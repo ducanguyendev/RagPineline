@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "query": "Hallucination trong tài liệu được hiểu là gì?",
+    "expected_answer": "Hallucination là hiện tượng mô hình sinh ra thông tin sai lệch, bịa đặt hoặc không có thực nhưng với văn phong tự tin."
+  },
+  {
+    "id": 2,
+    "query": "Grounding có vai trò gì khi mô hình trả lời?",
+    "expected_answer": "Grounding là kỹ thuật \"neo\" câu trả lời của mô hình vào dữ liệu thực tế được cung cấp để đảm bảo tính xác thực."
+  },
+  {
+    "id": 3,
+    "query": "RAG được đề xuất chính thức lần đầu vào thời điểm nào và bởi nhóm nào?",
+    "expected_answer": "RAG được đề xuất chính thức năm 2020 trong bài “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks” bởi Patrick Lewis và các cộng sự tại Facebook AI Research (FAIR)."
+  },
+  {
+    "id": 4,
+    "query": "Original RAG và Modern RAG khác nhau chủ yếu ở điểm nào?",
+    "expected_answer": "Original RAG dựa trên fine-tuning và cập nhật trọng số của retriever/generator; Modern RAG chủ yếu dựa trên In-Context Learning theo quy trình “Retrieve and Prompt”, thường giữ nguyên trọng số LLM và tối ưu retrieval."
+  },
+  {
+    "id": 5,
+    "query": "Ba giai đoạn chính của kiến trúc RAG hiện đại là gì?",
+    "expected_answer": "Ba giai đoạn chính là Indexing, Retrieval và Generation."
+  },
+  {
+    "id": 6,
+    "query": "Ở giai đoạn Indexing, tài liệu đi qua những bước chính nào trước khi có thể được tìm kiếm?",
+    "expected_answer": "Tài liệu được nạp và trích xuất nội dung/metadata, chia nhỏ thành chunks, chuyển chunks thành vector bằng embedding model, rồi lưu vector cùng ID/metadata vào Vector Store."
+  },
+  {
+    "id": 7,
+    "query": "Vì sao metadata quan trọng đối với RAG thực tế?",
+    "expected_answer": "Metadata hỗ trợ pre-filtering, giúp hệ thống lọc đúng phạm vi tài liệu trước khi tìm kiếm, ví dụ lọc tài liệu năm 2024 cho câu hỏi về doanh thu năm 2024."
+  },
+  {
+    "id": 8,
+    "query": "Fixed-size Chunking có nhược điểm gì so với Recursive Chunking?",
+    "expected_answer": "Fixed-size Chunking có thể cắt giữa câu hoặc giữa một ý, làm mất ngữ nghĩa. Recursive Chunking ưu tiên ranh giới tự nhiên như đoạn, dòng, dấu câu và khoảng trắng nên giữ cấu trúc câu/đoạn tốt hơn."
+  },
+  {
+    "id": 9,
+    "query": "Chunk overlap thường được khuyến nghị ở mức bao nhiêu so với độ dài chunk?",
+    "expected_answer": "Tài liệu nêu chunk_overlap thường ở mức 10-20% độ dài của chunk."
+  },
+  {
+    "id": 10,
+    "query": "Parent-Child Indexing giải quyết mâu thuẫn giữa chunk nhỏ và chunk lớn như thế nào?",
+    "expected_answer": "Hệ thống dùng Parent chunks lớn để giữ ngữ cảnh, chia thành Child chunks nhỏ để index/tìm kiếm; khi tìm thấy Child chunk thì trả Parent chunk tương ứng cho LLM."
+  },
+  {
+    "id": 11,
+    "query": "Multi-Query xử lý một câu hỏi ngắn hoặc thiếu ngữ cảnh ra sao?",
+    "expected_answer": "Multi-Query dùng LLM sinh 3-5 biến thể của câu hỏi gốc, tìm kiếm với tất cả biến thể rồi gộp kết quả để tăng khả năng tìm đúng tài liệu."
+  },
+  {
+    "id": 12,
+    "query": "HyDE thay đổi truy vấn trước khi retrieval theo cách nào?",
+    "expected_answer": "HyDE yêu cầu LLM viết một câu trả lời/tài liệu giả định cho câu hỏi, sau đó dùng embedding của đoạn giả định đó để tìm kiếm tài liệu thực."
+  },
+  {
+    "id": 13,
+    "query": "Dense Retrieval và Sparse Retrieval bổ sung cho nhau như thế nào trong Hybrid Search?",
+    "expected_answer": "Dense Retrieval mạnh về tương đồng ngữ nghĩa; Sparse Retrieval như BM25/TF-IDF mạnh về khớp từ khóa chính xác, tên riêng và thuật ngữ chuyên ngành. Hybrid Search kết hợp hai luồng."
+  },
+  {
+    "id": 14,
+    "query": "Vì sao RRF không cộng trực tiếp điểm của Vector Search và BM25?",
+    "expected_answer": "Vì điểm của Vector Search và BM25 nằm trên các thang đo khác nhau. RRF bỏ qua điểm gốc và hợp nhất dựa trên thứ hạng."
+  },
+  {
+    "id": 15,
+    "query": "Trong RRF, hằng số k thường được đặt bao nhiêu và để làm gì?",
+    "expected_answer": "k thường là 60 để làm mượt điểm số, tránh tài liệu hạng 1 chiếm ưu thế quá tuyệt đối so với hạng 2, hạng 3."
+  },
+  {
+    "id": 16,
+    "query": "Tại sao Cross-Encoder chính xác hơn Bi-Encoder nhưng chậm hơn?",
+    "expected_answer": "Bi-Encoder mã hóa câu hỏi và tài liệu độc lập nên nhanh nhưng mất quan hệ ngữ pháp/ngữ nghĩa phức tạp. Cross-Encoder đưa cả hai vào cùng lúc nên chính xác hơn nhưng chậm hơn."
+  },
+  {
+    "id": 17,
+    "query": "Chiến lược “hình phễu” trong re-ranking hoạt động theo thứ tự nào?",
+    "expected_answer": "Retrieve Many: lấy khoảng 50 tài liệu nhanh bằng Bi-Encoder; Re-rank Few: dùng Cross-Encoder chọn khoảng 5 tài liệu tốt nhất; sau đó đưa vào LLM."
+  },
+  {
+    "id": 18,
+    "query": "Context Reordering xử lý hiện tượng “Lost in the Middle” bằng cách nào?",
+    "expected_answer": "Hệ thống sắp xếp theo dạng chữ U: đặt tài liệu quan trọng nhất ở đầu và cuối prompt, tài liệu ít quan trọng hơn ở giữa."
+  },
+  {
+    "id": 19,
+    "query": "Zero-shot Prompting và Few-shot Learning trong phần Generation khác nhau thế nào?",
+    "expected_answer": "Zero-shot dùng template cố định mà không có ví dụ mẫu. Few-shot thêm 1-2 ví dụ Context-Question-Answer chuẩn để mô hình học phong cách và định dạng."
+  },
+  {
+    "id": 20,
+    "query": "Nếu bỏ Embedding Model, Vector Store/ANN Index và LLM thì hệ thống lần lượt biến thành những dạng nào?",
+    "expected_answer": "Bỏ Embedding Model: Lexical Retrieval-driven RAG. Bỏ Vector Store/ANN Index: Unscalable Prototype. Bỏ LLM: Semantic Search / Retrieval System."
+  },
+  {
+    "id": 21,
+    "query": "Trong LangChain, một Document gồm những thuộc tính chính nào?",
+    "expected_answer": "Một Document gồm page_content, metadata và id."
+  },
+  {
+    "id": 22,
+    "query": "Trong ví dụ LangChain, RecursiveCharacterTextSplitter được cấu hình chunk_size và chunk_overlap bao nhiêu?",
+    "expected_answer": "chunk_size=1000 và chunk_overlap=200."
+  },
+  {
+    "id": 23,
+    "query": "VectorStoreRetriever trong ví dụ hỗ trợ các kiểu tìm kiếm nào?",
+    "expected_answer": "similarity, mmr (Maximum Marginal Relevance) và similarity_score_threshold."
+  },
+  {
+    "id": 24,
+    "query": "Pipeline của phần thực hành dùng những thành phần nào từ tài liệu PDF đến câu trả lời?",
+    "expected_answer": "Tài liệu AIVN được chunking, vector hóa và lưu vào ChromaDB. Query được vector hóa, dùng similarity search lấy Top-K context, ghép qua prompt template rồi đưa vào Qwen để sinh câu trả lời."
+  },
+  {
+    "id": 25,
+    "query": "Trong class TextSplitter của phần thực hành, mặc định chunk_size và chunk_overlap là bao nhiêu?",
+    "expected_answer": "chunk_size=400 và chunk_overlap=120."
+  },
+  {
+    "id": 26,
+    "query": "Retriever trong class VectorDB của phần thực hành mặc định lấy bao nhiêu document gần nhất?",
+    "expected_answer": "Mặc định lấy 4 document gần nhất."
+  },
+  {
+    "id": 27,
+    "query": "Prompt của OfflineRAG yêu cầu mô hình làm gì khi tài liệu không có thông tin?",
+    "expected_answer": "Mô hình phải nói rõ “Không có thông tin”, trả lời dựa trên tài liệu và không thêm chi tiết nào ngoài tài liệu."
+  },
+  {
+    "id": 28,
+    "query": "Semantic Chunking khác Recursive Chunking ở nguyên tắc quyết định điểm cắt như thế nào?",
+    "expected_answer": "Recursive Chunking dựa trên ký tự phân tách; Semantic Chunking dựa trên sự thay đổi ngữ nghĩa giữa các câu, dùng độ tương đồng để phát hiện khi chủ đề đổi."
+  },
+  {
+    "id": 29,
+    "query": "Quy trình Semantic Chunking trong tài liệu gồm những bước nào?",
+    "expected_answer": "Tách thành câu hoàn chỉnh; tính độ tương đồng giữa câu trước và câu sau; đặt ngưỡng; tương đồng cao thì gộp, giảm dưới ngưỡng thì ngắt chunk."
+  },
+  {
+    "id": 30,
+    "query": "HNSW được mô tả là gì và dùng để giải quyết vấn đề nào?",
+    "expected_answer": "HNSW là thuật toán tìm kiếm vector xấp xỉ dựa trên đồ thị phân tầng, cân bằng tốc độ và độ chính xác; dùng để tìm nhanh khi số lượng vector lớn thay vì brute-force."
+  },
+  {
+    "id": 31,
+    "query": "BM25 cải thiện điểm yếu nào của TF-IDF theo mô tả trong tài liệu?",
+    "expected_answer": "BM25 bổ sung cơ chế bão hòa tần suất và chuẩn hóa độ dài, giúp tránh việc tài liệu lặp từ khóa quá nhiều được ưu tiên không công bằng."
+  },
+  {
+    "id": 32,
+    "query": "Hybrid Search trong tài liệu nâng cao thực hiện retrieval theo quy trình nào?",
+    "expected_answer": "Hệ thống chạy song song Sparse Retriever và Dense Retriever, sau đó hợp nhất kết quả; các chiến lược hợp nhất được thực nghiệm gồm Interleaving và RRF."
+  },
+  {
+    "id": 33,
+    "query": "Vì sao tài liệu xếp hạng khá ở cả Vector Search và BM25 có thể được RRF ưu tiên hơn tài liệu đứng đầu chỉ ở một bên?",
+    "expected_answer": "RRF cộng điểm theo nghịch đảo thứ hạng ở từng danh sách, nên tài liệu có thứ hạng tốt và ổn định ở cả hai luồng có thể có tổng điểm cao hơn."
+  },
+  {
+    "id": 34,
+    "query": "Nếu người dùng chỉ gõ một cụm rất ngắn như “remote work”, tài liệu đề xuất nhóm kỹ thuật nào để cải thiện retrieval?",
+    "expected_answer": "Query Transformation: dùng LLM viết lại, mở rộng hoặc chia nhỏ câu hỏi trước retrieval; các kỹ thuật được trình bày gồm HyDE và Query Decomposition."
+  },
+  {
+    "id": 35,
+    "query": "Query Decomposition phù hợp với loại câu hỏi nào và xử lý ra sao?",
+    "expected_answer": "Phù hợp câu hỏi phức tạp mà một đoạn khó chứa đủ thông tin; hệ thống chia thành sub-query, retrieval riêng rồi cho LLM tổng hợp."
+  },
+  {
+    "id": 36,
+    "query": "Cross-Encoder và MMR giải quyết hai mục tiêu re-ranking khác nhau như thế nào?",
+    "expected_answer": "Cross-Encoder chấm lại mức độ liên quan giữa query và từng document; MMR cân bằng mức độ liên quan với tính đa dạng để giảm trùng lặp."
+  },
+  {
+    "id": 37,
+    "query": "Bài thực nghiệm nâng cao sử dụng bao nhiêu tài liệu PDF làm dữ liệu đầu vào?",
+    "expected_answer": "45 tài liệu PDF chứa kiến thức chuyên sâu về Trí tuệ nhân tạo thuộc khóa học AIO."
+  },
+  {
+    "id": 38,
+    "query": "Bốn metric Ragas được sử dụng trong tài liệu để đánh giá RAG là gì?",
+    "expected_answer": "Faithfulness, Answer Relevancy, Context Precision và Context Recall."
+  },
+  {
+    "id": 39,
+    "query": "Faithfulness đo điều gì trong đánh giá RAG?",
+    "expected_answer": "Faithfulness đo mức độ các phát biểu trong câu trả lời có thể được hỗ trợ bởi context đã truy xuất, nhằm kiểm soát hallucination."
+  },
+  {
+    "id": 40,
+    "query": "Trong ví dụ Einstein, Faithfulness bằng bao nhiêu và vì sao?",
+    "expected_answer": "Faithfulness = 0.5 vì có 2 phát biểu nhưng chỉ 1 phát biểu được context hỗ trợ; ngày 20 March 1879 không khớp context ghi 14 March 1879."
+  },
+  {
+    "id": 41,
+    "query": "Context Precision và Context Recall khác nhau ở trọng tâm đánh giá nào?",
+    "expected_answer": "Context Precision tập trung vào độ chính xác và thứ hạng của context liên quan; Context Recall tập trung vào độ bao phủ thông tin cần thiết từ reference trong retrieved contexts."
+  },
+  {
+    "id": 42,
+    "query": "Ví dụ green tea trong phần Context Precision cho kết quả cuối cùng xấp xỉ bao nhiêu?",
+    "expected_answer": "Context Precision xấp xỉ 0.76."
+  },
+  {
+    "id": 43,
+    "query": "Ragas tạo testset tự động từ corpus PDF theo luồng chính nào?",
+    "expected_answer": "PDF được tiền xử lý và chuyển sang markdown, xây knowledge graph bằng embedding và trích xuất quan hệ, sau đó query synthesizer sinh câu hỏi; LLM tạo reference answer và reference_contexts cùng metadata."
+  },
+  {
+    "id": 44,
+    "query": "Phân phối mặc định của ba loại query do Ragas sinh trong tài liệu là bao nhiêu?",
+    "expected_answer": "Single-hop specific 50%, multi-hop abstract 25%, multi-hop specific 25%."
+  },
+  {
+    "id": 45,
+    "query": "Một sample trong Ragas Testset có những trường chính nào, và khi đánh giá hệ thống thực tế cần bổ sung thêm gì?",
+    "expected_answer": "Các trường chính gồm user_input, reference_contexts, reference, persona_name, query_style, query_length và synthesizer_name. Khi đánh giá thực tế bổ sung response và retrieved_contexts."
+  },
+  {
+    "id": 46,
+    "query": "Baseline RAG nâng cao được cấu hình như thế nào về chunking, retrieval và Top-K?",
+    "expected_answer": "Baseline dùng chunk_size=1024, chunk_overlap=128, VectorDB với similarity retrieval và k=3; chưa áp dụng Query Transformation hay Re-ranking."
+  },
+  {
+    "id": 47,
+    "query": "Baseline đạt các điểm Ragas nào và điểm yếu rõ nhất là gì?",
+    "expected_answer": "Faithfulness 0.73, Answer Relevancy 0.53, Context Precision 0.81, Context Recall 0.67. Điểm yếu rõ nhất là Answer Relevancy thấp nhất; Context Recall cũng còn trung bình."
+  },
+  {
+    "id": 48,
+    "query": "Semantic Chunking thay đổi các metric thế nào so với baseline?",
+    "expected_answer": "Faithfulness 0.73→0.81, Answer Relevancy 0.53→0.61, Context Precision 0.81→0.83, Context Recall 0.67→0.63."
+  },
+  {
+    "id": 49,
+    "query": "Trong các chiến lược Retrieval thử nghiệm, Hybrid + RRF đạt kết quả nào nổi bật?",
+    "expected_answer": "Hybrid + RRF đạt Faithfulness 0.86, Answer Relevancy 0.57, Context Precision 0.80 và Context Recall 0.80; tài liệu kết luận chiến lược này cân bằng tốt giữa “tìm đủ” và “tìm đúng”."
+  },
+  {
+    "id": 50,
+    "query": "Kỹ thuật nào đạt Faithfulness cao nhất trong bảng tổng kết thực nghiệm và điểm là bao nhiêu?",
+    "expected_answer": "Query Decomposition đạt Faithfulness cao nhất: 0.93, tăng 0.20 so me với baseline."
+  },
+  {
+    "id": 51,
+    "query": "HyDE đã tác động thế nào đến Faithfulness, Answer Relevancy và Context Recall so với baseline?",
+    "expected_answer": "Faithfulness tăng lên 0.81 (+0.08), Answer Relevancy giảm xuống 0.50 (-0.03), Context Recall giảm xuống 0.63 (-0.04)."
+  },
+  {
+    "id": 52,
+    "query": "Query Decomposition đạt kết quả gì và đánh đổi ở metric retrieval nào?",
+    "expected_answer": "Decomposition đạt Faithfulness 0.93, Answer Relevancy 0.65, Context Precision 0.68 và Context Recall 0.69. Đánh đổi chính là Context Precision giảm."
+  },
+  {
+    "id": 53,
+    "query": "Cross-Encoder trong thực nghiệm cải thiện những metric nào so với baseline?",
+    "expected_answer": "Cross-Encoder đạt Faithfulness 0.76, Answer Relevancy 0.61, Context Precision 0.82, Context Recall 0.71; Answer Relevancy tăng 0.08 và Context Recall tăng 0.04."
+  },
+  {
+    "id": 54,
+    "query": "Vì sao MMR làm giảm Context Recall trong thực nghiệm này?",
+    "expected_answer": "MMR phạt tài liệu có nội dung tương đồng để tăng đa dạng; trong tài liệu học thuật, các đoạn gần nghĩa có thể chứa chi tiết bổ trợ quan trọng nên bị loại quá mức, làm Context Recall giảm xuống 0.60."
+  },
+  {
+    "id": 55,
+    "query": "Tài liệu cho biết ChromaDB dùng thuật toán mã hóa dữ liệu (encryption) nào khi lưu vector?",
+    "expected_answer": "Tài liệu không cung cấp thông tin về thuật toán mã hóa dữ liệu (encryption) mà ChromaDB sử dụng khi lưu vector."
+  },
+  {
+    "id": 56,
+    "query": "Ragas trong tài liệu có metric riêng để chấm độ trễ phản hồi (latency) không, và công thức là gì?",
+    "expected_answer": "Tài liệu không cung cấp metric Ragas riêng cho latency hoặc công thức chấm latency; tài liệu chỉ sử dụng bốn metric Faithfulness, Answer Relevancy, Context Precision và Context Recall."
+  },
+  {
+    "id": 57,
+    "query": "Breakpoint threshold nào là tối ưu cho Semantic Chunking trên mọi loại dữ liệu?",
+    "expected_answer": "Tài liệu không đưa ra một breakpoint threshold tối ưu cho mọi loại dữ liệu; chỉ mô tả cơ chế dùng ngưỡng và cấu hình trong thực nghiệm."
+  },
+  {
+    "id": 58,
+    "query": "Nếu tăng k thì kết quả RAG có tốt hơn không?",
+    "expected_answer": "Câu hỏi chưa đủ rõ vì tài liệu dùng “k” ở nhiều ngữ cảnh, như Top-K retrieval và hằng số k trong RRF. Cần làm rõ tham số nào trước khi kết luận."
+  },
+  {
+    "id": 59,
+    "query": "Tài liệu quy định SLA thời gian phản hồi tối đa của chatbot RAG là bao nhiêu giây?",
+    "expected_answer": "Tài liệu không cung cấp SLA thời gian phản hồi tối đa của chatbot RAG."
+  },
+  {
+    "id": 60,
+    "query": "Theo tài liệu, phương pháp nào luôn tốt nhất cho mọi hệ thống RAG: Semantic Chunking, Hybrid+RRF hay Decomposition?",
+    "expected_answer": "Tài liệu không khẳng định một phương pháp luôn tốt nhất cho mọi hệ thống RAG. Kết quả chỉ phản ánh chuỗi thực nghiệm cụ thể và mỗi kỹ thuật có trade-off khác nhau."
+  }
+]

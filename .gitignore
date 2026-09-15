@@ -1,0 +1,25 @@
+# Virtual Environment
+.venv/
+env/
+venv/
+ENV/
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.class
+
+# Environment secrets
+.env
+.env.local
+
+# Vector database & Large local data
+data/vectorstore/
+data/raw/
+*.pdf
+*.bin
+*.sqlite3
+
+# Frontend build
+frontend/dist/
+frontend/node_modules/

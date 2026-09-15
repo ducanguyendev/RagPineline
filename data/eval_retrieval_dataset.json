@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "category": "text",
+    "user_input": "Theo Luật Thi hành án hình sự 2025, người chấp hành án được định nghĩa như thế nào?",
+    "reference": "Người chấp hành án là người bị kết án, phải chịu hình phạt theo bản án, quyết định của Tòa án có hiệu lực pháp luật và đã có quyết định thi hành.",
+    "reference_contexts": [
+      "1. Người chấp hành án là người bị kết án, phải chịu hình phạt theo bản án, quyết định của Tòa án có hiệu lực pháp luật và đã có quyết định thi hành."
+    ],
+    "metadata": {
+      "source": "127-qh15-2025.signed.pdf",
+      "page": 2,
+      "section_path": "Chương I > Điều 3"
+    }
+  },
+  {
+    "id": 2,
+    "category": "text",
+    "user_input": "Thời giờ lao động chuẩn của phạm nhân trong một ngày và một tuần được quy định tối đa là bao nhiêu?",
+    "reference": "Thời giờ lao động của phạm nhân không quá 08 giờ trong 01 ngày và không quá 05 ngày trong 01 tuần, được nghỉ các ngày chủ nhật, lễ, tết theo quy định.",
+    "reference_contexts": [
+      "Thời giờ lao động của phạm nhân không quá 08 giờ trong 01 ngày và 05 ngày trong 01 tuần, được nghỉ vào các ngày chủ nhật, lễ, tết theo quy định của pháp luật."
+    ],
+    "metadata": {
+      "source": "127-qh15-2025.signed.pdf",
+      "page": 26,
+      "section_path": "Chương II > Điều 28"
+    }
+  },
+  {
+    "id": 3,
+    "category": "text",
+    "user_input": "Hội đồng thi hành án tử hình gồm những thành phần cụ thể nào?",
+    "reference": "Hội đồng thi hành án tử hình gồm: Chánh án hoặc Phó Chánh án Tòa án đã ra quyết định thi hành án làm Chủ tịch Hội đồng; Viện trưởng hoặc Phó Viện trưởng Viện kiểm sát cùng cấp; Thủ trưởng hoặc Phó Thủ trưởng cơ quan thi hành án hình sự Công an cấp tỉnh hoặc cơ quan thi hành án hình sự cấp quân khu.",
+    "reference_contexts": [
+      "3. Hội đồng thi hành án tử hình bao gồm:\na) Chánh án hoặc Phó Chánh án Tòa án đã ra quyết định thi hành án làm Chủ tịch Hội đồng;\nb) Viện trưởng hoặc Phó Viện trưởng Viện kiểm sát cùng cấp;\nc) Thủ trưởng hoặc Phó Thủ trưởng cơ quan thi hành án hình sự Công an cấp tỉnh hoặc cơ quan thi hành án hình sự cấp quân khu."
+    ],
+    "metadata": {
+      "source": "127-qh15-2025.signed.pdf",
+      "page": 63,
+      "section_path": "Chương III > Điều 73"
+    }
+  },
+  {
+    "id": 4,
+    "category": "text",
+    "user_input": "Theo Luật Giáo dục nghề nghiệp 2025, 'giảng viên đồng cơ hữu' được hiểu như thế nào?",
+    "reference": "Giảng viên đồng cơ hữu là viên chức đang công tác tại đơn vị sự nghiệp công lập (trừ cơ sở giáo dục công lập), có trình độ cao hoặc tài năng, năng khiếu đặc biệt hoặc kỹ năng nghề cao và được cơ sở giáo dục nghề nghiệp công lập giao nhiệm vụ giảng dạy, nghiên cứu như giảng viên cơ hữu.",
+    "reference_contexts": [
+      "3. Giảng viên đồng cơ hữu là viên chức đang công tác tại đơn vị sự nghiệp công lập (trừ cơ sở giáo dục công lập), có trình độ cao hoặc tài năng, năng khiếu đặc biệt hoặc kỹ năng nghề cao và được cơ sở giáo dục nghề nghiệp công lập giao nhiệm vụ giảng dạy, nghiên cứu như giảng viên cơ hữu."
+    ],
+    "metadata": {
+      "source": "luat124-2025.pdf",
+      "page": 11,
+      "section_path": "Chương IV > Điều 21"
+    }
+  },
+  {
+    "id": 5,
+    "category": "text",
+    "user_input": "Ngày Pháp luật nước Cộng hòa xã hội chủ nghĩa Việt Nam được quy định vào ngày nào hàng năm?",
+    "reference": "Ngày Pháp luật nước Cộng hòa xã hội chủ nghĩa Việt Nam là ngày 09 tháng 11 hằng năm.",
+    "reference_contexts": [
+      "1. Ngày 09 tháng 11 hằng năm là Ngày Pháp luật nước Cộng hòa xã hội chủ nghĩa Việt Nam."
+    ],
+    "metadata": {
+      "source": "luatso12-luatphobiengdpl.signed.pdf",
+      "page": 3,
+      "section_path": "Chương I > Điều 8"
+    }
+  },
+  {
+    "id": 6,
+    "category": "text",
+    "user_input": "Báo cáo viên pháp luật cần đáp ứng những tiêu chuẩn gì về trình độ và thâm niên công tác?",
+    "reference": "Báo cáo viên pháp luật phải có phẩm chất đạo đức tốt, lập trường tư tưởng vững vàng, có uy tín, có khả năng truyền đạt; có trình độ cử nhân luật trở lên và thời gian công tác pháp luật ít nhất 02 năm (nếu có trình độ cử nhân khác thì thời gian công tác liên quan đến pháp luật ít nhất là 03 năm).",
+    "reference_contexts": [
+      "1. Báo cáo viên pháp luật là cán bộ, công chức, viên chức, sĩ quan trong lực lượng vũ trang nhân dân, luật sư, luật gia được lựa chọn tham gia phổ biến, giáo dục pháp luật khi đáp ứng đủ các tiêu chuẩn sau đây:\na) Có phẩm chất đạo đức tốt, lập trường tư tưởng vững vàng và có uy tín trong công tác;\nb) Có khả năng truyền đạt;\nc) Có trình độ cử nhân luật trở lên và thời gian công tác trong lĩnh vực pháp luật ít nhất là 02 năm; trường hợp không có trình độ cử nhân luật, nhưng có trình độ cử nhân khác thì phải có thời gian công tác liên quan đến pháp luật ít nhất là 03 năm."
+    ],
+    "metadata": {
+      "source": "luatso12-luatphobiengdpl.signed.pdf",
+      "page": 15,
+      "section_path": "Chương III > Điều 33"
+    }
+  },
+  {
+    "id": 7,
+    "category": "text",
+    "user_input": "Đạo luật Dodd-Frank 2010 của Hoa Kỳ đã thành lập cơ quan liên ngành nào để xác định và ứng phó với rủi ro hệ thống?",
+    "reference": "Luật Dodd-Frank 2010 đã thành lập Hội đồng Giám sát Ổn định Tài chính (Financial Stability Oversight Council - FSOC) làm cơ quan liên ngành xác định và ứng phó với rủi ro hệ thống.",
+    "reference_contexts": [
+      "Thứ nhất, Luật Dodd-Frank thành lập một cơ quan liên ngành, có tên Hội đồng Giám sát ổn định Tài chính (Financial Stability Oversight Council – FSOC), có chức năng xác định và ứng phó với rủi ro hệ thống."
+    ],
+    "metadata": {
+      "source": "THỂ-CHẾ-PHÁP-LUẬT-KINH-TẾ-MỘT-SỐ-QUỐC-GIA-TRÊN-THẾ-GIỚI.pdf",
+      "page": 78,
+      "section_path": "Chương II > Mục 3.2.1"
+    }
+  },
+  {
+    "id": 8,
+    "category": "table",
+    "user_input": "Trong tài liệu hệ thống RAG, khi loại bỏ Vector Store hoặc ANN Index thì hệ thống sẽ trở thành gì và có hạn chế cốt lõi nào?",
+    "reference": "Khi loại bỏ Vector Store/ANN Index, hệ thống trở thành Unscalable Prototype (mô hình khó mở rộng) với hạn chế cốt lõi là độ trễ tăng mạnh ở dữ liệu lớn O(N) và khó vận hành hệ thống.",
+    "reference_contexts": [
+      "| Thành phần thiếu | Hệ thống trở thành | Hạn chế cốt lõi |\n| :--- | :--- | :--- |\n| Embedding Model | Lexical Retrieval-driven RAG (RAG dựa trên truy vấn từ khóa) | Giảm mạnh truy vấn theo ngữ nghĩa, khó bắt từ đồng nghĩa, và dễ bỏ sót thông tin. |\n| Vector Store/ANN Index | Unscalable Prototype (Mô hình khó mở rộng) | Độ trễ tăng mạnh ở dữ liệu lớn, khó vận hành hệ thống. |\n| LLM | Semantic Search / Retrieval System (Hệ truy vấn ngữ nghĩa) | Không thể tổng hợp, diễn giải, và trả lời hội thoại; người dùng phải tự đọc và rút kết luận từ các đoạn trích. |"
+    ],
+    "metadata": {
+      "source": "[Reading]-RAG-System.pdf",
+      "page": 16,
+      "section_path": "Phần I > Bảng 1: Tổng hợp sự thay đổi của hệ thống RAG theo các kịch bản"
+    }
+  },
+  {
+    "id": 9,
+    "category": "table",
+    "user_input": "Dựa trên bảng so sánh các chiến lược Chunking, Recursive Chunking và Semantic Chunking khác nhau như thế nào về nguyên lý và nhược điểm?",
+    "reference": "Recursive Chunking cắt dựa trên dấu câu và số lượng ký tự cố định, nhược điểm là dễ cắt ngang ý tưởng quan trọng làm nhiễu context. Semantic Chunking cắt dựa trên sự thay đổi về ý nghĩa nội dung giữa các câu, nhược điểm là tốn tài nguyên tính toán do phải chạy model so sánh từng câu.",
+    "reference_contexts": [
+      "| Tiêu chí | Recursive Chunking | Semantic Chunking |\n| :--- | :--- | :--- |\n| Nguyên lý | Cắt dựa trên dấu câu (\\n, dấu chấm) và số lượng ký tự cố định. | Cắt dựa trên sự thay đổi về ý nghĩa nội dung giữa các câu. |\n| Ưu điểm | Tốc độ cực nhanh, chi phí thấp. Giữ nguyên cấu trúc văn bản gốc. | Giữ trọn vẹn ý tưởng, không làm gãy mạch văn. Tăng độ chính xác khi tìm kiếm. |\n| Nhược điểm | Dễ cắt ngang ý tưởng quan trọng. Context có thể bị nhiễu vì chứa 2 nửa của 2 ý khác nhau. | Tốn tài nguyên tính toán do phải chạy model để so sánh từng câu. |\n| Phù hợp với | Tài liệu có cấu trúc rõ ràng, ví dụ hợp đồng, luật, sách giáo khoa... | Tài liệu dạng tường thuật, ít cấu trúc như biên bản cuộc họp, transcript video... |"
+    ],
+    "metadata": {
+      "source": "[Reading]-RAG-System.pdf",
+      "page": 44,
+      "section_path": "Phần II > Bảng 1: Bảng so sánh chiến lược Chunking"
+    }
+  },
+  {
+    "id": 10,
+    "category": "table",
+    "user_input": "Trong bảng tổng kết thực nghiệm RAGAS, phương pháp nâng cao nào đạt điểm Faithfulness cao nhất và giá trị là bao nhiêu?",
+    "reference": "Phương pháp Decomposition đạt điểm Faithfulness cao nhất với 0.93 (tăng 0.20 điểm so với baseline).",
+    "reference_contexts": [
+      "| Thực nghiệm | Faithfulness Score | Faithfulness ∆ | Answer Relevancy Score | Answer Relevancy ∆ | Context Precision Score | Context Precision ∆ | Context Recall Score | Context Recall ∆ |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| 1. Fixed Chunking (Baseline) | 0.73 | 0.00 | 0.53 | 0.00 | 0.81 | 0.00 | 0.67 | 0.00 |\n| 1. Semantic Chunking | 0.81 | 0.08 | 0.61 | 0.08 | 0.83 | 0.02 | 0.63 | -0.04 |\n| 2. Sparse Retrieval | 0.44 | -0.29 | 0.29 | -0.24 | 0.36 | -0.45 | 0.51 | -0.16 |\n| 2. Hybrid | 0.79 | 0.06 | 0.55 | 0.02 | 0.57 | -0.24 | 0.73 | 0.06 |\n| 2. Hybrid + RRF | 0.86 | 0.13 | 0.57 | 0.04 | 0.80 | -0.01 | 0.80 | 0.13 |\n| 3. HyDE | 0.81 | 0.08 | 0.50 | -0.03 | 0.80 | -0.01 | 0.63 | -0.04 |\n| 3. Decomposition | 0.93 | 0.20 | 0.65 | 0.12 | 0.68 | -0.13 | 0.69 | 0.02 |\n| 4. Cross-Encoder | 0.76 | 0.03 | 0.61 | 0.08 | 0.82 | 0.01 | 0.71 | 0.04 |\n| 4. MMR | 0.77 | 0.04 | 0.49 | -0.04 | 0.80 | -0.01 | 0.60 | -0.07 |"
+    ],
+    "metadata": {
+      "source": "[Reading]-RAG-System.pdf",
+      "page": 108,
+      "section_path": "Phần II > Bảng 3: Kết quả RAGAS và độ chênh so với Baseline (∆)"
+    }
+  },
+  {
+    "id": 11,
+    "category": "table",
+    "user_input": "Theo bảng thống kê văn bản lập pháp kinh tế của Quốc hội Hoa Kỳ từ năm 1973, lĩnh vực nào có số lượng văn bản ban hành nhiều nhất?",
+    "reference": "Lĩnh vực Thương mại có số lượng văn bản ban hành nhiều nhất với 250 văn bản (tiếp theo là Nông nghiệp và thực phẩm với 246 văn bản).",
+    "reference_contexts": [
+      "| Lĩnh vực | Tài chính | Nông nghiệp và thực phẩm | Thương mại | Năng lượng | Phát triển nguồn nước | Thương mại và Tài chính quốc tế | Khoa học, công nghệ và truyền thông | Thuế | Lao động | Phát triển nhà ở và cộng đồng |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| Số lượng văn bản | 220 | 246 | 250 | 207 | 192 | 176 | 151 | 141 | 118 | 92 |"
+    ],
+    "metadata": {
+      "source": "THỂ-CHẾ-PHÁP-LUẬT-KINH-TẾ-MỘT-SỐ-QUỐC-GIA-TRÊN-THẾ-GIỚI.pdf",
+      "page": 51,
+      "section_path": "Chương II > Bảng 1: Thống kê số văn bản quy phạm pháp luật điều chỉnh một số lĩnh vực kinh tế"
+    }
+  },
+  {
+    "id": 12,
+    "category": "table",
+    "user_input": "Theo bảng tiêu chí đánh giá quy định pháp luật của VCCI, tiêu chí 'Tính minh bạch' gồm những nội dung cụ thể nào?",
+    "reference": "Tính minh bạch gồm: Rõ ràng về hình thức (ngôn ngữ chính xác, dễ hiểu, diễn đạt không đa nghĩa) và Rõ ràng trong quy định áp dụng cho doanh nghiệp (rõ ràng về quyền, nghĩa vụ, trình tự thủ tục, chi phí thời gian và giảm nguy cơ nhũng nhiễu).",
+    "reference_contexts": [
+      "| STT | Tiêu chí | Các nội dung cụ thể |\n| :--- | :--- | :--- |\n| 1 | Tính minh bạch | Rõ ràng về hình thức: Ngôn ngữ sử dụng có chính xác, dễ hiểu không? Diễn đạt có rõ ràng không? Có thể bị hiểu theo nhiều cách khác nhau không?\nRõ ràng trong các quy định áp dụng cho doanh nghiệp: Rõ ràng về quyền và nghĩa vụ không? Rõ ràng về các trình tự, thủ tục, chi phí (thời gian, phí, lệ phí) không? Có nguy cơ cho nhũng nhiễu, tham nhũng không? |\n| 2 | Tính thống nhất | Có tuân thủ với các văn bản pháp luật có giá trị pháp lý cao hơn không? Có mâu thuẫn giữa các quy định trong bản thân văn bản đó không? Có tương thích với các cam kết quốc tế không? |\n| 3 | Tính hợp lý | Có đơn giản hóa được điều kiện kinh doanh, thủ tục hành chính, giảm chi phí không? Có đưa ra quy định bất hợp lý cản trở tự do kinh doanh không? Có phân biệt đối xử không? |\n| 4 | Tính khả thi | Có khả năng doanh nghiệp thực hiện được trên thực tế không? Có khả năng cơ quan nhà nước thực hiện được không? |"
+    ],
+    "metadata": {
+      "source": "VCCI-WB-Business-Conditions_VN_light-FINAL.pdf",
+      "page": 28,
+      "section_path": "Phần II > Hộp 1: Các tiêu chí đánh giá quy định pháp luật của VCCI"
+    }
+  },
+  {
+    "id": 13,
+    "category": "image",
+    "user_input": "Sơ đồ kiến trúc RAG gốc của Patrick Lewis (2020) mô tả cơ chế kết hợp giữa hai thành phần nào và sử dụng mô hình nào làm Generator?",
+    "reference": "Sơ đồ thể hiện sự kết hợp giữa Retriever p_η (Non-Parametric Memory truy cập Document Index qua MIPS) và Generator p_θ (Parametric Memory) sử dụng mô hình BART, được tối ưu hóa qua cơ chế End-to-End Backprop.",
+    "reference_contexts": [
+      "[ai_caption]: Sơ đồ khối kiến trúc RAG gốc theo nghiên cứu của Patrick Lewis (2020) thể hiện luồng End-to-End Backprop qua Query Encoder q(x), Retriever p_η (Non-Parametric) truy xuất Document Index qua MIPS, và Generator p_θ (Parametric - mô hình BART) để marginalize và sinh câu trả lời y cho các tác vụ Question Answering, Fact Verification và Question Generation."
+    ],
+    "metadata": {
+      "source": "[Reading]-RAG-System.pdf",
+      "page": 4,
+      "section_path": "Phần I > Hình 2: Tổng quan kiến trúc RAG trong bài báo gốc của Patrick Lewis (2020)"
+    }
+  },
+  {
+    "id": 14,
+    "category": "image",
+    "user_input": "Hình minh họa cơ chế tìm kiếm trong đồ thị phân tầng HNSW mô tả quá trình tìm kiếm từ layer cao nhất xuống layer 0 diễn ra như thế nào?",
+    "reference": "Quá trình tìm kiếm bắt đầu từ Entry Point ở Layer 2 với các liên kết thưa, di chuyển nhanh đến láng giềng gần nhất với Query vector, sau đó chuyển dần xuống Layer 1 và tinh chỉnh tìm kiếm cục bộ chính xác tại Layer 0.",
+    "reference_contexts": [
+      "[ai_caption]: Sơ đồ đồ thị phân tầng của thuật toán HNSW gồm Layer 2, Layer 1 và Layer 0. Điểm truy vấn (Query) được so sánh bắt đầu từ Entry Point tại Layer 2 thông qua các liên kết thưa (đường cao tốc), chuyển dần điểm truy cập xuống Layer 1 và cuối cùng định vị chính xác tại Layer 0 nơi chứa toàn bộ node dữ liệu và các liên kết dày đặc."
+    ],
+    "metadata": {
+      "source": "[Reading]-RAG-System.pdf",
+      "page": 45,
+      "section_path": "Phần II > Hình 4: Cấu trúc đồ thị phân tầng của HNSW"
+    }
+  },
+  {
+    "id": 15,
+    "category": "image",
+    "user_input": "Sơ đồ kiến trúc so sánh Bi-Encoder và Cross-Encoder thể hiện điểm khác biệt cơ bản nào trong cách xử lý đầu vào giữa Query và Document?",
+    "reference": "Bi-Encoder mã hóa Query và Document độc lập qua hai BERT Encoder riêng biệt rồi mới so khớp vector Similarity Score; trong khi Cross-Encoder ghép chuỗi [CLS] Query [SEP] Document [SEP] và đưa đồng thời vào một BERT Encoder duy nhất để tính Relevant Score qua full Self-Attention.",
+    "reference_contexts": [
+      "[ai_caption]: Sơ đồ so sánh kiến trúc Bi-Encoder và Cross-Encoder. Bên trái (Bi-Encoder): Query và Document đi qua hai nhánh BERT Encoder độc lập để tạo ra Query Embedding và Document Embedding rồi tính Similarity Score. Bên phải (Cross-Encoder): Ghép Query và Document thành một chuỗi duy nhất định dạng [CLS] Query [SEP] Document [SEP] đưa qua một BERT Encoder duy nhất để tính Relevant Score."
+    ],
+    "metadata": {
+      "source": "[Reading]-RAG-System.pdf",
+      "page": 54,
+      "section_path": "Phần II > Hình 6: So sánh sự khác biệt cơ bản giữa hai kiến trúc Bi-Encoder vs Cross-Encoder"
+    }
+  }
+]

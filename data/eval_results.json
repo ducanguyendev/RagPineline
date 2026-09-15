@@ -1,0 +1,384 @@
+{
+  "timestamp": "2026-08-27 15:12:47",
+  "provider": "gemini",
+  "total_test_cases": 10,
+  "avg_latency_ms": 146370.82,
+  "avg_similarity_score": 0.8746,
+  "pass_count": 10,
+  "pass_rate_percent": 100.0,
+  "early_exit_count": 0,
+  "details": [
+    {
+      "id": 1,
+      "query": "Hallucination trong tài liệu được hiểu là gì?",
+      "expected_answer": "Hallucination là hiện tượng mô hình sinh ra thông tin sai lệch, bịa đặt hoặc không có thực nhưng với văn phong tự tin.",
+      "generated_answer": "Hallucination được hiểu là hiện tượng mô hình sinh ra thông tin sai lệch, bịa đặt hoặc không có thực nhưng với văn phong tự tin [SOURCE_1], [SOURCE_2], [SOURCE_3].",
+      "similarity_score": 0.962,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 38,
+          "section": "Mục lục",
+          "chunk_id": "[Reading]-RAG-System_sec_78_chunk_78",
+          "rerank_score": 0.6748
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 41,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_page_41_chunk_1",
+          "rerank_score": 0.6493
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 37,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_32_chunk_32",
+          "rerank_score": 0.4815
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 103425.29
+    },
+    {
+      "id": 2,
+      "query": "Grounding có vai trò gì khi mô hình trả lời?",
+      "expected_answer": "Grounding là kỹ thuật \"neo\" câu trả lời của mô hình vào dữ liệu thực tế được cung cấp để đảm bảo tính xác thực.",
+      "generated_answer": "Grounding là một kỹ thuật được sử dụng để \"neo\" câu trả lời của mô hình vào dữ liệu thực tế đã được cung cấp, nhằm đảm bảo tính xác thực của câu trả lời đó [SOURCE_1].",
+      "similarity_score": 0.9583,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 3,
+          "section": "Mục lục",
+          "chunk_id": "[Reading]-RAG-System_sec_06_chunk_06",
+          "rerank_score": 0.3569
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 162546.57
+    },
+    {
+      "id": 3,
+      "query": "RAG được đề xuất chính thức lần đầu vào thời điểm nào và bởi nhóm nào?",
+      "expected_answer": "RAG được đề xuất chính thức năm 2020 trong bài “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks” bởi Patrick Lewis và các cộng sự tại Facebook AI Research (FAIR).",
+      "generated_answer": "Khái niệm RAG lần đầu tiên được đề xuất chính thức vào năm 2020 [SOURCE_1], [SOURCE_2] trong bài báo khoa học 'Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks' bởi Patrick Lewis và các cộng sự tại Facebook AI Research (FAIR) [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.9548,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 4,
+          "section": "info-circle Nguồn gốc",
+          "chunk_id": "[Reading]-RAG-System_sec_08_chunk_08",
+          "rerank_score": 0.9884
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 4,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_page_4_chunk_1",
+          "rerank_score": 0.9782
+        }
+      ],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_003.png"
+      ],
+      "latency_ms": 177687.46
+    },
+    {
+      "id": 4,
+      "query": "Original RAG và Modern RAG khác nhau chủ yếu ở điểm nào?",
+      "expected_answer": "Original RAG dựa trên fine-tuning và cập nhật trọng số của retriever/generator; Modern RAG chủ yếu dựa trên In-Context Learning theo quy trình “Retrieve and Prompt”, thường giữ nguyên trọng số LLM và tối ưu retrieval.",
+      "generated_answer": "Original RAG và Modern RAG khác nhau chủ yếu ở các điểm sau:\n\n* **Hướng tiếp cận:** Original RAG (2020) là hướng tiếp cận dựa trên fine-tuning [SOURCE_1], [SOURCE_2], [SOURCE_3]. Modern RAG (hiện nay) là hướng tiếp cận dựa trên In-Context Learning [SOURCE_1], [SOURCE_2], [SOURCE_3].\n* **Huấn luyện mô hình:** Mô hình Original RAG yêu cầu huấn luyện đồng thời cả bộ truy xuất và mô hình sinh văn bản để chúng học cách phối hợp với nhau, và trọng số của mô hình thay đổi trong quá trình này [SOURCE_1], [SOURCE_2], [SOURCE_3]. Trong khi đó, Modern RAG thường giữ nguyên trọng số của LLM và chỉ tập trung tối ưu hóa việc truy xuất dữ liệu, sau đó đưa dữ liệu này vào đầu vào (Prompt) để mô hình xử lý [SOURCE_1], [SOURCE_2], [SOURCE_3].\n* **Quy trình:** RAG hiện đại thường ám chỉ quy trình 'Retrieve and Prompt' [SOURCE_1], [SOURCE_2], [SOURCE_3].\n* **Tính linh hoạt và chi phí:** Cách tiếp cận của Modern RAG linh hoạt, chi phí thấp và dễ dàng áp dụng cho dữ liệu riêng tư mà không cần quy trình huấn luyện phức tạp [SOURCE_1], [SOURCE_2], [SOURCE_3].",
+      "similarity_score": 0.841,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 5,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_04_chunk_04",
+          "rerank_score": 0.9992
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 5,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_page_5_chunk_1",
+          "rerank_score": 0.9968
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 5,
+          "section": "II.1. Sự chuyển dịch sang In-Context RAG",
+          "chunk_id": "[Reading]-RAG-System_sec_09_chunk_09",
+          "rerank_score": 0.9883
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 197365.9
+    },
+    {
+      "id": 5,
+      "query": "Ba giai đoạn chính của kiến trúc RAG hiện đại là gì?",
+      "expected_answer": "Ba giai đoạn chính là Indexing, Retrieval và Generation.",
+      "generated_answer": "Ba giai đoạn chính của kiến trúc RAG hiện đại là Indexing, Retrieval và Generation [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.8254,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 5,
+          "section": "II.2. Kiến trúc RAG hiện đại",
+          "chunk_id": "[Reading]-RAG-System_sec_10_chunk_10",
+          "rerank_score": 0.9975
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 5,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_04_chunk_04",
+          "rerank_score": 0.9929
+        }
+      ],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_004.png"
+      ],
+      "latency_ms": 164566.09
+    },
+    {
+      "id": 6,
+      "query": "Ở giai đoạn Indexing, tài liệu đi qua những bước chính nào trước khi có thể được tìm kiếm?",
+      "expected_answer": "Tài liệu được nạp và trích xuất nội dung/metadata, chia nhỏ thành chunks, chuyển chunks thành vector bằng embedding model, rồi lưu vector cùng ID/metadata vào Vector Store.",
+      "generated_answer": "Ở giai đoạn Indexing, tài liệu đi qua các bước chính sau trước khi có thể được tìm kiếm:\n\n1. **Load & Extract (Tải và Trích xuất)**: Giai đoạn này bắt đầu bằng việc thu thập nguồn dữ liệu đầu vào và trích xuất nội dung văn bản thuần túy từ các định dạng tệp tin đa dạng, đồng thời thu thập các thông tin ngữ cảnh đi kèm tài liệu (metadata) như chủ đề, số trang, ngày xuất bản, tác giả [SOURCE_1], [SOURCE_5].\n2. **Chunking (Chia nhỏ văn bản)**: Văn bản được chia nhỏ thành các đoạn gọi là \"chunk\", có độ dài phù hợp với context window của mô hình [SOURCE_1], [SOURCE_5].\n3. **Embedding (Mã hóa)**: Sử dụng mô hình embedding để mã hóa các chunk thành các vector số thực trong không gian ngữ nghĩa n-chiều [SOURCE_2], [SOURCE_5].\n\nKết quả của giai đoạn này là một cơ sở dữ liệu Vector lưu trữ các vector kèm theo metadata tương ứng, cho phép hệ thống tìm kiếm hiệu quả [SOURCE_2], [SOURCE_5].",
+      "similarity_score": 0.7439,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 6,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_page_6_chunk_1",
+          "rerank_score": 0.9333
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 39,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_34_chunk_34",
+          "rerank_score": 0.846
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 39,
+          "section": "II. Nhắc lại về RAG cơ bản",
+          "chunk_id": "[Reading]-RAG-System_sec_80_chunk_80",
+          "rerank_score": 0.2615
+        }
+      ],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_023.png"
+      ],
+      "latency_ms": 94097.52
+    },
+    {
+      "id": 7,
+      "query": "Vì sao metadata quan trọng đối với RAG thực tế?",
+      "expected_answer": "Metadata hỗ trợ pre-filtering, giúp hệ thống lọc đúng phạm vi tài liệu trước khi tìm kiếm, ví dụ lọc tài liệu năm 2024 cho câu hỏi về doanh thu năm 2024.",
+      "generated_answer": "Metadata đóng vai trò cực kỳ quan trọng trong các hệ thống RAG thực tế để hỗ trợ tính năng Pre-filtering [SOURCE_1], [SOURCE_2]. Ví dụ, nếu người dùng hỏi về \"Doanh thu năm 2024\", hệ thống có thể sử dụng metadata để lọc chính xác các tài liệu liên quan đến năm 2024, thay vì phải tìm kiếm trong toàn bộ dữ liệu [SOURCE_1], [SOURCE_2]. Metadata bao gồm các thông tin ngữ cảnh đi kèm tài liệu như chủ đề, số trang, ngày xuất bản, tác giả [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.8263,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 6,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_05_chunk_05",
+          "rerank_score": 0.9936
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 6,
+          "section": "1. Document Loading :",
+          "chunk_id": "[Reading]-RAG-System_sec_12_chunk_12",
+          "rerank_score": 0.9866
+        }
+      ],
+      "image_urls_count": 2,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_005.png",
+        "/images/[Reading]-RAG-System/fig_006.png"
+      ],
+      "latency_ms": 193070.03
+    },
+    {
+      "id": 8,
+      "query": "Fixed-size Chunking có nhược điểm gì so với Recursive Chunking?",
+      "expected_answer": "Fixed-size Chunking có thể cắt giữa câu hoặc giữa một ý, làm mất ngữ nghĩa. Recursive Chunking ưu tiên ranh giới tự nhiên như đoạn, dòng, dấu câu và khoảng trắng nên giữ cấu trúc câu/đoạn tốt hơn.",
+      "generated_answer": "So với Recursive Chunking, Fixed-size Chunking có nhược điểm chính là dễ làm mất ngữ nghĩa của văn bản [SOURCE_2]. Cụ thể:\n\n* **Mất ngữ nghĩa**: Fixed-size Chunking chia văn bản dựa trên số lượng ký tự hoặc token cố định. Điều này dễ làm mất ngữ nghĩa nếu điểm cắt rơi vào giữa câu hoặc giữa một ý đang trình bày dở [SOURCE_2].\n* **Đứt gãy mạch văn**: Việc cắt ngang ý tưởng có thể gây ra hiện tượng đứt gãy mạch văn, khiến Retriever không tìm thấy đủ thông tin cần thiết để trả lời câu hỏi một cách đầy đủ [SOURCE_3].\n\nTrong khi đó, Recursive Chunking cố gắng cắt dựa trên cấu trúc tự nhiên của văn bản theo thứ tự ưu tiên các dấu ngắt đoạn văn, dấu xuống dòng, dấu chấm câu và khoảng trắng, giúp giữ trọn vẹn cấu trúc câu và đoạn văn [SOURCE_2].",
+      "similarity_score": 0.8865,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 7,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_page_7_chunk_1",
+          "rerank_score": 0.9542
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 79,
+          "section": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+          "chunk_id": "[Reading]-RAG-System_sec_188_chunk_188",
+          "rerank_score": 0.8982
+        }
+      ],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_037.png"
+      ],
+      "latency_ms": 136121.89
+    },
+    {
+      "id": 9,
+      "query": "Chunk overlap thường được khuyến nghị ở mức bao nhiêu so với độ dài chunk?",
+      "expected_answer": "Tài liệu nêu chunk_overlap thường ở mức 10-20% độ dài của chunk.",
+      "generated_answer": "Chunk overlap thường được khuyến nghị ở mức 10-20% độ dài của chunk [SOURCE_1], [SOURCE_2], [SOURCE_3], [SOURCE_4].",
+      "similarity_score": 0.9139,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 4,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 7,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_page_7_chunk_2",
+          "rerank_score": 0.9688
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 7,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_06_chunk_06",
+          "rerank_score": 0.966
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 7,
+          "section": "1. Document Loading :",
+          "chunk_id": "[Reading]-RAG-System_sec_13_chunk_13",
+          "rerank_score": 0.935
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 7,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_page_7_chunk_1",
+          "rerank_score": 0.8913
+        }
+      ],
+      "image_urls_count": 2,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_007.png",
+        "/images/[Reading]-RAG-System/fig_008.png"
+      ],
+      "latency_ms": 127387.67
+    },
+    {
+      "id": 10,
+      "query": "Parent-Child Indexing giải quyết mâu thuẫn giữa chunk nhỏ và chunk lớn như thế nào?",
+      "expected_answer": "Hệ thống dùng Parent chunks lớn để giữ ngữ cảnh, chia thành Child chunks nhỏ để index/tìm kiếm; khi tìm thấy Child chunk thì trả Parent chunk tương ứng cho LLM.",
+      "generated_answer": "Parent-Child Indexing giải quyết mâu thuẫn giữa chunk nhỏ và chunk lớn bằng cách sử dụng cả hai loại chunk cho các mục đích khác nhau [SOURCE_1], [SOURCE_2], [SOURCE_4].\n\nCụ thể:\n* Văn bản được chia thành các khối lớn (ví dụ 1000 tokens) gọi là Parent chunks, có nhiệm vụ chứa ngữ cảnh đầy đủ [SOURCE_1], [SOURCE_2], [SOURCE_3].\n* Các Parent chunks này sau đó được chia thành các khối nhỏ hơn (ví dụ 200 tokens) gọi là Child chunks [SOURCE_1], [SOURCE_2], [SOURCE_3].\n* Cơ chế hoạt động là hệ thống sẽ lập chỉ mục (index) và tìm kiếm trên các Child chunks để đạt được độ chính xác cao [SOURCE_1], [SOURCE_2], [SOURCE_3].\n* Tuy nhiên, khi trả về kết quả cho LLM, hệ thống sẽ lấy Parent chunk tương ứng để cung cấp ngữ cảnh đầy đủ hơn cho LLM [SOURCE_1], [SOURCE_2], [SOURCE_3].\n\nCách làm này giúp tận dụng ưu điểm của chunk nhỏ (tốt cho tìm kiếm) và chunk lớn (tốt cho LLM do có nhiều ngữ cảnh hơn) [SOURCE_1], [SOURCE_2], [SOURCE_4].",
+      "similarity_score": 0.8338,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 4,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 8,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_page_8_chunk_1",
+          "rerank_score": 0.9993
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 7,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_06_chunk_06",
+          "rerank_score": 0.9976
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 8,
+          "section": "· Parent-Child Indexing (Small-to-Big):",
+          "chunk_id": "[Reading]-RAG-System_sec_15_chunk_15",
+          "rerank_score": 0.9717
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 8,
+          "section": "3. Chiến lược Indexing nâng cao",
+          "chunk_id": "[Reading]-RAG-System_sec_14_chunk_14",
+          "rerank_score": 0.867
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 107439.75
+    }
+  ]
+}
