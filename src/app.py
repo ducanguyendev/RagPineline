@@ -22,8 +22,9 @@ from src.rag.device_utils import (
     is_xpu_available,
     resolve_device,
 )
-from src.rag.indexer import build_index
-from src.rag.retriever import load_vector_db
+from src.rag.bm25_retriever import clear_bm25_cache
+from src.rag.indexer import build_index, count_vectors
+from src.rag.retriever import clear_vector_db_cache, load_vector_db
 from src.rag.rag_pipeline import answer_query
 load_dotenv()
 
@@ -96,7 +97,7 @@ class ChunkRequest(BaseModel):
 
 
 class EmbedRequest(BaseModel):
-    reset_db: bool = True
+    reset_db: bool = False
 
 
 class SearchRequest(BaseModel):
@@ -138,7 +139,7 @@ def vector_count() -> int:
         return 0
     try:
         db = load_vector_db(VECTOR_DIR, EMBEDDING_MODEL)
-        return int(db._collection.count())
+        return count_vectors(db)
     except Exception:
         return 0
 
@@ -250,6 +251,7 @@ def run_chunk(request: ChunkRequest):
 
     try:
         process_chunking(input_file, CHUNKED, config)
+        clear_bm25_cache(CHUNKED)
     except Exception as exc:
         raise HTTPException(status_code=500, detail=f"Chunking lỗi: {exc}") from exc
 
@@ -280,19 +282,22 @@ def run_embed(request: EmbedRequest):
             detail="Chưa có chunked.jsonl. Hãy chạy Chunking trước.",
         )
 
-    if request.reset_db and VECTOR_DIR.exists():
-        shutil.rmtree(VECTOR_DIR)
-
     start = time.perf_counter()
 
     try:
+        if request.reset_db and VECTOR_DIR.exists():
+            clear_vector_db_cache(VECTOR_DIR)
+            shutil.rmtree(VECTOR_DIR)
+
         db = build_index(
             input_file=CHUNKED,
             persist_dir=VECTOR_DIR,
             model_name=EMBEDDING_MODEL,
         )
-        vectors = int(db._collection.count())
+        vectors = count_vectors(db)
+        clear_vector_db_cache(VECTOR_DIR)
     except Exception as exc:
+        clear_vector_db_cache(VECTOR_DIR)
         raise HTTPException(status_code=500, detail=f"Embedding/Indexing lỗi: {exc}") from exc
 
     duration_ms = (time.perf_counter() - start) * 1000
@@ -423,7 +428,7 @@ def search_top_k(request: SearchRequest):
     return {
         "query": query,
         "top_k": request.top_k,
-        "total_vectors": int(db._collection.count()),
+        "total_vectors": count_vectors(db),
         "total_duration_ms": round(total_ms, 2),
         "logs": logs,
         "results": results,

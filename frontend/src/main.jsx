@@ -46,6 +46,7 @@ function App() {
   const [strategy, setStrategy] = useState("token");
   const [targetTokens, setTargetTokens] = useState(600);
   const [overlap, setOverlap] = useState(100);
+  const [fullRebuild, setFullRebuild] = useState(false);
 
   const [query, setQuery] = useState("");
   const [topK, setTopK] = useState(5);
@@ -133,6 +134,13 @@ function App() {
       return;
     }
 
+    if (
+      fullRebuild &&
+      !window.confirm("Full rebuild sẽ xóa toàn bộ Vector Database hiện tại.")
+    ) {
+      return;
+    }
+
     setRunning(true);
     setError("");
     setResults([]);
@@ -167,7 +175,7 @@ function App() {
         id: "embedding",
         label: "Embedding",
         url: "/api/pipeline/embed",
-        body: { reset_db: true },
+        body: { reset_db: fullRebuild },
       },
     ];
 
@@ -286,6 +294,7 @@ function App() {
     setRagAnswer(null);
     setRetrievalTime(null);
     setError("");
+    setFullRebuild(false);
   }
 
   return (
@@ -419,6 +428,23 @@ function App() {
                   onChange={(e) => setOverlap(e.target.value)}
                 />
               </div>
+            </div>
+
+            <div className="rebuild-controls">
+              <label className="rebuild-option">
+                <input
+                  type="checkbox"
+                  checked={fullRebuild}
+                  onChange={(e) => setFullRebuild(e.target.checked)}
+                  disabled={running}
+                />
+                <span>Full rebuild vector database</span>
+              </label>
+              {fullRebuild && (
+                <div className="rebuild-warning" role="alert">
+                  Full rebuild sẽ xóa toàn bộ Vector Database hiện tại.
+                </div>
+              )}
             </div>
 
             <button className="primary-btn" onClick={runPipeline} disabled={running || !selectedFile}>

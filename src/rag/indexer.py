@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import sys
@@ -50,19 +51,87 @@ class EmbeddingRuntime:
     fallback_reason: str | None = None
 
 
-def load_chunks(path: Path) -> list[Document]:
+def _first_nonempty(*values: object) -> str:
+    for value in values:
+        if value is not None and str(value).strip():
+            return str(value).strip()
+    return ""
+
+
+def _fallback_chroma_id(data: dict[str, object], content: str) -> str:
+    """Build a deterministic ID when legacy chunk data has no ``chunk_id``."""
+    metadata = data.get("metadata")
+    if not isinstance(metadata, dict):
+        metadata = {}
+
+    document_id = _first_nonempty(
+        data.get("document_id"),
+        data.get("doc_id"),
+        metadata.get("document_id"),
+        metadata.get("doc_id"),
+        metadata.get("source"),
+        "unknown-document",
+    )
+    identity = {
+        "document_id": document_id,
+        "chunk_index": data.get("chunk_index"),
+        "page_start": metadata.get("page_start", metadata.get("page")),
+        "section": metadata.get("section"),
+        "content_sha256": hashlib.sha256(content.encode("utf-8")).hexdigest(),
+    }
+    serialized = json.dumps(
+        identity,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+        default=str,
+    )
+    return f"fallback-{hashlib.sha256(serialized.encode('utf-8')).hexdigest()}"
+
+
+def _stable_chroma_id(data: dict[str, object], content: str, line_number: int) -> str:
+    raw_chunk_id = data.get("chunk_id")
+    if raw_chunk_id is not None and str(raw_chunk_id).strip():
+        return str(raw_chunk_id).strip()
+
+    fallback_id = _fallback_chroma_id(data, content)
+    print(
+        "WARNING: "
+        f"Missing chunk_id on line {line_number}; using deterministic Chroma ID "
+        f"{fallback_id}."
+    )
+    return fallback_id
+
+
+def load_chunks(path: Path, *, limit: int | None = None) -> list[Document]:
     """Load project JSONL chunks as LangChain documents."""
+    if limit is not None and limit <= 0:
+        raise ValueError(f"limit must be greater than zero, got {limit}.")
+
     documents: list[Document] = []
+    id_lines: dict[str, int] = {}
 
     with path.open("r", encoding="utf-8") as file:
-        for line in file:
+        for line_number, line in enumerate(file, start=1):
             if not line.strip():
                 continue
 
             data = json.loads(line)
+            content = data["chunk_content"]
+            stable_id = _stable_chroma_id(data, content, line_number)
+            previous_line = id_lines.get(stable_id)
+            if previous_line is not None:
+                raise ValueError(
+                    f"Duplicate stable Chroma ID {stable_id!r} on lines "
+                    f"{previous_line} and {line_number}. chunk_id values must be "
+                    "globally unique within a collection."
+                )
+            id_lines[stable_id] = line_number
+
             raw_meta = {
                 **data.get("metadata", {}),
-                "chunk_id": data.get("chunk_id", ""),
+                "chunk_id": stable_id,
+                "document_id": data.get("document_id", data.get("doc_id", "")),
                 "doc_id": data.get("doc_id", ""),
             }
 
@@ -79,12 +148,74 @@ def load_chunks(path: Path) -> list[Document]:
 
             documents.append(
                 Document(
-                    page_content=data["chunk_content"],
+                    id=stable_id,
+                    page_content=content,
                     metadata=clean_meta,
                 )
             )
 
+            if limit is not None and len(documents) >= limit:
+                break
+
     return documents
+
+
+def document_chroma_ids(documents: list[Document]) -> list[str]:
+    """Return validated, globally unique Chroma IDs for a document batch."""
+    ids: list[str] = []
+    seen: set[str] = set()
+
+    for position, document in enumerate(documents, start=1):
+        stable_id = _first_nonempty(
+            getattr(document, "id", None),
+            document.metadata.get("chunk_id"),
+        )
+        if not stable_id:
+            raise ValueError(
+                f"Document {position} has no stable Chroma ID. "
+                "Load documents through load_chunks() or provide Document.id."
+            )
+        if stable_id in seen:
+            raise ValueError(
+                f"Duplicate stable Chroma ID {stable_id!r} in indexing input. "
+                "IDs must be globally unique within a collection."
+            )
+        seen.add(stable_id)
+        ids.append(stable_id)
+
+    return ids
+
+
+def count_vectors(db: Chroma) -> int:
+    """Count collection IDs through the public LangChain Chroma API."""
+    result = db.get(include=[])
+    return len(result.get("ids", []))
+
+
+def upsert_documents(
+    db: Chroma,
+    documents: list[Document],
+    batch_size: int,
+    *,
+    show_progress: bool = True,
+) -> list[str]:
+    """Upsert documents with stable IDs through Chroma's public API."""
+    resolved_batch_size = _positive_int(batch_size, "CHROMA_BATCH_SIZE")
+    ids = document_chroma_ids(documents)
+
+    with tqdm(
+        total=len(documents),
+        desc="Indexing",
+        unit="chunk",
+        disable=not show_progress,
+    ) as progress:
+        for start in range(0, len(documents), resolved_batch_size):
+            batch = documents[start : start + resolved_batch_size]
+            batch_ids = ids[start : start + resolved_batch_size]
+            db.add_documents(batch, ids=batch_ids)
+            progress.update(len(batch))
+
+    return ids
 
 
 def _positive_int(value: str | int, setting_name: str) -> int:
@@ -268,14 +399,11 @@ def build_index(input_file: Path, persist_dir: Path, model_name: str):
         embedding_function=runtime.embeddings,
         persist_directory=str(persist_dir),
     )
+    vectors_before = count_vectors(db)
 
     print("Building vector database...")
     indexing_start = time.perf_counter()
-    with tqdm(total=len(documents), desc="Indexing", unit="chunk") as progress:
-        for start in range(0, len(documents), chroma_batch_size):
-            batch = documents[start : start + chroma_batch_size]
-            db.add_documents(batch)
-            progress.update(len(batch))
+    upsert_documents(db, documents, chroma_batch_size)
 
     indexing_seconds = time.perf_counter() - indexing_start
     chunk_count = len(documents)
@@ -283,7 +411,7 @@ def build_index(input_file: Path, persist_dir: Path, model_name: str):
     milliseconds_per_chunk = (
         indexing_seconds * 1000 / chunk_count if chunk_count else 0.0
     )
-    vectors_stored = int(db._collection.count())
+    vectors_after = count_vectors(db)
 
     print("=" * 60)
     print("INDEX COMPLETE")
@@ -293,12 +421,13 @@ def build_index(input_file: Path, persist_dir: Path, model_name: str):
     print(f"Precision        : {runtime.precision}")
     print(f"Embedding batch  : {runtime.batch_size}")
     print(f"Chroma batch     : {chroma_batch_size}")
-    print(f"Chunks           : {chunk_count}")
+    print(f"Input chunks     : {chunk_count}")
+    print(f"Vectors before   : {vectors_before}")
+    print(f"Vectors after    : {vectors_after}")
     print(f"Model load       : {runtime.model_load_seconds:.2f} s")
     print(f"Indexing         : {indexing_seconds:.2f} s")
     print(f"Throughput       : {chunks_per_second:.2f} chunks/s")
     print(f"Per chunk        : {milliseconds_per_chunk:.1f} ms")
-    print(f"Vectors stored   : {vectors_stored}")
     print(f"Database         : {persist_dir}")
     print("=" * 60)
 

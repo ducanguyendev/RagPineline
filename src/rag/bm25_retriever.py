@@ -116,17 +116,34 @@ class BM25Retriever:
 _BM25_CACHE = {}
 
 
+def clear_bm25_cache(input_file: Path = None) -> int:
+    """Clear all cached BM25 indexes or only entries for one chunk file."""
+    if input_file is None:
+        keys = list(_BM25_CACHE)
+    else:
+        target = str(Path(input_file).resolve())
+        keys = [key for key in _BM25_CACHE if key[0] == target]
+
+    for key in keys:
+        _BM25_CACHE.pop(key, None)
+    return len(keys)
+
+
 def load_bm25_retriever(input_file: Path = None) -> BM25Retriever:
-    global _BM25_CACHE
     if input_file is None:
         input_file = ROOT / "data" / "processed" / "chunked.jsonl"
 
-    cache_key = str(input_file)
+    if not input_file.exists():
+        raise FileNotFoundError(f"Input chunked file not found: {input_file}")
+
+    resolved_path = str(input_file.resolve())
+    stat = input_file.stat()
+    cache_key = (resolved_path, stat.st_mtime_ns, stat.st_size)
     if cache_key in _BM25_CACHE:
         return _BM25_CACHE[cache_key]
 
-    if not input_file.exists():
-        raise FileNotFoundError(f"Input chunked file not found: {input_file}")
+    # A rewritten chunk file must not leave its previous in-memory index active.
+    clear_bm25_cache(input_file)
 
     documents = []
     with input_file.open("r", encoding="utf-8") as f:

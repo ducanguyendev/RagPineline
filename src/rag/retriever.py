@@ -5,6 +5,7 @@ Load vector database and test similarity search.
 """
 
 import argparse
+import gc
 import sys
 from pathlib import Path
 
@@ -37,11 +38,26 @@ DEFAULT_DB = "data/vectorstore/chroma"
 
 _VECTOR_DB_CACHE = {}
 
+
+def clear_vector_db_cache(db_path: Path | None = None) -> int:
+    """Drop cached Chroma references, optionally for one persistent directory."""
+    if db_path is None:
+        keys = list(_VECTOR_DB_CACHE)
+    else:
+        target = str(Path(db_path).resolve())
+        keys = [key for key in _VECTOR_DB_CACHE if key[0] == target]
+
+    removed = [_VECTOR_DB_CACHE.pop(key) for key in keys]
+    removed_count = len(removed)
+    del removed
+    gc.collect()
+    return removed_count
+
 def load_vector_db(
     db_path: Path,
     model_name: str
 ):
-    cache_key = (str(db_path), model_name)
+    cache_key = (str(Path(db_path).resolve()), model_name)
     if cache_key in _VECTOR_DB_CACHE:
         return _VECTOR_DB_CACHE[cache_key]
 

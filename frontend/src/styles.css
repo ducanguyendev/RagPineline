@@ -147,6 +147,16 @@ select:focus, input:focus, textarea:focus { border-color: #60a5fa; box-shadow: 0
 .select-wrap svg { position: absolute; right: 11px; top: 13px; pointer-events: none; color: #76859a; }
 .select-wrap select { appearance: none; padding-right: 35px; }
 .form-row { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 11px; margin-bottom: 17px; }
+.rebuild-controls { margin: -4px 0 14px; }
+.rebuild-option {
+  display: flex; align-items: center; gap: 8px; margin: 0; color: #475569; cursor: pointer;
+}
+.rebuild-option input { width: 16px; height: 16px; padding: 0; accent-color: #dc2626; }
+.rebuild-option input:disabled { cursor: not-allowed; }
+.rebuild-warning {
+  margin-top: 8px; padding: 8px 10px; border: 1px solid #fecaca; border-radius: 8px;
+  background: #fef2f2; color: #b91c1c; font-size: 12px; font-weight: 650;
+}
 .primary-btn, .search-btn {
   border: 0; border-radius: 9px; background: #2563eb; color: #fff; font-weight: 750;
   min-height: 44px; display: flex; align-items: center; justify-content: center; gap: 8px;
