@@ -16,6 +16,7 @@ import json
 import sys
 from pathlib import Path
 
+from tqdm import tqdm
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(
@@ -151,12 +152,12 @@ def build_index(
         model_name=model_name,
 
         model_kwargs={
-            "device": "cuda"
+            "device": "cpu"
         },
 
         encode_kwargs={
             "normalize_embeddings": True,
-            "batch_size": 1
+            "batch_size": 32
         }
 
     )
@@ -171,19 +172,19 @@ def build_index(
     )
 
 
-    db = Chroma.from_documents(
-
-        documents=documents,
-
-        embedding=embeddings,
-
-        persist_directory=str(
-            persist_dir
-        ),
-
-        collection_name="rag_documents"
-
+    db = Chroma(
+        collection_name="rag_documents",
+        embedding_function=embeddings,
+        persist_directory=str(persist_dir),
     )
+
+    # Chroma nhận dữ liệu theo từng đợt để terminal hiển thị tiến độ thật.
+    chroma_batch_size = 128
+    with tqdm(total=len(documents), desc="Indexing", unit="chunk") as progress:
+        for start in range(0, len(documents), chroma_batch_size):
+            batch = documents[start : start + chroma_batch_size]
+            db.add_documents(batch)
+            progress.update(len(batch))
 
 
     print("=" * 60)
@@ -191,7 +192,7 @@ def build_index(
     print("INDEX COMPLETE")
 
     print(
-        f"Vectors stored: {len(documents)}"
+        f"Vectors stored: {db._collection.count()}"
     )
 
     print(

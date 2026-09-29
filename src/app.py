@@ -13,7 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from src.data.pdf_loader import convert_pdf
+from src.data.pdf_loader import convert_pdfs
 from src.data.image_captioner import caption_elements
 from src.data.chunker_optimized import ChunkConfig, process_chunking
 from src.rag.indexer import build_index
@@ -174,7 +174,7 @@ def run_load(request: LoadRequest):
     start = time.perf_counter()
 
     try:
-        convert_pdf(pdf_path, PDF_EXTRACT, ELEMENTS_FILE)
+        convert_pdfs(pdf_path, PDF_EXTRACT, ELEMENTS_FILE)
         try:
             caption_elements(ELEMENTS_FILE)
         except Exception as cap_err:

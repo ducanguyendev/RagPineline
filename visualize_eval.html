@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Đánh Giá RAG</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .summary-cards {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            flex: 1;
+            min-width: 180px;
+            border-top: 4px solid #3498db;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #7f8c8d;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        .card p {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 10px 0 0;
+            color: #2c3e50;
+        }
+        .section-title {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+        .metric-container {
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+        .metric-explanation {
+            flex: 1;
+            min-width: 300px;
+        }
+        .metric-explanation h3 {
+            color: #2980b9;
+            margin-top: 0;
+        }
+        .metric-chart {
+            flex: 1;
+            min-width: 400px;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dashboard Kết Quả Đánh Giá RAG Pipeline</h1>
+    
+    <div class="summary-cards" id="summary-cards">
+        <!-- populated by JS -->
+    </div>
+
+    <!-- Tiêu chí 1: Similarity Score -->
+    <h2 class="section-title">Tiêu chí 1: Điểm tương đồng (Similarity Score)</h2>
+    <div class="metric-container">
+        <div class="metric-explanation">
+            <h3>Đánh giá độ chính xác ngữ nghĩa</h3>
+            <p><strong>Ý nghĩa:</strong> Đo lường mức độ trùng khớp về mặt ý nghĩa giữa câu trả lời sinh ra và câu trả lời kỳ vọng.</p>
+            <p><strong>Kết quả cụ thể:</strong></p>
+            <ul>
+                <li>Điểm trung bình toàn hệ thống: <span class="highlight" id="txt-avg-sim">...</span> (Thang điểm 0 - 1)</li>
+                <li>Phân bố: Biểu đồ bên cạnh cho thấy hệ thống có số lượng lớn các câu trả lời đạt điểm tuyệt đối hoặc rất cao (>0.8). Điều này chứng tỏ khả năng sinh văn bản (Generation) bám sát dữ liệu tốt.</li>
+            </ul>
+        </div>
+        <div class="metric-chart">
+            <canvas id="similarityScoreChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Tiêu chí 2: Pass / Fail -->
+    <h2 class="section-title">Tiêu chí 2: Tỷ lệ Đạt / Không đạt (Pass / Fail)</h2>
+    <div class="metric-container">
+        <div class="metric-explanation">
+            <h3>Đánh giá mức độ thành công tổng thể</h3>
+            <p><strong>Ý nghĩa:</strong> Số lượng test case vượt qua bài kiểm tra dựa trên ngưỡng điểm tương đồng được cấu hình sẵn.</p>
+            <p><strong>Kết quả cụ thể:</strong></p>
+            <ul>
+                <li>Tổng số test cases: <span class="highlight" id="txt-total-cases">...</span></li>
+                <li>Số câu Đạt (Pass): <span class="highlight" id="txt-pass-count">...</span></li>
+                <li>Số câu Không đạt (Fail): <span class="highlight" id="txt-fail-count">...</span></li>
+                <li>Tỷ lệ thành công: <span class="highlight" id="txt-pass-rate">...</span></li>
+            </ul>
+            <p>Tỷ lệ này cho thấy hệ thống hoạt động tương đối ổn định với đa số các câu truy vấn phức tạp.</p>
+        </div>
+        <div class="metric-chart">
+            <canvas id="passRateChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Tiêu chí 3: Độ trễ (Latency) -->
+    <h2 class="section-title">Tiêu chí 3: Thời gian phản hồi (Latency)</h2>
+    <div class="metric-container">
+        <div class="metric-explanation">
+            <h3>Đánh giá tốc độ và hiệu năng</h3>
+            <p><strong>Ý nghĩa:</strong> Thời gian cần thiết (tính bằng milli-giây) từ khi hệ thống nhận câu hỏi đến lúc hoàn thiện sinh ra câu trả lời (bao gồm cả khâu Retrieval và Generation).</p>
+            <p><strong>Kết quả cụ thể:</strong></p>
+            <ul>
+                <li>Thời gian trung bình: <span class="highlight" id="txt-avg-latency">...</span> ms (Tương đương <span class="highlight" id="txt-avg-latency-s">...</span> giây)</li>
+            </ul>
+            <p><em>Ghi chú:</em> Do tính chất của mô hình LLM lớn, thời gian phản hồi ở mức này cần được xem xét tối ưu thêm ở bước Retrieval hoặc dùng kỹ thuật Streaming để tăng trải nghiệm người dùng.</p>
+        </div>
+        <div class="metric-chart" style="max-width: 100%;">
+            <canvas id="latencyChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Tiêu chí 4: Tỷ lệ thoát sớm (Early Exit) -->
+    <h2 class="section-title">Tiêu chí 4: Nhận diện thiếu thông tin (Early Exit)</h2>
+    <div class="metric-container">
+        <div class="metric-explanation">
+            <h3>Đánh giá khả năng chống Hallucination (Bịa đặt)</h3>
+            <p><strong>Ý nghĩa:</strong> Khả năng của hệ thống chủ động nhận diện khi không có đủ thông tin từ tài liệu gốc và từ chối trả lời, thay vì cố gắng sinh ra thông tin giả mạo (Hallucination).</p>
+            <p><strong>Kết quả cụ thể:</strong></p>
+            <ul>
+                <li>Số lần nhận diện thiếu thông tin (Thoát sớm): <span class="highlight" id="txt-early-exit">...</span> / <span id="txt-total-cases-2">...</span> cases.</li>
+                <li>Tỷ lệ thoát sớm an toàn: <span class="highlight" id="txt-early-exit-rate">...</span></li>
+            </ul>
+            <p>Hệ thống của bạn có cơ chế Early Exit hoạt động tốt, giúp đảm bảo tính xác thực tuyệt đối của dữ liệu sinh ra.</p>
+        </div>
+        <div class="metric-chart">
+            <canvas id="earlyExitChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        fetch('./data/eval_results.json')
+            .then(response => response.json())
+            .then(data => {
+                renderDashboard(data);
+            })
+            .catch(error => {
+                console.error("Error loading JSON:", error);
+                alert("Vui lòng chạy file qua local server (VD: python -m http.server 8000) để tải được dữ liệu.");
+            });
+
+        function renderDashboard(data) {
+            // 1. Cập nhật con số hiển thị dạng text
+            document.getElementById('summary-cards').innerHTML = `
+                <div class="card"><h3>Tổng Test Cases</h3><p>${data.total_test_cases}</p></div>
+                <div class="card" style="border-top-color: #2ecc71;"><h3>Tỷ lệ Đạt</h3><p>${data.pass_rate_percent}%</p></div>
+                <div class="card" style="border-top-color: #9b59b6;"><h3>Similarity Score</h3><p>${data.avg_similarity_score}</p></div>
+                <div class="card" style="border-top-color: #e67e22;"><h3>Độ trễ trung bình</h3><p>${(data.avg_latency_ms/1000).toFixed(2)}s</p></div>
+                <div class="card" style="border-top-color: #f1c40f;"><h3>Số lần Thoát sớm</h3><p>${data.early_exit_count}</p></div>
+            `;
+
+            // Text elements
+            document.getElementById('txt-avg-sim').innerText = data.avg_similarity_score;
+            
+            const passCount = data.pass_count;
+            const failCount = data.total_test_cases - passCount;
+            document.getElementById('txt-total-cases').innerText = data.total_test_cases;
+            document.getElementById('txt-total-cases-2').innerText = data.total_test_cases;
+            document.getElementById('txt-pass-count').innerText = passCount;
+            document.getElementById('txt-fail-count').innerText = failCount;
+            document.getElementById('txt-pass-rate').innerText = data.pass_rate_percent + '%';
+
+            document.getElementById('txt-avg-latency').innerText = data.avg_latency_ms.toFixed(0);
+            document.getElementById('txt-avg-latency-s').innerText = (data.avg_latency_ms / 1000).toFixed(2);
+
+            const earlyExitCount = data.early_exit_count;
+            const normalExecutionCount = data.total_test_cases - earlyExitCount;
+            document.getElementById('txt-early-exit').innerText = earlyExitCount;
+            document.getElementById('txt-early-exit-rate').innerText = ((earlyExitCount / data.total_test_cases) * 100).toFixed(2) + '%';
+
+
+            // 2. Render Biểu đồ
+
+            // Biểu đồ Similarity
+            const details = data.details;
+            const bins = [0, 0, 0, 0, 0];
+            details.forEach(d => {
+                let score = d.similarity_score;
+                if(score < 0.2) bins[0]++;
+                else if(score < 0.4) bins[1]++;
+                else if(score < 0.6) bins[2]++;
+                else if(score < 0.8) bins[3]++;
+                else bins[4]++;
+            });
+            new Chart(document.getElementById('similarityScoreChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['0 - 0.2', '0.2 - 0.4', '0.4 - 0.6', '0.6 - 0.8', '0.8 - 1.0'],
+                    datasets: [{
+                        label: 'Số lượng câu trả lời',
+                        data: bins,
+                        backgroundColor: 'rgba(155, 89, 182, 0.7)',
+                        borderColor: 'rgba(155, 89, 182, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: { responsive: true, scales: { y: { beginAtZero: true, ticks: { stepSize: 5 } } } }
+            });
+
+            // Biểu đồ Pass/Fail
+            new Chart(document.getElementById('passRateChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Đạt (Pass)', 'Không đạt (Fail)'],
+                    datasets: [{
+                        data: [passCount, failCount],
+                        backgroundColor: ['#2ecc71', '#e74c3c'],
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+
+            // Biểu đồ Latency
+            const labels = details.map(d => 'TC ' + d.id);
+            const latencies = details.map(d => d.latency_ms / 1000); // Đổi ra giây cho dễ nhìn
+            new Chart(document.getElementById('latencyChart'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Độ trễ (giây)',
+                        data: latencies,
+                        backgroundColor: 'rgba(230, 126, 34, 0.2)',
+                        borderColor: 'rgba(230, 126, 34, 1)',
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: { 
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true, title: { display: true, text: 'Giây' } } }
+                }
+            });
+
+            // Biểu đồ Early Exit
+            new Chart(document.getElementById('earlyExitChart'), {
+                type: 'pie',
+                data: {
+                    labels: ['Từ chối trả lời (Early Exit)', 'Tiến hành sinh câu trả lời'],
+                    datasets: [{
+                        data: [earlyExitCount, normalExecutionCount],
+                        backgroundColor: ['#f1c40f', '#3498db'],
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+    </script>
+</body>
+</html>

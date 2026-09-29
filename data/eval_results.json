@@ -1,81 +1,64 @@
 {
-  "timestamp": "2026-08-27 15:12:47",
+  "timestamp": "2026-09-17 12:00:59",
   "provider": "gemini",
-  "total_test_cases": 10,
-  "avg_latency_ms": 146370.82,
-  "avg_similarity_score": 0.8746,
-  "pass_count": 10,
-  "pass_rate_percent": 100.0,
-  "early_exit_count": 0,
+  "total_test_cases": 60,
+  "avg_latency_ms": 116555.83,
+  "avg_similarity_score": 0.7465,
+  "pass_count": 44,
+  "pass_rate_percent": 73.33,
+  "early_exit_count": 7,
   "details": [
     {
       "id": 1,
       "query": "Hallucination trong tài liệu được hiểu là gì?",
       "expected_answer": "Hallucination là hiện tượng mô hình sinh ra thông tin sai lệch, bịa đặt hoặc không có thực nhưng với văn phong tự tin.",
-      "generated_answer": "Hallucination được hiểu là hiện tượng mô hình sinh ra thông tin sai lệch, bịa đặt hoặc không có thực nhưng với văn phong tự tin [SOURCE_1], [SOURCE_2], [SOURCE_3].",
-      "similarity_score": 0.962,
+      "generated_answer": "Hallucination được hiểu là hiện tượng mô hình sinh ra thông tin sai lệch, bịa đặt hoặc không có thực nhưng với văn phong tự tin [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.9653,
       "is_pass": true,
       "is_early_exit": false,
-      "citations_count": 3,
+      "citations_count": 2,
       "citations": [
         {
           "source_id": "SOURCE_1",
-          "file": "[Reading]-RAG-System.pdf",
+          "file": "127-qh15-2025.signed.pdf",
           "page": 38,
           "section": "Mục lục",
-          "chunk_id": "[Reading]-RAG-System_sec_78_chunk_78",
+          "chunk_id": "127-qh15-2025.signed_sec_79_chunk_79",
           "rerank_score": 0.6748
         },
         {
           "source_id": "SOURCE_2",
           "file": "[Reading]-RAG-System.pdf",
-          "page": 41,
+          "page": 2,
           "section": "Overview",
-          "chunk_id": "[Reading]-RAG-System_page_41_chunk_1",
-          "rerank_score": 0.6493
-        },
-        {
-          "source_id": "SOURCE_3",
-          "file": "[Reading]-RAG-System.pdf",
-          "page": 37,
-          "section": "Overview",
-          "chunk_id": "[Reading]-RAG-System_sec_32_chunk_32",
-          "rerank_score": 0.4815
+          "chunk_id": "[Reading]-RAG-System_sec_02_chunk_02",
+          "rerank_score": 0.4
         }
       ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 103425.29
+      "latency_ms": 60181.04
     },
     {
       "id": 2,
       "query": "Grounding có vai trò gì khi mô hình trả lời?",
       "expected_answer": "Grounding là kỹ thuật \"neo\" câu trả lời của mô hình vào dữ liệu thực tế được cung cấp để đảm bảo tính xác thực.",
-      "generated_answer": "Grounding là một kỹ thuật được sử dụng để \"neo\" câu trả lời của mô hình vào dữ liệu thực tế đã được cung cấp, nhằm đảm bảo tính xác thực của câu trả lời đó [SOURCE_1].",
-      "similarity_score": 0.9583,
-      "is_pass": true,
-      "is_early_exit": false,
-      "citations_count": 1,
-      "citations": [
-        {
-          "source_id": "SOURCE_1",
-          "file": "[Reading]-RAG-System.pdf",
-          "page": 3,
-          "section": "Mục lục",
-          "chunk_id": "[Reading]-RAG-System_sec_06_chunk_06",
-          "rerank_score": 0.3569
-        }
-      ],
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
+      "similarity_score": 0.3524,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 0,
+      "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 162546.57
+      "latency_ms": 83926.54
     },
     {
       "id": 3,
       "query": "RAG được đề xuất chính thức lần đầu vào thời điểm nào và bởi nhóm nào?",
       "expected_answer": "RAG được đề xuất chính thức năm 2020 trong bài “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks” bởi Patrick Lewis và các cộng sự tại Facebook AI Research (FAIR).",
-      "generated_answer": "Khái niệm RAG lần đầu tiên được đề xuất chính thức vào năm 2020 [SOURCE_1], [SOURCE_2] trong bài báo khoa học 'Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks' bởi Patrick Lewis và các cộng sự tại Facebook AI Research (FAIR) [SOURCE_1], [SOURCE_2].",
-      "similarity_score": 0.9548,
+      "generated_answer": "Khái niệm RAG lần đầu tiên được đề xuất chính thức vào năm 2020 [SOURCE_1], [SOURCE_2] trong bài báo khoa học 'RetrievalAugmented Generation for Knowledge-Intensive NLP Tasks' bởi Patrick Lewis và các cộng sự tại Facebook AI Research (FAIR) [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.956,
       "is_pass": true,
       "is_early_exit": false,
       "citations_count": 2,
@@ -85,62 +68,54 @@
           "file": "[Reading]-RAG-System.pdf",
           "page": 4,
           "section": "info-circle Nguồn gốc",
-          "chunk_id": "[Reading]-RAG-System_sec_08_chunk_08",
-          "rerank_score": 0.9884
+          "chunk_id": "[Reading]-RAG-System_sec_09_chunk_09",
+          "rerank_score": 0.9889
         },
         {
           "source_id": "SOURCE_2",
           "file": "[Reading]-RAG-System.pdf",
-          "page": 4,
+          "page": 3,
           "section": "Overview",
-          "chunk_id": "[Reading]-RAG-System_page_4_chunk_1",
-          "rerank_score": 0.9782
+          "chunk_id": "[Reading]-RAG-System_sec_03_chunk_03",
+          "rerank_score": 0.9612
         }
       ],
       "image_urls_count": 1,
       "image_urls": [
         "/images/[Reading]-RAG-System/fig_003.png"
       ],
-      "latency_ms": 177687.46
+      "latency_ms": 58341.66
     },
     {
       "id": 4,
       "query": "Original RAG và Modern RAG khác nhau chủ yếu ở điểm nào?",
       "expected_answer": "Original RAG dựa trên fine-tuning và cập nhật trọng số của retriever/generator; Modern RAG chủ yếu dựa trên In-Context Learning theo quy trình “Retrieve and Prompt”, thường giữ nguyên trọng số LLM và tối ưu retrieval.",
-      "generated_answer": "Original RAG và Modern RAG khác nhau chủ yếu ở các điểm sau:\n\n* **Hướng tiếp cận:** Original RAG (2020) là hướng tiếp cận dựa trên fine-tuning [SOURCE_1], [SOURCE_2], [SOURCE_3]. Modern RAG (hiện nay) là hướng tiếp cận dựa trên In-Context Learning [SOURCE_1], [SOURCE_2], [SOURCE_3].\n* **Huấn luyện mô hình:** Mô hình Original RAG yêu cầu huấn luyện đồng thời cả bộ truy xuất và mô hình sinh văn bản để chúng học cách phối hợp với nhau, và trọng số của mô hình thay đổi trong quá trình này [SOURCE_1], [SOURCE_2], [SOURCE_3]. Trong khi đó, Modern RAG thường giữ nguyên trọng số của LLM và chỉ tập trung tối ưu hóa việc truy xuất dữ liệu, sau đó đưa dữ liệu này vào đầu vào (Prompt) để mô hình xử lý [SOURCE_1], [SOURCE_2], [SOURCE_3].\n* **Quy trình:** RAG hiện đại thường ám chỉ quy trình 'Retrieve and Prompt' [SOURCE_1], [SOURCE_2], [SOURCE_3].\n* **Tính linh hoạt và chi phí:** Cách tiếp cận của Modern RAG linh hoạt, chi phí thấp và dễ dàng áp dụng cho dữ liệu riêng tư mà không cần quy trình huấn luyện phức tạp [SOURCE_1], [SOURCE_2], [SOURCE_3].",
-      "similarity_score": 0.841,
+      "generated_answer": "Original RAG và Modern RAG khác nhau chủ yếu ở các điểm sau:\n\n* **Phương pháp tiếp cận**: Original RAG (2020) là hướng tiếp cận dựa trên fine-tuning [SOURCE_1], [SOURCE_2]. Trong khi đó, Modern RAG (hiện nay) là hướng tiếp cận dựa trên In-Context Learning [SOURCE_1], [SOURCE_2].\n* **Huấn luyện mô hình**: Original RAG yêu cầu huấn luyện đồng thời cả bộ truy xuất và mô hình sinh văn bản để chúng học cách phối hợp với nhau [SOURCE_1], [SOURCE_2]. Toàn bộ kiến trúc này được fine-tuning end-to-end, cho phép cập nhật trọng số của cả Query Encoder và Generator [SOURCE_2]. Ngược lại, trong Modern RAG, trọng số của LLM thường được giữ nguyên và chỉ tập trung tối ưu hóa việc truy xuất dữ liệu, sau đó đưa dữ liệu này vào đầu vào (Prompt) để mô hình xử lý [SOURCE_1], [SOURCE_2].\n* **Thay đổi trọng số**: Trọng số của mô hình thay đổi trong quá trình huấn luyện của Original RAG [SOURCE_1], [SOURCE_2]. Còn với Modern RAG, trọng số của LLM được giữ nguyên [SOURCE_1], [SOURCE_2].\n* **Quy trình hoạt động**: Modern RAG thường ám chỉ quy trình 'Retrieve and Prompt' [SOURCE_1], [SOURCE_2].\n* **Ưu điểm của Modern RAG**: Cách tiếp cận hiện đại này linh hoạt, chi phí thấp và dễ dàng áp dụng cho dữ liệu riêng tư mà không cần quy trình huấn luyện phức tạp [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.8601,
       "is_pass": true,
       "is_early_exit": false,
-      "citations_count": 3,
+      "citations_count": 2,
       "citations": [
         {
           "source_id": "SOURCE_1",
           "file": "[Reading]-RAG-System.pdf",
           "page": 5,
-          "section": "Overview",
-          "chunk_id": "[Reading]-RAG-System_sec_04_chunk_04",
-          "rerank_score": 0.9992
+          "section": "II.1. Sự chuyển dịch sang In-Context RAG",
+          "chunk_id": "[Reading]-RAG-System_sec_10_chunk_10",
+          "rerank_score": 0.9883
         },
         {
           "source_id": "SOURCE_2",
           "file": "[Reading]-RAG-System.pdf",
-          "page": 5,
+          "page": 4,
           "section": "Overview",
-          "chunk_id": "[Reading]-RAG-System_page_5_chunk_1",
-          "rerank_score": 0.9968
-        },
-        {
-          "source_id": "SOURCE_3",
-          "file": "[Reading]-RAG-System.pdf",
-          "page": 5,
-          "section": "II.1. Sự chuyển dịch sang In-Context RAG",
-          "chunk_id": "[Reading]-RAG-System_sec_09_chunk_09",
-          "rerank_score": 0.9883
+          "chunk_id": "[Reading]-RAG-System_sec_04_chunk_04",
+          "rerank_score": 0.9798
         }
       ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 197365.9
+      "latency_ms": 64772.95
     },
     {
       "id": 5,
@@ -157,30 +132,30 @@
           "file": "[Reading]-RAG-System.pdf",
           "page": 5,
           "section": "II.2. Kiến trúc RAG hiện đại",
-          "chunk_id": "[Reading]-RAG-System_sec_10_chunk_10",
-          "rerank_score": 0.9975
+          "chunk_id": "[Reading]-RAG-System_sec_11_chunk_11",
+          "rerank_score": 0.998
         },
         {
           "source_id": "SOURCE_2",
           "file": "[Reading]-RAG-System.pdf",
-          "page": 5,
+          "page": 4,
           "section": "Overview",
           "chunk_id": "[Reading]-RAG-System_sec_04_chunk_04",
-          "rerank_score": 0.9929
+          "rerank_score": 0.9859
         }
       ],
       "image_urls_count": 1,
       "image_urls": [
         "/images/[Reading]-RAG-System/fig_004.png"
       ],
-      "latency_ms": 164566.09
+      "latency_ms": 69241.73
     },
     {
       "id": 6,
       "query": "Ở giai đoạn Indexing, tài liệu đi qua những bước chính nào trước khi có thể được tìm kiếm?",
       "expected_answer": "Tài liệu được nạp và trích xuất nội dung/metadata, chia nhỏ thành chunks, chuyển chunks thành vector bằng embedding model, rồi lưu vector cùng ID/metadata vào Vector Store.",
-      "generated_answer": "Ở giai đoạn Indexing, tài liệu đi qua các bước chính sau trước khi có thể được tìm kiếm:\n\n1. **Load & Extract (Tải và Trích xuất)**: Giai đoạn này bắt đầu bằng việc thu thập nguồn dữ liệu đầu vào và trích xuất nội dung văn bản thuần túy từ các định dạng tệp tin đa dạng, đồng thời thu thập các thông tin ngữ cảnh đi kèm tài liệu (metadata) như chủ đề, số trang, ngày xuất bản, tác giả [SOURCE_1], [SOURCE_5].\n2. **Chunking (Chia nhỏ văn bản)**: Văn bản được chia nhỏ thành các đoạn gọi là \"chunk\", có độ dài phù hợp với context window của mô hình [SOURCE_1], [SOURCE_5].\n3. **Embedding (Mã hóa)**: Sử dụng mô hình embedding để mã hóa các chunk thành các vector số thực trong không gian ngữ nghĩa n-chiều [SOURCE_2], [SOURCE_5].\n\nKết quả của giai đoạn này là một cơ sở dữ liệu Vector lưu trữ các vector kèm theo metadata tương ứng, cho phép hệ thống tìm kiếm hiệu quả [SOURCE_2], [SOURCE_5].",
-      "similarity_score": 0.7439,
+      "generated_answer": "Ở giai đoạn Indexing, tài liệu đi qua các bước chính sau trước khi có thể được tìm kiếm:\n\n1. **Load & Extract**: Trích xuất văn bản thuần túy từ các định dạng tệp tin thô đa dạng (như PDF, Docx, Text, Markdown...) [SOURCE_1].\n2. **Chunking**: Chia nhỏ văn bản đã trích xuất thành các đoạn gọi là chunk, với độ dài phù hợp với context window của mô hình [SOURCE_1].\n3. **Embedding**: Sử dụng một mô hình embedding để mã hóa các chunk này thành các vector số thực trong không gian ngữ nghĩa n-chiều [SOURCE_1], [SOURCE_4]. Các đoạn văn bản có nội dung ngữ nghĩa giống nhau sẽ có vector nằm gần nhau trong không gian này [SOURCE_4].\n4. **Vector Store**: Các vector này, cùng với ID và metadata tương ứng, sau đó được lưu trữ vào một cơ sở dữ liệu vector chuyên dụng [SOURCE_1], [SOURCE_4].\n\nMục tiêu của giai đoạn này là chuyển đổi tri thức thô thành dạng biểu diễn mà máy tính có thể tìm kiếm hiệu quả [SOURCE_1], tương đồng với quy trình ETL (Extract-Transform-Load) trong kỹ thuật dữ liệu [SOURCE_2].",
+      "similarity_score": 0.7563,
       "is_pass": true,
       "is_early_exit": false,
       "citations_count": 3,
@@ -188,59 +163,73 @@
         {
           "source_id": "SOURCE_1",
           "file": "[Reading]-RAG-System.pdf",
-          "page": 6,
+          "page": 39,
           "section": "Overview",
-          "chunk_id": "[Reading]-RAG-System_page_6_chunk_1",
-          "rerank_score": 0.9333
+          "chunk_id": "[Reading]-RAG-System_sec_34_chunk_34",
+          "rerank_score": 0.8574
         },
         {
           "source_id": "SOURCE_2",
           "file": "[Reading]-RAG-System.pdf",
-          "page": 39,
-          "section": "Overview",
-          "chunk_id": "[Reading]-RAG-System_sec_34_chunk_34",
-          "rerank_score": 0.846
+          "page": 5,
+          "section": "II.2.1. Phase 1: Indexing",
+          "chunk_id": "[Reading]-RAG-System_sec_12_chunk_12",
+          "rerank_score": 0.7415
         },
         {
-          "source_id": "SOURCE_5",
+          "source_id": "SOURCE_4",
           "file": "[Reading]-RAG-System.pdf",
-          "page": 39,
-          "section": "II. Nhắc lại về RAG cơ bản",
-          "chunk_id": "[Reading]-RAG-System_sec_80_chunk_80",
-          "rerank_score": 0.2615
+          "page": 8,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_07_chunk_07",
+          "rerank_score": 0.5437
         }
       ],
-      "image_urls_count": 1,
-      "image_urls": [
-        "/images/[Reading]-RAG-System/fig_023.png"
-      ],
-      "latency_ms": 94097.52
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 97762.3
     },
     {
       "id": 7,
       "query": "Vì sao metadata quan trọng đối với RAG thực tế?",
       "expected_answer": "Metadata hỗ trợ pre-filtering, giúp hệ thống lọc đúng phạm vi tài liệu trước khi tìm kiếm, ví dụ lọc tài liệu năm 2024 cho câu hỏi về doanh thu năm 2024.",
-      "generated_answer": "Metadata đóng vai trò cực kỳ quan trọng trong các hệ thống RAG thực tế để hỗ trợ tính năng Pre-filtering [SOURCE_1], [SOURCE_2]. Ví dụ, nếu người dùng hỏi về \"Doanh thu năm 2024\", hệ thống có thể sử dụng metadata để lọc chính xác các tài liệu liên quan đến năm 2024, thay vì phải tìm kiếm trong toàn bộ dữ liệu [SOURCE_1], [SOURCE_2]. Metadata bao gồm các thông tin ngữ cảnh đi kèm tài liệu như chủ đề, số trang, ngày xuất bản, tác giả [SOURCE_1], [SOURCE_2].",
-      "similarity_score": 0.8263,
+      "generated_answer": "Metadata đóng vai trò cực kỳ quan trọng đối với hệ thống RAG trong các ứng dụng thực tế vì những lý do sau:\n* **Hỗ trợ tính năng Pre-filtering**: Metadata giúp lọc tài liệu trước khi tìm kiếm, từ đó tăng độ chính xác và hiệu quả. Ví dụ, nếu người dùng hỏi về \"Doanh thu năm 2024\", hệ thống có thể sử dụng metadata để lọc ra các tài liệu chỉ liên quan đến năm 2024, thay vì tìm kiếm trên toàn bộ dữ liệu [SOURCE_1], [SOURCE_2].\n* **Cung cấp thông tin ngữ cảnh**: Trong các ứng dụng thực tế, chỉ nội dung văn bản là chưa đủ. Hệ thống RAG tối ưu cần trích xuất kèm các thông tin ngữ cảnh đi kèm tài liệu, như chủ đề, số trang, ngày xuất bản, tác giả [SOURCE_1], [SOURCE_2].\n* **Hỗ trợ vận hành và quản lý dữ liệu**: Việc lọc theo metadata, cập nhật, chèn hoặc xóa dữ liệu sẽ trở nên khó khăn nếu không có lớp lưu trữ phù hợp [SOURCE_3].\n\nTrong LangChain, metadata là một dictionary chứa thông tin bổ sung tùy ý cho một đối tượng `Document`, ví dụ như nguồn gốc tài liệu, số trang, hoặc quan hệ với các tài liệu khác [SOURCE_4].",
+      "similarity_score": 0.7975,
       "is_pass": true,
       "is_early_exit": false,
-      "citations_count": 2,
+      "citations_count": 4,
       "citations": [
         {
           "source_id": "SOURCE_1",
           "file": "[Reading]-RAG-System.pdf",
           "page": 6,
-          "section": "Overview",
-          "chunk_id": "[Reading]-RAG-System_sec_05_chunk_05",
-          "rerank_score": 0.9936
+          "section": "1. Document Loading :",
+          "chunk_id": "[Reading]-RAG-System_sec_13_chunk_13",
+          "rerank_score": 0.9866
         },
         {
           "source_id": "SOURCE_2",
           "file": "[Reading]-RAG-System.pdf",
-          "page": 6,
-          "section": "1. Document Loading :",
-          "chunk_id": "[Reading]-RAG-System_sec_12_chunk_12",
-          "rerank_score": 0.9866
+          "page": 5,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_05_chunk_05",
+          "rerank_score": 0.9594
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 15,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_14_chunk_14",
+          "rerank_score": 0.487
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 16,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_15_chunk_15",
+          "rerank_score": 0.3799
         }
       ],
       "image_urls_count": 2,
@@ -248,82 +237,56 @@
         "/images/[Reading]-RAG-System/fig_005.png",
         "/images/[Reading]-RAG-System/fig_006.png"
       ],
-      "latency_ms": 193070.03
+      "latency_ms": 114807.98
     },
     {
       "id": 8,
       "query": "Fixed-size Chunking có nhược điểm gì so với Recursive Chunking?",
       "expected_answer": "Fixed-size Chunking có thể cắt giữa câu hoặc giữa một ý, làm mất ngữ nghĩa. Recursive Chunking ưu tiên ranh giới tự nhiên như đoạn, dòng, dấu câu và khoảng trắng nên giữ cấu trúc câu/đoạn tốt hơn.",
-      "generated_answer": "So với Recursive Chunking, Fixed-size Chunking có nhược điểm chính là dễ làm mất ngữ nghĩa của văn bản [SOURCE_2]. Cụ thể:\n\n* **Mất ngữ nghĩa**: Fixed-size Chunking chia văn bản dựa trên số lượng ký tự hoặc token cố định. Điều này dễ làm mất ngữ nghĩa nếu điểm cắt rơi vào giữa câu hoặc giữa một ý đang trình bày dở [SOURCE_2].\n* **Đứt gãy mạch văn**: Việc cắt ngang ý tưởng có thể gây ra hiện tượng đứt gãy mạch văn, khiến Retriever không tìm thấy đủ thông tin cần thiết để trả lời câu hỏi một cách đầy đủ [SOURCE_3].\n\nTrong khi đó, Recursive Chunking cố gắng cắt dựa trên cấu trúc tự nhiên của văn bản theo thứ tự ưu tiên các dấu ngắt đoạn văn, dấu xuống dòng, dấu chấm câu và khoảng trắng, giúp giữ trọn vẹn cấu trúc câu và đoạn văn [SOURCE_2].",
-      "similarity_score": 0.8865,
+      "generated_answer": "Fixed-size Chunking có nhược điểm là dễ làm mất ngữ nghĩa nếu điểm cắt rơi vào giữa câu hoặc giữa một ý đang trình bày dở [SOURCE_2].\n\nNgược lại, Recursive Chunking là phương pháp phổ biến hơn, cố gắng cắt dựa trên cấu trúc tự nhiên của văn bản theo thứ tự ưu tiên như dấu ngắt đoạn văn, dấu xuống dòng, dấu chấm câu, hoặc khoảng trắng, giúp giữ trọn vẹn cấu trúc câu và đoạn văn [SOURCE_2].",
+      "similarity_score": 0.9394,
       "is_pass": true,
       "is_early_exit": false,
-      "citations_count": 2,
+      "citations_count": 1,
       "citations": [
         {
           "source_id": "SOURCE_2",
           "file": "[Reading]-RAG-System.pdf",
-          "page": 7,
+          "page": 6,
           "section": "Overview",
-          "chunk_id": "[Reading]-RAG-System_page_7_chunk_1",
-          "rerank_score": 0.9542
-        },
-        {
-          "source_id": "SOURCE_3",
-          "file": "[Reading]-RAG-System.pdf",
-          "page": 79,
-          "section": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
-          "chunk_id": "[Reading]-RAG-System_sec_188_chunk_188",
-          "rerank_score": 0.8982
+          "chunk_id": "[Reading]-RAG-System_sec_06_chunk_06",
+          "rerank_score": 0.9665
         }
       ],
-      "image_urls_count": 1,
-      "image_urls": [
-        "/images/[Reading]-RAG-System/fig_037.png"
-      ],
-      "latency_ms": 136121.89
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 92156.03
     },
     {
       "id": 9,
       "query": "Chunk overlap thường được khuyến nghị ở mức bao nhiêu so với độ dài chunk?",
       "expected_answer": "Tài liệu nêu chunk_overlap thường ở mức 10-20% độ dài của chunk.",
-      "generated_answer": "Chunk overlap thường được khuyến nghị ở mức 10-20% độ dài của chunk [SOURCE_1], [SOURCE_2], [SOURCE_3], [SOURCE_4].",
-      "similarity_score": 0.9139,
+      "generated_answer": "Tham số `chunk_overlap` thường được thiết lập ở mức 10-20% độ dài của chunk để đảm bảo ngữ nghĩa không bị mất tại điểm cắt giữa hai chunk liền kề [SOURCE_1], [SOURCE_2]. Phần giao thoa này đóng vai trò như 'cầu nối' ngữ cảnh [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.8015,
       "is_pass": true,
       "is_early_exit": false,
-      "citations_count": 4,
+      "citations_count": 2,
       "citations": [
         {
           "source_id": "SOURCE_1",
           "file": "[Reading]-RAG-System.pdf",
           "page": 7,
-          "section": "Overview",
-          "chunk_id": "[Reading]-RAG-System_page_7_chunk_2",
-          "rerank_score": 0.9688
+          "section": "1. Document Loading :",
+          "chunk_id": "[Reading]-RAG-System_sec_14_chunk_14",
+          "rerank_score": 0.9558
         },
         {
           "source_id": "SOURCE_2",
           "file": "[Reading]-RAG-System.pdf",
-          "page": 7,
+          "page": 6,
           "section": "Overview",
           "chunk_id": "[Reading]-RAG-System_sec_06_chunk_06",
-          "rerank_score": 0.966
-        },
-        {
-          "source_id": "SOURCE_3",
-          "file": "[Reading]-RAG-System.pdf",
-          "page": 7,
-          "section": "1. Document Loading :",
-          "chunk_id": "[Reading]-RAG-System_sec_13_chunk_13",
-          "rerank_score": 0.935
-        },
-        {
-          "source_id": "SOURCE_4",
-          "file": "[Reading]-RAG-System.pdf",
-          "page": 7,
-          "section": "Overview",
-          "chunk_id": "[Reading]-RAG-System_page_7_chunk_1",
-          "rerank_score": 0.8913
+          "rerank_score": 0.8877
         }
       ],
       "image_urls_count": 2,
@@ -331,14 +294,145 @@
         "/images/[Reading]-RAG-System/fig_007.png",
         "/images/[Reading]-RAG-System/fig_008.png"
       ],
-      "latency_ms": 127387.67
+      "latency_ms": 126357.48
     },
     {
       "id": 10,
       "query": "Parent-Child Indexing giải quyết mâu thuẫn giữa chunk nhỏ và chunk lớn như thế nào?",
       "expected_answer": "Hệ thống dùng Parent chunks lớn để giữ ngữ cảnh, chia thành Child chunks nhỏ để index/tìm kiếm; khi tìm thấy Child chunk thì trả Parent chunk tương ứng cho LLM.",
-      "generated_answer": "Parent-Child Indexing giải quyết mâu thuẫn giữa chunk nhỏ và chunk lớn bằng cách sử dụng cả hai loại chunk cho các mục đích khác nhau [SOURCE_1], [SOURCE_2], [SOURCE_4].\n\nCụ thể:\n* Văn bản được chia thành các khối lớn (ví dụ 1000 tokens) gọi là Parent chunks, có nhiệm vụ chứa ngữ cảnh đầy đủ [SOURCE_1], [SOURCE_2], [SOURCE_3].\n* Các Parent chunks này sau đó được chia thành các khối nhỏ hơn (ví dụ 200 tokens) gọi là Child chunks [SOURCE_1], [SOURCE_2], [SOURCE_3].\n* Cơ chế hoạt động là hệ thống sẽ lập chỉ mục (index) và tìm kiếm trên các Child chunks để đạt được độ chính xác cao [SOURCE_1], [SOURCE_2], [SOURCE_3].\n* Tuy nhiên, khi trả về kết quả cho LLM, hệ thống sẽ lấy Parent chunk tương ứng để cung cấp ngữ cảnh đầy đủ hơn cho LLM [SOURCE_1], [SOURCE_2], [SOURCE_3].\n\nCách làm này giúp tận dụng ưu điểm của chunk nhỏ (tốt cho tìm kiếm) và chunk lớn (tốt cho LLM do có nhiều ngữ cảnh hơn) [SOURCE_1], [SOURCE_2], [SOURCE_4].",
-      "similarity_score": 0.8338,
+      "generated_answer": "Parent-Child Indexing giải quyết mâu thuẫn giữa việc chunk nhỏ tốt cho tìm kiếm và chunk lớn tốt cho LLM bằng cách sử dụng một cơ chế hai cấp [SOURCE_1, SOURCE_3].\n\nCụ thể:\n* Văn bản được chia thành các khối lớn gọi là Parent chunks (ví dụ: 1000 tokens) để chứa ngữ cảnh đầy đủ [SOURCE_1, SOURCE_2].\n* Các Parent chunks này sau đó được chia thành các khối nhỏ hơn gọi là Child chunks (ví dụ: 200 tokens) [SOURCE_1, SOURCE_2].\n* Hệ thống sẽ thực hiện việc lập chỉ mục (index) và tìm kiếm trên các Child chunks để đạt được độ chính xác cao [SOURCE_1, SOURCE_2].\n* Tuy nhiên, khi trả về kết quả cho LLM, hệ thống sẽ lấy Parent chunk tương ứng để cung cấp ngữ cảnh đầy đủ hơn [SOURCE_1, SOURCE_2].\n\nCách tiếp cận này cho phép tận dụng ưu điểm của chunk nhỏ trong việc tìm kiếm hiệu quả và ưu điểm của chunk lớn trong việc cung cấp ngữ cảnh phong phú cho LLM [SOURCE_1, SOURCE_3].",
+      "similarity_score": 0.8383,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 114065.5
+    },
+    {
+      "id": 11,
+      "query": "Multi-Query xử lý một câu hỏi ngắn hoặc thiếu ngữ cảnh ra sao?",
+      "expected_answer": "Multi-Query dùng LLM sinh 3-5 biến thể của câu hỏi gốc, tìm kiếm với tất cả biến thể rồi gộp kết quả để tăng khả năng tìm đúng tài liệu.",
+      "generated_answer": "Multi-Query xử lý một câu hỏi ngắn hoặc thiếu ngữ cảnh bằng cách sử dụng mô hình ngôn ngữ lớn (LLM) để sinh ra từ 3 đến 5 biến thể khác nhau của câu hỏi gốc [SOURCE_1], [SOURCE_2]. Sau đó, hệ thống sẽ tìm kiếm tất cả các biến thể này và gộp kết quả lại [SOURCE_1], [SOURCE_2].\n\nĐiều này giúp tăng khả năng tìm thấy tài liệu liên quan mà không phụ thuộc vào cách diễn đạt duy nhất của người dùng, đặc biệt khi câu hỏi ban đầu ngắn, thiếu ngữ cảnh hoặc có thể mang nhiều nghĩa [SOURCE_1], [SOURCE_2].\n\nVí dụ, nếu người dùng hỏi \"Lỗi kết nối db\" (một câu hỏi ngắn, thiếu ngữ cảnh), LLM có thể tạo ra các câu hỏi chi tiết hơn như \"Cách khắc phục lỗi connection timeout khi kết nối database\" hoặc \"Xử lý lỗi Access Denied cho user root trong MySQL/PostgreSQL\" [SOURCE_2]. Hệ thống sẽ tìm kiếm dựa trên tất cả các vấn đề này (Timeout, Permission, Network) để đảm bảo không bỏ sót tài liệu kỹ thuật liên quan [SOURCE_2].",
+      "similarity_score": 0.7782,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 9,
+          "section": "1. Query Processing",
+          "chunk_id": "[Reading]-RAG-System_sec_20_chunk_20",
+          "rerank_score": 0.9866
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 8,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_07_chunk_07",
+          "rerank_score": 0.9627
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 118614.17
+    },
+    {
+      "id": 12,
+      "query": "HyDE thay đổi truy vấn trước khi retrieval theo cách nào?",
+      "expected_answer": "HyDE yêu cầu LLM viết một câu trả lời/tài liệu giả định cho câu hỏi, sau đó dùng embedding của đoạn giả định đó để tìm kiếm tài liệu thực.",
+      "generated_answer": "HyDE thay đổi truy vấn trước khi retrieval bằng cách không truy vấn trực tiếp bằng câu hỏi gốc [SOURCE_1], [SOURCE_3]. Thay vào đó, hệ thống trước hết sinh ra một đoạn văn giả định mang tính chuyên ngành nhờ LLM (Large Language Model) [SOURCE_1], [SOURCE_3]. Sau đó, đoạn văn giả định này được sử dụng để truy vấn vào Vector Database [SOURCE_1], [SOURCE_3]. Cách làm này giúp embedding của truy vấn gần hơn với không gian ngữ nghĩa của tài liệu, từ đó cải thiện chất lượng retrieval cho các câu hỏi ngắn hoặc thiếu ngữ cảnh [SOURCE_1], [SOURCE_3].",
+      "similarity_score": 0.7664,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 94,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_82_chunk_82",
+          "rerank_score": 0.8975
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 94,
+          "section": "VII.5.3. Thực nghiệm 3: Query Transformations",
+          "chunk_id": "[Reading]-RAG-System_sec_208_chunk_208",
+          "rerank_score": 0.8681
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 110867.77
+    },
+    {
+      "id": 13,
+      "query": "Dense Retrieval và Sparse Retrieval bổ sung cho nhau như thế nào trong Hybrid Search?",
+      "expected_answer": "Dense Retrieval mạnh về tương đồng ngữ nghĩa; Sparse Retrieval như BM25/TF-IDF mạnh về khớp từ khóa chính xác, tên riêng và thuật ngữ chuyên ngành. Hybrid Search kết hợp hai luồng.",
+      "generated_answer": "Trong Hybrid Search, Dense Retrieval và Sparse Retrieval bổ sung cho nhau bằng cách khắc phục những điểm yếu của nhau để mang lại kết quả tìm kiếm toàn diện hơn [SOURCE_2], [SOURCE_4].\n\nCụ thể:\n* **Dense Retrieval (Vector Search)** vượt trội trong việc nắm bắt ngữ nghĩa và các từ đồng nghĩa, tìm kiếm các nội dung có ý nghĩa tương đương (ví dụ: 'giá xe' ↔ 'chi phí mua ô tô') [SOURCE_1], [SOURCE_2], [SOURCE_4].\n* Tuy nhiên, **Dense Retrieval** thường bộc lộ hạn chế khi xử lý các truy vấn đòi hỏi độ chính xác tuyệt đối về mặt từ khóa, ví dụ như: tên riêng, mã số sản phẩm, hoặc các thuật ngữ chuyên ngành hiếm gặp [SOURCE_1], [SOURCE_3].\n* **Sparse Retrieval (Keyword Search)**, sử dụng các thuật toán thống kê truyền thống như BM25 hoặc TF-IDF, hoạt động bằng cách đếm tần suất xuất hiện chính xác của từ khóa [SOURCE_2]. Nó cực kỳ quan trọng để bắt chính xác các tên riêng, từ khóa hoặc thuật ngữ chuyên ngành mà Vector Search thường bỏ qua [SOURCE_2], [SOURCE_4].\n\nKhi kết hợp trong Hybrid Search, hệ thống gửi truy vấn đồng thời đến cả hai bộ tìm kiếm: BM25 trả về danh sách khớp về từ khóa chính xác, và Vector Search trả về danh sách khớp về ngữ cảnh và từ đồng nghĩa [SOURCE_4]. Sau đó, các kết quả này được hợp nhất và xếp hạng lại (ví dụ bằng Reciprocal Rank Fusion) để đưa ra Top-K văn bản tốt nhất [SOURCE_4]. Sự kết hợp này giúp cân bằng hiệu năng toàn diện, vì Sparse Retrieval đơn lẻ có thể thất bại trong việc bao phủ thông tin ngữ nghĩa [SOURCE_5].",
+      "similarity_score": 0.8201,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 5,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 85,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_74_chunk_74",
+          "rerank_score": 0.9933
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 10,
+          "section": "3. Hybrid Search",
+          "chunk_id": "[Reading]-RAG-System_sec_26_chunk_26",
+          "rerank_score": 0.9781
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 85,
+          "section": "VII.5.2. Thực nghiệm 2: Retrieval Strategies",
+          "chunk_id": "[Reading]-RAG-System_sec_196_chunk_196",
+          "rerank_score": 0.978
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 47,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_42_chunk_42",
+          "rerank_score": 0.9508
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 108,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_95_chunk_95",
+          "rerank_score": 0.9275
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 204297.68
+    },
+    {
+      "id": 14,
+      "query": "Vì sao RRF không cộng trực tiếp điểm của Vector Search và BM25?",
+      "expected_answer": "Vì điểm của Vector Search và BM25 nằm trên các thang đo khác nhau. RRF bỏ qua điểm gốc và hợp nhất dựa trên thứ hạng.",
+      "generated_answer": "RRF không cộng trực tiếp điểm số của Vector Search và BM25 vì thang đo điểm số của hai phương pháp này hoàn toàn khác nhau [SOURCE_1], [SOURCE_3], [SOURCE_4], [SOURCE_5]. Cụ thể, Vector Search thường sử dụng cosine similarity với điểm số nằm trong khoảng [0, 1], trong khi BM25 sử dụng công thức thống kê và có thể trả về bất kỳ số dương nào [SOURCE_5]. Việc cộng trực tiếp các điểm số này sẽ không hợp lý [SOURCE_3], [SOURCE_4] và có thể khiến BM25 lấn át hoàn toàn Vector Search [SOURCE_1].",
+      "similarity_score": 0.8205,
       "is_pass": true,
       "is_early_exit": false,
       "citations_count": 4,
@@ -346,39 +440,1466 @@
         {
           "source_id": "SOURCE_1",
           "file": "[Reading]-RAG-System.pdf",
-          "page": 8,
+          "page": 31,
+          "section": "V. Câu hỏi trắc nghiệm",
+          "chunk_id": "[Reading]-RAG-System_sec_68_chunk_68",
+          "rerank_score": 0.9992
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 11,
+          "section": "info-circle Cách hoạt động của thuật toán RRF",
+          "chunk_id": "[Reading]-RAG-System_sec_27_chunk_27",
+          "rerank_score": 0.9935
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 10,
           "section": "Overview",
-          "chunk_id": "[Reading]-RAG-System_page_8_chunk_1",
+          "chunk_id": "[Reading]-RAG-System_sec_09_chunk_09",
+          "rerank_score": 0.9908
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 47,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_42_chunk_42",
+          "rerank_score": 0.9878
+        }
+      ],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_019.png"
+      ],
+      "latency_ms": 172411.56
+    },
+    {
+      "id": 15,
+      "query": "Trong RRF, hằng số k thường được đặt bao nhiêu và để làm gì?",
+      "expected_answer": "k thường là 60 để làm mượt điểm số, tránh tài liệu hạng 1 chiếm ưu thế quá tuyệt đối so với hạng 2, hạng 3.",
+      "generated_answer": "Trong thuật toán Reciprocal Rank Fusion (RRF), hằng số `k` thường được đặt là 60 [SOURCE_1], [SOURCE_2], [SOURCE_3], [SOURCE_4], [SOURCE_5].\n\nMục đích của hằng số `k` là để \"làm mượt\" điểm số [SOURCE_1], [SOURCE_2], [SOURCE_4]. Nó giúp ngăn không cho các tài liệu ở Top 1 có điểm số quá áp đảo hoặc chiếm ưu thế quá tuyệt đối so với các tài liệu ở hạng 2, 3 [SOURCE_1], [SOURCE_2], [SOURCE_4]. Điều này đảm bảo tính công bằng bằng cách giảm bớt sự chênh lệch điểm số giữa các thứ hạng quá cao [SOURCE_3], [SOURCE_5].",
+      "similarity_score": 0.7472,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 5,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 11,
+          "section": "info-circle Cách hoạt động của thuật toán RRF",
+          "chunk_id": "[Reading]-RAG-System_sec_27_chunk_27",
+          "rerank_score": 0.9704
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 10,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_09_chunk_09",
+          "rerank_score": 0.9661
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 48,
+          "section": "info-circle Nguyên lí",
+          "chunk_id": "[Reading]-RAG-System_sec_105_chunk_105",
+          "rerank_score": 0.9461
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 111,
+          "section": "VIII. Câu hỏi trắc nghiệm",
+          "chunk_id": "[Reading]-RAG-System_sec_229_chunk_229",
+          "rerank_score": 0.8787
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 47,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_42_chunk_42",
+          "rerank_score": 0.8495
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 119065.99
+    },
+    {
+      "id": 16,
+      "query": "Tại sao Cross-Encoder chính xác hơn Bi-Encoder nhưng chậm hơn?",
+      "expected_answer": "Bi-Encoder mã hóa câu hỏi và tài liệu độc lập nên nhanh nhưng mất quan hệ ngữ pháp/ngữ nghĩa phức tạp. Cross-Encoder đưa cả hai vào cùng lúc nên chính xác hơn nhưng chậm hơn.",
+      "generated_answer": "Cross-Encoder chính xác hơn Bi-Encoder nhưng chậm hơn là do cơ chế hoạt động của chúng:\n\n**Về độ chính xác:**\n* Cross-Encoder có độ chính xác cao hơn vì nó đưa cả câu hỏi và văn bản vào mô hình cùng một lúc, xử lý chúng như con người đọc song song [SOURCE_1",
+      "similarity_score": 0.8977,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_028.png"
+      ],
+      "latency_ms": 173883.8
+    },
+    {
+      "id": 17,
+      "query": "Chiến lược “hình phễu” trong re-ranking hoạt động theo thứ tự nào?",
+      "expected_answer": "Retrieve Many: lấy khoảng 50 tài liệu nhanh bằng Bi-Encoder; Re-rank Few: dùng Cross-Encoder chọn khoảng 5 tài liệu tốt nhất; sau đó đưa vào LLM.",
+      "generated_answer": "Chiến lược \"hình phễu\" trong re-ranking hoạt động theo thứ tự sau:\n1. **Retrieve (Tìm kiếm)**: Sử dụng Bi-Encoder để lấy nhanh một số lượng lớn tài liệu (ví dụ: Top 50 tài liệu) từ toàn bộ cơ sở dữ liệu [SOURCE_1], [SOURCE_2], [SOURCE_3].\n2. **Re-rank (Xếp hạng lại)**: Dùng Cross-Encoder để chấm điểm lại mức độ liên quan của các tài liệu đã tìm được ở bước trên (ví dụ: Top 50 tài liệu) [SOURCE_1], [SOURCE_2], [SOURCE_3].\n3. **Select (Chọn lọc)**: Lấy một số lượng nhỏ tài liệu có điểm cao nhất sau khi re-rank (ví dụ: Top 5 tài liệu tốt nhất) để đưa vào ngữ cảnh cho LLM (Mô hình ngôn ngữ lớn) [SOURCE_1], [SOURCE_2], [SOURCE_3].\n\nCách này giúp cân bằng giữa tốc độ và độ chính xác [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.8096,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 11,
+          "section": "4. Re-ranking",
+          "chunk_id": "[Reading]-RAG-System_sec_28_chunk_28",
+          "rerank_score": 0.9733
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 11,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_10_chunk_10",
+          "rerank_score": 0.9698
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 52,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_47_chunk_47",
+          "rerank_score": 0.8758
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 83823.85
+    },
+    {
+      "id": 18,
+      "query": "Context Reordering xử lý hiện tượng “Lost in the Middle” bằng cách nào?",
+      "expected_answer": "Hệ thống sắp xếp theo dạng chữ U: đặt tài liệu quan trọng nhất ở đầu và cuối prompt, tài liệu ít quan trọng hơn ở giữa.",
+      "generated_answer": "Context Reordering xử lý hiện tượng \"Lost in the Middle\" bằng cách tối ưu hóa vị trí của thông tin trong prompt [SOURCE_1]. Hiện tượng \"Lost in the Middle\" xảy ra khi LLM thường chú ý tốt nhất vào thông tin ở đầu và cuối prompt, nhưng lại bỏ quên thông tin ở giữa [SOURCE_1], [SOURCE_2].\n\nChiến thuật Reordering tối ưu hóa vị trí theo dạng hình chữ U [SOURCE_1]. Thay vì đưa tài liệu vào theo thứ tự độ liên quan giảm dần, Context Reordering sắp xếp lại để đưa các tài liệu quan trọng nhất nằm ở hai đầu và các tài liệu ít quan trọng vào giữa [SOURCE_1]. Kết quả là các tài liệu quan trọng bao bọc lấy các tài liệu ít quan trọng hơn, tận dụng tối đa khả năng tập trung của LLM [SOURCE_1].",
+      "similarity_score": 0.7501,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 12,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_11_chunk_11",
+          "rerank_score": 0.9794
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 12,
+          "section": "· Context Selection & Compression :",
+          "chunk_id": "[Reading]-RAG-System_sec_32_chunk_32",
+          "rerank_score": 0.9547
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 115232.3
+    },
+    {
+      "id": 19,
+      "query": "Zero-shot Prompting và Few-shot Learning trong phần Generation khác nhau thế nào?",
+      "expected_answer": "Zero-shot dùng template cố định mà không có ví dụ mẫu. Few-shot thêm 1-2 ví dụ Context-Question-Answer chuẩn để mô hình học phong cách và định dạng.",
+      "generated_answer": "Zero-shot Prompting và Few-shot Learning là hai kỹ thuật trong Prompt Engineering, khác nhau ở việc có cung cấp ví dụ mẫu cho mô hình hay không [SOURCE_2, SOURCE_3, SOURCE_1].\n\nCụ thể:\n* **Zero-shot Prompting**: Là việc sử dụng một template cố định để hướng dẫn mô hình trả lời trực tiếp dựa trên ngữ cảnh mà *không cần ví dụ mẫu* [SOURCE_2, SOURCE_3].\n* **Few-shot Learning**: Là việc cung cấp thêm 1-2 ví dụ mẫu (gồm bộ ba Context - Question - Answer chuẩn) vào prompt để LLM học được phong cách trả lời và định dạng mong muốn [SOURCE_1].",
+      "similarity_score": 0.7824,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 13,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_12_chunk_12",
+          "rerank_score": 0.8668
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 49413.66
+    },
+    {
+      "id": 20,
+      "query": "Nếu bỏ Embedding Model, Vector Store/ANN Index và LLM thì hệ thống lần lượt biến thành những dạng nào?",
+      "expected_answer": "Bỏ Embedding Model: Lexical Retrieval-driven RAG. Bỏ Vector Store/ANN Index: Unscalable Prototype. Bỏ LLM: Semantic Search / Retrieval System.",
+      "generated_answer": "Nếu loại bỏ các thành phần Embedding Model, Vector Store/ANN Index và LLM, hệ thống RAG sẽ lần lượt biến thành các dạng sau:\n\n* **Loại bỏ Embedding Model**: Hệ thống trở thành Lexical Retrieval-driven RAG (RAG dựa trên truy vấn từ khóa) [SOURCE_1], [SOURCE_2], [SOURCE_3], [SOURCE_4]. Hệ thống vẫn có LLM để trả lời, nhưng chất lượng truy vấn theo ngữ nghĩa giảm rõ rệt và dễ bỏ sót thông tin [SOURCE_1], [SOURCE_4].\n* **Loại bỏ Vector Store/ANN Index**: Hệ thống trở thành Unscalable Prototype (Mô hình khó mở rộng) [SOURCE_2], [SOURCE_3], [SOURCE_5]. Hệ thống có thể chạy demo ở quy mô nhỏ, nhưng khó mở rộng và khó vận hành ổn định trong môi trường thực tế [SOURCE_2], [SOURCE_5].\n* **Loại bỏ LLM (Large Language Model)**: Hệ thống trở thành Semantic Search / Retrieval System (Hệ truy vấn ngữ nghĩa) [SOURCE_2], [SOURCE_3]. Hệ thống mạnh về truy vấn theo ngữ nghĩa, nhưng không còn thành phần Generation, nên chưa phải là chatbot hay hệ RAG hoàn chỉnh [SOURCE_2], [SOURCE_3].",
+      "similarity_score": 0.8443,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 5,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 14,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_13_chunk_13",
+          "rerank_score": 0.9962
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 15,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_14_chunk_14",
+          "rerank_score": 0.9896
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 16,
+          "section": "Kịch bản 3: Loại bỏ LLM (Large Language Model)",
+          "chunk_id": "[Reading]-RAG-System_sec_44_chunk_44",
+          "rerank_score": 0.9742
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 15,
+          "section": "Kịch bản 1: Loại bỏ Embedding Model",
+          "chunk_id": "[Reading]-RAG-System_sec_42_chunk_42",
+          "rerank_score": 0.9636
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 15,
+          "section": "Kịch bản 2: Loại bỏ Vector Store/ANN Index",
+          "chunk_id": "[Reading]-RAG-System_sec_43_chunk_43",
+          "rerank_score": 0.8568
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 50273.54
+    },
+    {
+      "id": 21,
+      "query": "Trong LangChain, một Document gồm những thuộc tính chính nào?",
+      "expected_answer": "Một Document gồm page_content, metadata và id.",
+      "generated_answer": "Trong LangChain, một đối tượng Document bao gồm ba thuộc tính chính [SOURCE_1], [SOURCE_2]:\n* **page_content**: Chuỗi ký tự chứa nội dung văn bản [SOURCE_1], [SOURCE_2].\n* **metadata**: Một dictionary chứa thông tin bổ sung tùy ý, ví dụ như nguồn gốc của tài liệu, số trang, quan hệ với tài liệu khác [SOURCE_1], [SOURCE_2].\n* **id**: Mã định danh chuỗi cho tài liệu [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.7291,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 17,
+          "section": "1. Documents và Document Loaders",
+          "chunk_id": "[Reading]-RAG-System_sec_48_chunk_48",
+          "rerank_score": 0.9985
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 16,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_15_chunk_15",
+          "rerank_score": 0.9968
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 83622.76
+    },
+    {
+      "id": 22,
+      "query": "Trong ví dụ LangChain, RecursiveCharacterTextSplitter được cấu hình chunk_size và chunk_overlap bao nhiêu?",
+      "expected_answer": "chunk_size=1000 và chunk_overlap=200.",
+      "generated_answer": "Trong các ví dụ LangChain được cung cấp, `RecursiveCharacterTextSplitter` được cấu hình với `chunk_size=1000` và `chunk_overlap=200` [SOURCE_1], [SOURCE_2], [SOURCE_3].",
+      "similarity_score": 0.6849,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 32,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_28_chunk_28",
+          "rerank_score": 0.9956
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 32,
+          "section": "V. Câu hỏi trắc nghiệm",
+          "chunk_id": "[Reading]-RAG-System_sec_69_chunk_69",
+          "rerank_score": 0.9948
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 17,
+          "section": "1. Documents và Document Loaders",
+          "chunk_id": "[Reading]-RAG-System_sec_48_chunk_48",
+          "rerank_score": 0.9934
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 96968.58
+    },
+    {
+      "id": 23,
+      "query": "VectorStoreRetriever trong ví dụ hỗ trợ các kiểu tìm kiếm nào?",
+      "expected_answer": "similarity, mmr (Maximum Marginal Relevance) và similarity_score_threshold.",
+      "generated_answer": "VectorStoreRetriever hỗ trợ các loại tìm kiếm thông qua tham số `search_type` bao gồm:\n\n* **similarity**: Tìm kiếm tương đồng mặc định [SOURCE_1], [SOURCE_2].\n* **mmr (Maximum Marginal Relevance)**: Cân bằng giữa độ tương đồng và độ đa dạng của kết quả [SOURCE_1], [SOURCE_2].\n* **similarity_score_threshold**: Lọc bỏ các kết quả có điểm tương đồng thấp hơn ngưỡng quy định [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.7104,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 19,
+          "section": "VectorStoreRetriever",
+          "chunk_id": "[Reading]-RAG-System_sec_52_chunk_52",
+          "rerank_score": 0.9697
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 19,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_17_chunk_17",
+          "rerank_score": 0.9456
+        }
+      ],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_015.png"
+      ],
+      "latency_ms": 77711.87
+    },
+    {
+      "id": 24,
+      "query": "Pipeline của phần thực hành dùng những thành phần nào từ tài liệu PDF đến câu trả lời?",
+      "expected_answer": "Tài liệu AIVN được chunking, vector hóa và lưu vào ChromaDB. Query được vector hóa, dùng similarity search lấy Top-K context, ghép qua prompt template rồi đưa vào Qwen để sinh câu trả lời.",
+      "generated_answer": "Pipeline của phần thực hành từ tài liệu PDF đến câu trả lời bao gồm các thành phần và quy trình sau:\n\n1. **Xử lý tài liệu đầu vào:** Quy trình bắt đầu bằng việc xử lý tài liệu PDF tiếng Việt [SOURCE_1], sử dụng `SimpleLoader` để load tài liệu [SOURCE_5].\n2. **Chia nhỏ và Vector hóa:** Tài liệu được chia nhỏ bằng `TextSplitter` (với `chunk_size=400` và `chunk_overlap=120`) [SOURCE_5], sau đó được vector hóa để lưu trữ vào cơ sở dữ liệu vector ChromaDB [SOURCE_1].\n3. **Truy xuất dữ liệu (Retrieval):** Khi có câu hỏi, hệ thống sử dụng `VectorDB` để tạo một `retriever` (với tham số `k: 4`) nhằm tìm kiếm các ngữ cảnh phù hợp [SOURCE_1], [SOURCE_5].\n4. **Xây dựng Prompt:** \n * Các tài liệu truy xuất được đưa qua hàm helper `format_docs` để lọc bỏ các đoạn văn bản quá ngắn (độ dài $\\le$ 40) và loại bỏ thông tin trùng lặp [SOURCE_4].\n * Ngữ cảnh sau khi lọc và câu hỏi sẽ được đưa vào một `PromptTemplate` [SOURCE_2].\n5. **Sinh câu trả lời:** Hệ thống sử dụng mô hình ngôn ngữ Qwen (được khởi tạo là `llm`) để sinh câu trả lời dựa trên prompt đã xây dựng [SOURCE_1], [SOURCE_2], [SOURCE_5].\n6. **Hậu xử lý:** Câu trả lời từ mô hình được đi qua `FocusedAnswerParser` (được gán cho `self.answer_parser`) để xử lý cuối cùng [SOURCE_2].\n\nToàn",
+      "similarity_score": 0.6644,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 4,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 20,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_18_chunk_18",
+          "rerank_score": 0.9459
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 28,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_24_chunk_24",
+          "rerank_score": 0.8776
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 33,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_29_chunk_29",
+          "rerank_score": 0.639
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 28,
+          "section": "Kết nối toàn bộ pipeline",
+          "chunk_id": "[Reading]-RAG-System_sec_66_chunk_66",
+          "rerank_score": 0.5565
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 205295.22
+    },
+    {
+      "id": 25,
+      "query": "Trong class TextSplitter của phần thực hành, mặc định chunk_size và chunk_overlap là bao nhiêu?",
+      "expected_answer": "chunk_size=400 và chunk_overlap=120.",
+      "generated_answer": "Trong class TextSplitter, các giá trị mặc định được thiết lập là `chunk_size` bằng 400 và `chunk_overlap` bằng 120 [SOURCE_5]. Tuy nhiên, trong một chiến lược baseline tiêu chuẩn, các giá trị này được sử dụng là `chunk_size=1024` và `chunk_overlap=128` [SOURCE_1].",
+      "similarity_score": 0.6549,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 71,
+          "section": "Đọc và chia nhỏ tài liệu",
+          "chunk_id": "[Reading]-RAG-System_sec_173_chunk_173",
+          "rerank_score": 0.9894
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 24,
+          "section": "Tải và chia nhỏ tài liệu PDF",
+          "chunk_id": "[Reading]-RAG-System_sec_61_chunk_61",
+          "rerank_score": 0.8496
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 148154.35
+    },
+    {
+      "id": 26,
+      "query": "Retriever trong class VectorDB của phần thực hành mặc định lấy bao nhiêu document gần nhất?",
+      "expected_answer": "Mặc định lấy 4 document gần nhất.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, số lượng document gần nhất mà retriever trong class VectorDB mặc định lấy tùy thuộc vào từng phần thực hành cụ thể trong tài liệu:\n\n* Ở phần IV.4 (Xây dựng Vector Database), `search_kwargs` được thiết lập mặc định lấy **4** document gần nhất (`\"k\": 4`) [SOURCE_1].\n* Ở phần 4.3 (Xây dựng Vector Database trang 72) và VII.4.5, hàm `get_retriever` thiết lập `search_kwargs` mặc định lấy **3** document gần nhất (`\"k\": 3`) [SOURCE_3, SOURCE_5].",
+      "similarity_score": 0.7307,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 25,
+          "section": "IV.4. Xây dựng Vector Database",
+          "chunk_id": "[Reading]-RAG-System_sec_62_chunk_62",
+          "rerank_score": 0.9775
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 133988.38
+    },
+    {
+      "id": 27,
+      "query": "Prompt của OfflineRAG yêu cầu mô hình làm gì khi tài liệu không có thông tin?",
+      "expected_answer": "Mô hình phải nói rõ “Không có thông tin”, trả lời dựa trên tài liệu và không thêm chi tiết nào ngoài tài liệu.",
+      "generated_answer": "Prompt của OfflineRAG yêu cầu mô hình nếu tài liệu không có thông tin thì phải nói rõ \"Không có thông tin\" [SOURCE_1], [SOURCE_3].",
+      "similarity_score": 0.7195,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 27,
+          "section": "Định nghĩa RAG Chain và parser",
+          "chunk_id": "[Reading]-RAG-System_sec_65_chunk_65",
+          "rerank_score": 0.9201
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 28,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_24_chunk_24",
+          "rerank_score": 0.8626
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 67686.37
+    },
+    {
+      "id": 28,
+      "query": "Semantic Chunking khác Recursive Chunking ở nguyên tắc quyết định điểm cắt như thế nào?",
+      "expected_answer": "Recursive Chunking dựa trên ký tự phân tách; Semantic Chunking dựa trên sự thay đổi ngữ nghĩa giữa các câu, dùng độ tương đồng để phát hiện khi chủ đề đổi.",
+      "generated_answer": "Sự khác biệt về nguyên tắc quyết định điểm cắt giữa Semantic Chunking và Recursive Chunking được thể hiện như sau:\n\n* **Recursive Chunking:** Phương pháp này thực hiện cắt dựa trên các dấu câu (như dấu xuống dòng `\\n`, dấu chấm) và số lượng ký tự cố định [SOURCE_1], [SOURCE_2]. Đây được coi là cách cắt cứng nhắc theo ký tự [SOURCE_5].\n* **Semantic Chunking:** Thay vì cắt theo số ký tự cố định, phương pháp này đọc hiểu nội dung để quyết định điểm cắt [SOURCE_3]. Nguyên lý của nó là dựa vào sự thay đổi về ý nghĩa nội dung giữa các câu [SOURCE_1], [SOURCE_2]. \n\nCụ thể hơn về cơ chế của Semantic Chunking:\n* Khi các câu văn liên tiếp cùng bàn về một chủ đề, vector của chúng sẽ nằm gần nhau trong không gian biểu diễn; nhưng khi nội dung chuyển sang chủ đề mới, vector sẽ đột ngột thay đổi",
+      "similarity_score": 0.8265,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 4,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 42,
+          "section": "Phân tích kết quả:",
+          "chunk_id": "[Reading]-RAG-System_sec_88_chunk_88",
+          "rerank_score": 0.9771
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 41,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_36_chunk_36",
+          "rerank_score": 0.9704
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 40,
+          "section": "III.1. Semantic Chunking",
+          "chunk_id": "[Reading]-RAG-System_sec_84_chunk_84",
+          "rerank_score": 0.9212
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 82,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_71_chunk_71",
+          "rerank_score": 0.9097
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 143139.03
+    },
+    {
+      "id": 29,
+      "query": "Quy trình Semantic Chunking trong tài liệu gồm những bước nào?",
+      "expected_answer": "Tách thành câu hoàn chỉnh; tính độ tương đồng giữa câu trước và câu sau; đặt ngưỡng; tương đồng cao thì gộp, giảm dưới ngưỡng thì ngắt chunk.",
+      "generated_answer": "Quy trình thực hiện Semantic Chunking trong tài liệu bao gồm các bước sau:\n\n1. **Sentence Splitting**: Chia văn bản thành các câu hoàn chỉnh dựa trên dấu chấm câu [SOURCE_3].",
+      "similarity_score": 0.6813,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 40,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_35_chunk_35",
+          "rerank_score": 0.944
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 144487.62
+    },
+    {
+      "id": 30,
+      "query": "HNSW được mô tả là gì và dùng để giải quyết vấn đề nào?",
+      "expected_answer": "HNSW là thuật toán tìm kiếm vector xấp xỉ dựa trên đồ thị phân tầng, cân bằng tốc độ và độ chính xác; dùng để tìm nhanh khi số lượng vector lớn thay vì brute-force.",
+      "generated_answer": "HNSW (viết tắt của Hierarchical Navigable Small World) được mô tả và sử dụng như sau:\n\n**Mô tả về HNSW:**\n* **Định nghĩa:** HNSW là một thuật toán tìm kiếm láng giềng gần nhất xấp xỉ (ANN - Approximate Nearest Neighbor) [SOURCE_1, SOURCE_5]. Đây là thuật toán tìm kiếm vector xấp xỉ dựa trên cấu trúc đồ thị phân tầng, giúp cân bằng giữa tốc độ truy xuất và độ chính xác của kết quả [SOURCE_2, SOURCE_5].\n* **Cơ chế hoạt động:** HNSW tổ chức dữ liệu dưới dạng một cấu trúc đồ thị",
+      "similarity_score": 0.8347,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 114442.05
+    },
+    {
+      "id": 31,
+      "query": "BM25 cải thiện điểm yếu nào của TF-IDF theo mô tả trong tài liệu?",
+      "expected_answer": "BM25 bổ sung cơ chế bão hòa tần suất và chuẩn hóa độ dài, giúp tránh việc tài liệu lặp từ khóa quá nhiều được ưu tiên không công bằng.",
+      "generated_answer": "BM25 là phiên bản nâng cấp hoàn thiện của TF-IDF, được thiết kế để khắc phục các nhược điểm về spam từ khóa và độ dài văn bản [SOURCE_1, SOURCE_3]. Cụ thể, BM25 cải thiện các điểm yếu sau:\n\n* **Khắc phục vấn đề spam từ khóa (thông qua cơ chế TF Saturation - Bão hòa tần suất):** Trong TF-IDF, nếu một từ xuất hiện càng nhiều thì điểm số sẽ tăng tuyến tính vô hạn (ví dụ: xuất hiện 100 lần thì điểm cao gấp 100 lần) [SOURCE_1, SOURCE_2]. BM25 áp dụng cơ chế bão hòa, nghĩa là điểm số sẽ tăng đáng kể ở những lần xuất hiện đầu tiên (lần thứ 2, thứ 3...), nhưng nếu từ khóa đã xuất hiện rất nhiều lần (ví dụ 100 lần) thì việc xuất hiện thêm lần tiếp theo hầu như không làm tăng thêm điểm số [SOURCE_1, SOURCE_2]. Điều này giúp loại",
+      "similarity_score": 0.7745,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_026.png"
+      ],
+      "latency_ms": 98025.95
+    },
+    {
+      "id": 32,
+      "query": "Hybrid Search trong tài liệu nâng cao thực hiện retrieval theo quy trình nào?",
+      "expected_answer": "Hệ thống chạy song song Sparse Retriever và Dense Retriever, sau đó hợp nhất kết quả; các chiến lược hợp nhất được thực nghiệm gồm Interleaving và RRF.",
+      "generated_answer": "Hybrid Search không phải là một thuật toán mới mà là một quy trình kết hợp kết quả từ hai luồng tìm kiếm song song là Sparse Retriever và Dense Retriever [SOURCE_5]. Quy trình thực hiện cụ thể bao gồm các bước sau [SOURCE_3]:\n\n1. **Parallel Execution (Thực thi song song):** Khi nhận được câu hỏi, hệ thống sẽ gửi truy vấn đồng thời đến cả hai bộ tìm kiếm [SOURCE_3]. Trong đó:\n * BM25 trả về danh sách A khớp về từ khóa chính xác [SOURCE_3].\n * Vector Search trả về danh sách B khớp về ngữ cảnh và từ đồng nghĩa [SOURCE_3].\n2. **Fusion (Hợp nhất):** Hợp nhất hai danh sách này lại thành một danh sách duy nhất [SOURCE_3].\n3. **Ranking (Xếp hạng):** Sắp xếp lại thứ tự ưu tiên để đưa ra Top-K văn bản tốt nhất cho LLM [SOURCE_3].",
+      "similarity_score": 0.6668,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 47,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_42_chunk_42",
+          "rerank_score": 0.9082
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 48,
+          "section": "IV.2. Hybrid Search",
+          "chunk_id": "[Reading]-RAG-System_sec_102_chunk_102",
+          "rerank_score": 0.8278
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 80386.66
+    },
+    {
+      "id": 33,
+      "query": "Vì sao tài liệu xếp hạng khá ở cả Vector Search và BM25 có thể được RRF ưu tiên hơn tài liệu đứng đầu chỉ ở một bên?",
+      "expected_answer": "RRF cộng điểm theo nghịch đảo thứ hạng ở từng danh sách, nên tài liệu có thứ hạng tốt và ổn định ở cả hai luồng có thể có tổng điểm cao hơn.",
+      "generated_answer": "Tài liệu xếp hạng khá ở cả hai phương pháp (Vector Search và BM25) có thể được RRF ưu tiên hơn tài liệu chỉ đứng đầu ở một phía nhờ vào các nguyên nhân sau:\n\n1. **Sự đồng thuận cao giữa hai thuật toán:** Về mặt lý thuyết, tài liệu xuất hiện ở vị trí tốt trong cả hai danh sách truy xuất sẽ được đánh giá quan trọng hơn vì nhận được sự đồng thuận cao từ cả hai mô hình [SOURCE_1], [SOURCE_5]. RRF giúp hệ thống chọn ra tài liệu hài hòa và có độ tin cậy cao nhất thay vì chỉ tin vào một phía đơn lẻ [SOURCE_1], [SOURCE_2], [SOURCE_5].\n2. **Vai trò làm mượt của hằng số $k$:** Thuật toán RRF tính điểm dựa trên nghịch đảo của thứ hạng kết hợp với một hằng số làm mượt $k$ (thường là 60) [SOURCE_3], [SOURCE_4]. Hằng số này có tác dụng làm mượt điểm số, ngăn không cho tài liệu xếp hạng Top 1 chiếm ưu thế quá tuyệt đối so với các thứ hạng liền kề như Top 2 hay Top 3 [SOURCE_3], [SOURCE_4].\n3. **Hiệu ứng cộng dồn điểm nghịch đảo thứ hạng:** Do điểm của Top 1 không áp đảo hoàn toàn, khi cộng điểm nghịch đảo từ cả hai danh sách, một tài liệu giữ vị trí khá ở cả hai luồng sẽ tích lũy được tổng điểm lớn hơn tài liệu chỉ đứng nhất ở một bên nhưng lại tụt hậu sâu ở bên còn lại [SOURCE_3], [SOURCE_4]. \n - *Ví dụ minh họa:* Với $k = 60$, Doc A (Hạng 1 Vector, Hạng 10 BM25) chỉ đạt điểm $0.0307$, trong khi Doc B (Hạng 2 Vector, Hạng 3 BM25)",
+      "similarity_score": 0.7596,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 5,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 49,
+          "section": "2. Tính điểm Doc B:",
+          "chunk_id": "[Reading]-RAG-System_sec_108_chunk_108",
           "rerank_score": 0.9993
         },
         {
           "source_id": "SOURCE_2",
           "file": "[Reading]-RAG-System.pdf",
-          "page": 7,
+          "page": 49,
           "section": "Overview",
-          "chunk_id": "[Reading]-RAG-System_sec_06_chunk_06",
-          "rerank_score": 0.9976
+          "chunk_id": "[Reading]-RAG-System_sec_43_chunk_43",
+          "rerank_score": 0.9987
         },
         {
           "source_id": "SOURCE_3",
           "file": "[Reading]-RAG-System.pdf",
-          "page": 8,
-          "section": "· Parent-Child Indexing (Small-to-Big):",
-          "chunk_id": "[Reading]-RAG-System_sec_15_chunk_15",
-          "rerank_score": 0.9717
+          "page": 11,
+          "section": "info-circle Cách hoạt động của thuật toán RRF",
+          "chunk_id": "[Reading]-RAG-System_sec_27_chunk_27",
+          "rerank_score": 0.996
         },
         {
           "source_id": "SOURCE_4",
           "file": "[Reading]-RAG-System.pdf",
-          "page": 8,
-          "section": "3. Chiến lược Indexing nâng cao",
-          "chunk_id": "[Reading]-RAG-System_sec_14_chunk_14",
-          "rerank_score": 0.867
+          "page": 10,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_09_chunk_09",
+          "rerank_score": 0.9947
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 90,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_78_chunk_78",
+          "rerank_score": 0.9848
         }
       ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 107439.75
+      "latency_ms": 129408.25
+    },
+    {
+      "id": 34,
+      "query": "Nếu người dùng chỉ gõ một cụm rất ngắn như “remote work”, tài liệu đề xuất nhóm kỹ thuật nào để cải thiện retrieval?",
+      "expected_answer": "Query Transformation: dùng LLM viết lại, mở rộng hoặc chia nhỏ câu hỏi trước retrieval; các kỹ thuật được trình bày gồm HyDE và Query Decomposition.",
+      "generated_answer": "Để giải quyết vấn đề người dùng đặt những câu hỏi ngắn, thiếu ngữ cảnh như \"remote work\", tài liệu đề xuất sử dụng nhóm kỹ thuật **Query Transformation** [SOURCE_1, SOURCE_2].\n\nÝ tưởng cốt lõi của kỹ thuật này là sử dụng một LLM để viết lại, mở rộng hoặc chia nhỏ câu hỏi của người dùng thành các phiên bản tốt hơn trước khi thực hiện tìm kiếm [SOURCE_1, SOURCE_2]. Một kỹ thuật cụ thể được đề cập trong nhóm này là **Hypothetical document embeddings (HyDE)** [SOURCE_1]. Kỹ thuật HyDE giúp cải thiện chất lượng retrieval bằng cách yêu cầu LLM tạo ra một câu trả lời giả định, sau đó sử dụng chính đoạn văn giả định này để tìm kiếm trong cơ sở dữ liệu thay vì dùng câu hỏi gốc [SOURCE_1, SOURCE_3].",
+      "similarity_score": 0.837,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 50,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_44_chunk_44",
+          "rerank_score": 0.8921
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 70149.14
+    },
+    {
+      "id": 35,
+      "query": "Query Decomposition phù hợp với loại câu hỏi nào và xử lý ra sao?",
+      "expected_answer": "Phù hợp câu hỏi phức tạp mà một đoạn khó chứa đủ thông tin; hệ thống chia thành sub-query, retrieval riêng rồi cho LLM tổng hợp.",
+      "generated_answer": "Query Decomposition phù hợp với các loại câu hỏi sau:\n\n* **Các câu hỏi phức tạp:** Những câu hỏi mà một đoạn văn bản duy nhất không thể chứa đủ thông tin để trả lời [SOURCE_1].\n* **Câu hỏi cần so sánh hoặc tổng hợp:** Các câu hỏi yêu cầu so sánh hoặc tổng hợp thông tin từ nhiều nguồn khác nhau [SOURCE_1].\n* **Câu hỏi đa bước hoặc nhiều ý:** Các câu hỏi đa bước hoặc chứa nhiều ý nhỏ [SOURCE_2].\n\nCách thức xử lý của kỹ thuật này được thực hiện thông qua các bước sau:\n\nThay vì hỏi trực tiếp một câu dài hoặc phức tạp, hệ thống sẽ nhờ LLM phân tách câu hỏi gốc thành một tập các câu hỏi con đơn giản hơn [SOURCE",
+      "similarity_score": 0.7665,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 51,
+          "section": "V.2. Query Decomposition",
+          "chunk_id": "[Reading]-RAG-System_sec_113_chunk_113",
+          "rerank_score": 0.9888
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 97,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_85_chunk_85",
+          "rerank_score": 0.9719
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 174100.44
+    },
+    {
+      "id": 36,
+      "query": "Cross-Encoder và MMR giải quyết hai mục tiêu re-ranking khác nhau như thế nào?",
+      "expected_answer": "Cross-Encoder chấm lại mức độ liên quan giữa query và từng document; MMR cân bằng mức độ liên quan với tính đa dạng để giảm trùng lặp.",
+      "generated_answer": "Cross-Encoder và MMR giải quyết hai mục tiêu re-ranking khác nhau dựa trên nhu cầu về độ chính xác và tính bao quát của thông tin:\n\n* **Cross-Encoder**:\n * **Mục tiêu**: Được sử dụng khi cần một câu trả lời cực kỳ chính xác cho các câu hỏi khó [SOURCE_1, SOURCE_2].\n * **Cơ chế**: Đây là kiến trúc mô hình xử lý câu hỏi và",
+      "similarity_score": 0.7797,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 172276.79
+    },
+    {
+      "id": 37,
+      "query": "Bài thực nghiệm nâng cao sử dụng bao nhiêu tài liệu PDF làm dữ liệu đầu vào?",
+      "expected_answer": "45 tài liệu PDF chứa kiến thức chuyên sâu về Trí tuệ nhân tạo thuộc khóa học AIO.",
+      "generated_answer": "Bài thực nghiệm nâng cao sử dụng tập hợp 45 tài liệu định dạng PDF chứa kiến thức chuyên sâu về Trí tuệ nhân tạo thuộc khóa học AIO làm dữ liệu đầu vào [SOURCE_1], [SOURCE_4], [SOURCE_5].",
+      "similarity_score": 0.8646,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 55,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_49_chunk_49",
+          "rerank_score": 0.9637
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 59,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_53_chunk_53",
+          "rerank_score": 0.3713
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 60,
+          "section": "VII.3. Nguồn dữ liệu và bộ dữ liệu đánh giá",
+          "chunk_id": "[Reading]-RAG-System_sec_145_chunk_145",
+          "rerank_score": 0.3526
+        }
+      ],
+      "image_urls_count": 2,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_033.png",
+        "/images/[Reading]-RAG-System/fig_034.png"
+      ],
+      "latency_ms": 84927.86
+    },
+    {
+      "id": 38,
+      "query": "Bốn metric Ragas được sử dụng trong tài liệu để đánh giá RAG là gì?",
+      "expected_answer": "Faithfulness, Answer Relevancy, Context Precision và Context Recall.",
+      "generated_answer": "Bốn metric chính được sử dụng trong tài liệu để đánh giá hệ thống RAG bao gồm: [SOURCE_1, SOURCE_2]\n\n1. **Faithfulness (độ trung thực):** Đánh giá tính nhất quán của câu trả lời, đảm bảo nội dung được sinh ra hoàn toàn dựa trên ngữ cảnh được cung cấp và không bị bịa đặt [SOURCE_4].\n2. **Answer Relevancy (độ liên quan câu trả lời):** Đo lường mức độ phù hợp của câu trả lời đối với câu hỏi đặt ra, giúp loại bỏ các câu trả lời dài",
+      "similarity_score": 0.6693,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_4",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 77,
+          "section": "VII.4.7. Đánh giá RAG với Ragas",
+          "chunk_id": "[Reading]-RAG-System_sec_184_chunk_184",
+          "rerank_score": 0.8934
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 156331.08
+    },
+    {
+      "id": 39,
+      "query": "Faithfulness đo điều gì trong đánh giá RAG?",
+      "expected_answer": "Faithfulness đo mức độ các phát biểu trong câu trả lời có thể được hỗ trợ bởi context đã truy xuất, nhằm kiểm soát hallucination.",
+      "generated_answer": "Trong đánh giá hệ thống RAG, Faithfulness (tạm dịch: độ trung thực) đo lường các khía cạnh sau:\n\n* **Mức độ trung thực và hiện tượng ảo giác:** Chỉ số này đánh giá mức độ trung thực của câu trả lời so với context được truy xuất, nhằm đảm bảo không có hiện tượng hallucination (ảo giác) [SOURCE_1].\n* **Tính nhất quán và sự bịa đặt:** Faithfulness đánh giá tính nhất quán của câu trả lời, đảm bảo nội dung được sinh ra hoàn toàn dựa trên ngữ cảnh được cung cấp và không bịa đặt [SOURCE_2], [SOURCE_3].\n* **Khả năng hỗ trợ của ngữ cảnh:** Một câu trả lời được coi là faithful nếu tất cả các phát biểu trong đó đều có thể được hỗ trợ bởi context đã truy xuất [SOURCE_1].\n* **Cách thức tính toán:** Faithfulness được tính toán bằng cách so sánh response (câu trả lời do hệ thống sinh ra) với retrieved_contexts (danh sách context mà retriever của hệ thống truy xuất được) [SOURCE_5].",
+      "similarity_score": 0.7386,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 4,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 56,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_50_chunk_50",
+          "rerank_score": 0.9921
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 77,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_67_chunk_67",
+          "rerank_score": 0.9858
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 77,
+          "section": "VII.4.7. Đánh giá RAG với Ragas",
+          "chunk_id": "[Reading]-RAG-System_sec_184_chunk_184",
+          "rerank_score": 0.9841
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 66,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_58_chunk_58",
+          "rerank_score": 0.9181
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 94573.27
+    },
+    {
+      "id": 40,
+      "query": "Trong ví dụ Einstein, Faithfulness bằng bao nhiêu và vì sao?",
+      "expected_answer": "Faithfulness = 0.5 vì có 2 phát biểu nhưng chỉ 1 phát biểu được context hỗ trợ; ngày 20 March 1879 không khớp context ghi 14 March 1879.",
+      "generated_answer": "Trong ví dụ về Einstein, chỉ số Faithfulness bằng 0.5 [SOURCE_1].\n\nLý do là vì câu trả lời được phân tách thành hai phát biểu, trong đó:\n* Phát biểu 1: \"Einstein was born in Germany\" là đúng, có thể suy ra từ ngữ cảnh (\"German-born\") [SOURCE_1].\n* Phát biểu 2: \"Einstein was born on 20 March 1879\" là sai, vì ngữ cảnh ghi ngày sinh là 14 March 1879 chứ không phải 20 March 1879 [SOURCE_1].\n\nVì chỉ có một trong hai phát biểu có thể được xác thực từ ngữ cảnh, nên kết quả Faithfulness được tính là 1/2 = 0.5 [SOURCE_1].",
+      "similarity_score": 0.7059,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 57,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_51_chunk_51",
+          "rerank_score": 0.8376
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 92061.31
+    },
+    {
+      "id": 41,
+      "query": "Context Precision và Context Recall khác nhau ở trọng tâm đánh giá nào?",
+      "expected_answer": "Context Precision tập trung vào độ chính xác và thứ hạng của context liên quan; Context Recall tập trung vào độ bao phủ thông tin cần thiết từ reference trong retrieved contexts.",
+      "generated_answer": "Context Precision và Context Recall khác nhau về trọng tâm đánh giá như sau:\n\n* **Context Precision (độ chính xác ngữ cảnh):** Tập trung đo lường độ chính xác của quá trình retrieval bằng cách đánh giá thứ hạng của các context [SOURCE_2]. Chỉ số này kiểm tra xem các chunk liên quan có được xếp ở vị trí cao trong danh sách các context được truy xuất (retrieved contexts) hay không [SOURCE_2]. Ngoài ra, nó đánh giá tỷ lệ các chunks thực sự liên quan trong danh sách tìm kiếm được; chỉ số này càng cao nghĩa là hệ thống ít bị nhiễu bởi thông tin rác [SOURCE_1].\n* **Context Recall (độ bao phủ ngữ cảnh):** Tập trung đánh giá khả năng bao quát (độ bao phủ) của quá trình retrieval [SOURCE_2]. Chỉ số này đo lường xem có bao nhiêu thông tin cần thiết từ câu trả lời tham chiếu (reference answer) đã được tìm thấy trong các context được truy xuất [SOURCE_2]. Nói cách khác, nó kiểm tra xem ngữ cảnh tìm được có bao hàm toàn bộ thông tin cần thiết so với Ground Truth để trả lời câu hỏi hay không [SOURCE_1].",
+      "similarity_score": 0.8704,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 77,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_67_chunk_67",
+          "rerank_score": 0.9852
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 58,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_52_chunk_52",
+          "rerank_score": 0.9767
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 98855.73
+    },
+    {
+      "id": 42,
+      "query": "Ví dụ green tea trong phần Context Precision cho kết quả cuối cùng xấp xỉ bao nhiêu?",
+      "expected_answer": "Context Precision xấp xỉ 0.76.",
+      "generated_answer": "Trong ví dụ về green tea ở phần Context Precision, kết quả cuối cùng được tính toán xấp xỉ là 0.76 [SOURCE_1].",
+      "similarity_score": 0.8036,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 58,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_52_chunk_52",
+          "rerank_score": 0.9387
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 83004.8
+    },
+    {
+      "id": 43,
+      "query": "Ragas tạo testset tự động từ corpus PDF theo luồng chính nào?",
+      "expected_answer": "PDF được tiền xử lý và chuyển sang markdown, xây knowledge graph bằng embedding và trích xuất quan hệ, sau đó query synthesizer sinh câu hỏi; LLM tạo reference answer và reference_contexts cùng metadata.",
+      "generated_answer": "Quy trình tạo testset tự động của Ragas từ nguồn dữ liệu PDF được thực hiện theo các bước chính sau:\n\n1. **Tiền xử lý và chuyển đổi:** Bắt đầu với việc tiền xử lý tài liệu PDF và chuyển đổi chúng sang định dạng markdown [SOURCE_1], [SOURCE_2].\n2. **Xây dựng Knowledge Graph:** Phân tích tài liệu để xây dựng knowledge graph thông qua embedding và trích xuất quan hệ giữa các đoạn văn bản [SOURCE_1], [SOURCE_2].\n3. **Sinh câu hỏi và câu trả lời:** Sử dụng các query synthesizer để xây dựng knowledge graph từ các document, sau đó sinh câu hỏi và reference answer theo các kiểu truy vấn khác nhau [SOURCE_3].\n\nCác câu hỏi được sinh ra thông qua các query synthesizer bao gồm ba loại chính [SOURCE_1]:\n* **Single-hop specific (chiếm 50%):** Là những câu hỏi đơn giản, chỉ cần một bước suy luận từ một nguồn duy nhất [SOURCE_1].\n* **Multi-hop abstract (chiếm 25%):** Yêu cầu tổng hợp thông tin từ nhiều nguồn và câu trả lời mang tính phân tích tổng quan [SOURCE_1].\n* **Multi-hop specific (chiếm",
+      "similarity_score": 0.7211,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 60,
+          "section": "VII.3. Nguồn dữ liệu và bộ dữ liệu đánh giá",
+          "chunk_id": "[Reading]-RAG-System_sec_145_chunk_145",
+          "rerank_score": 0.968
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 59,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_53_chunk_53",
+          "rerank_score": 0.953
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 110,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_97_chunk_97",
+          "rerank_score": 0.8179
+        }
+      ],
+      "image_urls_count": 2,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_033.png",
+        "/images/[Reading]-RAG-System/fig_034.png"
+      ],
+      "latency_ms": 116054.26
+    },
+    {
+      "id": 44,
+      "query": "Phân phối mặc định của ba loại query do Ragas sinh trong tài liệu là bao nhiêu?",
+      "expected_answer": "Single-hop specific 50%, multi-hop abstract 25%, multi-hop specific 25%.",
+      "generated_answer": "Phân phối của ba loại câu hỏi do các query synthesizer sinh ra bao gồm:\n\n* **Single-hop specific** chiếm 50%, là loại câu hỏi đơn giản chỉ cần một bước suy luận từ một nguồn duy nhất [SOURCE_1], [SOURCE_2].\n* **Multi-hop abstract** chiếm 25%, yêu cầu tổng hợp thông tin từ nhiều nguồn và trả lời mang tính phân tích tổng quan [SOURCE_1], [SOURCE_2].\n* **Multi-hop specific** chiếm 25%, cần nhiều bước suy luận kết nối thông tin từ nhiều nguồn nhưng tập trung vào sự kiện cụ thể [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.709,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 61,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_54_chunk_54",
+          "rerank_score": 0.9012
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 60,
+          "section": "VII.3. Nguồn dữ liệu và bộ dữ liệu đánh giá",
+          "chunk_id": "[Reading]-RAG-System_sec_145_chunk_145",
+          "rerank_score": 0.6348
+        }
+      ],
+      "image_urls_count": 2,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_033.png",
+        "/images/[Reading]-RAG-System/fig_034.png"
+      ],
+      "latency_ms": 112601.18
+    },
+    {
+      "id": 45,
+      "query": "Một sample trong Ragas Testset có những trường chính nào, và khi đánh giá hệ thống thực tế cần bổ sung thêm gì?",
+      "expected_answer": "Các trường chính gồm user_input, reference_contexts, reference, persona_name, query_style, query_length và synthesizer_name. Khi đánh giá thực tế bổ sung response và retrieved_contexts.",
+      "generated_answer": "Một sample trong Ragas Testset bao gồm các trường thông tin sau:",
+      "similarity_score": 0.5208,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 116444.15
+    },
+    {
+      "id": 46,
+      "query": "Baseline RAG nâng cao được cấu hình như thế nào về chunking, retrieval và Top-K?",
+      "expected_answer": "Baseline dùng chunk_size=1024, chunk_overlap=128, VectorDB với similarity retrieval và k=3; chưa áp dụng Query Transformation hay Re-ranking.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin đầy đủ về cấu hình chi tiết của chunking, retrieval và Top-K cho mô hình \"Baseline RAG nâng cao\" (mặc dù tài liệu có đề cập đến \"Fixed-size Chunking\" hoặc \"Recursive Chunking\" được sử dụng làm baseline trong một số ngữ cảnh [SOURCE_1, SOURCE_4], và khái niệm TopK trong giai đoạn Retrieval tiêu chuẩn [SOURCE_1, SOURCE_2]). Do đó, tôi không thể cung cấp câu trả lời chính xác cho toàn bộ câu hỏi của bạn dựa trên các tài liệu hiện có.",
+      "similarity_score": 0.6741,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 2,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_023.png",
+        "/images/[Reading]-RAG-System/fig_049.png"
+      ],
+      "latency_ms": 151667.67
+    },
+    {
+      "id": 47,
+      "query": "Baseline đạt các điểm Ragas nào và điểm yếu rõ nhất là gì?",
+      "expected_answer": "Faithfulness 0.73, Answer Relevancy 0.53, Context Precision 0.81, Context Recall 0.67. Điểm yếu rõ nhất là Answer Relevancy thấp nhất; Context Recall cũng còn trung bình.",
+      "generated_answer": "Hệ thống Baseline đạt các điểm chỉ số Ragas như sau:\n\n* **Faithfulness:** 0.73 [SOURCE_1], [SOURCE_2].\n* **Answer Relevancy:** 0.53 [SOURCE_1], [SOURCE_2].\n* **Context Precision:** 0.81 [SOURCE_1], [SOURCE_2].\n* **Context Recall:** 0.67 [SOURCE_1], [SOURCE_2].\n\nĐiểm yếu rõ nhất của hệ thống Baseline là **Answer Relevancy (0.53)** [SOURCE_1], [SOURCE_2]. Mặc dù câu trả lời có tính trung thực cao, nhưng điểm Relevancy thấp cho thấy câu trả lời có thể đang quá dài dòng, lặp lại hoặc chưa đi thẳng vào trọng tâm câu hỏi của người dùng [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.7579,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 79,
+          "section": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+          "chunk_id": "[Reading]-RAG-System_sec_189_chunk_189",
+          "rerank_score": 0.9952
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 79,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_68_chunk_68",
+          "rerank_score": 0.9947
+        }
+      ],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_037.png"
+      ],
+      "latency_ms": 112254.89
+    },
+    {
+      "id": 48,
+      "query": "Semantic Chunking thay đổi các metric thế nào so với baseline?",
+      "expected_answer": "Faithfulness 0.73→0.81, Answer Relevancy 0.53→0.61, Context Precision 0.81→0.83, Context Recall 0.67→0.63.",
+      "generated_answer": "So với baseline, việc sử dụng Semantic Chunking đã tạo ra những thay đổi về các chỉ số (metrics) như sau:\n\n* **Faithfulness (Độ trung thực):** Tăng mạnh từ 0.73 lên 0.81 [SOURCE_1], [SOURCE_2].\n* **Answer Relevancy (Độ liên quan câu trả lời):** Cải thiện đáng kể từ 0.53 lên 0.61 [SOURCE_1], [SOURCE_2], tương ứng với mức tăng 0.08 điểm so với baseline [SOURCE_4].\n* **Context Recall (Độ bao phủ):** Giảm nhẹ từ 0.67 xuống 0.63 [SOURCE_1], [SOURCE_2]. Nguyên nhân có thể do thuật toán gom nhóm ngữ nghĩa quá chặt chẽ, khiến một số thông tin liên quan nhưng nằm rải rác hoặc có ngữ nghĩa không quá gần nhau bị loại bỏ khỏi top-k kết quả tìm kiếm [SOURCE_1], [SOURCE_2].\n* **Context Precision (Độ chính xác ngữ cảnh):** Tăng nhẹ 0.02 điểm; đây là kỹ thuật duy nhất giúp tăng chỉ số này trong số các kỹ thuật nâng",
+      "similarity_score": 0.697,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 84,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_73_chunk_73",
+          "rerank_score": 0.9656
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 84,
+          "section": "4.3 Triển khai thuật toán Semantic Chunking",
+          "chunk_id": "[Reading]-RAG-System_sec_195_chunk_195",
+          "rerank_score": 0.963
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 107,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_94_chunk_94",
+          "rerank_score": 0.8877
+        }
+      ],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_039.png"
+      ],
+      "latency_ms": 140079.44
+    },
+    {
+      "id": 49,
+      "query": "Trong các chiến lược Retrieval thử nghiệm, Hybrid + RRF đạt kết quả nào nổi bật?",
+      "expected_answer": "Hybrid + RRF đạt Faithfulness 0.86, Answer Relevancy 0.57, Context Precision 0.80 và Context Recall 0.80; tài liệu kết luận chiến lược này cân bằng tốt giữa “tìm đủ” và “tìm đúng”.",
+      "generated_answer": "Dựa trên các tài liệu được cung cấp, chiến lược Hybrid Search kết hợp RRF (Hybrid + RRF) đã đạt được những kết quả nổi bật sau:\n\n* **Cân bằng hoàn hảo giữa Precision và Recall:** Cả hai chỉ số Context Precision và Context Recall đều đồng loạt đạt mức rất cao là 0.80 [SOURCE_1]. Điều này chứng minh thuật toán RRF đã lọc bỏ tài liệu nhiễu thành công, khắc phục điểm yếu của Interleaving và giữ lại đầy đủ thông tin quan trọng từ cả nguồn từ khóa lẫn vector [SOURCE_1].\n* **Chất lượng sinh văn bản tối ưu:** Chỉ số Faithfulness đạt đỉnh điểm ở mức 0.86, cao nhất trong tất cả các thực nghiệm tính đến thời điểm đó [SOURCE_1]. Ngoài ra, chiến lược này cũng ghi nhận mức tăng 0.13 điểm về độ trung thực (Faithfulness) so với hệ thống Baseline [SOURCE_5].\n* **Hiệu năng truy xuất độ bao phủ ngữ cảnh:** Hybrid + RRF cho thấy hiệu quả vượt trội trong việc tìm kiếm đầy đủ thông tin với mức tăng 0.13 điểm về độ bao phủ ngữ cảnh (Context Recall) [SOURCE_3].\n* **Giải quyết bài toán đánh đổi:** Chiến lược này giúp giải quyết triệt để bài toán đánh đổi giữa \"tìm đủ\" và \"tìm đúng\", trở thành một trong các giải pháp tối ưu được ưu tiên hàng đầu cho các bài toán RAG cần độ chính xác cao [SOURCE_1].",
+      "similarity_score": 0.8291,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 93,
+          "section": "Kết quả thực nghiệm với Hybrid Search + RRF",
+          "chunk_id": "[Reading]-RAG-System_sec_207_chunk_207",
+          "rerank_score": 0.996
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 108,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_95_chunk_95",
+          "rerank_score": 0.9761
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 107,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_94_chunk_94",
+          "rerank_score": 0.9256
+        }
+      ],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_044.png"
+      ],
+      "latency_ms": 173654.24
+    },
+    {
+      "id": 50,
+      "query": "Kỹ thuật nào đạt Faithfulness cao nhất trong bảng tổng kết thực nghiệm và điểm là bao nhiêu?",
+      "expected_answer": "Query Decomposition đạt Faithfulness cao nhất: 0.93, tăng 0.20 so me với baseline.",
+      "generated_answer": "Kỹ thuật đạt Faithfulness cao nhất trong bảng tổng kết thực nghiệm là chiến lược Decomposition với điểm số là 0.93 [SOURCE_1], [SOURCE_2], [SOURCE_3].",
+      "similarity_score": 0.7909,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 107,
+          "section": "VII.6.1. Đánh giá về chất lượng sinh văn bản",
+          "chunk_id": "[Reading]-RAG-System_sec_223_chunk_223",
+          "rerank_score": 0.9817
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 107,
+          "section": "VII.6. Tổng kết thực nghiệm",
+          "chunk_id": "[Reading]-RAG-System_sec_222_chunk_222",
+          "rerank_score": 0.9578
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 100,
+          "section": "Kết quả thực nghiệm với Decompostion",
+          "chunk_id": "[Reading]-RAG-System_sec_215_chunk_215",
+          "rerank_score": 0.9457
+        }
+      ],
+      "image_urls_count": 2,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_052.png",
+        "/images/[Reading]-RAG-System/fig_048.png"
+      ],
+      "latency_ms": 103112.19
+    },
+    {
+      "id": 51,
+      "query": "HyDE đã tác động thế nào đến Faithfulness, Answer Relevancy và Context Recall so với baseline?",
+      "expected_answer": "Faithfulness tăng lên 0.81 (+0.08), Answer Relevancy giảm xuống 0.50 (-0.03), Context Recall giảm xuống 0.63 (-0.04).",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, chiến lược HyDE (Hypothetical Document Embedding) đã tác động đến các chỉ số RAGAS so với baseline như sau:\n\n* **Faithfulness (Tính trung thực):** Chỉ số này được cải thiện, tăng 0.08 điểm và đạt mức 0.81 [SOURCE_1], [SOURCE_3]. Nguyên nhân là do việc tìm kiếm dựa trên văn bản giả định giúp mô hình nắm bắt tốt hơn các thuật ngữ chuyên ngành, tạo tiền đề ngữ cảnh tốt cho quá trình sinh câu trả lời [SOURCE_1].\n* **Answer Relevancy (Độ liên quan của câu trả lời):** Chỉ số này bị sụt giảm nhẹ 0.03 điểm xuống còn 0.50 [SOURCE_1], [SOURCE_3].\n* **Context Recall (Độ bao phủ ngữ cảnh):** Chỉ số này cũng giảm xuống mức 0.63, tương ứng với mức giảm 0.04 điểm so với baseline [SOURCE_1], [SOURCE_3]. \n\nNguyên nhân của sự sụt giảm ở các chỉ số Answer Relevancy và Context Recall là do HyDE dựa vào khả năng sáng tạo của LLM để viết câu trả lời giả định; nếu đoạn văn này chứa thông tin sai lệch, nó sẽ dẫn dắt bộ truy xuất tìm kiếm đi sai hướng và làm loãng độ chính xác của ngữ cảnh thực tế trong cơ sở dữ liệu [SOURCE_1].",
+      "similarity_score": 0.6744,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 97,
+          "section": "Kết quả thực nghiệm với HyDE",
+          "chunk_id": "[Reading]-RAG-System_sec_212_chunk_212",
+          "rerank_score": 0.9984
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 107,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_93_chunk_93",
+          "rerank_score": 0.9916
+        }
+      ],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_047.png"
+      ],
+      "latency_ms": 126720.87
+    },
+    {
+      "id": 52,
+      "query": "Query Decomposition đạt kết quả gì và đánh đổi ở metric retrieval nào?",
+      "expected_answer": "Decomposition đạt Faithfulness 0.93, Answer Relevancy 0.65, Context Precision 0.68 và Context Recall 0.69. Đánh đổi chính là Context Precision giảm.",
+      "generated_answer": "Chiến lược Query Decomposition đạt được các kết quả và có sự đánh đổi như sau:\n\n* **Kết quả đạt được (về chất lượng sinh văn bản):**\n * **Độ trung thực (Faithfulness):** Đạt kết quả cao nhất với điểm số 0.93, tăng 0.20 điểm so với baseline [SOURCE_1, SOURCE_2]. Việc chia nhỏ câu hỏi giúp mô hình tập trung vào các mảnh thông tin xác thực một cách tối ưu [SOURCE_1, SOURCE_2].\n * **Độ liên quan câu trả lời (Answer Relevancy):** Tiếp tục dẫn đầu với mức tăng 0.12 điểm so với baseline [SOURCE_1].\n\n* **Sự đánh đổi ở metric retrieval (hiệu năng truy xuất):**\n * **Độ chính xác ngữ cảnh (Context Precision):** Chiến lược Decomposition làm giảm chỉ số này 0.13 điểm [SOURCE_4].",
+      "similarity_score": 0.7792,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 107,
+          "section": "VII.6.1. Đánh giá về chất lượng sinh văn bản",
+          "chunk_id": "[Reading]-RAG-System_sec_223_chunk_223",
+          "rerank_score": 0.8667
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 107,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_94_chunk_94",
+          "rerank_score": 0.7523
+        }
+      ],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_052.png"
+      ],
+      "latency_ms": 183724.43
+    },
+    {
+      "id": 53,
+      "query": "Cross-Encoder trong thực nghiệm cải thiện những metric nào so với baseline?",
+      "expected_answer": "Cross-Encoder đạt Faithfulness 0.76, Answer Relevancy 0.61, Context Precision 0.82, Context Recall 0.71; Answer Relevancy tăng 0.08 và Context Recall tăng 0.04.",
+      "generated_answer": "Dựa trên các tài liệu được cung cấp, kỹ thuật Cross-Encoder giúp cải thiện các chỉ số (metrics) sau so với mô hình baseline:\n\n* **Độ liên quan câu trả lời (Answer Relevancy):** Tăng 0.08 điểm [SOURCE_1], [SOURCE_2].\n* **Độ trung thực (Faithfulness):** Tăng lên mức 0.76 [",
+      "similarity_score": 0.7991,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 107,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_94_chunk_94",
+          "rerank_score": 0.9872
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 104,
+          "section": "4.4 Xây dựng luồng xử lý cho RAG",
+          "chunk_id": "[Reading]-RAG-System_sec_219_chunk_219",
+          "rerank_score": 0.9793
+        }
+      ],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_049.png"
+      ],
+      "latency_ms": 120200.02
+    },
+    {
+      "id": 54,
+      "query": "Vì sao MMR làm giảm Context Recall trong thực nghiệm này?",
+      "expected_answer": "MMR phạt tài liệu có nội dung tương đồng để tăng đa dạng; trong tài liệu học thuật, các đoạn gần nghĩa có thể chứa chi tiết bổ trợ quan trọng nên bị loại quá mức, làm Context Recall giảm xuống 0.60.",
+      "generated_answer": "MMR làm giảm Context Recall vì thuật toán này thực hiện trừng phạt các tài liệu có nội dung tương đồng nhằm mục đích tránh sự lặp lại [SOURCE_1], [SOURCE_2]. Trong các tài liệu học thuật chuyên sâu, nhiều chi tiết quan trọng có thể nằm trong các đoạn văn có ngữ nghĩa gần giống nhau [SOURCE_1], [SOURCE_2]. Việc ưu tiên sự đa dạng quá mức một cách vô tình sẽ loại bỏ các thông tin bổ trợ cần thiết, khiến mô hình bị thiếu dữ liệu để có thể trả lời đầy đủ ý [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.8543,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 107,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_93_chunk_93",
+          "rerank_score": 0.9926
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 106,
+          "section": "Kết quả thực nghiệm với MMR",
+          "chunk_id": "[Reading]-RAG-System_sec_221_chunk_221",
+          "rerank_score": 0.9879
+        }
+      ],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_051.png"
+      ],
+      "latency_ms": 103397.56
+    },
+    {
+      "id": 55,
+      "query": "Tài liệu cho biết ChromaDB dùng thuật toán mã hóa dữ liệu (encryption) nào khi lưu vector?",
+      "expected_answer": "Tài liệu không cung cấp thông tin về thuật toán mã hóa dữ liệu (encryption) mà ChromaDB sử dụng khi lưu vector.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
+      "similarity_score": 0.5458,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_017.png"
+      ],
+      "latency_ms": 86915.35
+    },
+    {
+      "id": 56,
+      "query": "Ragas trong tài liệu có metric riêng để chấm độ trễ phản hồi (latency) không, và công thức là gì?",
+      "expected_answer": "Tài liệu không cung cấp metric Ragas riêng cho latency hoặc công thức chấm latency; tài liệu chỉ sử dụng bốn metric Faithfulness, Answer Relevancy, Context Precision và Context Recall.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
+      "similarity_score": 0.485,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 116327.84
+    },
+    {
+      "id": 57,
+      "query": "Breakpoint threshold nào là tối ưu cho Semantic Chunking trên mọi loại dữ liệu?",
+      "expected_answer": "Tài liệu không đưa ra một breakpoint threshold tối ưu cho mọi loại dữ liệu; chỉ mô tả cơ chế dùng ngưỡng và cấu hình trong thực nghiệm.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này. Tài liệu chỉ đề cập đến giá trị mặc định của tham số `SEMANTIC_BREAKPOINT_THRESHOLD` là 0.5 [SOURCE_1, SOURCE_3] hoặc việc thay đổi nó lên 0.95 trong câu hỏi trắc nghiệm [SOURCE_2], chứ không khẳng định một mức ngưỡng cụ thể nào là \"tối ưu cho mọi loại dữ liệu\" (ngược lại, tài liệu còn lưu ý rằng cần phải tinh chỉnh kỹ lưỡng ngưỡng threshold này) [SOURCE_4, SOURCE_5].",
+      "similarity_score": 0.6617,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 110,
+          "section": "VIII. Câu hỏi trắc nghiệm",
+          "chunk_id": "[Reading]-RAG-System_sec_228_chunk_228",
+          "rerank_score": 0.9366
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 248621.0
+    },
+    {
+      "id": 58,
+      "query": "Nếu tăng k thì kết quả RAG có tốt hơn không?",
+      "expected_answer": "Câu hỏi chưa đủ rõ vì tài liệu dùng “k” ở nhiều ngữ cảnh, như Top-K retrieval và hằng số k trong RRF. Cần làm rõ tham số nào trước khi kết luận.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
+      "similarity_score": 0.4533,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_049.png"
+      ],
+      "latency_ms": 100761.53
+    },
+    {
+      "id": 59,
+      "query": "Tài liệu quy định SLA thời gian phản hồi tối đa của chatbot RAG là bao nhiêu giây?",
+      "expected_answer": "Tài liệu không cung cấp SLA thời gian phản hồi tối đa của chatbot RAG.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
+      "similarity_score": 0.5409,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 70690.12
+    },
+    {
+      "id": 60,
+      "query": "Theo tài liệu, phương pháp nào luôn tốt nhất cho mọi hệ thống RAG: Semantic Chunking, Hybrid+RRF hay Decomposition?",
+      "expected_answer": "Tài liệu không khẳng định một phương pháp luôn tốt nhất cho mọi hệ thống RAG. Kết quả chỉ phản ánh chuỗi thực nghiệm cụ thể và mỗi kỹ thuật có trade-off khác nhau.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, không có phương pháp nào được khẳng định là \"luôn tốt nhất cho mọi hệ thống RAG\". Thay vào đó, tài liệu đưa ra các lựa chọn dựa trên mục tiêu tối ưu hóa cụ thể của hệ thống:\n\n* **Hybrid Search kết hợp RRF:** Là giải pháp cân bằng hiệu năng toàn diện nhất [SOURCE_1], [SOURCE_2]. Kỹ thuật này cho thấy hiệu quả vượt trội trong việc tìm kiếm đầy đủ thông tin (Context Recall) với mức tăng 0.13 điểm [SOURCE_2].\n* **Decomposition:** Là lựa chọn hàng đầu cho độ chính xác tuyệt đối, mặc dù chi phí tính toán cao hơn [SOURCE_1], [SOURCE_2]. Phương pháp này đạt kết quả cao nhất về độ trung thực (Faithfulness) với điểm số 0.93 (tăng 0.20 điểm so với baseline) [SOURCE_3], [SOURCE_4] và dẫn đầu",
+      "similarity_score": 0.7177,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 4,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 108,
+          "section": "VII.6.3. Kết luận chung",
+          "chunk_id": "[Reading]-RAG-System_sec_225_chunk_225",
+          "rerank_score": 0.9893
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 108,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_95_chunk_95",
+          "rerank_score": 0.9865
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 107,
+          "section": "Overview",
+          "chunk_id": "[Reading]-RAG-System_sec_94_chunk_94",
+          "rerank_score": 0.9835
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "[Reading]-RAG-System.pdf",
+          "page": 107,
+          "section": "VII.6.1. Đánh giá về chất lượng sinh văn bản",
+          "chunk_id": "[Reading]-RAG-System_sec_223_chunk_223",
+          "rerank_score": 0.976
+        }
+      ],
+      "image_urls_count": 1,
+      "image_urls": [
+        "/images/[Reading]-RAG-System/fig_052.png"
+      ],
+      "latency_ms": 181027.92
     }
   ]
 }
