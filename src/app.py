@@ -7,19 +7,25 @@ import time
 from pathlib import Path
 from typing import Any
 
-import torch
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 
 from src.data.pdf_loader import convert_pdfs
 from src.data.image_captioner import caption_elements
 from src.data.chunker_optimized import ChunkConfig, process_chunking
+from src.rag.device_utils import (
+    get_device_name,
+    is_cuda_available,
+    is_xpu_available,
+    resolve_device,
+)
 from src.rag.indexer import build_index
 from src.rag.retriever import load_vector_db
 from src.rag.rag_pipeline import answer_query
-
+load_dotenv()
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW_DIR = ROOT / "data" / "raw"
@@ -34,6 +40,31 @@ VECTOR_DIR = ROOT / "data" / "vectorstore" / "chroma"
 
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "BAAI/bge-m3")
 COLLECTION_NAME = "rag_documents"
+
+
+def accelerator_status() -> dict[str, Any]:
+    requested_device = os.getenv("INDEX_DEVICE", "auto")
+    try:
+        index_device = resolve_device(requested_device)
+        device_name = get_device_name(index_device)
+        device_error = None
+    except Exception as exc:
+        index_device = resolve_device("auto")
+        device_name = get_device_name(index_device)
+        device_error = f"{type(exc).__name__}: {exc}"
+
+    status = {
+        "xpu_available": is_xpu_available(),
+        "cuda_available": is_cuda_available(),
+        "index_device": index_device,
+        "device_name": device_name,
+        # Keep this key for the current frontend status badge.
+        "device": index_device,
+    }
+    if device_error:
+        status["index_device_error"] = device_error
+    return status
+
 
 app = FastAPI(
     title="Vietnamese PDF RAG Pipeline Demo",
@@ -116,7 +147,7 @@ def vector_count() -> int:
 def health():
     return {
         "status": "ok",
-        "device": "cuda" if torch.cuda.is_available() else "cpu",
+        **accelerator_status(),
     }
 
 
@@ -144,13 +175,14 @@ def list_files():
 
 @app.get("/api/pipeline/status")
 def pipeline_status():
+    accelerator = accelerator_status()
     return {
         "pdf_documents": count_jsonl(PDF_EXTRACT),
         "elements": count_jsonl(ELEMENTS_FILE),
         "chunks": count_jsonl(CHUNKED),
         "vectors": vector_count(),
         "embedding_model": EMBEDDING_MODEL,
-        "device": "cuda" if torch.cuda.is_available() else "cpu",
+        **accelerator,
         "paths": {
             "raw": str(RAW_DIR),
             "elements": str(ELEMENTS_FILE),
@@ -273,7 +305,7 @@ def run_embed(request: EmbedRequest):
         "details": {
             "vectors": vectors,
             "model": EMBEDDING_MODEL,
-            "device": "cuda" if torch.cuda.is_available() else "cpu",
+            **accelerator_status(),
             "database": str(VECTOR_DIR),
         },
     }
