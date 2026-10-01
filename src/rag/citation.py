@@ -70,6 +70,9 @@ def validate_and_resolve_citations(
             if "data/images/" in clean_p:
                 rel_url = "/images/" + clean_p.split("data/images/")[1]
                 image_urls.append(rel_url)
+            elif "data/processed/documents/" in clean_p:
+                rel_url = "/corpus-assets/" + clean_p.split("data/processed/documents/")[1]
+                image_urls.append(rel_url)
             elif clean_p.startswith("/images/"):
                 image_urls.append(clean_p)
 

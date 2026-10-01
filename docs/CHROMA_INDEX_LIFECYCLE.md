@@ -17,15 +17,10 @@ globally unique within the `rag_documents` collection.
 
 ## Existing production database
 
-`data/vectorstore/chroma` was created before stable-ID indexing was introduced.
-It is not migrated, reset, deleted, or rebuilt as part of Phase 2.
-
-After Phase 2 is reviewed and validated, this existing database will require
-exactly one explicit clean full rebuild to move all records to stable IDs. Until
-that migration is intentionally scheduled, keep using the existing database for
-retrieval only: do not run either incremental embedding or the full rebuild
-option against it. Incremental embedding would mix new stable IDs with its old
-random IDs. The one-time migration belongs to a later phase.
+The production database has completed the stable-ID rebuild and currently has
+5006 vectors for 5006 unique chunk IDs. Phase 3 bootstraps document ownership
+metadata around those vectors without re-embedding them. See
+`docs/INCREMENTAL_CORPUS.md` for the manifest and incremental workflow.
 
 ## Adding or updating chunks after migration
 

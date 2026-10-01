@@ -52,7 +52,12 @@ def create_converter():
     )
 
 
-def extract_elements_from_docling(doc, pdf_stem: str, images_dir: Path) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+def extract_elements_from_docling(
+    doc,
+    pdf_stem: str,
+    images_dir: Path,
+    image_path_prefix: str | None = None,
+) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     """
     Duyệt toàn bộ các phần tử (elements) do Docling bóc tách,
     trích xuất và lưu các file ảnh PNG thực tế vào data/images/<document_id>/.
@@ -98,7 +103,8 @@ def extract_elements_from_docling(doc, pdf_stem: str, images_dir: Path) -> tuple
             image_id = f"{pdf_stem}_fig_{fig_count:03d}"
             filename = f"fig_{fig_count:03d}.png"
             abs_image_path = images_dir / filename
-            rel_image_path = f"data/images/{pdf_stem}/{filename}"
+            relative_prefix = image_path_prefix or f"data/images/{pdf_stem}"
+            rel_image_path = f"{relative_prefix.rstrip('/')}/{filename}"
 
             width, height = 0, 0
             saved = False
@@ -174,7 +180,10 @@ def extract_elements_from_docling(doc, pdf_stem: str, images_dir: Path) -> tuple
 def convert_pdfs(
     input_path: Path,
     output_path: Path,
-    elements_output_path: Path = None
+    elements_output_path: Path = None,
+    *,
+    images_dir: Path | None = None,
+    image_path_prefix: str | None = None,
 ):
     if input_path.is_file():
         pdf_files = [input_path]
@@ -201,11 +210,29 @@ def convert_pdfs(
             result = converter.convert(str(pdf_path))
             document = result.document
 
-            # Thư mục lưu ảnh: data/images/<document_id>/
-            images_dir = output_path.parent.parent / "images" / pdf_stem
+            # Default remains data/images/<document_id> for the legacy CLI.
+            document_images_dir = (
+                images_dir
+                if images_dir is not None and len(pdf_files) == 1
+                else (images_dir / pdf_stem if images_dir is not None else output_path.parent.parent / "images" / pdf_stem)
+            )
+            document_image_prefix = (
+                image_path_prefix
+                if image_path_prefix is not None and len(pdf_files) == 1
+                else (
+                    f"{image_path_prefix.rstrip('/')}/{pdf_stem}"
+                    if image_path_prefix is not None
+                    else None
+                )
+            )
 
             # 1. Trích xuất các elements chi tiết và lưu file PNG thực tế
-            elements, image_records = extract_elements_from_docling(document, pdf_stem, images_dir)
+            elements, image_records = extract_elements_from_docling(
+                document,
+                pdf_stem,
+                document_images_dir,
+                document_image_prefix,
+            )
             print(f"  ✓ Extracted {len(elements)} elements & {len(image_records)} physical PNG images")
 
             all_elements.extend(elements)

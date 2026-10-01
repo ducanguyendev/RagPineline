@@ -43,7 +43,7 @@ function App() {
   const [logs, setLogs] = useState([]);
   const [running, setRunning] = useState(false);
 
-  const [strategy, setStrategy] = useState("token");
+  const [strategy, setStrategy] = useState("structure_block_aware");
   const [targetTokens, setTargetTokens] = useState(600);
   const [overlap, setOverlap] = useState(100);
   const [fullRebuild, setFullRebuild] = useState(false);
@@ -58,6 +58,10 @@ function App() {
   const completedCount = useMemo(
     () => STAGES.filter((s) => stageState[s.id]?.status === "success").length,
     [stageState]
+  );
+  const selectedFileInfo = useMemo(
+    () => files.find((file) => file.name === selectedFile),
+    [files, selectedFile]
   );
 
   async function request(url, options) {
@@ -129,14 +133,16 @@ function App() {
   }
 
   async function runPipeline() {
-    if (!selectedFile) {
+    if (!selectedFile && !fullRebuild) {
       setError("Không có PDF trong data/raw.");
       return;
     }
 
     if (
       fullRebuild &&
-      !window.confirm("Full rebuild sẽ xóa toàn bộ Vector Database hiện tại.")
+      !window.confirm(
+        "Full rebuild sẽ xóa và xây dựng lại toàn bộ Vector Database từ tất cả tài liệu trong corpus, không chỉ tài liệu đang chọn."
+      )
     ) {
       return;
     }
@@ -154,48 +160,52 @@ function App() {
     }));
     setLogs([]);
 
-    const steps = [
-      {
-        id: "loading",
-        label: "Loading",
-        url: "/api/pipeline/load",
-        body: { file_name: selectedFile },
-      },
-      {
-        id: "chunking",
-        label: "Chunking",
-        url: "/api/pipeline/chunk",
-        body: {
-          strategy,
-          target_tokens: Number(targetTokens),
-          token_overlap: Number(overlap),
-        },
-      },
-      {
-        id: "embedding",
-        label: "Embedding",
-        url: "/api/pipeline/embed",
-        body: { reset_db: fullRebuild },
-      },
-    ];
-
     try {
-      for (const step of steps) {
-        markRunning(step.id);
-        pushLog(step.id, `Bắt đầu ${step.label}...`);
-        const data = await request(step.url, {
+      if (fullRebuild) {
+        markRunning("embedding");
+        pushLog("embedding", "Bắt đầu rebuild toàn bộ canonical corpus...");
+        const data = await request("/api/corpus/rebuild", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(step.body),
+          body: JSON.stringify({ confirm: true }),
         });
-        markSuccess(step.id, data);
+        markSuccess("embedding", data);
+        setFullRebuild(false);
+      } else {
+        markRunning("loading");
+        markRunning("chunking");
+        markRunning("embedding");
+        pushLog("corpus", `Kiểm tra tài liệu ${selectedFile}...`);
+        const data = await request("/api/corpus/index-document", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            file_name: selectedFile,
+            strategy,
+            target_tokens: Number(targetTokens),
+            token_overlap: Number(overlap),
+          }),
+        });
+        const timings = data.timings || {};
+        setStageState((prev) => ({
+          ...prev,
+          loading: {
+            status: "success",
+            duration_ms: Number(timings.loading || 0) + Number(timings.captioning || 0),
+          },
+          chunking: { status: "success", duration_ms: timings.chunking || 0 },
+          embedding: { status: "success", duration_ms: timings.embedding_indexing || 0 },
+        }));
+        pushLog(
+          "corpus",
+          `${data.message}. Chunks ${data.chunks_before} → ${data.chunks_after}; vectors ${data.vectors_before} → ${data.vectors_after}.`,
+          "success",
+          data.duration_ms
+        );
       }
-      pushLog("pipeline", "Offline pipeline hoàn tất. Có thể chạy Retrieval.", "success");
       await refresh();
     } catch (e) {
-      const active = steps.find((s) => stageState[s.id]?.status === "running");
-      if (active) markError(active.id, e.message);
-      else pushLog("pipeline", e.message, "error");
+      markError(fullRebuild ? "embedding" : "loading", e.message);
       setError(e.message);
     } finally {
       setRunning(false);
@@ -377,7 +387,7 @@ function App() {
             <div className="panel-heading">
               <div>
                 <p className="overline">01 — OFFLINE PIPELINE</p>
-                <h2>Build Vector Database</h2>
+                <h2>Incremental Document Corpus</h2>
               </div>
               <div className="progress-ring">{completedCount}/4</div>
             </div>
@@ -392,17 +402,24 @@ function App() {
                 {files.length === 0 && <option>Không có PDF trong data/raw</option>}
                 {files.map((file) => (
                   <option key={file.name} value={file.name}>
-                    {file.name} ({file.size_mb} MB)
+                    [{String(file.corpus_status || "new").toUpperCase()}] {file.name} ({file.size_mb} MB)
                   </option>
                 ))}
               </select>
               <ChevronDown size={16} />
             </div>
 
+            {selectedFileInfo && (
+              <div className={`document-status ${selectedFileInfo.corpus_status || "new"}`}>
+                Document status: {String(selectedFileInfo.corpus_status || "new").toUpperCase()}
+              </div>
+            )}
+
             <div className="form-row">
               <div>
                 <label>Chunk strategy</label>
                 <select value={strategy} onChange={(e) => setStrategy(e.target.value)}>
+                  <option value="structure_block_aware">Structure &amp; Block-Aware</option>
                   <option value="token">Token</option>
                   <option value="size">Size</option>
                   <option value="semantic">Semantic</option>
@@ -442,14 +459,18 @@ function App() {
               </label>
               {fullRebuild && (
                 <div className="rebuild-warning" role="alert">
-                  Full rebuild sẽ xóa toàn bộ Vector Database hiện tại.
+                  Full rebuild sẽ xóa và xây dựng lại toàn bộ Vector Database từ tất cả tài liệu trong corpus, không chỉ tài liệu đang chọn.
                 </div>
               )}
             </div>
 
             <button className="primary-btn" onClick={runPipeline} disabled={running || !selectedFile}>
               {running ? <LoaderCircle className="spin" size={18} /> : <Play size={18} />}
-              {running ? "Đang chạy pipeline..." : "Run Loading → Embedding"}
+              {running
+                ? "Đang xử lý corpus..."
+                : fullRebuild
+                  ? "Rebuild Entire Corpus"
+                  : "Index Selected Document"}
             </button>
 
             <div className="stats-row">
@@ -471,7 +492,7 @@ function App() {
             <div className="terminal">
               {logs.length === 0 ? (
                 <div className="terminal-empty">
-                  Chưa có log. Nhấn <strong>Run Loading → Embedding</strong>.
+                  Chưa có log. Nhấn <strong>Index Selected Document</strong>.
                 </div>
               ) : (
                 logs.map((log) => (
