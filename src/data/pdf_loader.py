@@ -16,15 +16,49 @@ import json
 import re
 import sys
 import unicodedata
+from contextlib import contextmanager
 from pathlib import Path
+from threading import Event, Thread
+from time import perf_counter
 from typing import Any, Dict, List
 
 from docling.document_converter import DocumentConverter, PdfFormatOption
 from docling.datamodel.base_models import InputFormat
 from docling.datamodel.pipeline_options import PdfPipelineOptions
+from tqdm import tqdm
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
+
+
+def format_elapsed(seconds: float) -> str:
+    """Format elapsed time as HH:MM:SS, including runs longer than a day."""
+    hours, remainder = divmod(int(seconds), 3600)
+    minutes, seconds = divmod(remainder, 60)
+    return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+
+
+@contextmanager
+def docling_heartbeat(pdf_name: str, interval: float = 10.0):
+    """Report elapsed time only; Docling does not expose per-PDF progress here."""
+    stop_event = Event()
+    started_at = perf_counter()
+
+    def report_elapsed():
+        while not stop_event.wait(interval):
+            tqdm.write(
+                f"⏳ Docling processing {pdf_name} | "
+                f"elapsed {format_elapsed(perf_counter() - started_at)}",
+                file=sys.stdout,
+            )
+
+    heartbeat = Thread(target=report_elapsed, name="docling-heartbeat", daemon=True)
+    heartbeat.start()
+    try:
+        yield started_at
+    finally:
+        stop_event.set()
+        heartbeat.join()
 
 
 def clean_text(text: str) -> str:
@@ -110,7 +144,7 @@ def extract_elements_from_docling(doc, pdf_stem: str, images_dir: Path) -> tuple
                     img.save(abs_image_path)
                     saved = True
                 except Exception as exc:
-                    print(f"! Failed to extract image {image_id}: {exc}")
+                    tqdm.write(f"! Failed to extract image {image_id}: {exc}", file=sys.stdout)
 
             image_info = {
                 "image_id": image_id,
@@ -186,6 +220,7 @@ def convert_pdfs(
     else:
         raise FileNotFoundError(f"Input path does not exist: {input_path}")
 
+    total_started_at = perf_counter()
     print(f"Found {len(pdf_files)} PDF file(s) to process.")
 
     all_elements: List[Dict[str, Any]] = []
@@ -194,47 +229,75 @@ def convert_pdfs(
 
     converter = create_converter()
 
-    for pdf_path in pdf_files:
-        print(f"\nProcessing: {pdf_path}")
-        pdf_stem = pdf_path.stem
-        try:
-            result = converter.convert(str(pdf_path))
-            document = result.document
+    total_pdfs = len(pdf_files)
+    successful_pdfs = 0
+    failed_pdfs = 0
+    with tqdm(total=total_pdfs, desc=f"PDF 0/{total_pdfs}", unit="pdf", dynamic_ncols=True, file=sys.stdout) as progress:
+        for pdf_index, pdf_path in enumerate(pdf_files, start=1):
+            pdf_started_at = perf_counter()
+            progress.set_postfix_str(f"Processing: {pdf_path.name}")
+            tqdm.write("\n" + "=" * 70, file=sys.stdout)
+            tqdm.write(f"[{pdf_index}/{total_pdfs}] Processing: {pdf_path.name}", file=sys.stdout)
+            tqdm.write("=" * 70, file=sys.stdout)
+            pdf_stem = pdf_path.stem
+            try:
+                with docling_heartbeat(pdf_path.name) as docling_started_at:
+                    result = converter.convert(str(pdf_path))
+                tqdm.write(
+                    f"✓ Docling completed in {(perf_counter() - docling_started_at) / 60:.2f} minutes",
+                    file=sys.stdout,
+                )
+                document = result.document
 
-            # Thư mục lưu ảnh: data/images/<document_id>/
-            images_dir = output_path.parent.parent / "images" / pdf_stem
+                # Thư mục lưu ảnh: data/images/<document_id>/
+                images_dir = output_path.parent.parent / "images" / pdf_stem
 
-            # 1. Trích xuất các elements chi tiết và lưu file PNG thực tế
-            elements, image_records = extract_elements_from_docling(document, pdf_stem, images_dir)
-            print(f"  ✓ Extracted {len(elements)} elements & {len(image_records)} physical PNG images")
+                # 1. Trích xuất các elements chi tiết và lưu file PNG thực tế
+                elements, image_records = extract_elements_from_docling(document, pdf_stem, images_dir)
+                tqdm.write(
+                    f"✓ Extracted {len(elements)} elements & {len(image_records)} physical PNG images",
+                    file=sys.stdout,
+                )
 
-            all_elements.extend(elements)
-            all_image_records.extend(image_records)
+                all_elements.extend(elements)
+                all_image_records.extend(image_records)
 
-            # 2. Gom nhóm theo trang cho file pdf_extract.jsonl
-            pages_dict: Dict[int, List[str]] = {}
-            for elem in elements:
-                p = elem["page"]
-                if p not in pages_dict:
-                    pages_dict[p] = []
-                if elem["text"]:
-                    pages_dict[p].append(elem["text"])
+                # 2. Gom nhóm theo trang cho file pdf_extract.jsonl
+                pages_dict: Dict[int, List[str]] = {}
+                for elem in elements:
+                    p = elem["page"]
+                    if p not in pages_dict:
+                        pages_dict[p] = []
+                    if elem["text"]:
+                        pages_dict[p].append(elem["text"])
 
-            for page_no in sorted(pages_dict.keys()):
-                page_text = "\n\n".join(pages_dict[page_no])
-                record = {
-                    "id": f"{pdf_stem}_page_{page_no}",
-                    "content": page_text,
-                    "metadata": {
-                        "source": pdf_path.name,
-                        "page": page_no,
-                        "title": pdf_stem,
-                        "file_type": "pdf"
+                for page_no in sorted(pages_dict.keys()):
+                    page_text = "\n\n".join(pages_dict[page_no])
+                    record = {
+                        "id": f"{pdf_stem}_page_{page_no}",
+                        "content": page_text,
+                        "metadata": {
+                            "source": pdf_path.name,
+                            "page": page_no,
+                            "title": pdf_stem,
+                            "file_type": "pdf"
+                        }
                     }
-                }
-                all_page_records.append(record)
-        except Exception as exc:
-            print(f"❌ Failed to process {pdf_path.name}: {exc}")
+                    all_page_records.append(record)
+            except Exception as exc:
+                failed_pdfs += 1
+                tqdm.write(f"❌ Failed [{pdf_index}/{total_pdfs}]: {pdf_path.name}", file=sys.stdout)
+                tqdm.write(f"Reason: {exc}", file=sys.stdout)
+            else:
+                successful_pdfs += 1
+                tqdm.write(f"✓ Completed [{pdf_index}/{total_pdfs}]", file=sys.stdout)
+
+            tqdm.write(f"Elapsed for PDF : {format_elapsed(perf_counter() - pdf_started_at)}", file=sys.stdout)
+            tqdm.write(f"Total elapsed   : {format_elapsed(perf_counter() - total_started_at)}", file=sys.stdout)
+            # Advance only after this PDF has finished processing (success or failure).
+            progress.set_description(f"PDF {successful_pdfs + failed_pdfs}/{total_pdfs}", refresh=False)
+            progress.set_postfix_str(f"Successful: {successful_pdfs}, Failed: {failed_pdfs}", refresh=False)
+            progress.update(1)
 
     if elements_output_path is None:
         elements_output_path = output_path.parent / "elements.jsonl"
@@ -265,6 +328,9 @@ def convert_pdfs(
     print("=" * 60)
     print("PDF PARSE COMPLETE")
     print(f"Total PDFs processed: {len(pdf_files)}")
+    print(f"Successful PDFs : {successful_pdfs}")
+    print(f"Failed PDFs     : {failed_pdfs}")
+    print(f"Total elapsed   : {format_elapsed(perf_counter() - total_started_at)}")
     print(f"Elements: {elements_output_path}")
     print(f"PDF Extract: {output_path}")
     print("=" * 60)
