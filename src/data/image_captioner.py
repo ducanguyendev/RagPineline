@@ -60,7 +60,9 @@ def generate_caption(
 def caption_elements(
     elements_path: Path,
     output_path: Path = None,
-    model_name: str = "Salesforce/blip-image-captioning-base"
+    model_name: str = "Salesforce/blip-image-captioning-base",
+    *,
+    image_root_override: Path | None = None,
 ):
     if not elements_path.exists():
         raise FileNotFoundError(f"Elements file not found: {elements_path}")
@@ -92,7 +94,10 @@ def caption_elements(
     for idx, elem in image_elements:
         rel_path = elem.get("image_path", "")
         image_id = elem.get("image_id", f"img_{idx}")
-        abs_path = ROOT / rel_path if not Path(rel_path).is_absolute() else Path(rel_path)
+        if image_root_override is not None:
+            abs_path = image_root_override / Path(rel_path).name
+        else:
+            abs_path = ROOT / rel_path if not Path(rel_path).is_absolute() else Path(rel_path)
 
         width = elem.get("width", 0)
         height = elem.get("height", 0)

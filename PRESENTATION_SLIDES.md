@@ -7,7 +7,7 @@ Tài liệu này cung cấp kịch bản chi tiết **9 Slide thuyết trình b�
 
 ## 🎨 SLIDE 1: TRANG TIÊU ĐỀ (Title Slide)
 
-* **Tiêu đề chính**: HỆ THỐNG HOỎI ĐÁP ĐA PHƯƠNG THỨC TÀI LIỆU PDF TIẾNG VIỆT
+* **Tiêu đề chính**: HỆ THỐNG HỎI ĐÁP ĐA PHƯƠNG THỨC TÀI LIỆU PDF TIẾNG VIỆT
 * **Tiêu đề phụ**: Triển khai Kiến trúc Multimodal RAG, Hybrid Search (BM25 + Vector) & Chống Ảo giác
 * **Thông tin dự án**:
   * Dự án: `vi-coze` (Vietnamese PDF RAG Pipeline)

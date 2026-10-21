@@ -1,31 +1,31 @@
 {
-  "timestamp": "2026-10-08 16:02:45",
+  "timestamp": "2026-10-21 11:17:34",
   "total_test_cases": 15,
   "rerank_threshold": 0.05,
   "overall_metrics": {
     "avg_context_recall": 0.0853,
     "avg_context_precision": 0.0667,
-    "avg_latency_ms": 66091.47,
-    "total_duration_s": 1016.29
+    "avg_latency_ms": 40787.04,
+    "total_duration_s": 631.22
   },
   "by_category": {
     "text": {
       "count": 7,
       "avg_context_recall": 0.1828,
       "avg_context_precision": 0.1429,
-      "avg_latency_ms": 49230.27
+      "avg_latency_ms": 37007.34
     },
     "table": {
       "count": 5,
       "avg_context_recall": 0.0,
       "avg_context_precision": 0.0,
-      "avg_latency_ms": 78832.88
+      "avg_latency_ms": 42670.15
     },
     "image": {
       "count": 3,
       "avg_context_recall": 0.0,
       "avg_context_precision": 0.0,
-      "avg_latency_ms": 84198.57
+      "avg_latency_ms": 46467.83
     }
   },
   "details": [
@@ -41,7 +41,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 60656.22
+      "latency_ms": 42113.41
     },
     {
       "id": 2,
@@ -61,7 +61,7 @@
       ],
       "context_recall": 0.7325,
       "context_precision": 1.0,
-      "latency_ms": 46255.93
+      "latency_ms": 25330.99
     },
     {
       "id": 3,
@@ -75,7 +75,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 48612.29
+      "latency_ms": 30256.26
     },
     {
       "id": 4,
@@ -89,7 +89,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 36128.93
+      "latency_ms": 25856.42
     },
     {
       "id": 5,
@@ -109,7 +109,7 @@
       ],
       "context_recall": 0.547,
       "context_precision": 0.0,
-      "latency_ms": 43135.45
+      "latency_ms": 39343.79
     },
     {
       "id": 6,
@@ -123,7 +123,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 65828.92
+      "latency_ms": 56558.25
     },
     {
       "id": 7,
@@ -137,7 +137,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 43994.14
+      "latency_ms": 39592.29
     },
     {
       "id": 8,
@@ -151,7 +151,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 107139.08
+      "latency_ms": 77841.5
     },
     {
       "id": 9,
@@ -165,7 +165,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 87722.49
+      "latency_ms": 44227.68
     },
     {
       "id": 10,
@@ -179,7 +179,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 53768.94
+      "latency_ms": 29682.72
     },
     {
       "id": 11,
@@ -193,7 +193,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 68096.7
+      "latency_ms": 31177.47
     },
     {
       "id": 12,
@@ -207,7 +207,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 77437.18
+      "latency_ms": 30421.37
     },
     {
       "id": 13,
@@ -221,7 +221,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 69977.22
+      "latency_ms": 38085.14
     },
     {
       "id": 14,
@@ -235,7 +235,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 78017.8
+      "latency_ms": 41935.21
     },
     {
       "id": 15,
@@ -249,7 +249,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 104600.69
+      "latency_ms": 59383.14
     }
   ]
 }
