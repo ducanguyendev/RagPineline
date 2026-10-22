@@ -12,6 +12,9 @@ os.environ["TORCH_COMPILE_DISABLE"] = "1"
 os.environ["TORCHDYNAMO_DISABLE"] = "1"
 
 import argparse
+import importlib.metadata
+import importlib.util
+import inspect
 import json
 import logging
 import re
@@ -30,6 +33,7 @@ from docling.datamodel.base_models import InputFormat
 from docling.datamodel import pipeline_options as pipeline_options_module
 from docling.datamodel.pipeline_options import PdfPipelineOptions
 from tqdm import tqdm
+from src.data.pdf_errors import PdfInputError, PdfRuntimeError
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -37,8 +41,37 @@ if hasattr(sys.stdout, "reconfigure"):
 LOGGER = logging.getLogger(__name__)
 
 
-class PdfProcessingError(RuntimeError):
-    """A PDF failed during conversion or yielded no usable elements."""
+def _docling_version() -> str:
+    try:
+        return importlib.metadata.version("docling")
+    except importlib.metadata.PackageNotFoundError:
+        return "unknown"
+
+
+def _accelerator_options():
+    try:
+        from docling.datamodel.accelerator_options import (
+            AcceleratorDevice,
+            AcceleratorOptions,
+        )
+    except ImportError as exc:
+        raise RuntimeError(
+            f"Docling {_docling_version()} does not expose accelerator options."
+        ) from exc
+    return AcceleratorOptions(
+        num_threads=8,
+        device=AcceleratorDevice.CPU,
+    )
+
+
+def _resolve_tesseract() -> str | None:
+    executable = shutil.which("tesseract")
+    if executable:
+        return executable
+    common_windows_path = Path(r"C:\Program Files\Tesseract-OCR\tesseract.exe")
+    if common_windows_path.is_file():
+        return str(common_windows_path)
+    return None
 
 
 def format_elapsed(seconds: float) -> str:
@@ -83,7 +116,7 @@ def clean_text(text: str) -> str:
 
 
 def _tesseract_languages() -> set[str]:
-    executable = shutil.which("tesseract")
+    executable = _resolve_tesseract()
     if not executable:
         return set()
     try:
@@ -105,23 +138,62 @@ def _tesseract_languages() -> set[str]:
 
 def create_converter(*, enable_ocr: bool = True):
     pipeline_options = PdfPipelineOptions()
-    ocr_options_cls = getattr(pipeline_options_module, "TesseractOcrOptions", None)
-    if enable_ocr and ocr_options_cls is None:
-        raise RuntimeError(
-            "OCR is required for PDF fallback, but this Docling version does not "
-            "provide TesseractOcrOptions."
-        )
+    try:
+        pipeline_options.accelerator_options = _accelerator_options()
+    except Exception as exc:
+        LOGGER.exception("Unable to configure Docling CPU accelerator")
+        raise PdfRuntimeError(
+            f"Docling {_docling_version()} could not be configured for CPU conversion. "
+            "See backend logs for details."
+        ) from exc
     if enable_ocr:
+        cli_options_cls = getattr(
+            pipeline_options_module, "TesseractCliOcrOptions", None
+        )
+        binding_options_cls = getattr(
+            pipeline_options_module, "TesseractOcrOptions", None
+        )
+        ocr_options_cls = cli_options_cls
+        if ocr_options_cls is None:
+            binding_available = importlib.util.find_spec("tesserocr") is not None
+            if binding_available:
+                ocr_options_cls = binding_options_cls
+            else:
+                raise PdfInputError(
+                    f"OCR failed for this PDF: Docling {_docling_version()} has no "
+                    "Tesseract CLI backend and the tesserocr Python binding is unavailable."
+                )
         languages = _tesseract_languages()
         if not {"vie", "eng"}.issubset(languages):
-            raise RuntimeError(
+            raise PdfInputError(
                 "OCR is required for this PDF but Tesseract Vietnamese language "
                 "data is unavailable (required languages: vie, eng)."
             )
+        option_kwargs = {}
         try:
-            pipeline_options.ocr_options = ocr_options_cls(lang=["vie", "eng"])
-        except TypeError:
-            pipeline_options.ocr_options = ocr_options_cls(languages=["vie", "eng"])
+            parameters = inspect.signature(ocr_options_cls).parameters
+        except (TypeError, ValueError):
+            parameters = {}
+        if cli_options_cls is not None and "tesseract_cmd" in parameters:
+            option_kwargs["tesseract_cmd"] = _resolve_tesseract() or "tesseract"
+        if "lang" in parameters or not parameters:
+            option_kwargs["lang"] = ["vie", "eng"]
+        else:
+            option_kwargs["languages"] = ["vie", "eng"]
+        try:
+            pipeline_options.ocr_options = ocr_options_cls(**option_kwargs)
+        except Exception as exc:
+            LOGGER.exception("Unable to configure Docling Tesseract OCR backend")
+            raise PdfRuntimeError(
+                f"Docling {_docling_version()} could not configure Tesseract OCR. "
+                "See backend logs for details."
+            ) from exc
+        LOGGER.info(
+            "Docling %s OCR backend=%s executable=%s languages=vie,eng",
+            _docling_version(),
+            "tesseract-cli" if cli_options_cls is not None else "tesserocr-binding",
+            _resolve_tesseract(),
+        )
     pipeline_options.do_ocr = enable_ocr
     pipeline_options.do_table_structure = True
     pipeline_options.generate_picture_images = True
@@ -132,6 +204,14 @@ def create_converter(*, enable_ocr: bool = True):
             InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)
         }
     )
+
+
+def _ocr_backend_name() -> str:
+    if getattr(pipeline_options_module, "TesseractCliOcrOptions", None) is not None:
+        return "tesseract-cli"
+    if getattr(pipeline_options_module, "TesseractOcrOptions", None) is not None:
+        return "tesserocr-binding"
+    return "unavailable"
 
 
 def _document_diagnostics(document, elements: list[dict[str, Any]]) -> dict[str, int]:
@@ -326,9 +406,15 @@ def convert_pdfs(
             tqdm.write(f"[{pdf_index}/{total_pdfs}] Processing: {pdf_path.name}", file=sys.stdout)
             tqdm.write("=" * 70, file=sys.stdout)
             pdf_stem = pdf_path.stem
+            ocr_used = False
             try:
                 with docling_heartbeat(pdf_path.name) as docling_started_at:
                     result = native_converter.convert(str(pdf_path))
+                LOGGER.info(
+                    "PDF: %s | Docling: %s | Docling device: cpu | Native parse: success",
+                    pdf_path.name,
+                    _docling_version(),
+                )
                 tqdm.write(
                     f"✓ Docling completed in {(perf_counter() - docling_started_at) / 60:.2f} minutes",
                     file=sys.stdout,
@@ -362,7 +448,6 @@ def convert_pdfs(
                     document_images_dir,
                     document_image_prefix,
                 )
-                ocr_used = False
                 if _needs_ocr(document, elements):
                     tqdm.write(
                         f"Native text missing on one or more pages in {pdf_path.name}; "
@@ -370,7 +455,13 @@ def convert_pdfs(
                         file=sys.stdout,
                     )
                     if converter is None:
-                        converter = create_converter(enable_ocr=True)
+                        try:
+                            converter = create_converter(enable_ocr=True)
+                        except PdfInputError as exc:
+                            raise PdfInputError(
+                                f"OCR failed for {pdf_path.name}: {exc}"
+                            ) from exc
+                    ocr_used = True
                     with docling_heartbeat(pdf_path.name + " (OCR)"):
                         result = converter.convert(str(pdf_path))
                     document = result.document
@@ -380,29 +471,24 @@ def convert_pdfs(
                         document_images_dir,
                         document_image_prefix,
                     )
-                    ocr_used = True
                 diagnostics = _document_diagnostics(document, elements)
-                tqdm.write(
-                    "PDF diagnostics: "
-                    f"pages={diagnostics['pages']}, elements={diagnostics['elements']}, "
-                    f"text_elements={diagnostics['text_elements']}, "
-                    f"images={diagnostics['images']}, tables={diagnostics['tables']}, "
-                    f"ocr_enabled={ocr_used}",
-                    file=sys.stdout,
+                diagnostic_line = (
+                    f"PDF: {pdf_path.name} | Docling device: cpu | "
+                    f"Native parse: success | OCR fallback: {str(ocr_used).lower()} | "
+                    f"OCR engine: {_ocr_backend_name() if ocr_used else 'none'} | "
+                    f"OCR languages: {'vie, eng' if ocr_used else 'none'} | "
+                    f"Pages: {diagnostics['pages']} | Elements: {diagnostics['elements']} | "
+                    f"Text elements: {diagnostics['text_elements']} | "
+                    f"Tables: {diagnostics['tables']} | Images: {diagnostics['images']}"
                 )
+                tqdm.write(diagnostic_line, file=sys.stdout)
                 LOGGER.info(
-                    "PDF %s diagnostics: pages=%d elements=%d text_elements=%d "
-                    "images=%d tables=%d ocr_enabled=%s",
-                    pdf_path.name,
-                    diagnostics["pages"],
-                    diagnostics["elements"],
-                    diagnostics["text_elements"],
-                    diagnostics["images"],
-                    diagnostics["tables"],
-                    ocr_used,
+                    "%s | Docling version: %s",
+                    diagnostic_line,
+                    _docling_version(),
                 )
                 if not elements:
-                    raise PdfProcessingError(
+                    raise PdfInputError(
                         f"Docling produced zero elements for {pdf_path.name} "
                         f"(pages={diagnostics['pages']}, elements=0, "
                         f"text_elements=0, images=0, tables=0, "
@@ -442,9 +528,30 @@ def convert_pdfs(
                 failed_pdfs += 1
                 tqdm.write(f"❌ Failed [{pdf_index}/{total_pdfs}]: {pdf_path.name}", file=sys.stdout)
                 tqdm.write(f"Reason: {exc}", file=sys.stdout)
-                raise PdfProcessingError(
-                    f"Docling failed to parse {pdf_path.name}: "
-                    f"{type(exc).__name__}: {exc}"
+                if isinstance(exc, (PdfInputError, PdfRuntimeError)):
+                    raise
+                LOGGER.exception(
+                    "PDF processing failed: file=%s docling=%s device=cpu "
+                    "native_parse=failure ocr_fallback=%s",
+                    pdf_path.name,
+                    _docling_version(),
+                    ocr_used,
+                )
+                error_text = str(exc).lower()
+                if "fp64" in error_text or "not supported on the device" in error_text:
+                    raise PdfRuntimeError(
+                        "PDF conversion failed while running Docling. Docling was "
+                        "configured for CPU but conversion still failed. "
+                        "See backend logs for details."
+                    ) from exc
+                if ocr_used:
+                    raise PdfRuntimeError(
+                        f"OCR failed for {pdf_path.name}: Tesseract CLI conversion "
+                        "failed. See backend logs for details."
+                    ) from exc
+                raise PdfInputError(
+                    f"Could not read or parse PDF {pdf_path.name}. "
+                    "Check that the file is valid."
                 ) from exc
             else:
                 successful_pdfs += 1

@@ -21,6 +21,7 @@ from src.corpus_manager import (
     IncrementalCorpusManager,
 )
 from src.data.chunker_optimized import ChunkConfig
+from src.data.pdf_errors import PdfInputError, PdfRuntimeError
 from src.rag.device_utils import (
     get_device_name,
     is_cuda_available,
@@ -170,6 +171,10 @@ def vector_count() -> int:
 
 
 def _raise_corpus_http_error(exc: Exception) -> None:
+    if isinstance(exc, PdfInputError):
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    if isinstance(exc, PdfRuntimeError):
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
     if isinstance(
         exc,
         (
