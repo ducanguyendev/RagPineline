@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-10-22T09:18:23.516217+00:00",
+  "dataset": "D:\\DEMO\\RagPipeline\\data\\eval_dataset.json",
+  "provider": "gemini",
+  "ragas_version": "0.4.3",
+  "ragas_model": "gemini-3.8-flash",
+  "total_test_cases": 1,
+  "successful": 1,
+  "failed": 0,
+  "early_exit_count": 1,
+  "metrics": {
+    "avg_faithfulness": null,
+    "avg_context_precision": null,
+    "avg_context_recall": null
+  },
+  "details": [
+    {
+      "id": 1,
+      "query": "Hallucination trong tài liệu được hiểu là gì?",
+      "reference": "Hallucination là hiện tượng mô hình sinh ra thông tin sai lệch, bịa đặt hoặc không có thực nhưng với văn phong tự tin.",
+      "response": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
+      "retrieved_contexts_count": 0,
+      "retrieved_context_ids": [],
+      "faithfulness": null,
+      "context_precision": null,
+      "context_recall": null,
+      "rag_latency_ms": 42806.39,
+      "is_early_exit": true,
+      "evaluation_status": "success",
+      "error": "No retrieved context passed reranking threshold."
+    }
+  ]
+}

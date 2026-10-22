@@ -52,7 +52,8 @@ def answer_query(
     max_context_tokens: int = None,
     provider_name: str = None,
     vector_dir: Path = None,
-    embedding_model: str = None
+    embedding_model: str = None,
+    include_eval_trace: bool = False,
 ) -> Dict[str, Any]:
     """
     Thực thi luồng RAG hoàn chỉnh End-to-End.
@@ -62,13 +63,16 @@ def answer_query(
     query = query.strip()
 
     if not query:
-        return {
+        result = {
             "query": query,
             "answer": "Vui lòng nhập câu hỏi hợp lệ.",
             "citations": [],
             "image_urls": [],
             "logs": []
         }
+        if include_eval_trace:
+            result["eval_trace"] = {"retrieved_contexts": [], "retrieved_context_ids": []}
+        return result
 
     # Load cấu hình mặc định từ file .env / tham số
     top_k = top_k or int(os.getenv("RETRIEVAL_TOP_K", "15"))
@@ -119,7 +123,7 @@ def answer_query(
     if not passed_threshold or not reranked_docs:
         total_ms = (time.perf_counter() - start_time) * 1000
         print("⛔ [Early Exit] No candidate passed relevance threshold. Skipping LLM call.")
-        return {
+        result = {
             "query": query,
             "answer": NO_INFO_FALLBACK,
             "citations": [],
@@ -127,6 +131,9 @@ def answer_query(
             "total_duration_ms": round(total_ms, 2),
             "logs": logs
         }
+        if include_eval_trace:
+            result["eval_trace"] = {"retrieved_contexts": [], "retrieved_context_ids": []}
+        return result
 
     # BƯỚC 4: CONTEXT BUILDER (Deduplication, MAX_CONTEXT_TOKENS & SOURCE IDs)
     context_text, source_mapping, selected_chunks = build_context(reranked_docs, max_tokens=max_context_tokens)
@@ -146,7 +153,7 @@ def answer_query(
 
     total_ms = (time.perf_counter() - start_time) * 1000
 
-    return {
+    result = {
         "query": query,
         "answer": cleaned_answer,
         "citations": citations,
@@ -158,6 +165,21 @@ def answer_query(
             "source_ids": list(source_mapping.keys())
         }
     }
+    if include_eval_trace:
+        retrieved_contexts = [
+            (doc.get("content") or doc.get("page_content") or "").strip()
+            for doc in selected_chunks
+            if (doc.get("content") or doc.get("page_content") or "").strip()
+        ]
+        retrieved_context_ids = [
+            doc.get("chunk_id") or (doc.get("metadata") or {}).get("chunk_id")
+            for doc in selected_chunks
+        ]
+        result["eval_trace"] = {
+            "retrieved_contexts": retrieved_contexts,
+            "retrieved_context_ids": retrieved_context_ids,
+        }
+    return result
 
 
 def main():
