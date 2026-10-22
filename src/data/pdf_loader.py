@@ -13,7 +13,10 @@ os.environ["TORCHDYNAMO_DISABLE"] = "1"
 
 import argparse
 import json
+import logging
 import re
+import shutil
+import subprocess
 import sys
 import unicodedata
 from contextlib import contextmanager
@@ -24,11 +27,18 @@ from typing import Any, Dict, List
 
 from docling.document_converter import DocumentConverter, PdfFormatOption
 from docling.datamodel.base_models import InputFormat
+from docling.datamodel import pipeline_options as pipeline_options_module
 from docling.datamodel.pipeline_options import PdfPipelineOptions
 from tqdm import tqdm
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
+
+LOGGER = logging.getLogger(__name__)
+
+
+class PdfProcessingError(RuntimeError):
+    """A PDF failed during conversion or yielded no usable elements."""
 
 
 def format_elapsed(seconds: float) -> str:
@@ -72,9 +82,47 @@ def clean_text(text: str) -> str:
     return text.strip()
 
 
-def create_converter():
+def _tesseract_languages() -> set[str]:
+    executable = shutil.which("tesseract")
+    if not executable:
+        return set()
+    try:
+        completed = subprocess.run(
+            [executable, "--list-langs"],
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=15,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return set()
+    return {
+        line.strip()
+        for line in completed.stdout.splitlines()
+        if line.strip() and not line.lower().startswith("list of available")
+    }
+
+
+def create_converter(*, enable_ocr: bool = True):
     pipeline_options = PdfPipelineOptions()
-    pipeline_options.do_ocr = False
+    ocr_options_cls = getattr(pipeline_options_module, "TesseractOcrOptions", None)
+    if enable_ocr and ocr_options_cls is None:
+        raise RuntimeError(
+            "OCR is required for PDF fallback, but this Docling version does not "
+            "provide TesseractOcrOptions."
+        )
+    if enable_ocr:
+        languages = _tesseract_languages()
+        if not {"vie", "eng"}.issubset(languages):
+            raise RuntimeError(
+                "OCR is required for this PDF but Tesseract Vietnamese language "
+                "data is unavailable (required languages: vie, eng)."
+            )
+        try:
+            pipeline_options.ocr_options = ocr_options_cls(lang=["vie", "eng"])
+        except TypeError:
+            pipeline_options.ocr_options = ocr_options_cls(languages=["vie", "eng"])
+    pipeline_options.do_ocr = enable_ocr
     pipeline_options.do_table_structure = True
     pipeline_options.generate_picture_images = True
     pipeline_options.generate_page_images = True
@@ -84,6 +132,34 @@ def create_converter():
             InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)
         }
     )
+
+
+def _document_diagnostics(document, elements: list[dict[str, Any]]) -> dict[str, int]:
+    pages = getattr(getattr(document, "pages", None), "keys", lambda: [])()
+    page_count = len(pages) if pages else len(getattr(document, "pages", []) or [])
+    text_count = sum(1 for element in elements if element.get("text"))
+    image_count = sum(1 for element in elements if element.get("type") == "image")
+    table_count = sum(1 for element in elements if element.get("type") == "table")
+    return {
+        "pages": page_count,
+        "elements": len(elements),
+        "text_elements": text_count,
+        "images": image_count,
+        "tables": table_count,
+    }
+
+
+def _needs_ocr(document, elements: list[dict[str, Any]]) -> bool:
+    pages = getattr(document, "pages", None)
+    page_numbers = set(pages.keys()) if hasattr(pages, "keys") else set()
+    if not page_numbers:
+        page_numbers = {int(element.get("page") or 1) for element in elements}
+    text_pages = {
+        int(element.get("page") or 1)
+        for element in elements
+        if element.get("text")
+    }
+    return not text_pages or bool(page_numbers - text_pages)
 
 
 def extract_elements_from_docling(
@@ -236,7 +312,8 @@ def convert_pdfs(
     all_image_records: List[Dict[str, Any]] = []
     all_page_records: List[Dict[str, Any]] = []
 
-    converter = create_converter()
+    native_converter = create_converter(enable_ocr=False)
+    converter = None
 
     total_pdfs = len(pdf_files)
     successful_pdfs = 0
@@ -251,7 +328,7 @@ def convert_pdfs(
             pdf_stem = pdf_path.stem
             try:
                 with docling_heartbeat(pdf_path.name) as docling_started_at:
-                    result = converter.convert(str(pdf_path))
+                    result = native_converter.convert(str(pdf_path))
                 tqdm.write(
                     f"✓ Docling completed in {(perf_counter() - docling_started_at) / 60:.2f} minutes",
                     file=sys.stdout,
@@ -285,6 +362,52 @@ def convert_pdfs(
                     document_images_dir,
                     document_image_prefix,
                 )
+                ocr_used = False
+                if _needs_ocr(document, elements):
+                    tqdm.write(
+                        f"Native text missing on one or more pages in {pdf_path.name}; "
+                        "retrying with hybrid OCR.",
+                        file=sys.stdout,
+                    )
+                    if converter is None:
+                        converter = create_converter(enable_ocr=True)
+                    with docling_heartbeat(pdf_path.name + " (OCR)"):
+                        result = converter.convert(str(pdf_path))
+                    document = result.document
+                    elements, image_records = extract_elements_from_docling(
+                        document,
+                        pdf_stem,
+                        document_images_dir,
+                        document_image_prefix,
+                    )
+                    ocr_used = True
+                diagnostics = _document_diagnostics(document, elements)
+                tqdm.write(
+                    "PDF diagnostics: "
+                    f"pages={diagnostics['pages']}, elements={diagnostics['elements']}, "
+                    f"text_elements={diagnostics['text_elements']}, "
+                    f"images={diagnostics['images']}, tables={diagnostics['tables']}, "
+                    f"ocr_enabled={ocr_used}",
+                    file=sys.stdout,
+                )
+                LOGGER.info(
+                    "PDF %s diagnostics: pages=%d elements=%d text_elements=%d "
+                    "images=%d tables=%d ocr_enabled=%s",
+                    pdf_path.name,
+                    diagnostics["pages"],
+                    diagnostics["elements"],
+                    diagnostics["text_elements"],
+                    diagnostics["images"],
+                    diagnostics["tables"],
+                    ocr_used,
+                )
+                if not elements:
+                    raise PdfProcessingError(
+                        f"Docling produced zero elements for {pdf_path.name} "
+                        f"(pages={diagnostics['pages']}, elements=0, "
+                        f"text_elements=0, images=0, tables=0, "
+                        f"ocr_enabled={ocr_used})."
+                    )
                 tqdm.write(
                     f"✓ Extracted {len(elements)} elements & {len(image_records)} physical PNG images",
                     file=sys.stdout,
@@ -319,6 +442,10 @@ def convert_pdfs(
                 failed_pdfs += 1
                 tqdm.write(f"❌ Failed [{pdf_index}/{total_pdfs}]: {pdf_path.name}", file=sys.stdout)
                 tqdm.write(f"Reason: {exc}", file=sys.stdout)
+                raise PdfProcessingError(
+                    f"Docling failed to parse {pdf_path.name}: "
+                    f"{type(exc).__name__}: {exc}"
+                ) from exc
             else:
                 successful_pdfs += 1
                 tqdm.write(f"✓ Completed [{pdf_index}/{total_pdfs}]", file=sys.stdout)
