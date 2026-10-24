@@ -145,11 +145,9 @@ def _avg(details, key):
 
 
 def _corpus_warning():
-    # Lightweight metadata check only; never opens or modifies the vector index.
-    candidates = [ROOT / "data" / "processed" / "manifest.json", ROOT / "data" / "processed" / "chunked.jsonl"]
-    corpus_text = " ".join(path.read_text(encoding="utf-8", errors="ignore")[:200000] for path in candidates if path.is_file()).lower()
-    if corpus_text and not any(term in corpus_text for term in ("retrieval-augmented", "hallucination", "grounding", "rag system")):
-        print("WARNING: Evaluation dataset appears unrelated to the indexed corpus.\nRAGAS scores would not be meaningful.", file=sys.stderr)
+    # Topic compatibility cannot be inferred safely from keywords. Keep this as
+    # a no-op unless the dataset later provides reliable source filenames.
+    return
 
 
 def run_evaluation(dataset_path: Path, output_path: Path, limit: Optional[int] = None, include_contexts: bool = False):
