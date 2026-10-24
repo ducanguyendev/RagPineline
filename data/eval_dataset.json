@@ -1,302 +1,1902 @@
 [
   {
-    "id": 1,
-    "query": "Hallucination trong tài liệu được hiểu là gì?",
-    "expected_answer": "Hallucination là hiện tượng mô hình sinh ra thông tin sai lệch, bịa đặt hoặc không có thực nhưng với văn phong tự tin."
+    "id": "LAW_A_001",
+    "query": "Theo giáo trình, đối tượng điều chỉnh của Luật lao động gồm những nhóm quan hệ nào?",
+    "expected_answer": "Gồm quan hệ lao động và các quan hệ liên quan chặt chẽ hoặc phát sinh từ quan hệ lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 1 - Đối tượng điều chỉnh”, trang 3. \n\nNội dung được tài liệu xác nhận: Gồm quan hệ lao động và các quan hệ liên quan chặt chẽ hoặc phát sinh từ quan hệ lao động."
+    ],
+    "metadata": {
+      "category": "Definition",
+      "source_page": 3,
+      "source_section": "Bài 1 - Đối tượng điều chỉnh",
+      "required_keywords": "quan hệ lao động | quan hệ liên quan",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 2,
-    "query": "Grounding có vai trò gì khi mô hình trả lời?",
-    "expected_answer": "Grounding là kỹ thuật \"neo\" câu trả lời của mô hình vào dữ liệu thực tế được cung cấp để đảm bảo tính xác thực."
+    "id": "LAW_A_002",
+    "query": "Quan hệ lao động được giáo trình mô tả là gì?",
+    "expected_answer": "Là quan hệ giữa con người với con người trong lao động nhằm tạo ra các giá trị vật chất, tinh thần phục vụ bản thân và xã hội.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 1 - Quan hệ lao động”, trang 3. \n\nNội dung được tài liệu xác nhận: Là quan hệ giữa con người với con người trong lao động nhằm tạo ra các giá trị vật chất, tinh thần phục vụ bản thân và xã hội."
+    ],
+    "metadata": {
+      "category": "Definition",
+      "source_page": 3,
+      "source_section": "Bài 1 - Quan hệ lao động",
+      "required_keywords": "lao động | giá trị vật chất | tinh thần",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 3,
-    "query": "RAG được đề xuất chính thức lần đầu vào thời điểm nào và bởi nhóm nào?",
-    "expected_answer": "RAG được đề xuất chính thức năm 2020 trong bài “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks” bởi Patrick Lewis và các cộng sự tại Facebook AI Research (FAIR)."
+    "id": "LAW_A_003",
+    "query": "Giáo trình liệt kê những quan hệ nào liên quan đến quan hệ lao động?",
+    "expected_answer": "Gồm quan hệ về việc làm, học nghề, bồi thường thiệt hại, bảo hiểm xã hội, quan hệ với Công đoàn/đại diện tập thể lao động, giải quyết tranh chấp và đình công, và quản lý lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 1 - Các quan hệ liên quan”, trang 5. \n\nNội dung được tài liệu xác nhận: Gồm quan hệ về việc làm, học nghề, bồi thường thiệt hại, bảo hiểm xã hội, quan hệ với Công đoàn/đại diện tập thể lao động, giải quyết tranh chấp và đình công, và quản lý lao động."
+    ],
+    "metadata": {
+      "category": "List",
+      "source_page": 5,
+      "source_section": "Bài 1 - Các quan hệ liên quan",
+      "required_keywords": "việc làm | học nghề | bồi thường | BHXH | công đoàn | tranh chấp | quản lý",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 4,
-    "query": "Original RAG và Modern RAG khác nhau chủ yếu ở điểm nào?",
-    "expected_answer": "Original RAG dựa trên fine-tuning và cập nhật trọng số của retriever/generator; Modern RAG chủ yếu dựa trên In-Context Learning theo quy trình “Retrieve and Prompt”, thường giữ nguyên trọng số LLM và tối ưu retrieval."
+    "id": "LAW_A_004",
+    "query": "Theo giáo trình, quan hệ pháp luật lao động là gì?",
+    "expected_answer": "Là các quan hệ phát sinh trong quá trình sử dụng sức lao động, được các quy phạm pháp luật lao động điều chỉnh.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 2 - Khái niệm”, trang 14. \n\nNội dung được tài liệu xác nhận: Là các quan hệ phát sinh trong quá trình sử dụng sức lao động, được các quy phạm pháp luật lao động điều chỉnh."
+    ],
+    "metadata": {
+      "category": "Definition",
+      "source_page": 14,
+      "source_section": "Bài 2 - Khái niệm",
+      "required_keywords": "sử dụng sức lao động | quy phạm pháp luật lao động",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 5,
-    "query": "Ba giai đoạn chính của kiến trúc RAG hiện đại là gì?",
-    "expected_answer": "Ba giai đoạn chính là Indexing, Retrieval và Generation."
+    "id": "LAW_A_005",
+    "query": "Ba loại quan hệ về việc làm chủ yếu được giáo trình nêu là gì?",
+    "expected_answer": "Quan hệ bảo đảm việc làm giữa Nhà nước và NLĐ; giữa NSDLĐ và NLĐ; và giữa NLĐ với các trung tâm dịch vụ việc làm.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 1 - Quan hệ việc làm”, trang 5. \n\nNội dung được tài liệu xác nhận: Quan hệ bảo đảm việc làm giữa Nhà nước và NLĐ; giữa NSDLĐ và NLĐ; và giữa NLĐ với các trung tâm dịch vụ việc làm."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 5,
+      "source_section": "Bài 1 - Quan hệ việc làm",
+      "required_keywords": "Nhà nước | NSDLĐ | trung tâm dịch vụ việc làm",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 6,
-    "query": "Ở giai đoạn Indexing, tài liệu đi qua những bước chính nào trước khi có thể được tìm kiếm?",
-    "expected_answer": "Tài liệu được nạp và trích xuất nội dung/metadata, chia nhỏ thành chunks, chuyển chunks thành vector bằng embedding model, rồi lưu vector cùng ID/metadata vào Vector Store."
+    "id": "LAW_A_006",
+    "query": "Quan hệ học nghề có thể tồn tại dưới những dạng nào?",
+    "expected_answer": "Có thể là quan hệ độc lập hoặc là quan hệ phụ thuộc quan hệ lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 1 - Quan hệ học nghề”, trang 5. \n\nNội dung được tài liệu xác nhận: Có thể là quan hệ độc lập hoặc là quan hệ phụ thuộc quan hệ lao động."
+    ],
+    "metadata": {
+      "category": "Concept",
+      "source_page": 5,
+      "source_section": "Bài 1 - Quan hệ học nghề",
+      "required_keywords": "độc lập | phụ thuộc quan hệ lao động",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 7,
-    "query": "Vì sao metadata quan trọng đối với RAG thực tế?",
-    "expected_answer": "Metadata hỗ trợ pre-filtering, giúp hệ thống lọc đúng phạm vi tài liệu trước khi tìm kiếm, ví dụ lọc tài liệu năm 2024 cho câu hỏi về doanh thu năm 2024."
+    "id": "LAW_A_007",
+    "query": "Theo giáo trình, tiền lương được nhìn nhận như thế nào trong quan hệ lao động?",
+    "expected_answer": "Tiền lương được xem là giá cả của sức lao động và việc trả lương dựa trên thỏa thuận, trong khuôn khổ pháp luật.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 1/Bài 6 - Tiền lương”, trang None. \n\nNội dung được tài liệu xác nhận: Tiền lương được xem là giá cả của sức lao động và việc trả lương dựa trên thỏa thuận, trong khuôn khổ pháp luật."
+    ],
+    "metadata": {
+      "category": "Definition",
+      "source_page": null,
+      "source_section": "Bài 1/Bài 6 - Tiền lương",
+      "required_keywords": "giá cả sức lao động | thỏa thuận",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 8,
-    "query": "Fixed-size Chunking có nhược điểm gì so với Recursive Chunking?",
-    "expected_answer": "Fixed-size Chunking có thể cắt giữa câu hoặc giữa một ý, làm mất ngữ nghĩa. Recursive Chunking ưu tiên ranh giới tự nhiên như đoạn, dòng, dấu câu và khoảng trắng nên giữ cấu trúc câu/đoạn tốt hơn."
+    "id": "LAW_A_008",
+    "query": "Theo giáo trình, làm thêm vào ngày thường được trả ít nhất bao nhiêu phần trăm?",
+    "expected_answer": "Ít nhất bằng 150% đơn giá tiền lương hoặc tiền lương thực trả của công việc đang làm.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 6 - Trả lương làm thêm giờ”, trang 59. \n\nNội dung được tài liệu xác nhận: Ít nhất bằng 150% đơn giá tiền lương hoặc tiền lương thực trả của công việc đang làm."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 59,
+      "source_section": "Bài 6 - Trả lương làm thêm giờ",
+      "required_keywords": "150% | ngày thường",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 9,
-    "query": "Chunk overlap thường được khuyến nghị ở mức bao nhiêu so với độ dài chunk?",
-    "expected_answer": "Tài liệu nêu chunk_overlap thường ở mức 10-20% độ dài của chunk."
+    "id": "LAW_A_009",
+    "query": "Theo giáo trình, làm thêm vào ngày nghỉ hằng tuần được trả ít nhất bao nhiêu?",
+    "expected_answer": "Ít nhất bằng 200%.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 6 - Trả lương làm thêm giờ”, trang 59. \n\nNội dung được tài liệu xác nhận: Ít nhất bằng 200%."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 59,
+      "source_section": "Bài 6 - Trả lương làm thêm giờ",
+      "required_keywords": "200% | ngày nghỉ hàng tuần",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 10,
-    "query": "Parent-Child Indexing giải quyết mâu thuẫn giữa chunk nhỏ và chunk lớn như thế nào?",
-    "expected_answer": "Hệ thống dùng Parent chunks lớn để giữ ngữ cảnh, chia thành Child chunks nhỏ để index/tìm kiếm; khi tìm thấy Child chunk thì trả Parent chunk tương ứng cho LLM."
+    "id": "LAW_A_010",
+    "query": "Theo giáo trình, làm thêm vào ngày lễ/ngày nghỉ hưởng lương được trả ít nhất bao nhiêu?",
+    "expected_answer": "Ít nhất bằng 300% theo quy định được tài liệu trình bày.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 6 - Trả lương làm thêm giờ”, trang 59. \n\nNội dung được tài liệu xác nhận: Ít nhất bằng 300% theo quy định được tài liệu trình bày."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 59,
+      "source_section": "Bài 6 - Trả lương làm thêm giờ",
+      "required_keywords": "300% | ngày lễ | nghỉ hưởng lương",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 11,
-    "query": "Multi-Query xử lý một câu hỏi ngắn hoặc thiếu ngữ cảnh ra sao?",
-    "expected_answer": "Multi-Query dùng LLM sinh 3-5 biến thể của câu hỏi gốc, tìm kiếm với tất cả biến thể rồi gộp kết quả để tăng khả năng tìm đúng tài liệu."
+    "id": "LAW_A_011",
+    "query": "Giới hạn làm thêm giờ mà giáo trình nêu là bao nhiêu?",
+    "expected_answer": "Không quá 4 giờ trong một ngày, 200 giờ trong một năm; một số trường hợp đặc biệt không quá 300 giờ trong một năm.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 7 - Làm thêm giờ”, trang 79. \n\nNội dung được tài liệu xác nhận: Không quá 4 giờ trong một ngày, 200 giờ trong một năm; một số trường hợp đặc biệt không quá 300 giờ trong một năm."
+    ],
+    "metadata": {
+      "category": "Rule",
+      "source_page": 79,
+      "source_section": "Bài 7 - Làm thêm giờ",
+      "required_keywords": "4 giờ/ngày | 200 giờ/năm | 300 giờ/năm",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 12,
-    "query": "HyDE thay đổi truy vấn trước khi retrieval theo cách nào?",
-    "expected_answer": "HyDE yêu cầu LLM viết một câu trả lời/tài liệu giả định cho câu hỏi, sau đó dùng embedding của đoạn giả định đó để tìm kiếm tài liệu thực."
+    "id": "LAW_A_012",
+    "query": "Vì sao phương pháp thỏa thuận có vai trò quan trọng trong Luật lao động theo giáo trình?",
+    "expected_answer": "Vì quan hệ lao động có bản chất tự do thương lượng; các bên thỏa thuận trên cơ sở tự nguyện, bình đẳng để cùng có lợi và thực hiện nghĩa vụ.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 1 - Phương pháp điều chỉnh”\n\nNội dung được tài liệu xác nhận: Vì quan hệ lao động có bản chất tự do thương lượng; các bên thỏa thuận trên cơ sở tự nguyện, bình đẳng để cùng có lợi và thực hiện nghĩa vụ."
+    ],
+    "metadata": {
+      "category": "Concept",
+      "source_page": null,
+      "source_section": "Bài 1 - Phương pháp điều chỉnh",
+      "required_keywords": "thỏa thuận | tự nguyện | bình đẳng | cùng có lợi",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 13,
-    "query": "Dense Retrieval và Sparse Retrieval bổ sung cho nhau như thế nào trong Hybrid Search?",
-    "expected_answer": "Dense Retrieval mạnh về tương đồng ngữ nghĩa; Sparse Retrieval như BM25/TF-IDF mạnh về khớp từ khóa chính xác, tên riêng và thuật ngữ chuyên ngành. Hybrid Search kết hợp hai luồng."
+    "id": "LAW_A_013",
+    "query": "Phương pháp thỏa thuận trong Luật lao động khác Luật dân sự ở điểm nào theo giáo trình?",
+    "expected_answer": "Giáo trình cho rằng trong dân sự các chủ thể bình đẳng và độc lập về địa vị kinh tế nên thỏa thuận được sử dụng triệt để; trong lao động, thỏa thuận chịu ảnh hưởng bởi quan hệ phụ thuộc và các giới hạn bảo vệ lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 1 - Phương pháp điều chỉnh” \n\nNội dung được tài liệu xác nhận: Giáo trình cho rằng trong dân sự các chủ thể bình đẳng và độc lập về địa vị kinh tế nên thỏa thuận được sử dụng triệt để; trong lao động, thỏa thuận chịu ảnh hưởng bởi quan hệ phụ thuộc và các giới hạn bảo vệ lao động."
+    ],
+    "metadata": {
+      "category": "Comparison",
+      "source_page": null,
+      "source_section": "Bài 1 - Phương pháp điều chỉnh",
+      "required_keywords": "dân sự | lao động | bình đẳng | phụ thuộc",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 14,
-    "query": "Vì sao RRF không cộng trực tiếp điểm của Vector Search và BM25?",
-    "expected_answer": "Vì điểm của Vector Search và BM25 nằm trên các thang đo khác nhau. RRF bỏ qua điểm gốc và hợp nhất dựa trên thứ hạng."
+    "id": "LAW_A_014",
+    "query": "Quan hệ bồi thường thiệt hại trong lao động phát sinh khi nào?",
+    "expected_answer": "Phát sinh khi một chủ thể trong quá trình thực hiện quyền, nghĩa vụ lao động gây thiệt hại về sức khỏe, tính mạng, tài sản hoặc lợi ích của bên kia.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 1 - Bồi thường thiệt hại”, trang 6.\n\nNội dung được tài liệu xác nhận: Phát sinh khi một chủ thể trong quá trình thực hiện quyền, nghĩa vụ lao động gây thiệt hại về sức khỏe, tính mạng, tài sản hoặc lợi ích của bên kia."
+    ],
+    "metadata": {
+      "category": "Concept",
+      "source_page": 6,
+      "source_section": "Bài 1 - Bồi thường thiệt hại",
+      "required_keywords": "thiệt hại | sức khỏe | tính mạng | tài sản",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 15,
-    "query": "Trong RRF, hằng số k thường được đặt bao nhiêu và để làm gì?",
-    "expected_answer": "k thường là 60 để làm mượt điểm số, tránh tài liệu hạng 1 chiếm ưu thế quá tuyệt đối so với hạng 2, hạng 3."
+    "id": "LAW_A_015",
+    "query": "Một NLĐ gây thiệt hại tài sản cho NSDLĐ khi thực hiện nghĩa vụ lao động. Theo cách phân loại của giáo trình, đây thuộc nhóm quan hệ nào?",
+    "expected_answer": "Thuộc quan hệ về bồi thường thiệt hại liên quan đến quan hệ lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 1 - Bồi thường thiệt hại”, trang 5. \n\nNội dung được tài liệu xác nhận: Thuộc quan hệ về bồi thường thiệt hại liên quan đến quan hệ lao động."
+    ],
+    "metadata": {
+      "category": "Scenario-based",
+      "source_page": 5,
+      "source_section": "Bài 1 - Bồi thường thiệt hại",
+      "required_keywords": "bồi thường thiệt hại | tài sản",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 16,
-    "query": "Tại sao Cross-Encoder chính xác hơn Bi-Encoder nhưng chậm hơn?",
-    "expected_answer": "Bi-Encoder mã hóa câu hỏi và tài liệu độc lập nên nhanh nhưng mất quan hệ ngữ pháp/ngữ nghĩa phức tạp. Cross-Encoder đưa cả hai vào cùng lúc nên chính xác hơn nhưng chậm hơn."
+    "id": "LAW_A_016",
+    "query": "Một người tìm việc thông qua trung tâm dịch vụ việc làm. Theo giáo trình, quan hệ này có nằm trong đối tượng điều chỉnh của Luật lao động không?",
+    "expected_answer": "Có. Đây là một dạng quan hệ về việc làm giữa NLĐ và trung tâm dịch vụ việc làm, được xếp vào các quan hệ liên quan đến quan hệ lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 1 - Quan hệ việc làm”, trang 5. \n\nNội dung được tài liệu xác nhận: Có. Đây là một dạng quan hệ về việc làm giữa NLĐ và trung tâm dịch vụ việc làm, được xếp vào các quan hệ liên quan đến quan hệ lao động."
+    ],
+    "metadata": {
+      "category": "Scenario-based",
+      "source_page": 5,
+      "source_section": "Bài 1 - Quan hệ việc làm",
+      "required_keywords": "NLĐ | trung tâm dịch vụ việc làm | quan hệ việc làm",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 17,
-    "query": "Chiến lược “hình phễu” trong re-ranking hoạt động theo thứ tự nào?",
-    "expected_answer": "Retrieve Many: lấy khoảng 50 tài liệu nhanh bằng Bi-Encoder; Re-rank Few: dùng Cross-Encoder chọn khoảng 5 tài liệu tốt nhất; sau đó đưa vào LLM."
+    "id": "LAW_A_017",
+    "query": "Từ cách giáo trình xác định đối tượng và phương pháp điều chỉnh, hãy giải thích vì sao HĐLĐ vừa mang tính thỏa thuận vừa chịu giới hạn pháp luật.",
+    "expected_answer": "Các bên tự do, bình đẳng, tự nguyện thỏa thuận về quá trình lao động, nhưng pháp luật đặt ra khung/chuẩn mực, trong đó quyền lợi thường được ấn định mức tối thiểu và nghĩa vụ ở mức tối đa để bảo vệ quan hệ lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 1 - Đối tượng & phương pháp”, trang 4. \n\nNội dung được tài liệu xác nhận: Các bên tự do, bình đẳng, tự nguyện thỏa thuận về quá trình lao động, nhưng pháp luật đặt ra khung/chuẩn mực, trong đó quyền lợi thường được ấn định mức tối thiểu và nghĩa vụ ở mức tối đa để bảo vệ quan hệ lao động."
+    ],
+    "metadata": {
+      "category": "Multi-hop",
+      "source_page": 4,
+      "source_section": "Bài 1 - Đối tượng & phương pháp",
+      "required_keywords": "tự do thỏa thuận | khung pháp lý | quyền tối thiểu | nghĩa vụ tối đa",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 18,
-    "query": "Context Reordering xử lý hiện tượng “Lost in the Middle” bằng cách nào?",
-    "expected_answer": "Hệ thống sắp xếp theo dạng chữ U: đặt tài liệu quan trọng nhất ở đầu và cuối prompt, tài liệu ít quan trọng hơn ở giữa."
+    "id": "LAW_A_018",
+    "query": "Giáo trình liên hệ quan hệ tranh chấp lao động và đình công với mục tiêu ổn định quan hệ lao động như thế nào?",
+    "expected_answer": "Việc giải quyết tranh chấp/đình công do các cơ quan, tổ chức có thẩm quyền thực hiện nhằm bảo đảm quyền lợi các bên và duy trì sự hài hòa, ổn định của quan hệ lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 1 - Tranh chấp lao động”, trang 7. \n\nNội dung được tài liệu xác nhận: Việc giải quyết tranh chấp/đình công do các cơ quan, tổ chức có thẩm quyền thực hiện nhằm bảo đảm quyền lợi các bên và duy trì sự hài hòa, ổn định của quan hệ lao động."
+    ],
+    "metadata": {
+      "category": "Multi-hop",
+      "source_page": 7,
+      "source_section": "Bài 1 - Tranh chấp lao động",
+      "required_keywords": "tranh chấp | đình công | cơ quan thẩm quyền | hài hòa | ổn định",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 19,
-    "query": "Zero-shot Prompting và Few-shot Learning trong phần Generation khác nhau thế nào?",
-    "expected_answer": "Zero-shot dùng template cố định mà không có ví dụ mẫu. Few-shot thêm 1-2 ví dụ Context-Question-Answer chuẩn để mô hình học phong cách và định dạng."
+    "id": "LAW_A_019",
+    "query": "Nếu hỏi “quy định hiện hành năm 2026 về làm thêm giờ”, RAG có nên chỉ dùng con số trong giáo trình 2005 không?",
+    "expected_answer": "Không nên. Giáo trình là nguồn lịch sử/giảng dạy cũ; hệ thống phải nhận diện thời điểm của nguồn và không trình bày quy định trong tài liệu này như pháp luật hiện hành năm 2026 nếu không có nguồn cập nhật.",
+    "reference_contexts": [
+      "Căn cứ: phần “Lưu ý nguồn/tính thời điểm”, trang 1. \n\nNội dung được tài liệu xác nhận: Không nên. Giáo trình là nguồn lịch sử/giảng dạy cũ; hệ thống phải nhận diện thời điểm của nguồn và không trình bày quy định trong tài liệu này như pháp luật hiện hành năm 2026 nếu không có nguồn cập nhật."
+    ],
+    "metadata": {
+      "category": "Source-awareness",
+      "source_page": 1,
+      "source_section": "Lưu ý nguồn/tính thời điểm",
+      "required_keywords": "nguồn 2005 | lịch sử | không suy diễn hiện hành",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer with temporal caveat",
+      "notes": "Tests temporal grounding."
+    }
   },
   {
-    "id": 20,
-    "query": "Nếu bỏ Embedding Model, Vector Store/ANN Index và LLM thì hệ thống lần lượt biến thành những dạng nào?",
-    "expected_answer": "Bỏ Embedding Model: Lexical Retrieval-driven RAG. Bỏ Vector Store/ANN Index: Unscalable Prototype. Bỏ LLM: Semantic Search / Retrieval System."
+    "id": "LAW_A_020",
+    "query": "Theo giáo trình, vì sao Luật lao động không chỉ điều chỉnh việc “đi làm nhận lương” mà còn bao phủ nhiều quan hệ khác?",
+    "expected_answer": "Vì ngoài quan hệ lao động làm công ăn lương, quá trình sử dụng lao động còn phát sinh các quan hệ gắn chặt như việc làm, học nghề, bồi thường, BHXH, công đoàn, tranh chấp/đình công và quản lý lao động; các quan hệ này cần được điều chỉnh để quan hệ lao động vận hành ổn định.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bài 1 - Tổng hợp”\n\nNội dung được tài liệu xác nhận: Vì ngoài quan hệ lao động làm công ăn lương, quá trình sử dụng lao động còn phát sinh các quan hệ gắn chặt như việc làm, học nghề, bồi thường, BHXH, công đoàn, tranh chấp/đình công và quản lý lao động; các quan hệ này cần được điều chỉnh để quan hệ lao động vận hành ổn định."
+    ],
+    "metadata": {
+      "category": "Synthesis",
+      "source_page": null,
+      "source_section": "Bài 1 - Tổng hợp",
+      "required_keywords": "quan hệ lao động | quan hệ liên quan | ổn định",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 21,
-    "query": "Trong LangChain, một Document gồm những thuộc tính chính nào?",
-    "expected_answer": "Một Document gồm page_content, metadata và id."
+    "id": "LAW_B_001",
+    "query": "Theo sổ tay, hợp đồng lao động có thể được giao kết bằng lời nói trong trường hợp nào?",
+    "expected_answer": "Theo tài liệu, giao kết bằng lời nói áp dụng với công việc tạm thời có thời hạn dưới 03 tháng.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần I - Hợp đồng lao động”, trang 11. \n\nNội dung được tài liệu xác nhận: Theo tài liệu, giao kết bằng lời nói áp dụng với công việc tạm thời có thời hạn dưới 03 tháng."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 11,
+      "source_section": "Phần I - Hợp đồng lao động",
+      "required_keywords": "lời nói | tạm thời | dưới 03 tháng",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 22,
-    "query": "Trong ví dụ LangChain, RecursiveCharacterTextSplitter được cấu hình chunk_size và chunk_overlap bao nhiêu?",
-    "expected_answer": "chunk_size=1000 và chunk_overlap=200."
+    "id": "LAW_B_002",
+    "query": "Vì sao sổ tay khuyến nghị nên ký hợp đồng lao động?",
+    "expected_answer": "Vì hợp đồng thể hiện thỏa thuận về công việc, lương, điều kiện làm việc, quyền và nghĩa vụ và là căn cứ xem xét khi phát sinh tranh chấp.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần I - Hợp đồng lao động”\n\nNội dung được tài liệu xác nhận: Vì hợp đồng thể hiện thỏa thuận về công việc, lương, điều kiện làm việc, quyền và nghĩa vụ và là căn cứ xem xét khi phát sinh tranh chấp."
+    ],
+    "metadata": {
+      "category": "Concept",
+      "source_page": null,
+      "source_section": "Phần I - Hợp đồng lao động",
+      "required_keywords": "thỏa thuận | căn cứ | tranh chấp",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 23,
-    "query": "VectorStoreRetriever trong ví dụ hỗ trợ các kiểu tìm kiếm nào?",
-    "expected_answer": "similarity, mmr (Maximum Marginal Relevance) và similarity_score_threshold."
+    "id": "LAW_B_003",
+    "query": "Sổ tay có đề cập nội dung “khi nào được ký HĐLĐ không xác định thời hạn” ở phần nào?",
+    "expected_answer": "Nội dung này nằm trong Phần I - Hợp đồng lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần I - Hợp đồng lao động”, trang 6. \n\nNội dung được tài liệu xác nhận: Nội dung này nằm trong Phần I - Hợp đồng lao động."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 6,
+      "source_section": "Phần I - Hợp đồng lao động",
+      "required_keywords": "HĐLĐ không xác định thời hạn",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 24,
-    "query": "Pipeline của phần thực hành dùng những thành phần nào từ tài liệu PDF đến câu trả lời?",
-    "expected_answer": "Tài liệu AIVN được chunking, vector hóa và lưu vào ChromaDB. Query được vector hóa, dùng similarity search lấy Top-K context, ghép qua prompt template rồi đưa vào Qwen để sinh câu trả lời."
+    "id": "LAW_B_004",
+    "query": "Sổ tay xếp quy định về thử việc vào nhóm nội dung nào?",
+    "expected_answer": "Thuộc Phần I - Hợp đồng lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần I - Hợp đồng lao động”, trang 6. \n\nNội dung được tài liệu xác nhận: Thuộc Phần I - Hợp đồng lao động."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 6,
+      "source_section": "Phần I - Hợp đồng lao động",
+      "required_keywords": "thử việc | hợp đồng lao động",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 25,
-    "query": "Trong class TextSplitter của phần thực hành, mặc định chunk_size và chunk_overlap là bao nhiêu?",
-    "expected_answer": "chunk_size=400 và chunk_overlap=120."
+    "id": "LAW_B_005",
+    "query": "Sổ tay xếp trả tiền lương làm thêm giờ vào phần nào?",
+    "expected_answer": "Thuộc Phần II - Tiền lương.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần II - Tiền lương”, trang 6. \n\nNội dung được tài liệu xác nhận: Thuộc Phần II - Tiền lương."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 6,
+      "source_section": "Phần II - Tiền lương",
+      "required_keywords": "làm thêm giờ | tiền lương",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 26,
-    "query": "Retriever trong class VectorDB của phần thực hành mặc định lấy bao nhiêu document gần nhất?",
-    "expected_answer": "Mặc định lấy 4 document gần nhất."
+    "id": "LAW_B_006",
+    "query": "Sổ tay xếp nghỉ giữa giờ, nghỉ phép và nghỉ việc riêng vào phần nào?",
+    "expected_answer": "Thuộc Phần III - Thời gian làm việc và nghỉ ngơi.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần III - Thời gian làm việc và nghỉ ngơi”, trang 6. \n\nNội dung được tài liệu xác nhận: Thuộc Phần III - Thời gian làm việc và nghỉ ngơi."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 6,
+      "source_section": "Phần III - Thời gian làm việc và nghỉ ngơi",
+      "required_keywords": "nghỉ giữa giờ | nghỉ phép | nghỉ việc riêng",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 27,
-    "query": "Prompt của OfflineRAG yêu cầu mô hình làm gì khi tài liệu không có thông tin?",
-    "expected_answer": "Mô hình phải nói rõ “Không có thông tin”, trả lời dựa trên tài liệu và không thêm chi tiết nào ngoài tài liệu."
+    "id": "LAW_B_007",
+    "query": "Sổ tay xếp tai nạn lao động và bệnh nghề nghiệp vào phần nào?",
+    "expected_answer": "Thuộc Phần IV - An toàn lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần IV - An toàn lao động”, trang 6. \n\nNội dung được tài liệu xác nhận: Thuộc Phần IV - An toàn lao động."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 6,
+      "source_section": "Phần IV - An toàn lao động",
+      "required_keywords": "an toàn lao động | tai nạn | bệnh nghề nghiệp",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 28,
-    "query": "Semantic Chunking khác Recursive Chunking ở nguyên tắc quyết định điểm cắt như thế nào?",
-    "expected_answer": "Recursive Chunking dựa trên ký tự phân tách; Semantic Chunking dựa trên sự thay đổi ngữ nghĩa giữa các câu, dùng độ tương đồng để phát hiện khi chủ đề đổi."
+    "id": "LAW_B_008",
+    "query": "Một người làm việc tạm thời 2 tháng, hai bên chỉ thỏa thuận miệng về lương và an toàn lao động. Theo tình huống trong sổ tay, có được coi là đã giao kết HĐLĐ không?",
+    "expected_answer": "Có. Tài liệu kết luận trường hợp làm tạm thời 2 tháng thuộc trường hợp có thể giao kết bằng lời nói theo quy định mà sổ tay viện dẫn.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần I - Hợp đồng lao động”\n\nNội dung được tài liệu xác nhận: Có. Tài liệu kết luận trường hợp làm tạm thời 2 tháng thuộc trường hợp có thể giao kết bằng lời nói theo quy định mà sổ tay viện dẫn."
+    ],
+    "metadata": {
+      "category": "Scenario-based",
+      "source_page": null,
+      "source_section": "Phần I - Hợp đồng lao động",
+      "required_keywords": "2 tháng | lời nói | giao kết HĐLĐ",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 29,
-    "query": "Quy trình Semantic Chunking trong tài liệu gồm những bước nào?",
-    "expected_answer": "Tách thành câu hoàn chỉnh; tính độ tương đồng giữa câu trước và câu sau; đặt ngưỡng; tương đồng cao thì gộp, giảm dưới ngưỡng thì ngắt chunk."
+    "id": "LAW_B_009",
+    "query": "Hợp đồng lao động có ý nghĩa gì khi xảy ra tranh chấp theo sổ tay?",
+    "expected_answer": "Là căn cứ thể hiện các thỏa thuận của các bên để xem xét quyền, nghĩa vụ và giải quyết tranh chấp.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần I - Hợp đồng lao động”\n\nNội dung được tài liệu xác nhận: Là căn cứ thể hiện các thỏa thuận của các bên để xem xét quyền, nghĩa vụ và giải quyết tranh chấp."
+    ],
+    "metadata": {
+      "category": "Concept",
+      "source_page": null,
+      "source_section": "Phần I - Hợp đồng lao động",
+      "required_keywords": "căn cứ | quyền nghĩa vụ | tranh chấp",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 30,
-    "query": "HNSW được mô tả là gì và dùng để giải quyết vấn đề nào?",
-    "expected_answer": "HNSW là thuật toán tìm kiếm vector xấp xỉ dựa trên đồ thị phân tầng, cân bằng tốc độ và độ chính xác; dùng để tìm nhanh khi số lượng vector lớn thay vì brute-force."
+    "id": "LAW_B_010",
+    "query": "Muốn tìm câu trả lời về việc công ty có được giữ văn bằng gốc của NLĐ hay không, cần truy xuất phần nào của sổ tay?",
+    "expected_answer": "Phần VIII - Khiếu nại, khiếu kiện về lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần VIII - Khiếu nại, khiếu kiện”, trang 7. \n\nNội dung được tài liệu xác nhận: Phần VIII - Khiếu nại, khiếu kiện về lao động."
+    ],
+    "metadata": {
+      "category": "Navigation",
+      "source_page": 7,
+      "source_section": "Phần VIII - Khiếu nại, khiếu kiện",
+      "required_keywords": "văn bằng gốc | khiếu nại | khiếu kiện",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 31,
-    "query": "BM25 cải thiện điểm yếu nào của TF-IDF theo mô tả trong tài liệu?",
-    "expected_answer": "BM25 bổ sung cơ chế bão hòa tần suất và chuẩn hóa độ dài, giúp tránh việc tài liệu lặp từ khóa quá nhiều được ưu tiên không công bằng."
+    "id": "LAW_B_011",
+    "query": "Muốn tìm quy trình tiến hành đình công và tiền lương trong ngày đình công, cần truy xuất phần nào?",
+    "expected_answer": "Phần VII - Đình công.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần VII - Đình công”, trang 7. \n\nNội dung được tài liệu xác nhận: Phần VII - Đình công."
+    ],
+    "metadata": {
+      "category": "Navigation",
+      "source_page": 7,
+      "source_section": "Phần VII - Đình công",
+      "required_keywords": "đình công | trình tự | tiền lương",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 32,
-    "query": "Hybrid Search trong tài liệu nâng cao thực hiện retrieval theo quy trình nào?",
-    "expected_answer": "Hệ thống chạy song song Sparse Retriever và Dense Retriever, sau đó hợp nhất kết quả; các chiến lược hợp nhất được thực nghiệm gồm Interleaving và RRF."
+    "id": "LAW_B_012",
+    "query": "Câu hỏi về quyền lợi của phụ nữ mang thai và chế độ nghỉ thai sản nằm ở phần nào?",
+    "expected_answer": "Phần VI - Chế độ đối với lao động nữ.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần VI - Lao động nữ”, trang 7. \n\nNội dung được tài liệu xác nhận: Phần VI - Chế độ đối với lao động nữ."
+    ],
+    "metadata": {
+      "category": "Navigation",
+      "source_page": 7,
+      "source_section": "Phần VI - Lao động nữ",
+      "required_keywords": "mang thai | thai sản | lao động nữ",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 33,
-    "query": "Vì sao tài liệu xếp hạng khá ở cả Vector Search và BM25 có thể được RRF ưu tiên hơn tài liệu đứng đầu chỉ ở một bên?",
-    "expected_answer": "RRF cộng điểm theo nghịch đảo thứ hạng ở từng danh sách, nên tài liệu có thứ hạng tốt và ổn định ở cả hai luồng có thể có tổng điểm cao hơn."
+    "id": "LAW_B_013",
+    "query": "Câu hỏi về sa thải trái pháp luật và trách nhiệm của NSDLĐ khi sa thải trái pháp luật nằm ở đâu?",
+    "expected_answer": "Phần V - Kỷ luật lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần V - Kỷ luật lao động”, trang 7. Nội dung được tài liệu xác nhận: Phần V - Kỷ luật lao động."
+    ],
+    "metadata": {
+      "category": "Navigation",
+      "source_page": 7,
+      "source_section": "Phần V - Kỷ luật lao động",
+      "required_keywords": "sa thải trái pháp luật | trách nhiệm NSDLĐ",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 34,
-    "query": "Nếu người dùng chỉ gõ một cụm rất ngắn như “remote work”, tài liệu đề xuất nhóm kỹ thuật nào để cải thiện retrieval?",
-    "expected_answer": "Query Transformation: dùng LLM viết lại, mở rộng hoặc chia nhỏ câu hỏi trước retrieval; các kỹ thuật được trình bày gồm HyDE và Query Decomposition."
+    "id": "LAW_B_014",
+    "query": "Nếu NLĐ làm mất tài sản của doanh nghiệp, sổ tay định hướng tra cứu nội dung nào?",
+    "expected_answer": "Tra cứu câu hỏi “Bồi thường thiệt hại do làm mất tài sản?” trong Phần V - Kỷ luật lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần V - Kỷ luật lao động”, trang 7. Nội dung được tài liệu xác nhận: Tra cứu câu hỏi “Bồi thường thiệt hại do làm mất tài sản?” trong Phần V - Kỷ luật lao động."
+    ],
+    "metadata": {
+      "category": "Navigation",
+      "source_page": 7,
+      "source_section": "Phần V - Kỷ luật lao động",
+      "required_keywords": "bồi thường | mất tài sản | kỷ luật",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 35,
-    "query": "Query Decomposition phù hợp với loại câu hỏi nào và xử lý ra sao?",
-    "expected_answer": "Phù hợp câu hỏi phức tạp mà một đoạn khó chứa đủ thông tin; hệ thống chia thành sub-query, retrieval riêng rồi cho LLM tổng hợp."
+    "id": "LAW_B_015",
+    "query": "Một NLĐ vừa hỏi về nghỉ phép vừa hỏi về lương làm thêm giờ. RAG cần lấy tối thiểu từ những phần nào của sổ tay?",
+    "expected_answer": "Ít nhất từ Phần II - Tiền lương (lương làm thêm giờ) và Phần III - Thời gian làm việc và nghỉ ngơi (nghỉ phép).",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần II + III”, trang 6. Nội dung được tài liệu xác nhận: Ít nhất từ Phần II - Tiền lương (lương làm thêm giờ) và Phần III - Thời gian làm việc và nghỉ ngơi (nghỉ phép)."
+    ],
+    "metadata": {
+      "category": "Multi-hop",
+      "source_page": 6,
+      "source_section": "Phần II + III",
+      "required_keywords": "tiền lương | làm thêm | nghỉ phép",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 36,
-    "query": "Cross-Encoder và MMR giải quyết hai mục tiêu re-ranking khác nhau như thế nào?",
-    "expected_answer": "Cross-Encoder chấm lại mức độ liên quan giữa query và từng document; MMR cân bằng mức độ liên quan với tính đa dạng để giảm trùng lặp."
+    "id": "LAW_B_016",
+    "query": "Một vụ việc có tai nạn lao động và sau đó phát sinh khiếu kiện. Để trả lời theo cấu trúc sổ tay, cần kết hợp những phần nào?",
+    "expected_answer": "Cần kết hợp Phần IV - An toàn lao động với Phần VIII - Khiếu nại, khiếu kiện về lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần IV + VIII”, trang 6. Nội dung được tài liệu xác nhận: Cần kết hợp Phần IV - An toàn lao động với Phần VIII - Khiếu nại, khiếu kiện về lao động."
+    ],
+    "metadata": {
+      "category": "Multi-hop",
+      "source_page": 6,
+      "source_section": "Phần IV + VIII",
+      "required_keywords": "tai nạn lao động | khiếu nại | khiếu kiện",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 37,
-    "query": "Bài thực nghiệm nâng cao sử dụng bao nhiêu tài liệu PDF làm dữ liệu đầu vào?",
-    "expected_answer": "45 tài liệu PDF chứa kiến thức chuyên sâu về Trí tuệ nhân tạo thuộc khóa học AIO."
+    "id": "LAW_B_017",
+    "query": "“Mọi hợp đồng lao động đều bắt buộc phải lập thành văn bản” có phù hợp với nội dung sổ tay không?",
+    "expected_answer": "Không. Sổ tay nêu hai hình thức là văn bản và lời nói, trong đó lời nói được áp dụng cho công việc tạm thời dưới 03 tháng theo quy định mà tài liệu viện dẫn.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần I - Hợp đồng lao động”, trang None. Nội dung được tài liệu xác nhận: Không. Sổ tay nêu hai hình thức là văn bản và lời nói, trong đó lời nói được áp dụng cho công việc tạm thời dưới 03 tháng theo quy định mà tài liệu viện dẫn."
+    ],
+    "metadata": {
+      "category": "False Premise",
+      "source_page": null,
+      "source_section": "Phần I - Hợp đồng lao động",
+      "required_keywords": "văn bản | lời nói | dưới 03 tháng",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 38,
-    "query": "Bốn metric Ragas được sử dụng trong tài liệu để đánh giá RAG là gì?",
-    "expected_answer": "Faithfulness, Answer Relevancy, Context Precision và Context Recall."
+    "id": "LAW_B_018",
+    "query": "Nếu người dùng hỏi pháp luật hiện hành 2026, RAG có nên trả lời trực tiếp theo ngưỡng “dưới 03 tháng” của sổ tay không?",
+    "expected_answer": "Không nên coi đó là quy định hiện hành chỉ dựa vào sổ tay này. Cần nêu đây là nội dung của tài liệu và ưu tiên/đối chiếu nguồn pháp luật cập nhật hơn nếu câu hỏi yêu cầu hiện hành.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần I - Hợp đồng lao động”, trang 11. Nội dung được tài liệu xác nhận: Không nên coi đó là quy định hiện hành chỉ dựa vào sổ tay này. Cần nêu đây là nội dung của tài liệu và ưu tiên/đối chiếu nguồn pháp luật cập nhật hơn nếu câu hỏi yêu cầu hiện hành."
+    ],
+    "metadata": {
+      "category": "Source-awareness",
+      "source_page": 11,
+      "source_section": "Phần I - Hợp đồng lao động",
+      "required_keywords": "nguồn cũ | thời điểm | quy định hiện hành",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer with temporal caveat",
+      "notes": "Tests outdated-source handling."
+    }
   },
   {
-    "id": 39,
-    "query": "Faithfulness đo điều gì trong đánh giá RAG?",
-    "expected_answer": "Faithfulness đo mức độ các phát biểu trong câu trả lời có thể được hỗ trợ bởi context đã truy xuất, nhằm kiểm soát hallucination."
+    "id": "LAW_B_019",
+    "query": "Sổ tay được thiết kế theo hình thức nào và điều đó có ý nghĩa gì cho RAG?",
+    "expected_answer": "Tài liệu được thiết kế dạng Hỏi - Đáp, với thông tin và giải thích ngắn gọn; các câu hỏi dựa trên tình huống thực tế. Với RAG, cấu trúc này phù hợp cho truy xuất theo câu hỏi/tình huống nhưng vẫn cần giữ đúng bối cảnh và thời điểm của nguồn.",
+    "reference_contexts": [
+      "Căn cứ: phần “Giới thiệu”, trang 5. Nội dung được tài liệu xác nhận: Tài liệu được thiết kế dạng Hỏi - Đáp, với thông tin và giải thích ngắn gọn; các câu hỏi dựa trên tình huống thực tế. Với RAG, cấu trúc này phù hợp cho truy xuất theo câu hỏi/tình huống nhưng vẫn cần giữ đúng bối cảnh và thời điểm của nguồn."
+    ],
+    "metadata": {
+      "category": "Synthesis",
+      "source_page": 5,
+      "source_section": "Giới thiệu",
+      "required_keywords": "Hỏi-Đáp | tình huống thực tế | ngắn gọn",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 40,
-    "query": "Trong ví dụ Einstein, Faithfulness bằng bao nhiêu và vì sao?",
-    "expected_answer": "Faithfulness = 0.5 vì có 2 phát biểu nhưng chỉ 1 phát biểu được context hỗ trợ; ngày 20 March 1879 không khớp context ghi 14 March 1879."
+    "id": "LAW_B_020",
+    "query": "Một chatbot nhận câu hỏi “bị sa thải khi đang mang thai thì quyền lợi thế nào?”. Theo mục lục sổ tay, retrieval nên mở rộng sang những nhóm nội dung nào?",
+    "expected_answer": "Nên truy xuất ít nhất Phần V - Kỷ luật lao động và Phần VI - Chế độ đối với lao động nữ; tùy câu hỏi về khiếu kiện có thể cần thêm Phần VIII.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần V + VI (+ VIII)”, trang 7. Nội dung được tài liệu xác nhận: Nên truy xuất ít nhất Phần V - Kỷ luật lao động và Phần VI - Chế độ đối với lao động nữ; tùy câu hỏi về khiếu kiện có thể cần thêm Phần VIII."
+    ],
+    "metadata": {
+      "category": "Synthesis",
+      "source_page": 7,
+      "source_section": "Phần V + VI (+ VIII)",
+      "required_keywords": "sa thải | mang thai | lao động nữ | khiếu kiện",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 41,
-    "query": "Context Precision và Context Recall khác nhau ở trọng tâm đánh giá nào?",
-    "expected_answer": "Context Precision tập trung vào độ chính xác và thứ hạng của context liên quan; Context Recall tập trung vào độ bao phủ thông tin cần thiết từ reference trong retrieved contexts."
+    "id": "LAW_C_001",
+    "query": "Bộ tổng hợp văn bản được cập nhật đến thời điểm nào?",
+    "expected_answer": "Được cập nhật đến hết tháng 3/2020.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bìa”, trang 1. Nội dung được tài liệu xác nhận: Được cập nhật đến hết tháng 3/2020."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 1,
+      "source_section": "Bìa",
+      "required_keywords": "03/2020 | cập nhật",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 42,
-    "query": "Ví dụ green tea trong phần Context Precision cho kết quả cuối cùng xấp xỉ bao nhiêu?",
-    "expected_answer": "Context Precision xấp xỉ 0.76."
+    "id": "LAW_C_002",
+    "query": "Văn bản đầu tiên trong mục lục của bộ tổng hợp là văn bản nào?",
+    "expected_answer": "Bộ luật Lao động số 45/2019/QH14 ngày 20/11/2019.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục”, trang 2. Nội dung được tài liệu xác nhận: Bộ luật Lao động số 45/2019/QH14 ngày 20/11/2019."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 2,
+      "source_section": "Mục lục",
+      "required_keywords": "45/2019/QH14 | 20/11/2019",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 43,
-    "query": "Ragas tạo testset tự động từ corpus PDF theo luồng chính nào?",
-    "expected_answer": "PDF được tiền xử lý và chuyển sang markdown, xây knowledge graph bằng embedding và trích xuất quan hệ, sau đó query synthesizer sinh câu hỏi; LLM tạo reference answer và reference_contexts cùng metadata."
+    "id": "LAW_C_003",
+    "query": "Bộ tổng hợp có chứa Luật An toàn, vệ sinh lao động không?",
+    "expected_answer": "Có. Mục lục liệt kê Luật An toàn, vệ sinh lao động số 84/2015/QH13.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục”, trang 2. Nội dung được tài liệu xác nhận: Có. Mục lục liệt kê Luật An toàn, vệ sinh lao động số 84/2015/QH13."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 2,
+      "source_section": "Mục lục",
+      "required_keywords": "84/2015/QH13 | an toàn vệ sinh lao động",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 44,
-    "query": "Phân phối mặc định của ba loại query do Ragas sinh trong tài liệu là bao nhiêu?",
-    "expected_answer": "Single-hop specific 50%, multi-hop abstract 25%, multi-hop specific 25%."
+    "id": "LAW_C_004",
+    "query": "Bộ tổng hợp có chứa Luật Việc làm không?",
+    "expected_answer": "Có. Mục lục liệt kê Luật Việc làm số 38/2013/QH13.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục”, trang 2. Nội dung được tài liệu xác nhận: Có. Mục lục liệt kê Luật Việc làm số 38/2013/QH13."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 2,
+      "source_section": "Mục lục",
+      "required_keywords": "38/2013/QH13 | Luật việc làm",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 45,
-    "query": "Một sample trong Ragas Testset có những trường chính nào, và khi đánh giá hệ thống thực tế cần bổ sung thêm gì?",
-    "expected_answer": "Các trường chính gồm user_input, reference_contexts, reference, persona_name, query_style, query_length và synthesizer_name. Khi đánh giá thực tế bổ sung response và retrieved_contexts."
+    "id": "LAW_C_005",
+    "query": "Bộ tổng hợp có chứa Luật Công đoàn không?",
+    "expected_answer": "Có. Mục lục liệt kê Luật Công đoàn số 12/2012/QH13.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục”, trang 2. Nội dung được tài liệu xác nhận: Có. Mục lục liệt kê Luật Công đoàn số 12/2012/QH13."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 2,
+      "source_section": "Mục lục",
+      "required_keywords": "12/2012/QH13 | công đoàn",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 46,
-    "query": "Baseline RAG nâng cao được cấu hình như thế nào về chunking, retrieval và Top-K?",
-    "expected_answer": "Baseline dùng chunk_size=1024, chunk_overlap=128, VectorDB với similarity retrieval và k=3; chưa áp dụng Query Transformation hay Re-ranking."
+    "id": "LAW_C_006",
+    "query": "Nghị định nào trong mục lục quy định chi tiết về hợp đồng lao động?",
+    "expected_answer": "Nghị định số 44/2013/NĐ-CP ngày 10/05/2013.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục”, trang 4. Nội dung được tài liệu xác nhận: Nghị định số 44/2013/NĐ-CP ngày 10/05/2013."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 4,
+      "source_section": "Mục lục",
+      "required_keywords": "44/2013/NĐ-CP | hợp đồng lao động",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 47,
-    "query": "Baseline đạt các điểm Ragas nào và điểm yếu rõ nhất là gì?",
-    "expected_answer": "Faithfulness 0.73, Answer Relevancy 0.53, Context Precision 0.81, Context Recall 0.67. Điểm yếu rõ nhất là Answer Relevancy thấp nhất; Context Recall cũng còn trung bình."
+    "id": "LAW_C_007",
+    "query": "Nghị định nào trong mục lục liên quan đến tranh chấp lao động?",
+    "expected_answer": "Nghị định số 46/2013/NĐ-CP ngày 10/05/2013.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục”, trang 4. Nội dung được tài liệu xác nhận: Nghị định số 46/2013/NĐ-CP ngày 10/05/2013."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 4,
+      "source_section": "Mục lục",
+      "required_keywords": "46/2013/NĐ-CP | tranh chấp lao động",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 48,
-    "query": "Semantic Chunking thay đổi các metric thế nào so với baseline?",
-    "expected_answer": "Faithfulness 0.73→0.81, Answer Relevancy 0.53→0.61, Context Precision 0.81→0.83, Context Recall 0.67→0.63."
+    "id": "LAW_C_008",
+    "query": "BLLĐ 2019 trong bộ tổng hợp định nghĩa cưỡng bức lao động như thế nào?",
+    "expected_answer": "Là việc dùng vũ lực, đe dọa dùng vũ lực hoặc thủ đoạn khác để ép buộc NLĐ làm việc trái ý muốn.",
+    "reference_contexts": [
+      "Căn cứ: phần “BLLĐ 2019 - Điều 3”, trang 7. Nội dung được tài liệu xác nhận: Là việc dùng vũ lực, đe dọa dùng vũ lực hoặc thủ đoạn khác để ép buộc NLĐ làm việc trái ý muốn."
+    ],
+    "metadata": {
+      "category": "Definition",
+      "source_page": 7,
+      "source_section": "BLLĐ 2019 - Điều 3",
+      "required_keywords": "vũ lực | đe dọa | trái ý muốn",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 49,
-    "query": "Trong các chiến lược Retrieval thử nghiệm, Hybrid + RRF đạt kết quả nào nổi bật?",
-    "expected_answer": "Hybrid + RRF đạt Faithfulness 0.86, Answer Relevancy 0.57, Context Precision 0.80 và Context Recall 0.80; tài liệu kết luận chiến lược này cân bằng tốt giữa “tìm đủ” và “tìm đúng”."
+    "id": "LAW_C_009",
+    "query": "BLLĐ 2019 định nghĩa phân biệt đối xử trong lao động dựa trên những nhóm căn cứ nào?",
+    "expected_answer": "Tài liệu liệt kê các căn cứ như chủng tộc, màu da, nguồn gốc, dân tộc, giới tính, độ tuổi, thai sản, hôn nhân, tôn giáo/tín ngưỡng, chính kiến, khuyết tật, trách nhiệm gia đình, HIV và lý do liên quan đến tổ chức đại diện NLĐ.",
+    "reference_contexts": [
+      "Căn cứ: phần “BLLĐ 2019 - Điều 3”, trang 7. Nội dung được tài liệu xác nhận: Tài liệu liệt kê các căn cứ như chủng tộc, màu da, nguồn gốc, dân tộc, giới tính, độ tuổi, thai sản, hôn nhân, tôn giáo/tín ngưỡng, chính kiến, khuyết tật, trách nhiệm gia đình, HIV và lý do liên quan đến tổ chức đại diện NLĐ."
+    ],
+    "metadata": {
+      "category": "Definition",
+      "source_page": 7,
+      "source_section": "BLLĐ 2019 - Điều 3",
+      "required_keywords": "phân biệt đối xử | giới tính | tuổi | thai sản | HIV | công đoàn",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 50,
-    "query": "Kỹ thuật nào đạt Faithfulness cao nhất trong bảng tổng kết thực nghiệm và điểm là bao nhiêu?",
-    "expected_answer": "Query Decomposition đạt Faithfulness cao nhất: 0.93, tăng 0.20 so me với baseline."
+    "id": "LAW_C_010",
+    "query": "Theo BLLĐ 2019 trong bộ tổng hợp, NLĐ có quyền từ chối làm việc trong tình huống nào?",
+    "expected_answer": "Khi có nguy cơ rõ ràng đe dọa trực tiếp đến tính mạng, sức khỏe trong quá trình thực hiện công việc.",
+    "reference_contexts": [
+      "Căn cứ: phần “BLLĐ 2019 - Quyền NLĐ”, trang 8. Nội dung được tài liệu xác nhận: Khi có nguy cơ rõ ràng đe dọa trực tiếp đến tính mạng, sức khỏe trong quá trình thực hiện công việc."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 8,
+      "source_section": "BLLĐ 2019 - Quyền NLĐ",
+      "required_keywords": "từ chối làm việc | nguy cơ rõ ràng | tính mạng | sức khỏe",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 51,
-    "query": "HyDE đã tác động thế nào đến Faithfulness, Answer Relevancy và Context Recall so với baseline?",
-    "expected_answer": "Faithfulness tăng lên 0.81 (+0.08), Answer Relevancy giảm xuống 0.50 (-0.03), Context Recall giảm xuống 0.63 (-0.04)."
+    "id": "LAW_C_011",
+    "query": "Muốn tra quy định về lao động nước ngoài làm việc tại Việt Nam, mục lục gợi ý văn bản hợp nhất nào?",
+    "expected_answer": "VBHN số 5325/VBHN-BLĐTBXH ngày 19/12/2018 về Nghị định 11/2016/NĐ-CP, được sửa đổi bởi Nghị định 140/2018/NĐ-CP.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục”, trang 2. Nội dung được tài liệu xác nhận: VBHN số 5325/VBHN-BLĐTBXH ngày 19/12/2018 về Nghị định 11/2016/NĐ-CP, được sửa đổi bởi Nghị định 140/2018/NĐ-CP."
+    ],
+    "metadata": {
+      "category": "Navigation",
+      "source_page": 2,
+      "source_section": "Mục lục",
+      "required_keywords": "5325/VBHN-BLĐTBXH | lao động nước ngoài",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 52,
-    "query": "Query Decomposition đạt kết quả gì và đánh đổi ở metric retrieval nào?",
-    "expected_answer": "Decomposition đạt Faithfulness 0.93, Answer Relevancy 0.65, Context Precision 0.68 và Context Recall 0.69. Đánh đổi chính là Context Precision giảm."
+    "id": "LAW_C_012",
+    "query": "Muốn tra quy định về tiền lương theo hệ thống văn bản trước BLLĐ 2019, mục lục có văn bản hợp nhất nào?",
+    "expected_answer": "VBHN số 4759/VBHN-BLĐTBXH ngày 12/11/2018 hợp nhất Nghị định 49/2013/NĐ-CP và sửa đổi liên quan.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục”, trang 2. Nội dung được tài liệu xác nhận: VBHN số 4759/VBHN-BLĐTBXH ngày 12/11/2018 hợp nhất Nghị định 49/2013/NĐ-CP và sửa đổi liên quan."
+    ],
+    "metadata": {
+      "category": "Navigation",
+      "source_page": 2,
+      "source_section": "Mục lục",
+      "required_keywords": "4759/VBHN-BLĐTBXH | tiền lương",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 53,
-    "query": "Cross-Encoder trong thực nghiệm cải thiện những metric nào so với baseline?",
-    "expected_answer": "Cross-Encoder đạt Faithfulness 0.76, Answer Relevancy 0.61, Context Precision 0.82, Context Recall 0.71; Answer Relevancy tăng 0.08 và Context Recall tăng 0.04."
+    "id": "LAW_C_013",
+    "query": "Văn bản nào trong mục lục quy định chi tiết về thời giờ làm việc, nghỉ ngơi và an toàn, vệ sinh lao động?",
+    "expected_answer": "Nghị định số 45/2013/NĐ-CP ngày 10/05/2013.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục”, trang 4. Nội dung được tài liệu xác nhận: Nghị định số 45/2013/NĐ-CP ngày 10/05/2013."
+    ],
+    "metadata": {
+      "category": "Navigation",
+      "source_page": 4,
+      "source_section": "Mục lục",
+      "required_keywords": "45/2013/NĐ-CP | thời giờ | nghỉ ngơi | an toàn",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 54,
-    "query": "Vì sao MMR làm giảm Context Recall trong thực nghiệm này?",
-    "expected_answer": "MMR phạt tài liệu có nội dung tương đồng để tăng đa dạng; trong tài liệu học thuật, các đoạn gần nghĩa có thể chứa chi tiết bổ trợ quan trọng nên bị loại quá mức, làm Context Recall giảm xuống 0.60."
+    "id": "LAW_C_014",
+    "query": "Muốn tra danh mục công việc nhẹ được sử dụng người dưới 15 tuổi, tài liệu liệt kê thông tư nào?",
+    "expected_answer": "Thông tư số 11/2013/TT-BLĐTBXH ngày 11/06/2013.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục”, trang 5. Nội dung được tài liệu xác nhận: Thông tư số 11/2013/TT-BLĐTBXH ngày 11/06/2013."
+    ],
+    "metadata": {
+      "category": "Navigation",
+      "source_page": 5,
+      "source_section": "Mục lục",
+      "required_keywords": "11/2013/TT-BLĐTBXH | dưới 15 tuổi",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 55,
-    "query": "Tài liệu cho biết ChromaDB dùng thuật toán mã hóa dữ liệu (encryption) nào khi lưu vector?",
-    "expected_answer": "Tài liệu không cung cấp thông tin về thuật toán mã hóa dữ liệu (encryption) mà ChromaDB sử dụng khi lưu vector."
+    "id": "LAW_C_015",
+    "query": "Một câu hỏi vừa liên quan hợp đồng lao động vừa liên quan an toàn vệ sinh lao động. Bộ tổng hợp có những nhóm nguồn nào để retrieval?",
+    "expected_answer": "Có thể truy xuất BLLĐ 2019, Nghị định 44/2013/NĐ-CP về HĐLĐ và Luật An toàn, vệ sinh lao động 84/2015/QH13 cùng các văn bản hướng dẫn liên quan trong bộ tổng hợp.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục - đa văn bản”, trang 2. Nội dung được tài liệu xác nhận: Có thể truy xuất BLLĐ 2019, Nghị định 44/2013/NĐ-CP về HĐLĐ và Luật An toàn, vệ sinh lao động 84/2015/QH13 cùng các văn bản hướng dẫn liên quan trong bộ tổng hợp."
+    ],
+    "metadata": {
+      "category": "Multi-hop",
+      "source_page": 2,
+      "source_section": "Mục lục - đa văn bản",
+      "required_keywords": "BLLĐ 2019 | 44/2013 | 84/2015 | đa văn bản",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 56,
-    "query": "Ragas trong tài liệu có metric riêng để chấm độ trễ phản hồi (latency) không, và công thức là gì?",
-    "expected_answer": "Tài liệu không cung cấp metric Ragas riêng cho latency hoặc công thức chấm latency; tài liệu chỉ sử dụng bốn metric Faithfulness, Answer Relevancy, Context Precision và Context Recall."
+    "id": "LAW_C_016",
+    "query": "Tại sao tiêu đề “ĐANG CÓ HIỆU LỰC” của bộ tổng hợp không đủ để kết luận mọi văn bản trong đó còn hiệu lực vào năm 2026?",
+    "expected_answer": "Vì trạng thái đó gắn với thời điểm cập nhật hết tháng 3/2020. Để trả lời cho năm 2026 cần nguồn cập nhật sau thời điểm này.",
+    "reference_contexts": [
+      "Căn cứ: phần “Bìa - thời điểm cập nhật”, trang 1. Nội dung được tài liệu xác nhận: Vì trạng thái đó gắn với thời điểm cập nhật hết tháng 3/2020. Để trả lời cho năm 2026 cần nguồn cập nhật sau thời điểm này."
+    ],
+    "metadata": {
+      "category": "Temporal Reasoning",
+      "source_page": 1,
+      "source_section": "Bìa - thời điểm cập nhật",
+      "required_keywords": "03/2020 | hiệu lực | 2026 | cần cập nhật",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 57,
-    "query": "Breakpoint threshold nào là tối ưu cho Semantic Chunking trên mọi loại dữ liệu?",
-    "expected_answer": "Tài liệu không đưa ra một breakpoint threshold tối ưu cho mọi loại dữ liệu; chỉ mô tả cơ chế dùng ngưỡng và cấu hình trong thực nghiệm."
+    "id": "LAW_C_017",
+    "query": "“Bộ tổng hợp này chỉ chứa Bộ luật Lao động 2019” có đúng không?",
+    "expected_answer": "Không. Mục lục cho thấy tài liệu tổng hợp nhiều luật, nghị định, quyết định và thông tư về lao động, BHXH, việc làm, công đoàn, an toàn vệ sinh lao động và các chủ đề liên quan.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục”, trang 2. Nội dung được tài liệu xác nhận: Không. Mục lục cho thấy tài liệu tổng hợp nhiều luật, nghị định, quyết định và thông tư về lao động, BHXH, việc làm, công đoàn, an toàn vệ sinh lao động và các chủ đề liên quan."
+    ],
+    "metadata": {
+      "category": "False Premise",
+      "source_page": 2,
+      "source_section": "Mục lục",
+      "required_keywords": "nhiều văn bản | luật | nghị định | thông tư",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 58,
-    "query": "Nếu tăng k thì kết quả RAG có tốt hơn không?",
-    "expected_answer": "Câu hỏi chưa đủ rõ vì tài liệu dùng “k” ở nhiều ngữ cảnh, như Top-K retrieval và hằng số k trong RRF. Cần làm rõ tham số nào trước khi kết luận."
+    "id": "LAW_C_018",
+    "query": "Nếu câu hỏi yêu cầu quy định BLLĐ 2019 nguyên gốc tại thời điểm ban hành, bộ tổng hợp có phù hợp không?",
+    "expected_answer": "Có thể phù hợp vì tài liệu chứa Bộ luật Lao động 45/2019/QH14. Tuy nhiên cần phân biệt với yêu cầu “hiện hành 2026”, khi đó phải ưu tiên nguồn hợp nhất/cập nhật mới hơn.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục/BLLĐ 2019”, trang 2. Nội dung được tài liệu xác nhận: Có thể phù hợp vì tài liệu chứa Bộ luật Lao động 45/2019/QH14. Tuy nhiên cần phân biệt với yêu cầu “hiện hành 2026”, khi đó phải ưu tiên nguồn hợp nhất/cập nhật mới hơn."
+    ],
+    "metadata": {
+      "category": "Source Selection",
+      "source_page": 2,
+      "source_section": "Mục lục/BLLĐ 2019",
+      "required_keywords": "nguyên gốc 2019 | hiện hành 2026 | nguồn cập nhật",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 59,
-    "query": "Tài liệu quy định SLA thời gian phản hồi tối đa của chatbot RAG là bao nhiêu giây?",
-    "expected_answer": "Tài liệu không cung cấp SLA thời gian phản hồi tối đa của chatbot RAG."
+    "id": "LAW_C_019",
+    "query": "Một truy vấn về người lao động nước ngoài và BHXH bắt buộc nên mở rộng retrieval đến những văn bản nào trong mục lục?",
+    "expected_answer": "Ít nhất đến văn bản về lao động nước ngoài (VBHN 5325/VBHN-BLĐTBXH) và Nghị định 143/2018/NĐ-CP về BHXH bắt buộc đối với NLĐ là công dân nước ngoài làm việc tại Việt Nam.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục - lao động nước ngoài/BHXH”, trang 3. Nội dung được tài liệu xác nhận: Ít nhất đến văn bản về lao động nước ngoài (VBHN 5325/VBHN-BLĐTBXH) và Nghị định 143/2018/NĐ-CP về BHXH bắt buộc đối với NLĐ là công dân nước ngoài làm việc tại Việt Nam."
+    ],
+    "metadata": {
+      "category": "Multi-document",
+      "source_page": 3,
+      "source_section": "Mục lục - lao động nước ngoài/BHXH",
+      "required_keywords": "5325/VBHN | 143/2018 | lao động nước ngoài | BHXH",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   },
   {
-    "id": 60,
-    "query": "Theo tài liệu, phương pháp nào luôn tốt nhất cho mọi hệ thống RAG: Semantic Chunking, Hybrid+RRF hay Decomposition?",
-    "expected_answer": "Tài liệu không khẳng định một phương pháp luôn tốt nhất cho mọi hệ thống RAG. Kết quả chỉ phản ánh chuỗi thực nghiệm cụ thể và mỗi kỹ thuật có trade-off khác nhau."
+    "id": "LAW_C_020",
+    "query": "Một truy vấn về lao động nữ vừa hỏi công việc bị cấm vừa hỏi chính sách bảo vệ nên retrieval đến những nguồn nào trong bộ tổng hợp?",
+    "expected_answer": "Có thể cần Nghị định 85/2015/NĐ-CP về chính sách đối với lao động nữ và Thông tư 26/2013/TT-BLĐTBXH về danh mục công việc không được sử dụng lao động nữ, cùng quy định liên quan trong BLLĐ.",
+    "reference_contexts": [
+      "Căn cứ: phần “Mục lục - lao động nữ”, trang 3. Nội dung được tài liệu xác nhận: Có thể cần Nghị định 85/2015/NĐ-CP về chính sách đối với lao động nữ và Thông tư 26/2013/TT-BLĐTBXH về danh mục công việc không được sử dụng lao động nữ, cùng quy định liên quan trong BLLĐ."
+    ],
+    "metadata": {
+      "category": "Multi-document",
+      "source_page": 3,
+      "source_section": "Mục lục - lao động nữ",
+      "required_keywords": "85/2015 | 26/2013 | lao động nữ",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_001",
+    "query": "Cẩm nang ILO-VCCI được xây dựng để hỗ trợ chủ thể nào?",
+    "expected_answer": "Chủ yếu hỗ trợ người sử dụng lao động/doanh nghiệp cập nhật và tuân thủ các thay đổi của BLLĐ 2019.",
+    "reference_contexts": [
+      "Căn cứ: phần “Lời nói đầu”, trang None. Nội dung được tài liệu xác nhận: Chủ yếu hỗ trợ người sử dụng lao động/doanh nghiệp cập nhật và tuân thủ các thay đổi của BLLĐ 2019."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": null,
+      "source_section": "Lời nói đầu",
+      "required_keywords": "NSDLĐ | doanh nghiệp | BLLĐ 2019",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_002",
+    "query": "Cẩm nang so sánh chủ yếu hai phiên bản Bộ luật Lao động nào?",
+    "expected_answer": "BLLĐ 2012 và BLLĐ 2019.",
+    "reference_contexts": [
+      "Căn cứ: phần “Lời nói đầu”, trang None. Nội dung được tài liệu xác nhận: BLLĐ 2012 và BLLĐ 2019."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": null,
+      "source_section": "Lời nói đầu",
+      "required_keywords": "BLLĐ 2012 | BLLĐ 2019",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_003",
+    "query": "Cẩm nang tập trung vào những nhóm nội dung chính nào?",
+    "expected_answer": "Gồm quan hệ/HĐLĐ, chấm dứt HĐLĐ, tiền lương, nghỉ lễ-tết và làm thêm giờ, nghỉ hưu, lao động nữ, kỷ luật lao động; đồng thời có đối thoại và thương lượng tập thể.",
+    "reference_contexts": [
+      "Căn cứ: phần “Lời nói đầu/Mục lục”, trang 4. Nội dung được tài liệu xác nhận: Gồm quan hệ/HĐLĐ, chấm dứt HĐLĐ, tiền lương, nghỉ lễ-tết và làm thêm giờ, nghỉ hưu, lao động nữ, kỷ luật lao động; đồng thời có đối thoại và thương lượng tập thể."
+    ],
+    "metadata": {
+      "category": "List",
+      "source_page": 4,
+      "source_section": "Lời nói đầu/Mục lục",
+      "required_keywords": "HĐLĐ | chấm dứt | tiền lương | làm thêm | nghỉ hưu | lao động nữ | kỷ luật",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_004",
+    "query": "Chương I của cẩm nang nói về chủ đề gì?",
+    "expected_answer": "Quan hệ lao động và hợp đồng lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Chương I”, trang None. Nội dung được tài liệu xác nhận: Quan hệ lao động và hợp đồng lao động."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": null,
+      "source_section": "Chương I",
+      "required_keywords": "quan hệ lao động | HĐLĐ",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_005",
+    "query": "Cẩm nang có nội dung riêng về thử việc không?",
+    "expected_answer": "Có. Mục lục Chương I có phần về thử việc.",
+    "reference_contexts": [
+      "Căn cứ: phần “Chương I - Thử việc”, trang 5. Nội dung được tài liệu xác nhận: Có. Mục lục Chương I có phần về thử việc."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 5,
+      "source_section": "Chương I - Thử việc",
+      "required_keywords": "thử việc",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_006",
+    "query": "Cẩm nang có chương riêng về xử lý kỷ luật lao động không?",
+    "expected_answer": "Có. Chương III là Xử lý kỷ luật lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Chương III”, trang 7. Nội dung được tài liệu xác nhận: Có. Chương III là Xử lý kỷ luật lao động."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 7,
+      "source_section": "Chương III",
+      "required_keywords": "kỷ luật lao động",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_007",
+    "query": "Cẩm nang có nội dung về tiền lương làm thêm giờ và làm việc ban đêm không?",
+    "expected_answer": "Có. Mục lục có mục riêng “Tiền lương làm thêm giờ, làm việc vào ban đêm”.",
+    "reference_contexts": [
+      "Căn cứ: phần “Chương tiền lương”, trang 8. Nội dung được tài liệu xác nhận: Có. Mục lục có mục riêng “Tiền lương làm thêm giờ, làm việc vào ban đêm”."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 8,
+      "source_section": "Chương tiền lương",
+      "required_keywords": "làm thêm giờ | ban đêm | tiền lương",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_008",
+    "query": "Cẩm nang tiếp cận các thay đổi của BLLĐ 2019 theo cách nào?",
+    "expected_answer": "Làm rõ khác biệt giữa BLLĐ 2012 và 2019 cùng văn bản liên quan, sau đó đưa ra giải pháp/kiến nghị để doanh nghiệp điều chỉnh và tuân thủ.",
+    "reference_contexts": [
+      "Căn cứ: phần “Lời nói đầu”, trang 4. Nội dung được tài liệu xác nhận: Làm rõ khác biệt giữa BLLĐ 2012 và 2019 cùng văn bản liên quan, sau đó đưa ra giải pháp/kiến nghị để doanh nghiệp điều chỉnh và tuân thủ."
+    ],
+    "metadata": {
+      "category": "Concept",
+      "source_page": 4,
+      "source_section": "Lời nói đầu",
+      "required_keywords": "so sánh 2012-2019 | giải pháp | doanh nghiệp",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_009",
+    "query": "Muốn tìm dấu hiệu nhận biết quan hệ lao động, cần truy xuất phần nào?",
+    "expected_answer": "Chương I, mục I - Quan hệ lao động, phần “Dấu hiệu nhận biết quan hệ lao động”.",
+    "reference_contexts": [
+      "Căn cứ: phần “Chương I - Quan hệ lao động”, trang 5. Nội dung được tài liệu xác nhận: Chương I, mục I - Quan hệ lao động, phần “Dấu hiệu nhận biết quan hệ lao động”."
+    ],
+    "metadata": {
+      "category": "Navigation",
+      "source_page": 5,
+      "source_section": "Chương I - Quan hệ lao động",
+      "required_keywords": "dấu hiệu | quan hệ lao động",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_010",
+    "query": "Muốn tìm thay đổi về quyền NLĐ đơn phương chấm dứt HĐLĐ, cần truy xuất phần nào?",
+    "expected_answer": "Chương về chấm dứt HĐLĐ, mục nêu “Những điểm mới liên quan đến việc NLĐ đơn phương chấm dứt HĐLĐ”.",
+    "reference_contexts": [
+      "Căn cứ: phần “Chấm dứt HĐLĐ”, trang 6. Nội dung được tài liệu xác nhận: Chương về chấm dứt HĐLĐ, mục nêu “Những điểm mới liên quan đến việc NLĐ đơn phương chấm dứt HĐLĐ”."
+    ],
+    "metadata": {
+      "category": "Navigation",
+      "source_page": 6,
+      "source_section": "Chấm dứt HĐLĐ",
+      "required_keywords": "NLĐ | đơn phương chấm dứt | điểm mới",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_011",
+    "query": "Câu hỏi doanh nghiệp cho thôi việc do thay đổi cơ cấu, công nghệ hoặc lý do kinh tế cần truy xuất phần nào?",
+    "expected_answer": "Phần III về chấm dứt HĐLĐ do thay đổi cơ cấu, công nghệ hoặc vì lý do kinh tế, gồm căn cứ và quy trình cho thôi việc.",
+    "reference_contexts": [
+      "Căn cứ: phần “Chấm dứt HĐLĐ”, trang 6. Nội dung được tài liệu xác nhận: Phần III về chấm dứt HĐLĐ do thay đổi cơ cấu, công nghệ hoặc vì lý do kinh tế, gồm căn cứ và quy trình cho thôi việc."
+    ],
+    "metadata": {
+      "category": "Navigation",
+      "source_page": 6,
+      "source_section": "Chấm dứt HĐLĐ",
+      "required_keywords": "cơ cấu | công nghệ | lý do kinh tế | cho thôi việc",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_012",
+    "query": "Muốn tra các hình thức xử lý kỷ luật lao động, cần vào phần nào?",
+    "expected_answer": "Chương III - Xử lý kỷ luật lao động, mục II “Các hình thức xử lý kỷ luật lao động”.",
+    "reference_contexts": [
+      "Căn cứ: phần “Chương III”, trang 7. Nội dung được tài liệu xác nhận: Chương III - Xử lý kỷ luật lao động, mục II “Các hình thức xử lý kỷ luật lao động”."
+    ],
+    "metadata": {
+      "category": "Navigation",
+      "source_page": 7,
+      "source_section": "Chương III",
+      "required_keywords": "hình thức | kỷ luật lao động",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_013",
+    "query": "Muốn tra kỳ hạn trả lương, cần tìm mục nào?",
+    "expected_answer": "Mục “Kỳ hạn trả lương” trong chương/phần về tiền lương.",
+    "reference_contexts": [
+      "Căn cứ: phần “Tiền lương”, trang 8. Nội dung được tài liệu xác nhận: Mục “Kỳ hạn trả lương” trong chương/phần về tiền lương."
+    ],
+    "metadata": {
+      "category": "Navigation",
+      "source_page": 8,
+      "source_section": "Tiền lương",
+      "required_keywords": "kỳ hạn | trả lương",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_014",
+    "query": "Cẩm nang có áp dụng chi tiết cho doanh nghiệp cho thuê lại lao động không?",
+    "expected_answer": "Không phải trọng tâm. Tài liệu lưu ý phạm vi dành cho đa số doanh nghiệp sản xuất kinh doanh; doanh nghiệp kinh doanh có điều kiện như cho thuê lại lao động được hướng dẫn chi tiết ở tài liệu khác.",
+    "reference_contexts": [
+      "Căn cứ: phần “Lời nói đầu - Phạm vi”, trang None. Nội dung được tài liệu xác nhận: Không phải trọng tâm. Tài liệu lưu ý phạm vi dành cho đa số doanh nghiệp sản xuất kinh doanh; doanh nghiệp kinh doanh có điều kiện như cho thuê lại lao động được hướng dẫn chi tiết ở tài liệu khác."
+    ],
+    "metadata": {
+      "category": "Scope",
+      "source_page": null,
+      "source_section": "Lời nói đầu - Phạm vi",
+      "required_keywords": "phạm vi | cho thuê lại lao động | tài liệu khác",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_015",
+    "query": "Một doanh nghiệp hỏi vừa về chuyển NLĐ sang công việc khác vừa về chấm dứt HĐLĐ do thay đổi cơ cấu. Retrieval nên lấy những phần nào?",
+    "expected_answer": "Cần kết hợp nội dung Chương I về chuyển NLĐ làm công việc khác so với HĐLĐ với phần chấm dứt HĐLĐ do thay đổi cơ cấu, công nghệ/lý do kinh tế.",
+    "reference_contexts": [
+      "Căn cứ: phần “Chương I + Chấm dứt HĐLĐ”, trang 4. Nội dung được tài liệu xác nhận: Cần kết hợp nội dung Chương I về chuyển NLĐ làm công việc khác so với HĐLĐ với phần chấm dứt HĐLĐ do thay đổi cơ cấu, công nghệ/lý do kinh tế."
+    ],
+    "metadata": {
+      "category": "Multi-hop",
+      "source_page": 4,
+      "source_section": "Chương I + Chấm dứt HĐLĐ",
+      "required_keywords": "chuyển công việc | thay đổi cơ cấu | chấm dứt",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_016",
+    "query": "Một câu hỏi về làm thêm vào ngày lễ vừa liên quan thời giờ nghỉ vừa liên quan tiền lương. Cẩm nang định hướng retrieval qua những nhóm nội dung nào?",
+    "expected_answer": "Cần kết hợp phần ngày nghỉ lễ, tết/quy định làm thêm giờ với phần tiền lương, đặc biệt tiền lương làm thêm giờ và làm việc ban đêm.",
+    "reference_contexts": [
+      "Căn cứ: phần “Nghỉ lễ/tết + Tiền lương”, trang 4. Nội dung được tài liệu xác nhận: Cần kết hợp phần ngày nghỉ lễ, tết/quy định làm thêm giờ với phần tiền lương, đặc biệt tiền lương làm thêm giờ và làm việc ban đêm."
+    ],
+    "metadata": {
+      "category": "Multi-hop",
+      "source_page": 4,
+      "source_section": "Nghỉ lễ/tết + Tiền lương",
+      "required_keywords": "ngày lễ | làm thêm | tiền lương",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_017",
+    "query": "Vì sao cẩm nang phù hợp để test câu hỏi “điểm mới” hơn một văn bản luật thuần túy?",
+    "expected_answer": "Vì cẩm nang chủ động so sánh BLLĐ 2012 với BLLĐ 2019 và giải thích thay đổi, thay vì chỉ trình bày điều khoản hiện hành.",
+    "reference_contexts": [
+      "Căn cứ: phần “Lời nói đầu”, trang None. Nội dung được tài liệu xác nhận: Vì cẩm nang chủ động so sánh BLLĐ 2012 với BLLĐ 2019 và giải thích thay đổi, thay vì chỉ trình bày điều khoản hiện hành."
+    ],
+    "metadata": {
+      "category": "Comparison",
+      "source_page": null,
+      "source_section": "Lời nói đầu",
+      "required_keywords": "so sánh | điểm mới | 2012 | 2019",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_018",
+    "query": "Nếu cẩm nang nói một quy định “mới” của BLLĐ 2019, RAG có nên tự suy ra đó vẫn là quy định mới nhất năm 2026 không?",
+    "expected_answer": "Không. Cẩm nang xuất bản năm 2021 và tự lưu ý có thể có quy định mới chưa kịp cập nhật; câu hỏi hiện hành 2026 cần đối chiếu nguồn pháp luật cập nhật hơn.",
+    "reference_contexts": [
+      "Căn cứ: phần “Lời nói đầu - Lưu ý cập nhật”, trang None. Nội dung được tài liệu xác nhận: Không. Cẩm nang xuất bản năm 2021 và tự lưu ý có thể có quy định mới chưa kịp cập nhật; câu hỏi hiện hành 2026 cần đối chiếu nguồn pháp luật cập nhật hơn."
+    ],
+    "metadata": {
+      "category": "Source-awareness",
+      "source_page": null,
+      "source_section": "Lời nói đầu - Lưu ý cập nhật",
+      "required_keywords": "2021 | cập nhật | 2026 | đối chiếu",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer with temporal caveat",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_019",
+    "query": "Mục tiêu của cẩm nang đối với quản trị doanh nghiệp là gì ngoài việc “biết luật”?",
+    "expected_answer": "Giúp NSDLĐ nhận diện thay đổi pháp luật để tuân thủ, cải cách bộ máy quản lý và tổ chức đối thoại/thương lượng tập thể, qua đó hạn chế mâu thuẫn trong quan hệ lao động.",
+    "reference_contexts": [
+      "Căn cứ: phần “Lời nói đầu”, trang 3. Nội dung được tài liệu xác nhận: Giúp NSDLĐ nhận diện thay đổi pháp luật để tuân thủ, cải cách bộ máy quản lý và tổ chức đối thoại/thương lượng tập thể, qua đó hạn chế mâu thuẫn trong quan hệ lao động."
+    ],
+    "metadata": {
+      "category": "Synthesis",
+      "source_page": 3,
+      "source_section": "Lời nói đầu",
+      "required_keywords": "tuân thủ | quản trị | đối thoại | thương lượng | mâu thuẫn",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_D_020",
+    "query": "Doanh nghiệp hỏi một tình huống vừa có dấu hiệu quan hệ lao động, thử việc và sau đó sa thải. Retrieval tối thiểu nên phủ những phần nào của cẩm nang?",
+    "expected_answer": "Ít nhất Chương I về quan hệ lao động/HĐLĐ và thử việc, cùng Chương III về xử lý kỷ luật lao động/sa thải; nếu có chấm dứt HĐLĐ ngoài kỷ luật thì cần thêm chương chấm dứt HĐLĐ.",
+    "reference_contexts": [
+      "Căn cứ: phần “Chương I + II/III liên quan”, trang 5. Nội dung được tài liệu xác nhận: Ít nhất Chương I về quan hệ lao động/HĐLĐ và thử việc, cùng Chương III về xử lý kỷ luật lao động/sa thải; nếu có chấm dứt HĐLĐ ngoài kỷ luật thì cần thêm chương chấm dứt HĐLĐ."
+    ],
+    "metadata": {
+      "category": "Scenario-based",
+      "source_page": 5,
+      "source_section": "Chương I + II/III liên quan",
+      "required_keywords": "quan hệ lao động | thử việc | sa thải | chấm dứt",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_001",
+    "query": "Bộ luật Lao động trong văn bản hợp nhất có hiệu lực gốc từ ngày nào?",
+    "expected_answer": "Bộ luật Lao động 45/2019/QH14 có hiệu lực từ ngày 01/01/2021.",
+    "reference_contexts": [
+      "Căn cứ: phần “Phần mở đầu”, trang 1. Nội dung được tài liệu xác nhận: Bộ luật Lao động 45/2019/QH14 có hiệu lực từ ngày 01/01/2021."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 1,
+      "source_section": "Phần mở đầu",
+      "required_keywords": "01/01/2021 | 45/2019/QH14",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_002",
+    "query": "Theo Điều 3, người lao động được định nghĩa như thế nào?",
+    "expected_answer": "Là người làm việc cho NSDLĐ theo thỏa thuận, được trả lương và chịu sự quản lý, điều hành, giám sát của NSDLĐ.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 3”, trang 2. Nội dung được tài liệu xác nhận: Là người làm việc cho NSDLĐ theo thỏa thuận, được trả lương và chịu sự quản lý, điều hành, giám sát của NSDLĐ."
+    ],
+    "metadata": {
+      "category": "Definition",
+      "source_page": 2,
+      "source_section": "Điều 3",
+      "required_keywords": "thỏa thuận | trả lương | quản lý | điều hành | giám sát",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_003",
+    "query": "Độ tuổi lao động tối thiểu theo định nghĩa chung là bao nhiêu?",
+    "expected_answer": "Đủ 15 tuổi, trừ trường hợp được quy định riêng tại Mục 1 Chương XI.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 3”, trang 2. Nội dung được tài liệu xác nhận: Đủ 15 tuổi, trừ trường hợp được quy định riêng tại Mục 1 Chương XI."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 2,
+      "source_section": "Điều 3",
+      "required_keywords": "đủ 15 tuổi | ngoại lệ Chương XI",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_004",
+    "query": "Quan hệ lao động bao gồm những loại nào?",
+    "expected_answer": "Bao gồm quan hệ lao động cá nhân và quan hệ lao động tập thể.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 3”, trang None. Nội dung được tài liệu xác nhận: Bao gồm quan hệ lao động cá nhân và quan hệ lao động tập thể."
+    ],
+    "metadata": {
+      "category": "Definition",
+      "source_page": null,
+      "source_section": "Điều 3",
+      "required_keywords": "cá nhân | tập thể",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_005",
+    "query": "NSDLĐ có được giữ bản chính giấy tờ tùy thân, văn bằng, chứng chỉ của NLĐ không?",
+    "expected_answer": "Không. Điều 17 cấm NSDLĐ giữ bản chính các giấy tờ này khi giao kết, thực hiện HĐLĐ.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 17”, trang 8. Nội dung được tài liệu xác nhận: Không. Điều 17 cấm NSDLĐ giữ bản chính các giấy tờ này khi giao kết, thực hiện HĐLĐ."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 8,
+      "source_section": "Điều 17",
+      "required_keywords": "cấm | bản chính | giấy tờ | văn bằng | chứng chỉ",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_006",
+    "query": "HĐLĐ xác định thời hạn tối đa bao nhiêu tháng theo Điều 20?",
+    "expected_answer": "Không quá 36 tháng kể từ thời điểm có hiệu lực của hợp đồng.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 20”, trang None. Nội dung được tài liệu xác nhận: Không quá 36 tháng kể từ thời điểm có hiệu lực của hợp đồng."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": null,
+      "source_section": "Điều 20",
+      "required_keywords": "36 tháng | HĐLĐ xác định thời hạn",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_007",
+    "query": "Có áp dụng thử việc với HĐLĐ dưới 01 tháng không?",
+    "expected_answer": "Không. Điều 24 quy định không áp dụng thử việc với NLĐ giao kết HĐLĐ có thời hạn dưới 01 tháng.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 24”, trang 11. Nội dung được tài liệu xác nhận: Không. Điều 24 quy định không áp dụng thử việc với NLĐ giao kết HĐLĐ có thời hạn dưới 01 tháng."
+    ],
+    "metadata": {
+      "category": "Direct Fact",
+      "source_page": 11,
+      "source_section": "Điều 24",
+      "required_keywords": "không thử việc | dưới 01 tháng",
+      "retrieval_difficulty": "Easy",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_008",
+    "query": "Thời gian thử việc tối đa đối với người quản lý doanh nghiệp là bao lâu?",
+    "expected_answer": "Không quá 180 ngày.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 25”, trang 11. Nội dung được tài liệu xác nhận: Không quá 180 ngày."
+    ],
+    "metadata": {
+      "category": "Rule",
+      "source_page": 11,
+      "source_section": "Điều 25",
+      "required_keywords": "180 ngày | quản lý doanh nghiệp",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_009",
+    "query": "Khi tạm thời chuyển NLĐ làm công việc khác so với HĐLĐ, thời gian tối đa thông thường là bao nhiêu?",
+    "expected_answer": "Không quá 60 ngày làm việc cộng dồn trong 01 năm, trừ trường hợp NLĐ đồng ý bằng văn bản cho thời gian dài hơn.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 29”, trang 12. Nội dung được tài liệu xác nhận: Không quá 60 ngày làm việc cộng dồn trong 01 năm, trừ trường hợp NLĐ đồng ý bằng văn bản cho thời gian dài hơn."
+    ],
+    "metadata": {
+      "category": "Rule",
+      "source_page": 12,
+      "source_section": "Điều 29",
+      "required_keywords": "60 ngày | cộng dồn | 01 năm",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_010",
+    "query": "NLĐ làm HĐLĐ không xác định thời hạn muốn đơn phương chấm dứt hợp đồng thông thường phải báo trước bao lâu?",
+    "expected_answer": "Ít nhất 45 ngày, trừ các trường hợp luật cho phép không cần báo trước hoặc ngành/nghề đặc thù có quy định riêng.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 35”, trang 15. Nội dung được tài liệu xác nhận: Ít nhất 45 ngày, trừ các trường hợp luật cho phép không cần báo trước hoặc ngành/nghề đặc thù có quy định riêng."
+    ],
+    "metadata": {
+      "category": "Rule",
+      "source_page": 15,
+      "source_section": "Điều 35",
+      "required_keywords": "45 ngày | không xác định thời hạn | báo trước",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_011",
+    "query": "NLĐ làm HĐLĐ xác định thời hạn từ 12 đến 36 tháng muốn nghỉ thông thường phải báo trước bao lâu?",
+    "expected_answer": "Ít nhất 30 ngày.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 35”, trang 15. Nội dung được tài liệu xác nhận: Ít nhất 30 ngày."
+    ],
+    "metadata": {
+      "category": "Rule",
+      "source_page": 15,
+      "source_section": "Điều 35",
+      "required_keywords": "30 ngày | 12-36 tháng | báo trước",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_012",
+    "query": "Trợ cấp thôi việc được tính theo mức nào cho mỗi năm làm việc đủ điều kiện?",
+    "expected_answer": "Mỗi năm làm việc được trợ cấp một nửa tháng tiền lương, theo điều kiện và cách xác định thời gian của Điều 46.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 46”, trang 20. Nội dung được tài liệu xác nhận: Mỗi năm làm việc được trợ cấp một nửa tháng tiền lương, theo điều kiện và cách xác định thời gian của Điều 46."
+    ],
+    "metadata": {
+      "category": "Rule",
+      "source_page": 20,
+      "source_section": "Điều 46",
+      "required_keywords": "0,5 tháng lương | mỗi năm | trợ cấp thôi việc",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_013",
+    "query": "Trợ cấp mất việc làm được tính thế nào theo Điều 47?",
+    "expected_answer": "Cứ mỗi năm làm việc trả 01 tháng tiền lương nhưng ít nhất bằng 02 tháng tiền lương, nếu thuộc trường hợp và điều kiện của Điều 47.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 47”, trang None. Nội dung được tài liệu xác nhận: Cứ mỗi năm làm việc trả 01 tháng tiền lương nhưng ít nhất bằng 02 tháng tiền lương, nếu thuộc trường hợp và điều kiện của Điều 47."
+    ],
+    "metadata": {
+      "category": "Rule",
+      "source_page": null,
+      "source_section": "Điều 47",
+      "required_keywords": "1 tháng/năm | tối thiểu 2 tháng | mất việc",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_014",
+    "query": "Tiền lương theo Điều 90 bao gồm những thành phần nào?",
+    "expected_answer": "Gồm mức lương theo công việc hoặc chức danh, phụ cấp lương và các khoản bổ sung khác.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 90”, trang 35. Nội dung được tài liệu xác nhận: Gồm mức lương theo công việc hoặc chức danh, phụ cấp lương và các khoản bổ sung khác."
+    ],
+    "metadata": {
+      "category": "Definition",
+      "source_page": 35,
+      "source_section": "Điều 90",
+      "required_keywords": "mức lương | phụ cấp | khoản bổ sung",
+      "retrieval_difficulty": "Medium",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_015",
+    "query": "Một NLĐ làm thêm vào ngày nghỉ hằng tuần. Mức trả tối thiểu theo Điều 98 là bao nhiêu?",
+    "expected_answer": "Ít nhất bằng 200% đơn giá tiền lương hoặc tiền lương thực trả theo công việc đang làm.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 98”, trang 38. Nội dung được tài liệu xác nhận: Ít nhất bằng 200% đơn giá tiền lương hoặc tiền lương thực trả theo công việc đang làm."
+    ],
+    "metadata": {
+      "category": "Scenario-based",
+      "source_page": 38,
+      "source_section": "Điều 98",
+      "required_keywords": "200% | ngày nghỉ hằng tuần",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_016",
+    "query": "Một NLĐ làm thêm vào ngày lễ, tết. Điều 98 quy định mức tối thiểu nào?",
+    "expected_answer": "Ít nhất bằng 300%, chưa kể tiền lương ngày lễ, tết/ngày nghỉ có hưởng lương đối với NLĐ hưởng lương ngày.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 98”, trang 38. Nội dung được tài liệu xác nhận: Ít nhất bằng 300%, chưa kể tiền lương ngày lễ, tết/ngày nghỉ có hưởng lương đối với NLĐ hưởng lương ngày."
+    ],
+    "metadata": {
+      "category": "Scenario-based",
+      "source_page": 38,
+      "source_section": "Điều 98",
+      "required_keywords": "300% | lễ tết | chưa kể tiền lương ngày lễ",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_017",
+    "query": "Doanh nghiệp bố trí 10 giờ/ngày theo tuần. Điều này có thể phù hợp không và giới hạn tuần là bao nhiêu?",
+    "expected_answer": "Có thể, nếu NSDLĐ quy định thời giờ làm việc theo tuần và thông báo cho NLĐ; khi đó thời giờ bình thường không quá 10 giờ/ngày và không quá 48 giờ/tuần.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 105”, trang 40. Nội dung được tài liệu xác nhận: Có thể, nếu NSDLĐ quy định thời giờ làm việc theo tuần và thông báo cho NLĐ; khi đó thời giờ bình thường không quá 10 giờ/ngày và không quá 48 giờ/tuần."
+    ],
+    "metadata": {
+      "category": "Multi-hop",
+      "source_page": 40,
+      "source_section": "Điều 105",
+      "required_keywords": "10 giờ/ngày | 48 giờ/tuần | theo tuần",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_018",
+    "query": "Một NLĐ làm đủ 12 tháng hỏi về nghỉ hằng năm. RAG cần căn cứ điều nào và yếu tố nào để xác định số ngày nghỉ?",
+    "expected_answer": "Căn cứ Điều 113. Số ngày nghỉ hưởng nguyên lương phụ thuộc nhóm điều kiện/công việc của NLĐ theo các mức được điều này quy định.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 113”, trang 42. Nội dung được tài liệu xác nhận: Căn cứ Điều 113. Số ngày nghỉ hưởng nguyên lương phụ thuộc nhóm điều kiện/công việc của NLĐ theo các mức được điều này quy định."
+    ],
+    "metadata": {
+      "category": "Multi-hop",
+      "source_page": 42,
+      "source_section": "Điều 113",
+      "required_keywords": "12 tháng | nghỉ hằng năm | hưởng nguyên lương",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_019",
+    "query": "Khi xử lý kỷ luật lao động, NSDLĐ phải bảo đảm những nguyên tắc tố tụng cơ bản nào?",
+    "expected_answer": "Phải chứng minh lỗi của NLĐ; có sự tham gia của tổ chức đại diện NLĐ tại cơ sở khi NLĐ là thành viên; NLĐ phải có mặt và có quyền tự bào chữa/nhờ bào chữa; việc xử lý phải được lập biên bản, cùng các yêu cầu khác của Điều 122.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 122”, trang 46. Nội dung được tài liệu xác nhận: Phải chứng minh lỗi của NLĐ; có sự tham gia của tổ chức đại diện NLĐ tại cơ sở khi NLĐ là thành viên; NLĐ phải có mặt và có quyền tự bào chữa/nhờ bào chữa; việc xử lý phải được lập biên bản, cùng các yêu cầu khác của Điều 122."
+    ],
+    "metadata": {
+      "category": "Procedure",
+      "source_page": 46,
+      "source_section": "Điều 122",
+      "required_keywords": "chứng minh lỗi | tổ chức đại diện | tự bào chữa | biên bản",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Multiple Chunks",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
+  },
+  {
+    "id": "LAW_E_020",
+    "query": "NLĐ trộm cắp hoặc sử dụng ma túy tại nơi làm việc có thể bị áp dụng hình thức kỷ luật nào theo Điều 125?",
+    "expected_answer": "Có thể bị áp dụng hình thức xử lý kỷ luật sa thải theo các trường hợp Điều 125 quy định.",
+    "reference_contexts": [
+      "Căn cứ: phần “Điều 125”, trang 47. Nội dung được tài liệu xác nhận: Có thể bị áp dụng hình thức xử lý kỷ luật sa thải theo các trường hợp Điều 125 quy định."
+    ],
+    "metadata": {
+      "category": "Scenario-based",
+      "source_page": 47,
+      "source_section": "Điều 125",
+      "required_keywords": "trộm cắp | ma túy | sa thải",
+      "retrieval_difficulty": "Hard",
+      "expected_retrieval_type": "Single Chunk",
+      "is_answerable": true,
+      "expected_behavior": "Answer from document",
+      "notes": null
+    }
   }
 ]
