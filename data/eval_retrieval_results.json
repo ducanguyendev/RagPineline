@@ -1,31 +1,31 @@
 {
-  "timestamp": "2026-10-21 11:17:34",
+  "timestamp": "2026-10-26 16:03:08",
   "total_test_cases": 15,
   "rerank_threshold": 0.05,
   "overall_metrics": {
-    "avg_context_recall": 0.0853,
-    "avg_context_precision": 0.0667,
-    "avg_latency_ms": 40787.04,
-    "total_duration_s": 631.22
+    "avg_context_recall": 0.1265,
+    "avg_context_precision": 0.15,
+    "avg_latency_ms": 50304.45,
+    "total_duration_s": 780.98
   },
   "by_category": {
     "text": {
       "count": 7,
-      "avg_context_recall": 0.1828,
-      "avg_context_precision": 0.1429,
-      "avg_latency_ms": 37007.34
+      "avg_context_recall": 0.1855,
+      "avg_context_precision": 0.1786,
+      "avg_latency_ms": 48287.85
     },
     "table": {
       "count": 5,
-      "avg_context_recall": 0.0,
-      "avg_context_precision": 0.0,
-      "avg_latency_ms": 42670.15
+      "avg_context_recall": 0.1199,
+      "avg_context_precision": 0.2,
+      "avg_latency_ms": 47711.25
     },
     "image": {
       "count": 3,
       "avg_context_recall": 0.0,
       "avg_context_precision": 0.0,
-      "avg_latency_ms": 46467.83
+      "avg_latency_ms": 59331.86
     }
   },
   "details": [
@@ -41,7 +41,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 42113.41
+      "latency_ms": 53777.86
     },
     {
       "id": 2,
@@ -54,14 +54,14 @@
       "retrieved_chunks_count": 5,
       "retrieved_contexts": [
         "Section: Điều 104. Thời giờ làm việc bình thường\n---\n### Điều 104. Thời giờ làm việc bình thường\n\nThời giờ làm việc bình thường không quá 08 giờ trong 01 ngày và 48 giờ trong 01 tuần.\n\nNgười sử dụng lao động có quyền quy định làm việc theo giờ hoặc ngày hoặc tuần; trường hợp theo tuần thì thời giờ làm việc bình thường không quá 10 giờ trong 01 ngày, nhưng không quá 48 giờ trong 01 tuần.\n\nNhà nước khuyến khích người sử dụng lao động thực hiện tuần làm việc 40 giờ.\n\nThời giờ làm việc không quá 06 giờ trong 01 ngày đối với những người làm các công việc đặc biệt nặng nhọc, độc hại, nguy hiểm theo danh mục do Bộ Lao động - Thương binh và Xã hội chủ trì phối hợp với Bộ Y tế ban hành.",
-        "Section: Điều 105. Thời giờ làm việc bình thường\n---\n### Điều 105. Thời giờ làm việc bình thường\n\nThời giờ làm việc bình thường không quá 08 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần.\n\nNgười sử dụng lao động có quyền quy định thời giờ làm việc theo ngày hoặc tuần nhưng phải thông báo cho người lao động biết; trường hợp theo tuần thì thời giờ làm việc bình thường không quá 10 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần.\n\nNhà nước khuyến khích người sử dụng lao động thực hiện tuần làm việc 40 giờ đối với người lao động.\n\nNgười sử dụng lao động có trách nhiệm bảo đảm giới hạn thời gian làm việc tiếp xúc với yếu tố nguy hiểm, yếu tố có hại đúng theo quy chuẩn kỹ thuật quốc gia và pháp luật có liên quan.",
         "Section: (i) Giới hạn số giờ làm thêm trong ngày và trong tháng\n---\n### (i) Giới hạn số giờ làm thêm trong ngày và trong tháng\n\nTổng số giờ làm thêm không quá 50% số giờ làm việc bình thường trong 01 ngày khi làm thêm vào ngày làm việc bình thường. Trường hợp áp dụng quy định thời giờ làm việc bình thường theo tuần thì tổng số giờ làm việc bình thường và số giờ làm thêm không quá 12 giờ trong 01 ngày. Tổng số giờ làm thêm của NLĐ không quá 40 giờ trong 01 tháng. 247 Như vậy, từ quy định trên có thể thấy, từ 01/01/2021, số giờ làm thêm tối đa của NLĐ trong 01 tháng được tăng từ 30 giờ lên 40 giờ so với quy định tại BLLĐ 2012.\n\nNgoài ra, bên cạnh việc đảm bảo tổng số giờ làm thêm không quá 12 giờ trong một ngày, khi làm thêm vào ngày nghỉ lễ, tết và ngày nghỉ hằng tuần, 248 pháp luật lao động mới cũng bổ sung thêm giới hạn số giờ làm thêm trong trường hợp làm việc không trọn thời gian. Trong trường hợp này, tổng số giờ làm việc bình thường và số giờ làm thêm cũng không quá 12 giờ trong 01 ngày. 249",
+        "Section: Điều 105. Thời gid lam việc bình thường\n---\n### Điều 105. Thời gid lam việc bình thường\n\nThời giờ làm việc bình thường không quá 08 giờ trong 01 ngày và không quá 48 giờ trong 01 tuân.\n\nNgười sử dụng lao động có quyền quy định thời giờ làm việc theo ngày hoặc tuần nhưng phải thông báo cho người lao động biết; trường hợp theo tuân thì thời giờ làm việc bình thường không quá 10 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần.\n\nNhà nước khuyến khích người sử dụng lao động thực hiện tuần làm việc 40 giờ đôi với người lao động.\n\nNgười sử dung | lao động có trach nhigm bao dam giới han thời gian lam việc tiép xúc với yéu t6 nguy hiém, yéu tố có hai dung theo quy chuan ky thuật quoc gia va pháp luật có liên quan.",
         "Section: Chương VII THỜI GIỜ LÀM VIỆC, THỜI GIỜ NGHỈ NGƠI Mục 1. THỜI GIỜ LÀM VIỆC Điều 105. Thời giờ làm việc bình thường\n---\n### Chương VII THỜI GIỜ LÀM VIỆC, THỜI GIỜ NGHỈ NGƠI Mục 1. THỜI GIỜ LÀM VIỆC Điều 105. Thời giờ làm việc bình thường\n\nThời giờ làm việc bình thường không quá 08 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần.\n\nNgười sử dụng lao động có quyền quy định thời giờ làm việc theo ngày hoặc tuần nhưng phải thông báo cho người lao động biết; trường hợp theo tuần thì thời giờ làm việc bình thường không quá 10 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần.\n\nNhà nước khuyến khích người sử dụng lao động thực hiện tuần làm việc 40 giờ đối với người lao động.\n\nNgười sử dụng lao động có trách nhiệm bảo đảm giới hạn thời gian làm việc tiếp xúc với yếu tố nguy hiểm, yếu tố có hại đúng theo quy chuẩn kỹ thuật quốc gia và pháp luật có liên quan.",
         "Section: 1. Thời giờ làm việc\n---\n### 1. Thời giờ làm việc\n\nTheo quy định tại BLLĐ 2019, thời giờ làm việc bình thường không quá 08 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần. NSDLĐ có quyền quy định thời giờ làm việc theo ngày hoặc tuần nhưng phải thông báo cho NLĐ biết; trường hợp theo tuần thì thời giờ làm việc bình thường không quá 10 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần. 233\n\nNhư vậy, các quy định về thời giờ làm việc bình thường của BLLĐ 2019 vẫn kế thừa các quy định tại BLLĐ 2012. Tuy nhiên, BLLĐ 2019 lại có thêm quy định yêu cầu NSDLĐ phải thông báo cho NLĐ về chế độ thời giờ làm việc theo ngày hoặc tuần mà NSDLĐ đã chọn. Liên quan đến vấn đề này, pháp luật lao động hiện hành chưa có hướng dẫn cụ thể về hình thức của việc thông báo nói trên nhưng do thời giờ làm việc là một nội dung bắt buộc tại NQLĐ; 234 Đồng thời, NQLĐ cũng sẽ được thông báo đến NLĐ và niêm yết ở những nơi cần thiết tại nơi làm việc. 235 Nên theo quan điểm của một số cơ quan quản lý lao động, việc NSDLĐ thông báo và niêm yết NQLĐ cũng có thể được xem là đã thực hiện nghĩa vụ thông báo theo quy định nói trên."
       ],
       "context_recall": 0.7325,
       "context_precision": 1.0,
-      "latency_ms": 25330.99
+      "latency_ms": 25832.59
     },
     {
       "id": 3,
@@ -75,7 +75,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 30256.26
+      "latency_ms": 42515.55
     },
     {
       "id": 4,
@@ -89,7 +89,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 25856.42
+      "latency_ms": 24805.57
     },
     {
       "id": 5,
@@ -102,14 +102,14 @@
       "retrieved_chunks_count": 5,
       "retrieved_contexts": [
         "Section: CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\n---\n### CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\n\nĐộc lập - Tự do - Hạnh phúc\n\n---------------\n\nHà Nội, ngày 15 tháng 08 năm 1997",
-        "Section: CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc\n---\n### CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc\n\n---------------\n\nHà Nội, ngày 31 tháng 7 năm 2015",
-        "Section: CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc\n---\n### CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc\n\n---------------\n\nHà Nội, ngày 15 tháng 10 năm 2018",
-        "Section: CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc\n---\n### CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc\n\n---------------\n\nHà Nội, ngày 19 tháng 11 năm 2015",
-        "Section: CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc\n---\n### CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc\n\n---------------\n\nHà Nội, ngày 12 tháng 11 năm 2018"
+        "Section: CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc\n---\n### CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc\n\n---------------\n\nHà Nội, ngày 31 tháng 7 năm 2015\n\n—",
+        "Section: CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc\n---\n### CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc\n\n---------------\n\nHà Nội, ngày 19 tháng 12 năm 2018",
+        "Section: DANH SÁCH CÁC TỪ VIẾT TẮT\n---\n### DANH SÁCH CÁC TỪ VIẾT TẮT\n\n| BLLĐ 2019 | Bộ luật Lao động số 45/2019/QH14 của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam được Quốc hội thông qua vào ngày 20 tháng 11 năm 2019 |\n|-------------|--------------------------------------------------------------------------------------------------------------------------------------|\n| BLLĐ 2012 | Bộ luật Lao động số 10/2012/QH13 của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam được Quốc hội thông qua vào ngày 18 tháng 6 năm 2012 |\n| LDN 2020 | Luật Doanh nghiệp số 59/2020/QH14 của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam được Quốc hội thông qua vào ngày 17 tháng 6 năm 2020 |\n| CPTPP | Hiệp định Đối tác Toàn diện và Tiến bộ xuyên Thái Bình Dương |\n| EVFTA | Hiệp định Thương mại tự do EU-Việt Nam |\n| ILO | Tổ chức Lao động Quốc tế |\n| UBND | Ủy ban nhân dân |\n| TCĐDNLĐ | Tổ chức đại diện người lao động |\n| TCNLĐTDN | Tổ chức của người lao động tại doanh nghiệp |\n| TCĐDNLĐCS | Tổ chức đại diện người lao động tại cơ sở |\n| TCĐDNSDLĐ | Tổ chức đại diện người sử dụng lao động |\n| CĐCS | Công đoàn cơ sở |\n| SLĐTBXH | Sở Lao động - Thương binh và Xã hội |\n| BLĐTBXH | Bộ Lao động - Thương binh và Xã hội |\n| VCCI | Phòng Thương mại và Công nghiệp Việt Nam |\n| TLTT | Thương lượng tập thể |\n| TLTTDN | Thương lượng tập thể doanh nghiệp |\n| TLTTNDN | Thương lượng tập thể nhiều doanh nghiệp |",
+        "Section: CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc\n---\n### CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc\n\n---------------\n\nHà Nội, ngày 22 tháng 11 năm 2018"
       ],
-      "context_recall": 0.547,
-      "context_precision": 0.0,
-      "latency_ms": 39343.79
+      "context_recall": 0.5661,
+      "context_precision": 0.25,
+      "latency_ms": 28570.39
     },
     {
       "id": 6,
@@ -123,7 +123,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 56558.25
+      "latency_ms": 83782.93
     },
     {
       "id": 7,
@@ -137,7 +137,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 39592.29
+      "latency_ms": 78730.06
     },
     {
       "id": 8,
@@ -151,7 +151,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 77841.5
+      "latency_ms": 68133.62
     },
     {
       "id": 9,
@@ -165,7 +165,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 44227.68
+      "latency_ms": 54889.84
     },
     {
       "id": 10,
@@ -179,7 +179,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 29682.72
+      "latency_ms": 43413.96
     },
     {
       "id": 11,
@@ -193,7 +193,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 31177.47
+      "latency_ms": 37874.36
     },
     {
       "id": 12,
@@ -203,11 +203,13 @@
       "reference_contexts": [
         "| STT | Tiêu chí | Các nội dung cụ thể |\n| :--- | :--- | :--- |\n| 1 | Tính minh bạch | Rõ ràng về hình thức: Ngôn ngữ sử dụng có chính xác, dễ hiểu không? Diễn đạt có rõ ràng không? Có thể bị hiểu theo nhiều cách khác nhau không?\nRõ ràng trong các quy định áp dụng cho doanh nghiệp: Rõ ràng về quyền và nghĩa vụ không? Rõ ràng về các trình tự, thủ tục, chi phí (thời gian, phí, lệ phí) không? Có nguy cơ cho nhũng nhiễu, tham nhũng không? |\n| 2 | Tính thống nhất | Có tuân thủ với các văn bản pháp luật có giá trị pháp lý cao hơn không? Có mâu thuẫn giữa các quy định trong bản thân văn bản đó không? Có tương thích với các cam kết quốc tế không? |\n| 3 | Tính hợp lý | Có đơn giản hóa được điều kiện kinh doanh, thủ tục hành chính, giảm chi phí không? Có đưa ra quy định bất hợp lý cản trở tự do kinh doanh không? Có phân biệt đối xử không? |\n| 4 | Tính khả thi | Có khả năng doanh nghiệp thực hiện được trên thực tế không? Có khả năng cơ quan nhà nước thực hiện được không? |"
       ],
-      "retrieved_chunks_count": 0,
-      "retrieved_contexts": [],
-      "context_recall": 0.0,
-      "context_precision": 0.0,
-      "latency_ms": 30421.37
+      "retrieved_chunks_count": 1,
+      "retrieved_contexts": [
+        "Section: gia\n---\n### gia\n\nViệc đánh gia kỹ nang nghề quốc gia phải tuân thủ các nguyên tắc sau đây:\n\nBảo đảm sự tự nguyện của người lao động:\n\nCăn cứ vào tiêu chuẩn kỹ năng nghề quốc gia;\n\nTheo từng bậc trình độ kỹ năng của từng nghề;\n\nChính xác, độc lập, khách quan, công bằng, minh bạch.\n\nNội dung đánh giá kỹ năng nghề quốc gia bao gồm:\n\nKiến\n\nthức chuyên môn, kỹ thuật;\n\nKỹ năng thực hành công việc;\n\nQuy trình an toàn lao động, vệ sinh lao động."
+      ],
+      "context_recall": 0.5995,
+      "context_precision": 1.0,
+      "latency_ms": 34244.48
     },
     {
       "id": 13,
@@ -221,7 +223,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 38085.14
+      "latency_ms": 48813.98
     },
     {
       "id": 14,
@@ -235,7 +237,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 41935.21
+      "latency_ms": 63434.43
     },
     {
       "id": 15,
@@ -249,7 +251,7 @@
       "retrieved_contexts": [],
       "context_recall": 0.0,
       "context_precision": 0.0,
-      "latency_ms": 59383.14
+      "latency_ms": 65747.17
     }
   ]
 }

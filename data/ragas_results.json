@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-10-22T09:25:53.207089+00:00",
+  "timestamp": "2026-10-26T08:39:24.023367+00:00",
   "dataset": "D:\\DEMO\\RagPipeline\\data\\eval_dataset.json",
   "provider": "gemini",
   "ragas_version": "0.4.3",
   "ragas_model": "gemini-3.8-flash",
-  "total_test_cases": 3,
-  "successful": 3,
-  "failed": 0,
-  "early_exit_count": 3,
+  "total_test_cases": 1,
+  "successful": 0,
+  "failed": 1,
+  "early_exit_count": 0,
   "metrics": {
     "avg_faithfulness": null,
     "avg_context_precision": null,
@@ -15,49 +15,25 @@
   },
   "details": [
     {
-      "id": 1,
-      "query": "Hallucination trong tài liệu được hiểu là gì?",
-      "reference": "Hallucination là hiện tượng mô hình sinh ra thông tin sai lệch, bịa đặt hoặc không có thực nhưng với văn phong tự tin.",
-      "response": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "retrieved_contexts_count": 0,
-      "retrieved_context_ids": [],
+      "id": "LAW_A_001",
+      "query": "Theo giáo trình, đối tượng điều chỉnh của Luật lao động gồm những nhóm quan hệ nào?",
+      "reference": "Gồm quan hệ lao động và các quan hệ liên quan chặt chẽ hoặc phát sinh từ quan hệ lao động.",
+      "response": "Theo giáo trình, đối tượng điều chỉnh của Luật lao động bao gồm hai nhóm quan hệ xã hội chính [SOURCE_1]:\n\n1. **Quan hệ lao động** [SOURCE_1]. Luật lao động cũng điều chỉnh các quan hệ lao động của cán bộ, công chức trong phạm vi phù hợp [SOURCE_5].\n2. **Các quan hệ liên quan đến quan hệ lao động** (phát sinh trong quá trình sử dụng lao động) [SOURCE_1]. Các quan hệ này bao gồm:\n * Quan hệ về bảo hiểm xã hội, gồm quan hệ pháp luật trong việc tạo thành quỹ bảo hiểm và quan hệ pháp luật trong việc chi trả bảo hiểm xã hội [SOURCE_2].\n * Quan hệ giữa người sử dụng lao động với tổ chức Công đoàn, đại diện của tập thể người lao động, nhằm bảo vệ quyền, lợi ích hợp pháp của người lao động [SOURCE_2].\n * Quan hệ về quản lý lao động, là quan hệ giữa Nhà nước hoặc cơ quan Nhà nước có thẩm quyền với các cấp, ngành, doanh nghiệp hoặc người sử dụng lao động trong việc chấp hành các quy định của pháp luật về sử dụng lao động [SOURCE_4].",
+      "retrieved_contexts_count": 5,
+      "retrieved_context_ids": [
+        "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000007",
+        "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000015",
+        "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000018",
+        "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000017",
+        "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000011"
+      ],
       "faithfulness": null,
       "context_precision": null,
       "context_recall": null,
-      "rag_latency_ms": 42044.33,
-      "is_early_exit": true,
-      "evaluation_status": "success",
-      "error": "No retrieved context passed reranking threshold."
-    },
-    {
-      "id": 2,
-      "query": "Grounding có vai trò gì khi mô hình trả lời?",
-      "reference": "Grounding là kỹ thuật \"neo\" câu trả lời của mô hình vào dữ liệu thực tế được cung cấp để đảm bảo tính xác thực.",
-      "response": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "retrieved_contexts_count": 0,
-      "retrieved_context_ids": [],
-      "faithfulness": null,
-      "context_precision": null,
-      "context_recall": null,
-      "rag_latency_ms": 34538.09,
-      "is_early_exit": true,
-      "evaluation_status": "success",
-      "error": "No retrieved context passed reranking threshold."
-    },
-    {
-      "id": 3,
-      "query": "RAG được đề xuất chính thức lần đầu vào thời điểm nào và bởi nhóm nào?",
-      "reference": "RAG được đề xuất chính thức năm 2020 trong bài “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks” bởi Patrick Lewis và các cộng sự tại Facebook AI Research (FAIR).",
-      "response": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "retrieved_contexts_count": 0,
-      "retrieved_context_ids": [],
-      "faithfulness": null,
-      "context_precision": null,
-      "context_recall": null,
-      "rag_latency_ms": 35080.35,
-      "is_early_exit": true,
-      "evaluation_status": "success",
-      "error": "No retrieved context passed reranking threshold."
+      "rag_latency_ms": 65416.69,
+      "is_early_exit": false,
+      "evaluation_status": "failed",
+      "error": "Cannot use agenerate() with a synchronous client. Use generate() instead."
     }
   ]
 }

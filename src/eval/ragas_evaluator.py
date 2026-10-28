@@ -53,38 +53,48 @@ def _load_ragas_api():
     return ragas, classes, llm_factory
 
 
-def create_ragas_llm(model: str, api_key: Optional[str] = None, llm_factory=None):
-    """Construct RAGAS's Gemini judge adapter for the installed RAGAS API."""
-    if llm_factory is None:
-        try:
-            from ragas.llms import llm_factory
-        except Exception as exc:
-            raise RuntimeError(f"RAGAS llm_factory is unavailable: {exc}") from exc
+def create_ragas_llm(
+    model: str,
+    api_key: Optional[str] = None,
+    llm_factory=None,
+):
+    """Create an asynchronous Gemini judge for RAGAS 0.4.3."""
     api_key = api_key or os.getenv("GEMINI_API_KEY", "").strip()
+
     if not api_key:
-        raise RuntimeError("Missing GEMINI_API_KEY. RAGAS Gemini evaluation cannot run.")
-    try:
-        from google import genai
-    except Exception as exc:
-        raise RuntimeError(f"google-genai import failed: {exc}") from exc
+        raise RuntimeError("Missing GEMINI_API_KEY")
 
     try:
-        client = genai.Client(api_key=api_key)
-        signature = inspect.signature(llm_factory)
-    except Exception as exc:
-        raise RuntimeError(f"Could not initialize Gemini judge client: {exc}") from exc
-    kwargs = {}
-    if "provider" in signature.parameters:
-        kwargs["provider"] = "google"
-    if "client" in signature.parameters:
-        kwargs["client"] = client
-    elif "api_key" in signature.parameters:
-        kwargs["api_key"] = api_key
-    try:
-        return llm_factory(model, **kwargs)
+        import instructor
+        from google import genai
+        from ragas.llms.base import InstructorLLM
+
+        # Google GenAI SDK client
+        google_client = genai.Client(api_key=api_key)
+
+        # Bắt buộc dùng async vì RAGAS metrics gọi agenerate()
+        async_client = instructor.from_genai(
+            google_client,
+            use_async=True,
+        )
+
+        llm = InstructorLLM(
+            client=async_client,
+            model=model,
+            provider="google",
+        )
+
+        if not llm.is_async:
+            raise RuntimeError(
+                "RAGAS Gemini judge was not initialized as async"
+            )
+
+        print(f"RAGAS Gemini async judge initialized: {model}")
+        return llm
+
     except Exception as exc:
         raise RuntimeError(
-            f"Could not configure RAGAS Gemini judge with model {model!r}: {exc}"
+            f"Could not initialize asynchronous Gemini judge: {exc}"
         ) from exc
 
 
@@ -113,19 +123,30 @@ def _score_value(value: Any) -> float:
 
 def _metric_score(metric, row: Dict[str, Any]) -> float:
     method = getattr(metric, "ascore", None) or getattr(metric, "score", None)
+
     if method is None:
-        raise RuntimeError(f"Metric {type(metric).__name__} exposes neither ascore() nor score()")
+        raise RuntimeError(
+            f"Metric {type(metric).__name__} exposes neither ascore() nor score()"
+        )
+
     parameters = inspect.signature(method).parameters
+
     if "single_turn" in parameters:
         from ragas.dataset_schema import SingleTurnSample
         sample = SingleTurnSample(**row)
         result = method(single_turn=sample)
     else:
-        kwargs = {key: row[key] for key in ("user_input", "response", "reference", "retrieved_contexts")}
+        kwargs = {
+            key: value
+            for key, value in row.items()
+            if key in parameters
+        }
         result = method(**kwargs)
+
     if inspect.isawaitable(result):
         import asyncio
         result = asyncio.run(result)
+
     return _score_value(result)
 
 

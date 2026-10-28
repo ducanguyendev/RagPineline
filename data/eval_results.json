@@ -1,199 +1,1805 @@
 {
-  "timestamp": "2026-10-21 10:29:22",
+  "timestamp": "2026-10-26 11:43:26",
   "provider": "gemini",
-  "total_test_cases": 60,
-  "avg_latency_ms": 47262.22,
-  "avg_similarity_score": 0.4054,
-  "pass_count": 0,
-  "pass_rate_percent": 0.0,
-  "early_exit_count": 60,
+  "total_test_cases": 100,
+  "avg_latency_ms": 76490.66,
+  "avg_similarity_score": 0.6691,
+  "pass_count": 55,
+  "pass_rate_percent": 55.0,
+  "early_exit_count": 25,
   "details": [
     {
-      "id": 1,
-      "query": "Hallucination trong tài liệu được hiểu là gì?",
-      "expected_answer": "Hallucination là hiện tượng mô hình sinh ra thông tin sai lệch, bịa đặt hoặc không có thực nhưng với văn phong tự tin.",
+      "id": "LAW_A_001",
+      "query": "Theo giáo trình, đối tượng điều chỉnh của Luật lao động gồm những nhóm quan hệ nào?",
+      "expected_answer": "Gồm quan hệ lao động và các quan hệ liên quan chặt chẽ hoặc phát sinh từ quan hệ lao động.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, đối tượng điều chỉnh của Luật lao động bao gồm hai nhóm quan hệ xã hội chính [SOURCE_1]:\n* Quan hệ lao động [SOURCE_1].\n* Các quan hệ liên quan đến quan hệ lao động (phát sinh trong quá trình sử dụng lao động) [SOURCE_1].\n\nCụ thể, các quan hệ liên quan này có thể bao gồm quan hệ về bảo hiểm xã hội [SOURCE_2], quan hệ giữa người sử dụng lao động với tổ chức Công đoàn [SOURCE_2], và quan hệ về quản lý lao động [SOURCE_4]. Luật lao động cũng điều chỉnh các quan hệ lao động của cán bộ, công chức trong phạm vi phù hợp [SOURCE_5].",
+      "similarity_score": 0.7348,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 4,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 3,
+          "section": "1 - Đối tượng điều chỉnh của luật lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000007",
+          "rerank_score": 0.9985
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 6,
+          "section": "(4) Quan hệ về bảo hiểm xã hội",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000015",
+          "rerank_score": 0.9736
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 7,
+          "section": "(7) - Quan hệ về quản lý lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000017",
+          "rerank_score": 0.9369
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 3,
+          "section": "a - Quan hệ lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000011",
+          "rerank_score": 0.8553
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 47420.36
+    },
+    {
+      "id": "LAW_A_002",
+      "query": "Quan hệ lao động được giáo trình mô tả là gì?",
+      "expected_answer": "Là quan hệ giữa con người với con người trong lao động nhằm tạo ra các giá trị vật chất, tinh thần phục vụ bản thân và xã hội.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, quan hệ lao động được mô tả là quan hệ giữa con người với con người trong quá trình lao động nhằm tạo ra những giá trị vật chất, tinh thần phục vụ chính bản thân và xã hội [SOURCE_1].\n\nCác đặc điểm và khía cạnh của quan hệ lao động bao gồm:\n* Nó là biểu hiện một mặt của quan hệ sản xuất và chịu sự chi phối của quan hệ sở hữu [SOURCE_1].\n* Quan hệ lao động tồn tại ở nơi có tổ chức lao động, hợp tác và phân công lao động [SOURCE_1].\n* Trong nền kinh tế thị trường, các quan hệ lao động trở nên đa dạng, phức tạp và đan xen lẫn nhau [SOURCE_1].\n* Luật lao động chủ yếu điều chỉnh quan hệ lao động giữa người lao động làm công ăn lương với người sử dụng lao động thuộc mọi thành phần kinh tế, được xác lập trên cơ sở hợp đồng lao động [SOURCE_1], [SOURCE_5].\n* Quan hệ lao động giữa người lao động (hoặc tập thể lao động) với người sử dụng lao động được xác lập thông qua đối thoại, thương lượng, thỏa thuận theo các nguyên tắc tự nguyện, thiện chí, bình đẳng, hợp tác, tôn trọng quyền và lợi ích hợp pháp của nhau [SOURCE_3].\n* Đối với quan hệ lao động hình thành trên cơ sở hợp đồng lao động, pháp luật đặt ra các tiêu chuẩn, chuẩn mực hay khung pháp lý, trong đó quyền lợi của các bên được ấn định ở mức tối thiểu và nghĩa vụ ở mức tối đa. Các chủ thể tham gia quan hệ này được tự do, bình đẳng, tự nguyện, tự thỏa thuận các vấn đề liên quan đến quá trình lao động phù hợp với pháp luật và hiệu quả sản xuất, kinh doanh của doanh nghiệp [SOURCE_5].\n* Bộ luật Lao động năm 1994 điều chỉnh quan hệ lao động giữa người lao động làm công ăn lương với người sử dụng lao động và các quan hệ lao động liên quan trực tiếp [SOURCE_5].",
+      "similarity_score": 0.7557,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 3,
+          "section": "a - Quan hệ lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000009",
+          "rerank_score": 0.8707
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 72,
+          "section": "Điều 7. Quan hệ lao động",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000302",
+          "rerank_score": 0.7075
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 3,
+          "section": "a - Quan hệ lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000010",
+          "rerank_score": 0.5535
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 43098.25
+    },
+    {
+      "id": "LAW_A_003",
+      "query": "Giáo trình liệt kê những quan hệ nào liên quan đến quan hệ lao động?",
+      "expected_answer": "Gồm quan hệ về việc làm, học nghề, bồi thường thiệt hại, bảo hiểm xã hội, quan hệ với Công đoàn/đại diện tập thể lao động, giải quyết tranh chấp và đình công, và quản lý lao động.",
+      "generated_answer": "Dựa trên giáo trình, các quan hệ liên quan đến quan hệ lao động bao gồm [SOURCE_1]:\n* Quan hệ về việc làm [SOURCE_1]\n* Quan hệ học nghề [SOURCE_1]\n* Quan hệ về bồi thường thiệt hại [SOURCE_1]\n* Quan hệ về bảo hiểm xã hội [SOURCE_1]\n* Quan hệ giữa người sử dụng lao động với tổ chức Công đoàn, đại diện của tập thể người lao động [SOURCE_1]\n* Quan hệ về giải quyết các tranh chấp lao động và các cuộc đình công [SOURCE_1]\n* Quan hệ về quản lý lao động [SOURCE_1]",
+      "similarity_score": 0.8301,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 4,
+          "section": "b - Các quan hệ liên quan đến quan hệ lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000012",
+          "rerank_score": 0.9891
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 31817.6
+    },
+    {
+      "id": "LAW_A_004",
+      "query": "Theo giáo trình, quan hệ pháp luật lao động là gì?",
+      "expected_answer": "Là các quan hệ phát sinh trong quá trình sử dụng sức lao động, được các quy phạm pháp luật lao động điều chỉnh.",
+      "generated_answer": "Theo giáo trình, quan hệ pháp luật lao động là các quan hệ phát sinh trong quá trình sử dụng sức lao động của người lao động ở các cơ quan Nhà nước, các tổ chức, các hợp tác xã, các doanh nghiệp thuộc mọi thành phần kinh tế và các gia đình hay cá nhân có thuê mướn lao động, được các quy phạm pháp luật lao động điều chỉnh [SOURCE_1]. Quan hệ này thể hiện sự ràng buộc trách nhiệm giữa người lao động làm công ăn lương với người sử dụng lao động [SOURCE_1].\n\nKhi tham gia quan hệ pháp luật lao động, người lao động phải hoàn thành công việc như đã thỏa thuận trong hợp đồng lao động, chấp hành nội quy lao động và chịu sự quản lý điều hành của người chủ [SOURCE_1]. Ngược lại, người sử dụng lao động phải đảm bảo trả lương và các chế độ khác cho người lao động theo thỏa thuận trong hợp đồng lao động phù hợp với pháp luật và thỏa ước lao động tập thể [SOURCE_1].",
+      "similarity_score": 0.7802,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 14,
+          "section": "1. Khái niệm quan hệ pháp luật lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000037",
+          "rerank_score": 0.9866
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 30893.74
+    },
+    {
+      "id": "LAW_A_005",
+      "query": "Ba loại quan hệ về việc làm chủ yếu được giáo trình nêu là gì?",
+      "expected_answer": "Quan hệ bảo đảm việc làm giữa Nhà nước và NLĐ; giữa NSDLĐ và NLĐ; và giữa NLĐ với các trung tâm dịch vụ việc làm.",
+      "generated_answer": "Ba loại quan hệ về việc làm chủ yếu được giáo trình nêu là:\n* Quan hệ về đảm bảo việc làm giữa Nhà nước và người lao động [SOURCE_1];\n* Quan hệ về đảm bảo việc làm giữa người sử dụng lao động và người lao động [SOURCE_1];\n* Quan hệ giữa người lao động và các trung tâm dịch vụ việc làm [SOURCE_1].",
+      "similarity_score": 0.8312,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 5,
+          "section": "(1) Quan hệ về việc làm",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000013",
+          "rerank_score": 0.9916
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 30923.17
+    },
+    {
+      "id": "LAW_A_006",
+      "query": "Quan hệ học nghề có thể tồn tại dưới những dạng nào?",
+      "expected_answer": "Có thể là quan hệ độc lập hoặc là quan hệ phụ thuộc quan hệ lao động.",
+      "generated_answer": "Quan hệ học nghề có thể tồn tại dưới dạng một quan hệ độc lập hoặc một quan hệ phụ thuộc vào quan hệ lao động [SOURCE_1].",
+      "similarity_score": 0.8256,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 5,
+          "section": "(2) Quan hệ học nghề",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000014",
+          "rerank_score": 0.8857
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 35324.18
+    },
+    {
+      "id": "LAW_A_007",
+      "query": "Theo giáo trình, tiền lương được nhìn nhận như thế nào trong quan hệ lao động?",
+      "expected_answer": "Tiền lương được xem là giá cả của sức lao động và việc trả lương dựa trên thỏa thuận, trong khuôn khổ pháp luật.",
+      "generated_answer": "Theo giáo trình, tiền lương được nhìn nhận là số lượng tiền tệ mà người sử dụng lao động trả cho người lao động khi họ hoàn thành công việc theo chức năng, nhiệm vụ do pháp luật quy định hoặc theo thỏa thuận trong hợp đồng lao động [SOURCE_1].\n\nTiền lương do hai bên thỏa thuận trong hợp đồng lao động và được trả dựa trên năng suất lao động, chất lượng và hiệu quả công việc [SOURCE_1]. Mức lương này không được thấp hơn mức lương tối thiểu do Nhà nước quy định [SOURCE_1].\n\nLương thường được trả bằng tiền mặt, nhưng cũng có thể được trả một phần bằng séc hoặc ngân phiếu do Nhà nước phát hành nếu hai bên thỏa thuận và không gây thiệt hại, phiền hà cho người lao động [SOURCE_1].",
+      "similarity_score": 0.8289,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 58,
+          "section": "1. Định nghĩa tiền lương",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000173",
+          "rerank_score": 0.4619
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 34902.32
+    },
+    {
+      "id": "LAW_A_008",
+      "query": "Theo giáo trình, làm thêm vào ngày thường được trả ít nhất bao nhiêu phần trăm?",
+      "expected_answer": "Ít nhất bằng 150% đơn giá tiền lương hoặc tiền lương thực trả của công việc đang làm.",
+      "generated_answer": "Theo giáo trình, người lao động làm thêm giờ vào ngày thường được trả lương ít nhất bằng 150% [SOURCE_1].",
+      "similarity_score": 0.7178,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 59,
+          "section": "4. Trả lương khi làm thêm giờ",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000176",
+          "rerank_score": 0.954
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 26018.31
+    },
+    {
+      "id": "LAW_A_009",
+      "query": "Theo giáo trình, làm thêm vào ngày nghỉ hằng tuần được trả ít nhất bao nhiêu?",
+      "expected_answer": "Ít nhất bằng 200%.",
+      "generated_answer": "Theo giáo trình, làm thêm vào ngày nghỉ hằng tuần được trả ít nhất bằng 200% [SOURCE_1], [SOURCE_4].",
+      "similarity_score": 0.6275,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 80,
+          "section": "· Các điều kiện và nguyên tắc làm thêm đến 300 giờ trong một năm:",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000237",
+          "rerank_score": 0.9677
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 59,
+          "section": "4. Trả lương khi làm thêm giờ",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000176",
+          "rerank_score": 0.9081
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 24160.4
+    },
+    {
+      "id": "LAW_A_010",
+      "query": "Theo giáo trình, làm thêm vào ngày lễ/ngày nghỉ hưởng lương được trả ít nhất bao nhiêu?",
+      "expected_answer": "Ít nhất bằng 300% theo quy định được tài liệu trình bày.",
+      "generated_answer": "Theo giáo trình, người lao động làm thêm vào ngày lễ, ngày nghỉ có hưởng lương sẽ được trả ít nhất bằng 300% [SOURCE_1], [SOURCE_3].",
+      "similarity_score": 0.6219,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 80,
+          "section": "· Các điều kiện và nguyên tắc làm thêm đến 300 giờ trong một năm:",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000237",
+          "rerank_score": 0.9822
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 59,
+          "section": "4. Trả lương khi làm thêm giờ",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000176",
+          "rerank_score": 0.9426
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 23140.79
+    },
+    {
+      "id": "LAW_A_011",
+      "query": "Giới hạn làm thêm giờ mà giáo trình nêu là bao nhiêu?",
+      "expected_answer": "Không quá 4 giờ trong một ngày, 200 giờ trong một năm; một số trường hợp đặc biệt không quá 300 giờ trong một năm.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, giới hạn làm thêm giờ được quy định như sau:\n\n**1. Giới hạn theo ngày:**\n* Tổng số giờ làm thêm không quá 50% số giờ làm",
+      "similarity_score": 0.7188,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 37900.5
+    },
+    {
+      "id": "LAW_A_012",
+      "query": "Vì sao phương pháp thỏa thuận có vai trò quan trọng trong Luật lao động theo giáo trình?",
+      "expected_answer": "Vì quan hệ lao động có bản chất tự do thương lượng; các bên thỏa thuận trên cơ sở tự nguyện, bình đẳng để cùng có lợi và thực hiện nghĩa vụ.",
+      "generated_answer": "Theo giáo trình, phương pháp thỏa thuận có vai trò quan trọng trong Luật lao động vì những lý do sau:\n* Phương pháp này chủ yếu được áp dụng trong việc xác lập quan hệ lao động giữa người lao động và người sử dụng lao động, cũng như trong việc xác lập thỏa ước lao động tập thể [SOURCE_1].\n* Nó xuất phát từ bản chất của quan hệ lao động là tự do thương lượng [SOURCE_1].\n* Mục đích của phương pháp này là để các bên cùng nhau thỏa thuận các vấn đề liên quan trong quá trình lao động trên cơ sở tự nguyện, bình đẳng, nhằm đảm bảo cho hai bên cùng có lợi và tạo điều kiện để các bên thực hiện tốt các nghĩa vụ của mình [SOURCE_1].",
+      "similarity_score": 0.7702,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 7,
+          "section": "a - Phương pháp thỏa thuận",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000019",
+          "rerank_score": 0.9874
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 39837.57
+    },
+    {
+      "id": "LAW_A_013",
+      "query": "Phương pháp thỏa thuận trong Luật lao động khác Luật dân sự ở điểm nào theo giáo trình?",
+      "expected_answer": "Giáo trình cho rằng trong dân sự các chủ thể bình đẳng và độc lập về địa vị kinh tế nên thỏa thuận được sử dụng triệt để; trong lao động, thỏa thuận chịu ảnh hưởng bởi quan hệ phụ thuộc và các giới hạn bảo vệ lao động.",
+      "generated_answer": "Theo giáo trình, phương pháp thỏa thuận trong Luật lao động khác với Luật dân sự ở những điểm sau:\n\n* **Về địa vị của các chủ thể:** Trong Luật dân sự, các chủ thể tham gia quan hệ xã hội bình đẳng và độc lập với nhau về địa vị kinh tế [SOURCE_1]. Ngược lại, trong Luật lao động, các chủ thể tham gia vào quan hệ lao động không bình đẳng về địa vị và không độc lập với nhau về tổ chức [SOURCE_1].\n* **Về mức độ áp dụng và sự can thiệp của Nhà nước:** Phương pháp thỏa thuận trong Luật dân sự được sử dụng triệt để, tác động lên các quan hệ dân sự từ khi xác lập đến khi chấm dứt [SOURCE_1]. Còn trong Luật lao động, mặc dù có yếu tố tự do, thương lượng, tự nguyện thỏa thuận và các chủ thể thực hiện quyền tự định đoạt trong khuôn khổ pháp luật, nhưng lao động luôn có yếu tố quản lý [SOURCE_1]. Để điều hòa mối quan hệ này, Nhà nước đã đặt ra những quy định nhằm bảo vệ người lao động, nâng cao vị trí của họ để đạt được sự bình đẳng với người sử dụng lao động [SOURCE_1].",
+      "similarity_score": 0.8025,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 7,
+          "section": "a - Phương pháp thỏa thuận",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000019",
+          "rerank_score": 0.9896
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 41782.87
+    },
+    {
+      "id": "LAW_A_014",
+      "query": "Quan hệ bồi thường thiệt hại trong lao động phát sinh khi nào?",
+      "expected_answer": "Phát sinh khi một chủ thể trong quá trình thực hiện quyền, nghĩa vụ lao động gây thiệt hại về sức khỏe, tính mạng, tài sản hoặc lợi ích của bên kia.",
+      "generated_answer": "Quan hệ bồi thường thiệt hại trong lao động phát sinh khi một trong các chủ thể tham gia quan hệ lao động, trong quá trình thực hiện các quyền và nghĩa vụ pháp lý (chủ yếu là các quyền và nghĩa vụ trong lao động), gây thiệt hại về sức khỏe, tính mạng, tài sản hoặc lợi ích của bên kia [SOURCE_1].",
+      "similarity_score": 0.7514,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 5,
+          "section": "(2) Quan hệ học nghề",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000014",
+          "rerank_score": 0.9629
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 81757.73
+    },
+    {
+      "id": "LAW_A_015",
+      "query": "Một NLĐ gây thiệt hại tài sản cho NSDLĐ khi thực hiện nghĩa vụ lao động. Theo cách phân loại của giáo trình, đây thuộc nhóm quan hệ nào?",
+      "expected_answer": "Thuộc quan hệ về bồi thường thiệt hại liên quan đến quan hệ lao động.",
+      "generated_answer": "Dựa trên giáo trình được cung cấp, khi một người lao động gây thiệt hại tài sản cho người sử dụng lao động trong quá trình thực hiện quyền và nghĩa vụ lao động, giữa họ phát sinh \"Quan hệ về bồi thường thiệt hại\" [SOURCE_1]. Cụ thể hơn, trường hợp này thuộc nhóm \"Quan hệ bồi thường thiệt hại tài sản\" [SOURCE_1].",
+      "similarity_score": 0.7598,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 5,
+          "section": "(2) Quan hệ học nghề",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000014",
+          "rerank_score": 0.8741
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 116975.76
+    },
+    {
+      "id": "LAW_A_016",
+      "query": "Một người tìm việc thông qua trung tâm dịch vụ việc làm. Theo giáo trình, quan hệ này có nằm trong đối tượng điều chỉnh của Luật lao động không?",
+      "expected_answer": "Có. Đây là một dạng quan hệ về việc làm giữa NLĐ và trung tâm dịch vụ việc làm, được xếp vào các quan hệ liên quan đến quan hệ lao động.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, quan hệ của một người tìm việc thông qua trung tâm dịch vụ việc làm nằm trong đối tượng điều chỉnh của Luật lao động [SOURCE_1], [SOURCE_4], [SOURCE_5].\n\nCụ thể:\n* Đối tượng điều chỉnh của Luật lao động bao gồm \"mối quan hệ xã hội phát sinh giữa một bên là người lao động làm công ăn lương với một bên là cá nhân hoặc tổ chức sử dụng, thuê mướn có trả công cho người lao động và các quan hệ khác có liên quan chặt chẽ hoặc phát sinh từ quan hệ lao động\" [SOURCE_1].\n* Luật lao động điều chỉnh \"quan hệ lao động giữa người lao động làm công ăn lương với người sử dụng lao động và các quan hệ lao động liên quan trực tiếp với quan hệ lao động\" [SOURCE_4].\n*",
+      "similarity_score": 0.7481,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 3,
+          "section": "1 - Đối tượng điều chỉnh của luật lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000007",
+          "rerank_score": 0.9611
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 3,
+          "section": "a - Quan hệ lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000010",
+          "rerank_score": 0.5434
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 69,
+          "section": "Điều 1. Phạm vi điều chỉnh",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000294",
+          "rerank_score": 0.4706
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 57906.77
+    },
+    {
+      "id": "LAW_A_017",
+      "query": "Từ cách giáo trình xác định đối tượng và phương pháp điều chỉnh, hãy giải thích vì sao HĐLĐ vừa mang tính thỏa thuận vừa chịu giới hạn pháp luật.",
+      "expected_answer": "Các bên tự do, bình đẳng, tự nguyện thỏa thuận về quá trình lao động, nhưng pháp luật đặt ra khung/chuẩn mực, trong đó quyền lợi thường được ấn định mức tối thiểu và nghĩa vụ ở mức tối đa để bảo vệ quan hệ lao động.",
+      "generated_answer": "Dựa trên cách giáo trình xác định đối tượng và phương pháp điều chỉnh, Hợp đồng lao động (HĐLĐ) vừa mang tính thỏa thuận vừa chịu giới hạn pháp luật vì những lý do sau:\n\n1. **Tính thỏa thuận:** Phương pháp thỏa thuận là chủ yếu trong việc xác lập quan hệ lao động giữa người lao động và người sử dụng lao động, cũng như trong việc xác lập thỏa ước lao động tập thể [SOURCE_1]. Bản chất của quan hệ lao động là tự do thương lượng, do đó",
+      "similarity_score": 0.7703,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 7,
+          "section": "a - Phương pháp thỏa thuận",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000019",
+          "rerank_score": 0.4526
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 58979.97
+    },
+    {
+      "id": "LAW_A_018",
+      "query": "Giáo trình liên hệ quan hệ tranh chấp lao động và đình công với mục tiêu ổn định quan hệ lao động như thế nào?",
+      "expected_answer": "Việc giải quyết tranh chấp/đình công do các cơ quan, tổ chức có thẩm quyền thực hiện nhằm bảo đảm quyền lợi các bên và duy trì sự hài hòa, ổn định của quan hệ lao động.",
+      "generated_answer": "Giáo trình liên hệ quan hệ tranh chấp lao động và đình công với mục tiêu ổn định quan hệ lao động như sau: Trong quá trình thực hiện quyền và nghĩa vụ lao động, có thể phát sinh những bất đồng về quyền và lợi ích, dẫn đến tranh chấp lao động hoặc các cuộc đình công [SOURCE_1]. Việc giải quyết những tranh chấp và các cuộc đình công này do các tổ chức, cơ quan có thẩm quyền thực hiện nhằm bảo đảm quyền lợi cho cả hai bên, đồng thời đảm bảo sự hài hòa, ổn định của quan hệ lao động [SOURCE_1]. Vì vậy, quan hệ này thuộc đối tượng điều chỉnh của Luật lao động [SOURCE_1].",
+      "similarity_score": 0.8042,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 6,
+          "section": "(6) Quan hệ về giải quyết các tranh chấp lao động và các cuộc đình công",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000016",
+          "rerank_score": 0.9696
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 42625.36
+    },
+    {
+      "id": "LAW_A_019",
+      "query": "Nếu hỏi “quy định hiện hành năm 2026 về làm thêm giờ”, RAG có nên chỉ dùng con số trong giáo trình 2005 không?",
+      "expected_answer": "Không nên. Giáo trình là nguồn lịch sử/giảng dạy cũ; hệ thống phải nhận diện thời điểm của nguồn và không trình bày quy định trong tài liệu này như pháp luật hiện hành năm 2026 nếu không có nguồn cập nhật.",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3431,
+      "similarity_score": 0.4029,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 28695.25
+      "latency_ms": 46418.59
     },
     {
-      "id": 2,
-      "query": "Grounding có vai trò gì khi mô hình trả lời?",
-      "expected_answer": "Grounding là kỹ thuật \"neo\" câu trả lời của mô hình vào dữ liệu thực tế được cung cấp để đảm bảo tính xác thực.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3524,
+      "id": "LAW_A_020",
+      "query": "Theo giáo trình, vì sao Luật lao động không chỉ điều chỉnh việc “đi làm nhận lương” mà còn bao phủ nhiều quan hệ khác?",
+      "expected_answer": "Vì ngoài quan hệ lao động làm công ăn lương, quá trình sử dụng lao động còn phát sinh các quan hệ gắn chặt như việc làm, học nghề, bồi thường, BHXH, công đoàn, tranh chấp/đình công và quản lý lao động; các quan hệ này cần được điều chỉnh để quan hệ lao động vận hành ổn định.",
+      "generated_answer": "Theo giáo trình, Luật lao động không chỉ điều chỉnh quan hệ lao động giữa người lao động làm công ăn lương với người sử dụng lao động [SOURCE_1], [SOURCE_2] mà còn bao phủ nhiều quan hệ khác vì Bộ luật Lao động điều chỉnh \"các quan hệ lao động liên quan trực tiếp với quan hệ lao động\" [SOURCE_2] và \"một số quan hệ xã hội khác có liên quan chặt chẽ với quan hệ lao động\" [SOURCE_3].\n\nNhững quan hệ liên quan chặt",
+      "similarity_score": 0.8273,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 3,
+          "section": "a - Quan hệ lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000009",
+          "rerank_score": 0.9725
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 3,
+          "section": "a - Quan hệ lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000010",
+          "rerank_score": 0.8826
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 4,
+          "section": "b - Các quan hệ liên quan đến quan hệ lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000012",
+          "rerank_score": 0.8773
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 48907.43
+    },
+    {
+      "id": "LAW_B_001",
+      "query": "Theo sổ tay, hợp đồng lao động có thể được giao kết bằng lời nói trong trường hợp nào?",
+      "expected_answer": "Theo tài liệu, giao kết bằng lời nói áp dụng với công việc tạm thời có thời hạn dưới 03 tháng.",
+      "generated_answer": "Theo sổ tay, hợp đồng lao động có thể được giao kết bằng lời nói trong trường hợp làm công việc tạm thời có thời hạn dưới 03 tháng [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.8394,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 11,
+          "section": "Trả lời:",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000011",
+          "rerank_score": 0.9892
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 49,
+          "section": "Trả lời:",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000080",
+          "rerank_score": 0.9835
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 52209.8
+    },
+    {
+      "id": "LAW_B_002",
+      "query": "Vì sao sổ tay khuyến nghị nên ký hợp đồng lao động?",
+      "expected_answer": "Vì hợp đồng thể hiện thỏa thuận về công việc, lương, điều kiện làm việc, quyền và nghĩa vụ và là căn cứ xem xét khi phát sinh tranh chấp.",
+      "generated_answer": "Sổ tay khuyến nghị nên ký hợp đồng lao động vì những lý do sau:\n\n* Hợp đồng lao động là văn bản thể hiện sự thỏa thuận của các bên về công việc, lương, điều kiện làm việc, quyền và nghĩa vụ của các bên [SOURCE_2].\n* Đây là căn cứ để xem xét nếu xảy ra tranh chấp giữa các bên [SOURCE_2].\n* Việc thực hiện tốt nguyên tắc trong hợp đồng lao động đem lại quyền lợi cho cả người lao động và người sử dụng lao động [SOURCE_2].\n* Hợp đồng giúp đảm bảo tinh thần tự nguyện, bình đẳng, thiện chí, hợp tác và trung thực giữa các bên [SOURCE_2].\n* **Đối với người lao động:** Hợp đồng nhằm bảo vệ quyền lợi của họ, là căn cứ để hạn chế việc người sử dụng lao động bóc lột, đánh đập hoặc vi phạm quyền lợi của người lao động [SOURCE_2].\n* **Đối với người sử dụng lao động:** Hợp đồng lao động là căn cứ để quản lý người lao động và chỉ rõ nghĩa vụ của người lao động đối với người sử dụng lao động [SOURCE_1], [SOURCE_2]. Việc thực hiện tốt nguyên tắc của hợp đồng giúp các bên đảm bảo được quyền và nghĩa vụ của mình, tránh xảy ra tranh chấp, kiện tụng ảnh hưởng đến việc làm của cả hai bên [SOURCE_1], [SOURCE_2].",
+      "similarity_score": 0.8035,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 12,
+          "section": "Trả lời:",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000014",
+          "rerank_score": 0.441
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 11,
+          "section": "Trả lời:",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000013",
+          "rerank_score": 0.4113
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 56386.8
+    },
+    {
+      "id": "LAW_B_003",
+      "query": "Sổ tay có đề cập nội dung “khi nào được ký HĐLĐ không xác định thời hạn” ở phần nào?",
+      "expected_answer": "Nội dung này nằm trong Phần I - Hợp đồng lao động.",
+      "generated_answer": "Trong các tài liệu được cung cấp, nội dung liên quan đến việc ký kết hoặc chuyển sang hợp đồng lao động (HĐLĐ) không xác định thời hạn được đề cập ở các phần sau:\n\n1",
+      "similarity_score": 0.6785,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 341349.65
+    },
+    {
+      "id": "LAW_B_004",
+      "query": "Sổ tay xếp quy định về thử việc vào nhóm nội dung nào?",
+      "expected_answer": "Thuộc Phần I - Hợp đồng lao động.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin về việc \"Sổ tay xếp quy định về thử việc vào nhóm nội dung nào\".",
+      "similarity_score": 0.4748,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 31989.26
+      "latency_ms": 28443.6
     },
     {
-      "id": 3,
-      "query": "RAG được đề xuất chính thức lần đầu vào thời điểm nào và bởi nhóm nào?",
-      "expected_answer": "RAG được đề xuất chính thức năm 2020 trong bài “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks” bởi Patrick Lewis và các cộng sự tại Facebook AI Research (FAIR).",
+      "id": "LAW_B_005",
+      "query": "Sổ tay xếp trả tiền lương làm thêm giờ vào phần nào?",
+      "expected_answer": "Thuộc Phần II - Tiền lương.",
+      "generated_answer": "Trong sổ tay kiến thức pháp luật lao động CDI, phần trả tiền lương làm thêm giờ được xếp vào mục \"Trả tiền lương làm thêm giờ. @\" [SOURCE_2].",
+      "similarity_score": 0.6438,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_2",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 19,
+          "section": "Trả tiền lương làm thêm giờ. @",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000027",
+          "rerank_score": 0.6604
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 43126.16
+    },
+    {
+      "id": "LAW_B_006",
+      "query": "Sổ tay xếp nghỉ giữa giờ, nghỉ phép và nghỉ việc riêng vào phần nào?",
+      "expected_answer": "Thuộc Phần III - Thời gian làm việc và nghỉ ngơi.",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3506,
+      "similarity_score": 0.382,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 26900.53
+      "latency_ms": 22274.36
     },
     {
-      "id": 4,
-      "query": "Original RAG và Modern RAG khác nhau chủ yếu ở điểm nào?",
-      "expected_answer": "Original RAG dựa trên fine-tuning và cập nhật trọng số của retriever/generator; Modern RAG chủ yếu dựa trên In-Context Learning theo quy trình “Retrieve and Prompt”, thường giữ nguyên trọng số LLM và tối ưu retrieval.",
+      "id": "LAW_B_007",
+      "query": "Sổ tay xếp tai nạn lao động và bệnh nghề nghiệp vào phần nào?",
+      "expected_answer": "Thuộc Phần IV - An toàn lao động.",
+      "generated_answer": "Tai nạn lao động và bệnh nghề nghiệp được xếp vào Mục 2 TAI NẠN LAO ĐỘNG, BỆNH NGHỀ NGHIỆP [SOURCE_1].",
+      "similarity_score": 0.6245,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 111,
+          "section": "Mục 2 TAI NẠN LAO ĐỘNG, BỆNH NGHỀ NGHIỆP",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000469",
+          "rerank_score": 0.9469
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 78887.7
+    },
+    {
+      "id": "LAW_B_008",
+      "query": "Một người làm việc tạm thời 2 tháng, hai bên chỉ thỏa thuận miệng về lương và an toàn lao động. Theo tình huống trong sổ tay, có được coi là đã giao kết HĐLĐ không?",
+      "expected_answer": "Có. Tài liệu kết luận trường hợp làm tạm thời 2 tháng thuộc trường hợp có thể giao kết bằng lời nói theo quy định mà sổ tay viện dẫn.",
+      "generated_answer": "Theo tình huống trong sổ tay, trường hợp người làm việc tạm thời trong thời hạn 2 tháng và chỉ thỏa thuận miệng về lương cũng như quy định về an toàn lao động được coi là đã giao kết hợp đồng lao động [SOURCE_2].\n\nLý do cho việc này dựa trên các quy định sau:\n* Hợp đồng lao động là sự thỏa thuận giữa người lao động và người sử dụng lao động về việc làm có trả công (lương, thưởng), điều kiện lao động, thời giờ làm việc, nghỉ ngơi, nghỉ phép, nghỉ ốm và quyền và nghĩa vụ của mỗi bên trong quan hệ lao động [SOURCE_2].\n* Về hình thức, hợp đồng lao động có hai hình thức là bằng văn bản và giao kết bằng lời nói [SOURCE_2], [SOURCE_3].\n* Việc giao kết bằng lời nói (hợp đồng bằng miệng) chỉ áp dụng đối với trường hợp làm công việc tạm thời có thời hạn dưới 03 tháng hoặc đối với lao động giúp việc gia đình [SOURCE_2], [SOURCE_3], [SOURCE_5].",
+      "similarity_score": 0.7661,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_2",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 11,
+          "section": "Trả lời:",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000011",
+          "rerank_score": 0.9936
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 36,
+          "section": "b. Hình thức của hợp đồng lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000102",
+          "rerank_score": 0.7905
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 74,
+          "section": "Điều 16. Hình thức hợp đồng lao động",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000315",
+          "rerank_score": 0.6229
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 50253.53
+    },
+    {
+      "id": "LAW_B_009",
+      "query": "Hợp đồng lao động có ý nghĩa gì khi xảy ra tranh chấp theo sổ tay?",
+      "expected_answer": "Là căn cứ thể hiện các thỏa thuận của các bên để xem xét quyền, nghĩa vụ và giải quyết tranh chấp.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, trong quan hệ lao động, hợp đồng là văn bản thể hiện sự thỏa thuận của các bên về các vấn đề liên quan đến công việc, lương, điều kiện làm việc, quyền và nghĩa vụ của các bên [SOURCE_1]. Do đó, hợp đồng lao động chính là căn cứ để xem xét nếu xảy ra tranh chấp giữa các bên [SOURCE_1].",
+      "similarity_score": 0.7259,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 11,
+          "section": "Trả lời:",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000013",
+          "rerank_score": 0.966
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 119118.61
+    },
+    {
+      "id": "LAW_B_010",
+      "query": "Muốn tìm câu trả lời về việc công ty có được giữ văn bằng gốc của NLĐ hay không, cần truy xuất phần nào của sổ tay?",
+      "expected_answer": "Phần VIII - Khiếu nại, khiếu kiện về lao động.",
+      "generated_answer": "Để tìm câu trả lời về việc công ty có được giữ văn bằng gốc của người lao động hay không, bạn cần truy xuất phần \"Công ty có quyền giữ văn bằng gốc hay không? @\" [SOURCE_1].",
+      "similarity_score": 0.4781,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 49,
+          "section": "Công ty có quyền giữ văn bằng gốc hay không? @",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000079",
+          "rerank_score": 0.3578
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 36971.09
+    },
+    {
+      "id": "LAW_B_011",
+      "query": "Muốn tìm quy trình tiến hành đình công và tiền lương trong ngày đình công, cần truy xuất phần nào?",
+      "expected_answer": "Phần VII - Đình công.",
+      "generated_answer": "Để tìm quy trình tiến hành đình công, bạn có thể truy xuất các phần sau:\n\n* **Điều 200. Trình tự đình công:** Bao gồm các bước lấy ý kiến về đình công, ra quyết định đình công, thông báo đình công và tiến hành đình công [SOURCE_2].\n* **Các bước thực hiện cụ thể:** \n * **Đề nghị việc đình công:** Việc đình công được đề nghị bởi tập thể người lao động hoặc theo quyết định của ban chấp hành công đoàn cơ sở [SOURCE_3]. Khi có đề nghị, ban chấp hành công đoàn cơ sở phải lấy ý kiến của tập thể người lao động bằng cách bỏ phiếu kín hoặc lấy chữ ký [SOURCE_3].\n * **Thông báo việc đình công:** Sau khi xác định được số lượng người tham gia, Ban chấp hành công đoàn cơ sở phải cử đại diện để trao bản yêu cầu cho người",
+      "similarity_score": 0.5984,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_2",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 60,
+          "section": "Điều 200. Trình tự đình công",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000255",
+          "rerank_score": 0.4159
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 206,
+          "section": "2. Trình tự, thủ tục tiến hành đình công",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000597",
+          "rerank_score": 0.3597
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 55215.73
+    },
+    {
+      "id": "LAW_B_012",
+      "query": "Câu hỏi về quyền lợi của phụ nữ mang thai và chế độ nghỉ thai sản nằm ở phần nào?",
+      "expected_answer": "Phần VI - Chế độ đối với lao động nữ.",
+      "generated_answer": "Các câu hỏi về quyền lợi của phụ nữ khi mang thai và chế độ nghỉ thai sản nằm trong phần **VI. CHẾ ĐỘ ĐỐI VỚI LAO ĐỘNG NỮ** [SOURCE_3]. \n\nCụ thể, các nội dung này được liệt kê tại trang 39 của tài liệu [SOURCE_1], [SOURCE_3] bao gồm:\n* Quyền lợi của phụ nữ khi mang thai và nuôi con nhỏ như thế nào? [SOURCE_3].\n* Chế độ nghỉ thai sản được quy định như thế nào? [SOURCE_3].",
+      "similarity_score": 0.5761,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 39,
+          "section": "Quyền lợi của phụ nữ khi mang thai và nuôi con nhỏ như thế nào? @",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000062",
+          "rerank_score": 0.605
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 7,
+          "section": "KIẾN THỨC VỀ PHÁP LUẬT LAO ĐỘNG",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000007",
+          "rerank_score": 0.5208
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 45906.66
+    },
+    {
+      "id": "LAW_B_013",
+      "query": "Câu hỏi về sa thải trái pháp luật và trách nhiệm của NSDLĐ khi sa thải trái pháp luật nằm ở đâu?",
+      "expected_answer": "Phần V - Kỷ luật lao động.",
+      "generated_answer": "Câu hỏi về \"Trách nhiệm của người sử dụng lao động khi sa thải trái pháp luật?\" nằm ở trang 34 của tài liệu `so-tay-kien-thuc-phap-luat-lao-dong-cd",
+      "similarity_score": 0.5491,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 51867.51
+    },
+    {
+      "id": "LAW_B_014",
+      "query": "Nếu NLĐ làm mất tài sản của doanh nghiệp, sổ tay định hướng tra cứu nội dung nào?",
+      "expected_answer": "Tra cứu câu hỏi “Bồi thường thiệt hại do làm mất tài sản?” trong Phần V - Kỷ luật lao động.",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3379,
+      "similarity_score": 0.4728,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 45214.38
+      "latency_ms": 24184.08
     },
     {
-      "id": 5,
-      "query": "Ba giai đoạn chính của kiến trúc RAG hiện đại là gì?",
-      "expected_answer": "Ba giai đoạn chính là Indexing, Retrieval và Generation.",
+      "id": "LAW_B_015",
+      "query": "Một NLĐ vừa hỏi về nghỉ phép vừa hỏi về lương làm thêm giờ. RAG cần lấy tối thiểu từ những phần nào của sổ tay?",
+      "expected_answer": "Ít nhất từ Phần II - Tiền lương (lương làm thêm giờ) và Phần III - Thời gian làm việc và nghỉ ngơi (nghỉ phép).",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3475,
+      "similarity_score": 0.4037,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 38014.83
+      "latency_ms": 31972.3
     },
     {
-      "id": 6,
-      "query": "Ở giai đoạn Indexing, tài liệu đi qua những bước chính nào trước khi có thể được tìm kiếm?",
-      "expected_answer": "Tài liệu được nạp và trích xuất nội dung/metadata, chia nhỏ thành chunks, chuyển chunks thành vector bằng embedding model, rồi lưu vector cùng ID/metadata vào Vector Store.",
+      "id": "LAW_B_016",
+      "query": "Một vụ việc có tai nạn lao động và sau đó phát sinh khiếu kiện. Để trả lời theo cấu trúc sổ tay, cần kết hợp những phần nào?",
+      "expected_answer": "Cần kết hợp Phần IV - An toàn lao động với Phần VIII - Khiếu nại, khiếu kiện về lao động.",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3529,
+      "similarity_score": 0.4199,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 36812.17
+      "latency_ms": 37646.6
     },
     {
-      "id": 7,
-      "query": "Vì sao metadata quan trọng đối với RAG thực tế?",
-      "expected_answer": "Metadata hỗ trợ pre-filtering, giúp hệ thống lọc đúng phạm vi tài liệu trước khi tìm kiếm, ví dụ lọc tài liệu năm 2024 cho câu hỏi về doanh thu năm 2024.",
+      "id": "LAW_B_017",
+      "query": "“Mọi hợp đồng lao động đều bắt buộc phải lập thành văn bản” có phù hợp với nội dung sổ tay không?",
+      "expected_answer": "Không. Sổ tay nêu hai hình thức là văn bản và lời nói, trong đó lời nói được áp dụng cho công việc tạm thời dưới 03 tháng theo quy định mà tài liệu viện dẫn.",
+      "generated_answer": "Khẳng định “Mọi hợp đồng lao động đều bắt buộc phải lập thành văn bản” là **không phù hợp** với nội dung các tài liệu được cung cấp.\n\nDưới đây là các lý do cụ thể dựa trên tài liệu:\n\n* Theo Luật Lao động 2012, mọi hợp đồng lao động phải được giao kết bằng văn bản, ngoại trừ trường hợp hợp đồng để làm các công việc tạm thời có thời hạn dưới 03 tháng thì có thể giao kết bằng lời nói [SOURCE_1].\n* Các tài liệu khác cũng quy định rằng hai bên có thể giao kết hợp đồng lao động bằng lời nói đối với hợp đồng có thời hạn dưới 01 tháng (trừ một số trường hợp đặc biệt được quy định tại khoản 2 Điều 18, điểm a khoản 1 Điều 145 và khoản 1 Điều 162 của Bộ luật này) [SOURCE_2].\n* Hình thức hợp đồng bằng miệng (bằng lời nói) được áp dụng cho các trường hợp có tính chất tạm thời với thời hạn dưới ba tháng, hoặc đối với lao động giúp việc gia đình [SOURCE_3].",
+      "similarity_score": 0.7431,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 49,
+          "section": "Trả lời:",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000080",
+          "rerank_score": 0.5656
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 10,
+          "section": "Điều 14. Hình thức hợp đồng lao động",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000037",
+          "rerank_score": 0.4309
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 36,
+          "section": "b. Hình thức của hợp đồng lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000102",
+          "rerank_score": 0.3893
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 55189.16
+    },
+    {
+      "id": "LAW_B_018",
+      "query": "Nếu người dùng hỏi pháp luật hiện hành 2026, RAG có nên trả lời trực tiếp theo ngưỡng “dưới 03 tháng” của sổ tay không?",
+      "expected_answer": "Không nên coi đó là quy định hiện hành chỉ dựa vào sổ tay này. Cần nêu đây là nội dung của tài liệu và ưu tiên/đối chiếu nguồn pháp luật cập nhật hơn nếu câu hỏi yêu cầu hiện hành.",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3804,
+      "similarity_score": 0.4937,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 43087.0
+      "latency_ms": 38652.51
     },
     {
-      "id": 8,
-      "query": "Fixed-size Chunking có nhược điểm gì so với Recursive Chunking?",
-      "expected_answer": "Fixed-size Chunking có thể cắt giữa câu hoặc giữa một ý, làm mất ngữ nghĩa. Recursive Chunking ưu tiên ranh giới tự nhiên như đoạn, dòng, dấu câu và khoảng trắng nên giữ cấu trúc câu/đoạn tốt hơn.",
+      "id": "LAW_B_019",
+      "query": "Sổ tay được thiết kế theo hình thức nào và điều đó có ý nghĩa gì cho RAG?",
+      "expected_answer": "Tài liệu được thiết kế dạng Hỏi - Đáp, với thông tin và giải thích ngắn gọn; các câu hỏi dựa trên tình huống thực tế. Với RAG, cấu trúc này phù hợp cho truy xuất theo câu hỏi/tình huống nhưng vẫn cần giữ đúng bối cảnh và thời điểm của nguồn.",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.328,
+      "similarity_score": 0.4486,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 57910.3
+      "latency_ms": 33982.09
     },
     {
-      "id": 9,
-      "query": "Chunk overlap thường được khuyến nghị ở mức bao nhiêu so với độ dài chunk?",
-      "expected_answer": "Tài liệu nêu chunk_overlap thường ở mức 10-20% độ dài của chunk.",
+      "id": "LAW_B_020",
+      "query": "Một chatbot nhận câu hỏi “bị sa thải khi đang mang thai thì quyền lợi thế nào?”. Theo mục lục sổ tay, retrieval nên mở rộng sang những nhóm nội dung nào?",
+      "expected_answer": "Nên truy xuất ít nhất Phần V - Kỷ luật lao động và Phần VI - Chế độ đối với lao động nữ; tùy câu hỏi về khiếu kiện có thể cần thêm Phần VIII.",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4071,
+      "similarity_score": 0.4574,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 82058.52
+      "latency_ms": 28613.5
     },
     {
-      "id": 10,
-      "query": "Parent-Child Indexing giải quyết mâu thuẫn giữa chunk nhỏ và chunk lớn như thế nào?",
-      "expected_answer": "Hệ thống dùng Parent chunks lớn để giữ ngữ cảnh, chia thành Child chunks nhỏ để index/tìm kiếm; khi tìm thấy Child chunk thì trả Parent chunk tương ứng cho LLM.",
+      "id": "LAW_C_001",
+      "query": "Bộ tổng hợp văn bản được cập nhật đến thời điểm nào?",
+      "expected_answer": "Được cập nhật đến hết tháng 3/2020.",
+      "generated_answer": "Bộ tổng hợp văn bản được cập nhật đến hết tháng 3/2020 [SOURCE_1].",
+      "similarity_score": 0.8159,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 1,
+          "section": "TỔNG HỢP HỆ THỐNG VĂN BẢN PHÁP LUẬT VỀ LAO ĐỘNG",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000002",
+          "rerank_score": 0.5742
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 37856.97
+    },
+    {
+      "id": "LAW_C_002",
+      "query": "Văn bản đầu tiên trong mục lục của bộ tổng hợp là văn bản nào?",
+      "expected_answer": "Bộ luật Lao động số 45/2019/QH14 ngày 20/11/2019.",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.385,
+      "similarity_score": 0.3784,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 73060.8
+      "latency_ms": 50908.02
     },
     {
-      "id": 11,
-      "query": "Multi-Query xử lý một câu hỏi ngắn hoặc thiếu ngữ cảnh ra sao?",
-      "expected_answer": "Multi-Query dùng LLM sinh 3-5 biến thể của câu hỏi gốc, tìm kiếm với tất cả biến thể rồi gộp kết quả để tăng khả năng tìm đúng tài liệu.",
+      "id": "LAW_C_003",
+      "query": "Bộ tổng hợp có chứa Luật An toàn, vệ sinh lao động không?",
+      "expected_answer": "Có. Mục lục liệt kê Luật An toàn, vệ sinh lao động số 84/2015/QH13.",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3577,
+      "similarity_score": 0.4508,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 44869.34
+      "latency_ms": 294525.79
     },
     {
-      "id": 12,
-      "query": "HyDE thay đổi truy vấn trước khi retrieval theo cách nào?",
-      "expected_answer": "HyDE yêu cầu LLM viết một câu trả lời/tài liệu giả định cho câu hỏi, sau đó dùng embedding của đoạn giả định đó để tìm kiếm tài liệu thực.",
+      "id": "LAW_C_004",
+      "query": "Bộ tổng hợp có chứa Luật Việc làm không?",
+      "expected_answer": "Có. Mục lục liệt kê Luật Việc làm số 38/2013/QH13.",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4318,
+      "similarity_score": 0.4352,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 26539.36
+      "latency_ms": 65503.08
     },
     {
-      "id": 13,
-      "query": "Dense Retrieval và Sparse Retrieval bổ sung cho nhau như thế nào trong Hybrid Search?",
-      "expected_answer": "Dense Retrieval mạnh về tương đồng ngữ nghĩa; Sparse Retrieval như BM25/TF-IDF mạnh về khớp từ khóa chính xác, tên riêng và thuật ngữ chuyên ngành. Hybrid Search kết hợp hai luồng.",
+      "id": "LAW_C_005",
+      "query": "Bộ tổng hợp có chứa Luật Công đoàn không?",
+      "expected_answer": "Có. Mục lục liệt kê Luật Công đoàn số 12/2012/QH13.",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3698,
+      "similarity_score": 0.4366,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 40821.0
+      "latency_ms": 41650.17
     },
     {
-      "id": 14,
-      "query": "Vì sao RRF không cộng trực tiếp điểm của Vector Search và BM25?",
-      "expected_answer": "Vì điểm của Vector Search và BM25 nằm trên các thang đo khác nhau. RRF bỏ qua điểm gốc và hợp nhất dựa trên thứ hạng.",
+      "id": "LAW_C_006",
+      "query": "Nghị định nào trong mục lục quy định chi tiết về hợp đồng lao động?",
+      "expected_answer": "Nghị định số 44/2013/NĐ-CP ngày 10/05/2013.",
+      "generated_answer": "Trong mục lục, Nghị định số 44/2013/NĐ-CP ngày 10/05/2013 của Chính Phủ quy định chi tiết một số điều của Bộ luật lao động về hợp đồng lao động [SOURCE_1].",
+      "similarity_score": 0.7261,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 4,
+          "section": "MỤC LỤC",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000012",
+          "rerank_score": 0.9853
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 59958.89
+    },
+    {
+      "id": "LAW_C_007",
+      "query": "Nghị định nào trong mục lục liên quan đến tranh chấp lao động?",
+      "expected_answer": "Nghị định số 46/2013/NĐ-CP ngày 10/05/2013.",
+      "generated_answer": "Nghị định liên quan đến tranh chấp lao động trong mục lục là Nghị định số 46/2013/NĐ-CP ngày 10/05/2013 của Chính Phủ quy định chi tiết thi một hành số điều của Bộ luật lao động về tranh chấp lao động [SOURCE_1].",
+      "similarity_score": 0.6994,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 4,
+          "section": "MỤC LỤC",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000013",
+          "rerank_score": 0.9778
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 70055.32
+    },
+    {
+      "id": "LAW_C_008",
+      "query": "BLLĐ 2019 trong bộ tổng hợp định nghĩa cưỡng bức lao động như thế nào?",
+      "expected_answer": "Là việc dùng vũ lực, đe dọa dùng vũ lực hoặc thủ đoạn khác để ép buộc NLĐ làm việc trái ý muốn.",
+      "generated_answer": "Cưỡng bức lao động là việc dùng vũ lực, đe dọa dùng vũ lực hoặc các thủ đoạn khác để ép buộc người lao động phải làm việc trái ý muốn của họ [SOURCE_3].",
+      "similarity_score": 0.8422,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_3",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 6,
+          "section": "NHỮNG QUY ĐỊNH CHUNG",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000022",
+          "rerank_score": 0.8389
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 65325.89
+    },
+    {
+      "id": "LAW_C_009",
+      "query": "BLLĐ 2019 định nghĩa phân biệt đối xử trong lao động dựa trên những nhóm căn cứ nào?",
+      "expected_answer": "Tài liệu liệt kê các căn cứ như chủng tộc, màu da, nguồn gốc, dân tộc, giới tính, độ tuổi, thai sản, hôn nhân, tôn giáo/tín ngưỡng, chính kiến, khuyết tật, trách nhiệm gia đình, HIV và lý do liên quan đến tổ chức đại diện NLĐ.",
+      "generated_answer": "Theo BLLĐ 2019, phân biệt đối xử trong lao động được định nghĩa là một trong ba loại hành vi: (i) phân biệt, (ii) loại trừ hoặc (iii) ưu tiên dựa trên các đặc điểm, tình trạng của người lao động [SOURCE_1].\n\nCác căn cứ cụ thể để xác định hành vi phân biệt đối xử bao gồm:\n* Chủng tộc, màu da, nguồn gốc quốc gia hoặc nguồn gốc xã hội, dân tộc [SOURCE_2].\n* Giới tính, độ tuổi, tình trạng thai sản, tình trạng hôn nhân [SOURCE_2].\n* Tôn giáo, tín ngưỡng, chính kiến [SOURCE_2].\n* Khuyết tật, trách nhiệm gia đình [SOURCE_2].\n* Tình trạng nhiễm HIV [SOURCE_2].\n* Vì lý do thành lập, gia nhập và hoạt động công đoàn, tổ chức của người lao động tại doanh nghiệp có tác động làm ảnh hưởng đến bình đẳng về cơ hội việc làm hoặc nghề nghiệp [SOURCE_2].\n\nNgoài ra, các trường hợp sau đây không bị xem là phân biệt đối xử:\n* Xuất phát từ yêu cầu đặc thù của công việc [SOURCE_1, SOURCE_2].\n* Các hành vi duy trì, bảo vệ việc làm cho người lao động dễ bị tổn thương [SOURCE_1, SOURCE_2].",
+      "similarity_score": 0.707,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 11,
+          "section": "3. Quyền và nghĩa vụ cơ bản của NLĐ, NSDLĐ và các hành vi bị nghiêm cấm theo BLLĐ 2019",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000026",
+          "rerank_score": 0.9948
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 6,
+          "section": "NHỮNG QUY ĐỊNH CHUNG",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000022",
+          "rerank_score": 0.8917
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 76001.08
+    },
+    {
+      "id": "LAW_C_010",
+      "query": "Theo BLLĐ 2019 trong bộ tổng hợp, NLĐ có quyền từ chối làm việc trong tình huống nào?",
+      "expected_answer": "Khi có nguy cơ rõ ràng đe dọa trực tiếp đến tính mạng, sức khỏe trong quá trình thực hiện công việc.",
+      "generated_answer": "Theo BLLĐ 2019, trong trường hợp làm thêm giờ đặc biệt để thực hiện các công việc nhằm bảo vệ tính mạng con người, tài sản của cơ quan, tổ chức, cá nhân trong phòng ngừa, khắc phục hậu quả thiên tai, hỏa hoạn, dịch bệnh nguy hiểm và thảm họa, người lao động có quyền từ chối làm thêm giờ nếu công việc đó có nguy cơ ảnh hưởng đến tính mạng, sức khỏe của người lao động theo quy định của pháp luật về an toàn, vệ sinh lao động [SOURCE_1].",
+      "similarity_score": 0.63,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 113,
+          "section": "2. Làm thêm giờ trong trường hợp đặc biệt",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000255",
+          "rerank_score": 0.9951
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 95385.84
+    },
+    {
+      "id": "LAW_C_011",
+      "query": "Muốn tra quy định về lao động nước ngoài làm việc tại Việt Nam, mục lục gợi ý văn bản hợp nhất nào?",
+      "expected_answer": "VBHN số 5325/VBHN-BLĐTBXH ngày 19/12/2018 về Nghị định 11/2016/NĐ-CP, được sửa đổi bởi Nghị định 140/2018/NĐ-CP.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này. \n\nTrong mục lục ở [SOURCE_2], tài liệu chỉ ghi nhận một phần bị khuyết dòng về",
+      "similarity_score": 0.4146,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_2",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 3,
+          "section": "MỤC LỤC",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000007",
+          "rerank_score": 0.962
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 317616.2
+    },
+    {
+      "id": "LAW_C_012",
+      "query": "Muốn tra quy định về tiền lương theo hệ thống văn bản trước BLLĐ 2019, mục lục có văn bản hợp nhất nào?",
+      "expected_answer": "VBHN số 4759/VBHN-BLĐTBXH ngày 12/11/2018 hợp nhất Nghị định 49/2013/NĐ-CP và sửa đổi liên quan.",
+      "generated_answer": "Trong mục lục, để tra cứu quy định về tiền lương, có Văn bản hợp nhất số 4759/VBHN-BLĐTBXH ngày 14/05/2013 [SOURCE_1].",
+      "similarity_score": 0.735,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 2,
+          "section": "MỤC LỤC",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000005",
+          "rerank_score": 0.8386
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 68712.9
+    },
+    {
+      "id": "LAW_C_013",
+      "query": "Văn bản nào trong mục lục quy định chi tiết về thời giờ làm việc, nghỉ ngơi và an toàn, vệ sinh lao động?",
+      "expected_answer": "Nghị định số 45/2013/NĐ-CP ngày 10/05/2013.",
+      "generated_answer": "Văn bản quy định chi tiết một số Điều của Bộ luật Lao động về thời giờ làm việc, thời giờ nghỉ ngơi và an toàn lao động, vệ sinh lao động là Nghị định số 45/2013/NĐ-CP ngày 10 tháng 05 năm 2013 của Chính phủ [SOURCE_5].",
+      "similarity_score": 0.6894,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_5",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 52,
+          "section": "Lĩnh vực việc làm",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000092",
+          "rerank_score": 0.978
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 46610.2
+    },
+    {
+      "id": "LAW_C_014",
+      "query": "Muốn tra danh mục công việc nhẹ được sử dụng người dưới 15 tuổi, tài liệu liệt kê thông tư nào?",
+      "expected_answer": "Thông tư số 11/2013/TT-BLĐTBXH ngày 11/06/2013.",
+      "generated_answer": "Để tra danh mục công việc nhẹ được sử dụng người dưới 15 tuổi, tài liệu liệt kê các thông tư sau:\n\n* Thông tư số 11/2013/TT-BLĐTBXH ngày 11/06/2013 (hoặc ngày 11 tháng 06 năm 2013) của Bộ Lao động - Thương binh và Xã hội [SOURCE_1], [SOURCE_3].\n* Thông tư số 44/2013/TT-BLDTBXH ngày 41 tháng 06 năm 2013 của Bộ trưởng Bộ Lao động - Thương binh và Xã hội [SOURCE_2].",
+      "similarity_score": 0.6442,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 5,
+          "section": "MỤC LỤC",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000015",
+          "rerank_score": 0.9932
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 739,
+          "section": "Công việc nhẹ được sir dung người dưới 15 tuổi lam việc",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:002705",
+          "rerank_score": 0.9868
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 52,
+          "section": "Lĩnh vực việc làm",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000093",
+          "rerank_score": 0.9737
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 121443.87
+    },
+    {
+      "id": "LAW_C_015",
+      "query": "Một câu hỏi vừa liên quan hợp đồng lao động vừa liên quan an toàn vệ sinh lao động. Bộ tổng hợp có những nhóm nguồn nào để retrieval?",
+      "expected_answer": "Có thể truy xuất BLLĐ 2019, Nghị định 44/2013/NĐ-CP về HĐLĐ và Luật An toàn, vệ sinh lao động 84/2015/QH13 cùng các văn bản hướng dẫn liên quan trong bộ tổng hợp.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
+      "similarity_score": 0.4462,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 79088.58
+    },
+    {
+      "id": "LAW_C_016",
+      "query": "Tại sao tiêu đề “ĐANG CÓ HIỆU LỰC” của bộ tổng hợp không đủ để kết luận mọi văn bản trong đó còn hiệu lực vào năm 2026?",
+      "expected_answer": "Vì trạng thái đó gắn với thời điểm cập nhật hết tháng 3/2020. Để trả lời cho năm 2026 cần nguồn cập nhật sau thời điểm này.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
+      "similarity_score": 0.4876,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 29225.18
+    },
+    {
+      "id": "LAW_C_017",
+      "query": "“Bộ tổng hợp này chỉ chứa Bộ luật Lao động 2019” có đúng không?",
+      "expected_answer": "Không. Mục lục cho thấy tài liệu tổng hợp nhiều luật, nghị định, quyết định và thông tư về lao động, BHXH, việc làm, công đoàn, an toàn vệ sinh lao động và các chủ đề liên quan.",
+      "generated_answer": "Thông tin này không đúng. Bộ luật Lao động số 45/2019/QH14 được sửa đổi, bổ sung bởi các luật sau:\n\n* Luật Công nghiệp công nghệ số 71/2025/QH15 [SOURCE_1].\n* Luật Dân số số 113/2025/QH15 [SOURCE_1].\n* Luật Giáo dục nghề nghiệp số 124/2025/QH15 [SOURCE_1].",
+      "similarity_score": 0.6295,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "Văn-bản-hợp-nhất-18-VBHN-VPQH.pdf",
+          "page": 1,
+          "section": "BỘ LUẬT LAO DONG",
+          "chunk_id": "van-ban-hop-nhat-18-vbhn-vpqh-9ba3e3741cd49a49:chunk:000002",
+          "rerank_score": 0.4095
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 63440.77
+    },
+    {
+      "id": "LAW_C_018",
+      "query": "Nếu câu hỏi yêu cầu quy định BLLĐ 2019 nguyên gốc tại thời điểm ban hành, bộ tổng hợp có phù hợp không?",
+      "expected_answer": "Có thể phù hợp vì tài liệu chứa Bộ luật Lao động 45/2019/QH14. Tuy nhiên cần phân biệt với yêu cầu “hiện hành 2026”, khi đó phải ưu tiên nguồn hợp nhất/cập nhật mới hơn.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
+      "similarity_score": 0.4562,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 506129.03
+    },
+    {
+      "id": "LAW_C_019",
+      "query": "Một truy vấn về người lao động nước ngoài và BHXH bắt buộc nên mở rộng retrieval đến những văn bản nào trong mục lục?",
+      "expected_answer": "Ít nhất đến văn bản về lao động nước ngoài (VBHN 5325/VBHN-BLĐTBXH) và Nghị định 143/2018/NĐ-CP về BHXH bắt buộc đối với NLĐ là công dân nước ngoài làm việc tại Việt Nam.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
+      "similarity_score": 0.3687,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 31847.7
+    },
+    {
+      "id": "LAW_C_020",
+      "query": "Một truy vấn về lao động nữ vừa hỏi công việc bị cấm vừa hỏi chính sách bảo vệ nên retrieval đến những nguồn nào trong bộ tổng hợp?",
+      "expected_answer": "Có thể cần Nghị định 85/2015/NĐ-CP về chính sách đối với lao động nữ và Thông tư 26/2013/TT-BLĐTBXH về danh mục công việc không được sử dụng lao động nữ, cùng quy định liên quan trong BLLĐ.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
+      "similarity_score": 0.4503,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 56163.04
+    },
+    {
+      "id": "LAW_D_001",
+      "query": "Cẩm nang ILO-VCCI được xây dựng để hỗ trợ chủ thể nào?",
+      "expected_answer": "Chủ yếu hỗ trợ người sử dụng lao động/doanh nghiệp cập nhật và tuân thủ các thay đổi của BLLĐ 2019.",
+      "generated_answer": "Cẩm nang này được xây dựng nhằm hỗ trợ Người sử dụng lao động (NSDLĐ) với các mục tiêu cụ thể sau:\n\n* Đáp ứng nhu cầu cập nhật và tìm hiểu những quy định mới của các doanh nghiệp với tư cách là NSDLĐ [SOURCE_2].\n* Cung cấp cho NSDLĐ những thay đổi quan trọng của Bộ luật Lao động (BLLĐ) 2019 so với quy định của BLLĐ 2012, tạo điều kiện cho NSDLĐ tuân thủ đúng các quy định hiện hành trong quan hệ lao động [SOURCE_2].\n* Giúp NSDLĐ có thể thực hiện những cải cách cần thiết trong bộ máy quản lý cũng như tổ chức các hoạt động đối thoại, thương lượng tập thể để đảm bảo quyền lợi và nghĩa vụ của NSDLĐ và người lao động theo đúng quy định của pháp luật, nhằm tránh các mâu thuẫn phát sinh giữa các bên [SOURCE_2].\n* Giúp người đọc có được cái nhìn tổng quan về sự thay đổi của BLLĐ, làm rõ các nội dung liên quan trực tiếp đến quyền lợi và nghĩa vụ của NSDLĐ như thay đổi trong việc thực hiện hợp đồng lao động [SOURCE_3].",
+      "similarity_score": 0.8039,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_2",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 3,
+          "section": "Vai trò và mục tiêu của Cẩm nang Thực hiện BLLĐ 2019 đối với NSDLĐ trong việc chuẩn bị để đáp ứng những thay đổi của BLLĐ 2019.",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000007",
+          "rerank_score": 0.615
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 131,
+          "section": "KẾT LUẬN",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000296",
+          "rerank_score": 0.4324
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 81858.19
+    },
+    {
+      "id": "LAW_D_002",
+      "query": "Cẩm nang so sánh chủ yếu hai phiên bản Bộ luật Lao động nào?",
+      "expected_answer": "BLLĐ 2012 và BLLĐ 2019.",
+      "generated_answer": "Cẩm nang so sánh sự khác biệt về quy định giữa Bộ luật Lao động 2012 (BLLĐ 2012) và Bộ luật Lao động 2019 (BLLĐ 2019) [SOURCE_1].",
+      "similarity_score": 0.6971,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 4,
+          "section": "CẨM NANG THỰC HIỆN BỘ LUẬT LAO ĐỘNG 2019 TẠI DOANH NGHIỆP",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000008",
+          "rerank_score": 0.6804
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 62214.19
+    },
+    {
+      "id": "LAW_D_003",
+      "query": "Cẩm nang tập trung vào những nhóm nội dung chính nào?",
+      "expected_answer": "Gồm quan hệ/HĐLĐ, chấm dứt HĐLĐ, tiền lương, nghỉ lễ-tết và làm thêm giờ, nghỉ hưu, lao động nữ, kỷ luật lao động; đồng thời có đối thoại và thương lượng tập thể.",
+      "generated_answer": "Cẩm nang tập trung vào các thay đổi quan trọng liên quan đến: HĐLĐ; hình thức của HĐLĐ; hành vi NSDLĐ không",
+      "similarity_score": 0.6426,
+      "is_pass": false,
+      "is_early_exit": false,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 75889.93
+    },
+    {
+      "id": "LAW_D_004",
+      "query": "Chương I của cẩm nang nói về chủ đề gì?",
+      "expected_answer": "Quan hệ lao động và hợp đồng lao động.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
+      "similarity_score": 0.4099,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 77263.7
+    },
+    {
+      "id": "LAW_D_005",
+      "query": "Cẩm nang có nội dung riêng về thử việc không?",
+      "expected_answer": "Có. Mục lục Chương I có phần về thử việc.",
+      "generated_answer": "Có, cẩm nang này tập trung vào các thay đổi quan trọng liên quan đến thời gian thử việc [SOURCE_1].",
+      "similarity_score": 0.7485,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 4,
+          "section": "CẨM NANG THỰC HIỆN BỘ LUẬT LAO ĐỘNG 2019 TẠI DOANH NGHIỆP",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000008",
+          "rerank_score": 0.9435
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 69857.18
+    },
+    {
+      "id": "LAW_D_006",
+      "query": "Cẩm nang có chương riêng về xử lý kỷ luật lao động không?",
+      "expected_answer": "Có. Chương III là Xử lý kỷ luật lao động.",
+      "generated_answer": "Có, cẩm nang có một chương riêng về xử lý kỷ luật lao động là Chương III: XỬ LÝ KỶ LUẬT LAO ĐỘNG [SOURCE_3]. Chương này bắt đầu từ trang 53 [SOURCE_3] và bao gồm các mục sau:\n\n* I. TỔNG QUAN VỀ XỬ LÝ KỶ LUẬT LAO ĐỘNG [SOURCE_3].\n* II. CÁC HÌNH THỨC XỬ LÝ KỶ LUẬT LAO ĐỘNG [SOURCE_3].\n* III. QUY TRÌNH XỬ LÝ KỶ LUẬT LAO ĐỘNG [SOURCE_3].\n* IV. MỘT SỐ NỘI DUNG MỚI VÀ NHỮNG ĐIỂM CẦN LƯU Ý VỀ XỬ LÝ KLLĐ THEO BLLĐ 2019 [SOURCE_3].",
+      "similarity_score": 0.833,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_3",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 6,
+          "section": "MỤC LỤC",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000016",
+          "rerank_score": 0.6505
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 88554.98
+    },
+    {
+      "id": "LAW_D_007",
+      "query": "Cẩm nang có nội dung về tiền lương làm thêm giờ và làm việc ban đêm không?",
+      "expected_answer": "Có. Mục lục có mục riêng “Tiền lương làm thêm giờ, làm việc vào ban đêm”.",
+      "generated_answer": "Có, cẩm nang có nội dung về tiền lương làm thêm giờ và làm việc vào ban đêm [SOURCE_1]. Cụ thể:\n\n* Cẩm nang tập trung vào các thay đổi quan trọng liên quan đến làm thêm giờ [SOURCE_1].\n* Nội dung chính của cẩm nang bao gồm Quy định về làm thêm giờ [SOURCE_1].\n* Tài liệu có phần IV trình bày về TIỀN LƯƠNG LÀM THÊM GIỜ, LÀM VIỆC VÀO BAN ĐÊM [SOURCE_3].",
+      "similarity_score": 0.8242,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 4,
+          "section": "CẨM NANG THỰC HIỆN BỘ LUẬT LAO ĐỘNG 2019 TẠI DOANH NGHIỆP",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000008",
+          "rerank_score": 0.9783
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 99,
+          "section": "IV. TIỀN LƯƠNG LÀM THÊM GIỜ, LÀM VIỆC VÀO BAN ĐÊM",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000226",
+          "rerank_score": 0.8852
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 81263.01
+    },
+    {
+      "id": "LAW_D_008",
+      "query": "Cẩm nang tiếp cận các thay đổi của BLLĐ 2019 theo cách nào?",
+      "expected_answer": "Làm rõ khác biệt giữa BLLĐ 2012 và 2019 cùng văn bản liên quan, sau đó đưa ra giải pháp/kiến nghị để doanh nghiệp điều chỉnh và tuân thủ.",
+      "generated_answer": "Cẩm nang tiếp cận các thay đổi của BLLĐ 2019 thông qua việc làm rõ sự khác biệt về quy định giữa BLLĐ 2012 và BLLĐ 2019, cùng với các văn bản pháp luật mới có liên quan điều chỉnh quan hệ lao động (QHLĐ) [SOURCE_1]. Từ đó, cẩm nang đưa ra các giải pháp và kiến nghị đối với doanh nghiệp trong việc cải cách các thay đổi đó [SOURCE_1].",
+      "similarity_score": 0.8268,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 4,
+          "section": "CẨM NANG THỰC HIỆN BỘ LUẬT LAO ĐỘNG 2019 TẠI DOANH NGHIỆP",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000008",
+          "rerank_score": 0.9967
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 64908.24
+    },
+    {
+      "id": "LAW_D_009",
+      "query": "Muốn tìm dấu hiệu nhận biết quan hệ lao động, cần truy xuất phần nào?",
+      "expected_answer": "Chương I, mục I - Quan hệ lao động, phần “Dấu hiệu nhận biết quan hệ lao động”.",
+      "generated_answer": "Để tìm dấu hiệu nhận biết quan hệ lao động, bạn cần truy xuất phần \"2. Dấu hiệu nhận biết quan hệ lao động\" [SOURCE_1], [SOURCE_2]. Phần này nằm trong mục \"I. QUAN HỆ LAO ĐỘNG\" tại trang 10 của tài liệu [SOURCE_2].",
+      "similarity_score": 0.868,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 10,
+          "section": "2. Dấu hiệu nhận biết quan hệ lao động",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000025",
+          "rerank_score": 0.6095
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 5,
+          "section": "MỤC LỤC",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000010",
+          "rerank_score": 0.4188
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 73841.44
+    },
+    {
+      "id": "LAW_D_010",
+      "query": "Muốn tìm thay đổi về quyền NLĐ đơn phương chấm dứt HĐLĐ, cần truy xuất phần nào?",
+      "expected_answer": "Chương về chấm dứt HĐLĐ, mục nêu “Những điểm mới liên quan đến việc NLĐ đơn phương chấm dứt HĐLĐ”.",
+      "generated_answer": "Để tìm các thay đổi về quyền của người lao động (NLĐ) đơn phương chấm dứt hợp đồng lao động (HĐLĐ), bạn cần truy xuất phần **\"3. Những điểm mới liên quan đến việc NLĐ đơn phương chấm dứt HĐLĐ\"** [SOURCE_1], [SOURCE_3].\n\nPhần này bao gồm các thông tin về những thay",
+      "similarity_score": 0.8165,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 32,
+          "section": "3. Những điểm mới liên quan đến việc NLĐ đơn phương chấm dứt HĐLĐ",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000077",
+          "rerank_score": 0.9335
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 32,
+          "section": "3. Những điểm mới liên quan đến việc NLĐ đơn phương chấm dứt HĐLĐ",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000078",
+          "rerank_score": 0.7684
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 93062.31
+    },
+    {
+      "id": "LAW_D_011",
+      "query": "Câu hỏi doanh nghiệp cho thôi việc do thay đổi cơ cấu, công nghệ hoặc lý do kinh tế cần truy xuất phần nào?",
+      "expected_answer": "Phần III về chấm dứt HĐLĐ do thay đổi cơ cấu, công nghệ hoặc vì lý do kinh tế, gồm căn cứ và quy trình cho thôi việc.",
+      "generated_answer": "Để trả lời các câu hỏi về việc doanh nghiệp cho thôi việc do thay đổi cơ cấu, công nghệ hoặc vì lý do kinh tế, cần truy xuất các phần thông tin sau:\n\n* **Định nghĩa và các trường hợp cụ thể:** Truy xuất thông tin về các trường hợp được coi là thay đổi cơ cấu, công nghệ (như thay đổi cơ cấu tổ chức, sản phẩm, quy trình, máy móc...) và các lý do kinh tế (như khủng hoảng, suy thoái kinh tế hoặc thực hiện chính sách Nhà nước, cam kết quốc tế) [SOURCE_1].\n* **Điều kiện và mục đích chung:** Truy xuất nội dung về mục đích của việc chấm dứt hợp đồng lao động (HĐLĐ) nhằm phù hợp với nhu cầu quản lý, vận hành, gia tăng hiệu suất và lợi thế cạnh tranh, cũng như điều kiện để người sử dụng lao động (NSDLĐ) có thể cho người lao động (NLĐ) thôi việc [SOURCE_5].\n* **Quy trình thực hiện cho thôi việc:** Truy xuất các bước thủ tục pháp lý cụ thể, bao gồm:\n * Lập danh sách NLĐ được đào tạo lại [SOURCE_2].\n * Xây dựng Phương án sử dụng lao động (PASDLĐ) với sự tham gia của tổ chức đại diện người lao động tại cơ sở (TCĐDNLĐCS) [SOURCE_2].\n * Tổ chức đối thoại tại nơi làm việc về PASDLĐ và công bố công khai [SOURCE_2].\n * Thông báo công khai PASDLĐ cho NLĐ [SOURCE_2].\n * Trao đổi ý kiến và tổ chức đối thoại với TCĐDNLĐCS về việc cho NLĐ thôi việc [SOURCE_2], [SOURCE_4].\n* **Chi tiết về Phương án sử dụng lao động (PASDLĐ):** Truy xuất quy định về việc xây dựng PASDLĐ là thủ tục bắt buộc khi ảnh hưởng đến việc làm của từ 02 NLĐ trở lên, bao gồm yêu cầu giải trình",
+      "similarity_score": 0.8237,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 4,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 419,
+          "section": "Điều 13. Thay đổi cơ cấu, công nghệ và lý do kinh tế",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:001645",
+          "rerank_score": 0.9297
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 34,
+          "section": "2. Quy trình cho thôi việc",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000081",
+          "rerank_score": 0.9083
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 68,
+          "section": "(ii) NSDLĐ cho thôi việc trong trường hợp thay đổi cơ cấu, công nghệ hoặc vì lý do kinh tế",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000158",
+          "rerank_score": 0.8432
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 33,
+          "section": "III. CHẤM DỨT HĐLĐ DO THAY ĐỔI CƠ CẤU, CÔNG NGHỆ HOẶC VÌ LÝ DO KINH TẾ",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000079",
+          "rerank_score": 0.831
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 92897.9
+    },
+    {
+      "id": "LAW_D_012",
+      "query": "Muốn tra các hình thức xử lý kỷ luật lao động, cần vào phần nào?",
+      "expected_answer": "Chương III - Xử lý kỷ luật lao động, mục II “Các hình thức xử lý kỷ luật lao động”.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, để tra cứu các hình thức xử lý kỷ luật lao động, bạn có thể tìm đến các phần sau:\n\n* Phần **\"II. CÁC HÌNH THỨC XỬ LÝ KỶ LUẬT LAO ĐỘNG\"** [SOURCE_1].\n* Phần **\"2. Các hình thức xử lý kỷ luật lao động:\"** [SOURCE_5].\n* Phần nội dung về **\"Sa thải:\"** và các chế tài xử lý kỷ luật [SOURCE_2].\n* Phần **\"Điều 27. Nội dung của nội quy lao động\"** (về danh mục hành vi vi phạm và các hình thức xử lý kỷ luật lao động tương ứng) [SOURCE_4].",
+      "similarity_score": 0.8333,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 4,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 53,
+          "section": "II. CÁC HÌNH THỨC XỬ LÝ KỶ LUẬT LAO ĐỘNG",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000126",
+          "rerank_score": 0.872
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 92,
+          "section": "(3) Sa thải:",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000274",
+          "rerank_score": 0.8254
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 426,
+          "section": "Điều 27. Nội dung của nội quy lao động",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:001673",
+          "rerank_score": 0.7136
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 91,
+          "section": "2. Các hình thức xử lý kỷ luật lao động:",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000272",
+          "rerank_score": 0.6221
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 128903.32
+    },
+    {
+      "id": "LAW_D_013",
+      "query": "Muốn tra kỳ hạn trả lương, cần tìm mục nào?",
+      "expected_answer": "Mục “Kỳ hạn trả lương” trong chương/phần về tiền lương.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
+      "similarity_score": 0.4698,
+      "is_pass": false,
+      "is_early_exit": true,
+      "citations_count": 0,
+      "citations": [],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 133625.17
+    },
+    {
+      "id": "LAW_D_014",
+      "query": "Cẩm nang có áp dụng chi tiết cho doanh nghiệp cho thuê lại lao động không?",
+      "expected_answer": "Không phải trọng tâm. Tài liệu lưu ý phạm vi dành cho đa số doanh nghiệp sản xuất kinh doanh; doanh nghiệp kinh doanh có điều kiện như cho thuê lại lao động được hướng dẫn chi tiết ở tài liệu khác.",
+      "generated_answer": "Không, cẩm nang này không áp dụng chi tiết cho các doanh nghiệp cho thuê lại lao động [SOURCE_1]. Phạm vi của cẩm nang dành cho đa số các doanh nghiệp sản xuất kinh doanh, còn đối với các doanh nghiệp thuộc lĩnh vực kinh doanh có điều kiện như cho thuê lại lao động thì sẽ được hướng dẫn chi tiết ở tài liệu khác [SOURCE_1].",
+      "similarity_score": 0.7814,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 4,
+          "section": "CẨM NANG THỰC HIỆN BỘ LUẬT LAO ĐỘNG 2019 TẠI DOANH NGHIỆP",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000008",
+          "rerank_score": 0.9963
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 89162.37
+    },
+    {
+      "id": "LAW_D_015",
+      "query": "Một doanh nghiệp hỏi vừa về chuyển NLĐ sang công việc khác vừa về chấm dứt HĐLĐ do thay đổi cơ cấu. Retrieval nên lấy những phần nào?",
+      "expected_answer": "Cần kết hợp nội dung Chương I về chuyển NLĐ làm công việc khác so với HĐLĐ với phần chấm dứt HĐLĐ do thay đổi cơ cấu, công nghệ/lý do kinh tế.",
+      "generated_answer": "Dựa trên các tài liệu được cung cấp, hệ thống Retrieval (truy xuất) nên lấy các phần liên quan đến việc chấm dứt hợp đồng lao động do thay đổi cơ cấu, công nghệ [SOURCE_1, SOURCE_2, SOURCE_3, SOURCE_5] và các quy định chung về phạm vi nội dung cẩm nang hướng dẫn thực hiện Bộ luật Lao động 2019 tại doanh nghiệp [SOURCE_4]. \n\nCụ thể, các phần tài liệu có thể tham khảo bao gồm:\n- Mục lục và các nội dung chi tiết về việc chấm dứt hợp đồng lao động do thay đổi cơ cấu, công nghệ, lý do kinh tế (như căn cứ xác định, quy trình cho thôi việc, điểm mới theo BLLĐ 2019, trách nhiệm chi trả trợ cấp, và các lưu ý) [SOURCE_1, SOURCE_2, SOURCE_3, SOURCE_5].\n- Phần giới thiệu về phạm vi của cẩm nang, trong đó có đề cập đến nội dung về việc \"chuyển NLĐ làm công việc khác so với HĐLĐ\" [SOURCE_4].\n\nDựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin chi tiết cụ thể về quy trình hay điều kiện pháp lý của hành động \"chuyển NLĐ sang công việc khác\" ngoài việc đây là một trong các nội dung thuộc phạm vi tìm hiểu của cẩm nang [SOURCE_4], trong khi các quy định cụ thể về trường hợp thay đổi cơ cấu được quy định chi tiết tại Mục III [SOURCE_2, SOURCE_3].",
+      "similarity_score": 0.7829,
+      "is_pass": true,
+      "is_early_exit": true,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_4",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 4,
+          "section": "CẨM NANG THỰC HIỆN BỘ LUẬT LAO ĐỘNG 2019 TẠI DOANH NGHIỆP",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000008",
+          "rerank_score": 0.5604
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 82378.33
+    },
+    {
+      "id": "LAW_D_016",
+      "query": "Một câu hỏi về làm thêm vào ngày lễ vừa liên quan thời giờ nghỉ vừa liên quan tiền lương. Cẩm nang định hướng retrieval qua những nhóm nội dung nào?",
+      "expected_answer": "Cần kết hợp phần ngày nghỉ lễ, tết/quy định làm thêm giờ với phần tiền lương, đặc biệt tiền lương làm thêm giờ và làm việc ban đêm.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, cẩm nang định hướng thông qua các nhóm nội dung sau:\n\n* Các thay đổi quan trọng tập trung vào: làm thêm giờ; nghỉ lễ, tết [SOURCE_2].\n* Nội dung chính bao gồm: Tiền lương; Ngày nghỉ lễ, tết - Quy định về làm thêm giờ [SOURCE_2].",
+      "similarity_score": 0.7301,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_2",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 4,
+          "section": "CẨM NANG THỰC HIỆN BỘ LUẬT LAO ĐỘNG 2019 TẠI DOANH NGHIỆP",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000008",
+          "rerank_score": 0.5927
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 66875.17
+    },
+    {
+      "id": "LAW_D_017",
+      "query": "Vì sao cẩm nang phù hợp để test câu hỏi “điểm mới” hơn một văn bản luật thuần túy?",
+      "expected_answer": "Vì cẩm nang chủ động so sánh BLLĐ 2012 với BLLĐ 2019 và giải thích thay đổi, thay vì chỉ trình bày điều khoản hiện hành.",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
       "similarity_score": 0.4092,
       "is_pass": false,
@@ -202,651 +1808,790 @@
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 42601.39
+      "latency_ms": 54025.69
     },
     {
-      "id": 15,
-      "query": "Trong RRF, hằng số k thường được đặt bao nhiêu và để làm gì?",
-      "expected_answer": "k thường là 60 để làm mượt điểm số, tránh tài liệu hạng 1 chiếm ưu thế quá tuyệt đối so với hạng 2, hạng 3.",
+      "id": "LAW_D_018",
+      "query": "Nếu cẩm nang nói một quy định “mới” của BLLĐ 2019, RAG có nên tự suy ra đó vẫn là quy định mới nhất năm 2026 không?",
+      "expected_answer": "Không. Cẩm nang xuất bản năm 2021 và tự lưu ý có thể có quy định mới chưa kịp cập nhật; câu hỏi hiện hành 2026 cần đối chiếu nguồn pháp luật cập nhật hơn.",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4297,
+      "similarity_score": 0.4592,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 43511.34
+      "latency_ms": 57682.99
     },
     {
-      "id": 16,
-      "query": "Tại sao Cross-Encoder chính xác hơn Bi-Encoder nhưng chậm hơn?",
-      "expected_answer": "Bi-Encoder mã hóa câu hỏi và tài liệu độc lập nên nhanh nhưng mất quan hệ ngữ pháp/ngữ nghĩa phức tạp. Cross-Encoder đưa cả hai vào cùng lúc nên chính xác hơn nhưng chậm hơn.",
+      "id": "LAW_D_019",
+      "query": "Mục tiêu của cẩm nang đối với quản trị doanh nghiệp là gì ngoài việc “biết luật”?",
+      "expected_answer": "Giúp NSDLĐ nhận diện thay đổi pháp luật để tuân thủ, cải cách bộ máy quản lý và tổ chức đối thoại/thương lượng tập thể, qua đó hạn chế mâu thuẫn trong quan hệ lao động.",
+      "generated_answer": "Ngoài việc giúp người đọc nắm bắt các quy định pháp luật, cẩm nang hướng tới các mục tiêu quản trị doanh nghiệp sau:\n\n* **Cải cách bộ máy và tổ chức hoạt động:** Giúp NSDLĐ có những cải cách cần thiết trong bộ máy quản lý cũng như tổ chức các hoạt động đối thoại và thương lượng tập thể (TLTT) [SOURCE_3]. Cẩm nang cũng đưa ra các giải pháp, kiến nghị đối với doanh nghiệp trong việc cải cách các thay đổi từ quy định của BLLĐ 2012 sang BLLĐ 2019 [SOURCE_1].\n* **Đảm bảo quyền lợi và tuân thủ:** Đảm bảo quyền lợi và nghĩa vụ của cả NSDLĐ và NLĐ theo đúng quy định của pháp luật [SOURCE_3].\n* **Quản trị rủi ro và mâu thuẫn:** Hạn chế các rủi ro, tranh chấp phát sinh giữa NSDLĐ và NLĐ [SOURCE_2], đồng thời tránh các mâu thuẫn phát sinh giữa các bên [SOURCE_3].\n* **Hỗ trợ vận hành và sản xuất:** Giúp áp dụng pháp luật lao động vào công tác quản lý và sử dụng lao động để đáp ứng nhu cầu sản xuất, hoạt động của doanh nghiệp [SOURCE_2].\n* **Hướng dẫn thực hiện thực tế:** Cung cấp các sơ đồ và quy",
+      "similarity_score": 0.8004,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 4,
+          "section": "CẨM NANG THỰC HIỆN BỘ LUẬT LAO ĐỘNG 2019 TẠI DOANH NGHIỆP",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000008",
+          "rerank_score": 0.852
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 131,
+          "section": "KẾT LUẬN",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000296",
+          "rerank_score": 0.7402
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 3,
+          "section": "Vai trò và mục tiêu của Cẩm nang Thực hiện BLLĐ 2019 đối với NSDLĐ trong việc chuẩn bị để đáp ứng những thay đổi của BLLĐ 2019.",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000007",
+          "rerank_score": 0.6328
+        }
+      ],
+      "image_urls_count": 0,
+      "image_urls": [],
+      "latency_ms": 90360.42
+    },
+    {
+      "id": "LAW_D_020",
+      "query": "Doanh nghiệp hỏi một tình huống vừa có dấu hiệu quan hệ lao động, thử việc và sau đó sa thải. Retrieval tối thiểu nên phủ những phần nào của cẩm nang?",
+      "expected_answer": "Ít nhất Chương I về quan hệ lao động/HĐLĐ và thử việc, cùng Chương III về xử lý kỷ luật lao động/sa thải; nếu có chấm dứt HĐLĐ ngoài kỷ luật thì cần thêm chương chấm dứt HĐLĐ.",
       "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3593,
+      "similarity_score": 0.4107,
       "is_pass": false,
       "is_early_exit": true,
       "citations_count": 0,
       "citations": [],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 74373.09
+      "latency_ms": 76510.25
     },
     {
-      "id": 17,
-      "query": "Chiến lược “hình phễu” trong re-ranking hoạt động theo thứ tự nào?",
-      "expected_answer": "Retrieve Many: lấy khoảng 50 tài liệu nhanh bằng Bi-Encoder; Re-rank Few: dùng Cross-Encoder chọn khoảng 5 tài liệu tốt nhất; sau đó đưa vào LLM.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3502,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_001",
+      "query": "Bộ luật Lao động trong văn bản hợp nhất có hiệu lực gốc từ ngày nào?",
+      "expected_answer": "Bộ luật Lao động 45/2019/QH14 có hiệu lực từ ngày 01/01/2021.",
+      "generated_answer": "Trong tài liệu được cung cấp, có hai mốc thời gian về hiệu lực thi hành của Bộ luật Lao động tại các điều khoản khác nhau:\n\n* Tại Điều 220, Bộ luật có hiệu lực thi hành từ ngày 01 tháng 01 năm 2021 [SOURCE_3].\n* Tại Điều 240, Bộ luật có hiệu lực thi hành từ ngày 01 tháng 5 năm 2013 [SOURCE_4].",
+      "similarity_score": 0.8268,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_3",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 67,
+          "section": "Điều 220. Hiệu lực thi hành",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000286",
+          "rerank_score": 0.9765
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 140,
+          "section": "Điều 240. Hiệu lực của Bộ luật Lao động",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000591",
+          "rerank_score": 0.9661
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 71782.04
+      "latency_ms": 115081.77
     },
     {
-      "id": 18,
-      "query": "Context Reordering xử lý hiện tượng “Lost in the Middle” bằng cách nào?",
-      "expected_answer": "Hệ thống sắp xếp theo dạng chữ U: đặt tài liệu quan trọng nhất ở đầu và cuối prompt, tài liệu ít quan trọng hơn ở giữa.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3681,
+      "id": "LAW_E_002",
+      "query": "Theo Điều 3, người lao động được định nghĩa như thế nào?",
+      "expected_answer": "Là người làm việc cho NSDLĐ theo thỏa thuận, được trả lương và chịu sự quản lý, điều hành, giám sát của NSDLĐ.",
+      "generated_answer": "Vì các tài liệu cung cấp có những định nghĩa khác nhau về \"người lao động\" tại Điều 3, tôi xin tổng hợp như sau:\n\n* Người lao động là người làm việc cho người sử dụng lao động theo thỏa thuận, được trả lương và chịu sự quản lý, điều hành, giám sát của người sử dụng lao động [SOURCE_1], [SOURCE_4]. Độ tuổi lao động tối thiểu của người lao động là đủ 15 tuổi, trừ trường hợp quy định tại Mục 1 Chương XI của Bộ luật này [SOURCE_1], [SOURCE_4].\n* Người lao động là người từ đủ 15 tuổi trở lên, có khả năng lao động, làm việc theo hợp đồng lao động, được trả lương và chịu sự quản lý, điều hành của người sử dụng lao động [SOURCE_2].\n* Trong một ngữ cảnh khác, lao động (gọi chung là người lao động) là người giúp việc gia đình quy định tại Khoản 1 Điều 179 của Bộ luật Lao động, bao gồm người lao động sống tại gia đình người sử dụng lao động và người lao động không sống tại gia đình người sử dụng lao động [SOURCE_3].\n* Ngoài ra, người lao động còn được định nghĩa là công dân Việt Nam từ đủ 15 tuổi trở lên, có khả năng lao động và có nhu cầu làm việc [SOURCE_5].",
+      "similarity_score": 0.6326,
       "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "is_early_exit": false,
+      "citations_count": 5,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 6,
+          "section": "Điều 3. Giải thích từ ngữ",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000020",
+          "rerank_score": 0.9915
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 69,
+          "section": "Điều 3. Giải thích từ ngữ",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000296",
+          "rerank_score": 0.9866
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 526,
+          "section": "Điều 3. Giải thích từ ngữ",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:002103",
+          "rerank_score": 0.9837
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "Văn-bản-hợp-nhất-18-VBHN-VPQH.pdf",
+          "page": 2,
+          "section": "Điều 3. Giái thich tir ngữ",
+          "chunk_id": "van-ban-hop-nhat-18-vbhn-vpqh-9ba3e3741cd49a49:chunk:000006",
+          "rerank_score": 0.9685
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 272,
+          "section": "Điều 3. Giải thích từ ngữ",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:001048",
+          "rerank_score": 0.9662
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 83953.21
+      "latency_ms": 117339.01
     },
     {
-      "id": 19,
-      "query": "Zero-shot Prompting và Few-shot Learning trong phần Generation khác nhau thế nào?",
-      "expected_answer": "Zero-shot dùng template cố định mà không có ví dụ mẫu. Few-shot thêm 1-2 ví dụ Context-Question-Answer chuẩn để mô hình học phong cách và định dạng.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4032,
+      "id": "LAW_E_003",
+      "query": "Độ tuổi lao động tối thiểu theo định nghĩa chung là bao nhiêu?",
+      "expected_answer": "Đủ 15 tuổi, trừ trường hợp được quy định riêng tại Mục 1 Chương XI.",
+      "generated_answer": "Độ tuổi lao động tối thiểu của người lao động là đủ 15 tuổi, trừ các trường hợp được quy định tại Mục 1 Chương XI của Bộ luật này [SOURCE_1]. Theo quy định của pháp luật lao động Việt Nam, người lao động là người ít nhất đủ 15 tuổi, có khả năng lao động và có giao kết hợp đồng lao động [SOURCE_2]. \n\nTuy nhiên, đối với một số nghề và công việc cụ thể do Bộ lao động, thương binh và xã hội quy định, trẻ em chưa đủ 15 tuổi có thể được nhận vào làm việc nếu có sự đồng ý bằng văn bản của cha mẹ hoặc người đỡ đầu [SOURCE_2].",
+      "similarity_score": 0.6665,
       "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 6,
+          "section": "Điều 3. Giải thích từ ngữ",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000020",
+          "rerank_score": 0.905
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 16,
+          "section": "a) Người lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000043",
+          "rerank_score": 0.713
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 47244.74
+      "latency_ms": 61027.87
     },
     {
-      "id": 20,
-      "query": "Nếu bỏ Embedding Model, Vector Store/ANN Index và LLM thì hệ thống lần lượt biến thành những dạng nào?",
-      "expected_answer": "Bỏ Embedding Model: Lexical Retrieval-driven RAG. Bỏ Vector Store/ANN Index: Unscalable Prototype. Bỏ LLM: Semantic Search / Retrieval System.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4074,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_004",
+      "query": "Quan hệ lao động bao gồm những loại nào?",
+      "expected_answer": "Bao gồm quan hệ lao động cá nhân và quan hệ lao động tập thể.",
+      "generated_answer": "Dựa trên các tài liệu được cung cấp, quan hệ lao động bao gồm các loại sau:\n\n**1. Quan hệ lao động chủ yếu:**\nLuật lao động chủ yếu điều chỉnh quan hệ lao động giữa người lao động làm công ăn lương với người sử dụng lao động thuộc mọi thành phần kinh tế, loại quan hệ này được xác lập trên cơ sở hợp đồng lao động [SOURCE_2]. Ngoài ra, còn có quan hệ lao động của cán bộ, công chức làm việc trong bộ máy Nhà nước (loại quan hệ này trước hết do Luật hành chính điều chỉnh, nhưng Luật lao động cũng điều chỉnh trong phạm vi phù hợp) [SOURCE_5].\n\n**2. Các quan hệ liên quan chặt chẽ với quan hệ lao động:**\nNgoài quan hệ lao động làm công ăn lương, Luật lao động còn điều chỉnh một số quan hệ xã hội khác bao gồm [SOURCE_1]:\n* Quan hệ về việc làm [SOURCE_1].\n* Quan hệ học nghề [SOURCE_1].\n* Quan hệ về bồi thường thiệt hại [SOURCE_1].\n* Quan hệ về bảo hiểm xã hội [SOURCE_1].\n* Quan hệ giữa người sử dụng lao động với tổ chức Công đoàn, đại diện của tập thể người lao động [SOURCE_1].\n* Quan hệ về giải quyết các tranh chấp lao động và các cuộc đình công [SOURCE_1].\n* Quan hệ về quản lý lao động [SOURCE_1].",
+      "similarity_score": 0.7492,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 4,
+          "section": "b - Các quan hệ liên quan đến quan hệ lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000012",
+          "rerank_score": 0.9914
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 3,
+          "section": "a - Quan hệ lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000009",
+          "rerank_score": 0.9696
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 3,
+          "section": "a - Quan hệ lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000010",
+          "rerank_score": 0.9567
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 70817.37
+      "latency_ms": 99172.78
     },
     {
-      "id": 21,
-      "query": "Trong LangChain, một Document gồm những thuộc tính chính nào?",
-      "expected_answer": "Một Document gồm page_content, metadata và id.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3838,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_005",
+      "query": "NSDLĐ có được giữ bản chính giấy tờ tùy thân, văn bằng, chứng chỉ của NLĐ không?",
+      "expected_answer": "Không. Điều 17 cấm NSDLĐ giữ bản chính các giấy tờ này khi giao kết, thực hiện HĐLĐ.",
+      "generated_answer": "Người sử dụng lao động (NSDLĐ) không được phép giữ bản chính giấy tờ tùy thân, văn bằng, chứng chỉ của người lao động [SOURCE_1]. \n\nCụ thể:\n* Theo quy định về những hành vi NSDLĐ không được làm khi giao kết, thực hiện hợp đồng lao động, việc giữ bản chính giấy tờ tùy thân, văn bằng, chứng chỉ của người lao động là hành vi bị cấm [SOURCE_1].\n* Luật Lao động 2012 cũng quy định cấm NSDLĐ được giữ giấy tờ tùy thân, bằng cấp, chứng chỉ gốc của người lao động [SOURCE_4].\n* Đối với hành vi vi phạm quy định này, NSDLĐ sẽ bị buộc phải trả lại bản chính giấy tờ tùy thân, văn bằng, chứng chỉ đã giữ của người lao động [SOURCE_3].",
+      "similarity_score": 0.7692,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 75,
+          "section": "Điều 20. Những hành vi người sử dụng lao động không được làm khi giao kết, thực hiện hợp đồng lao động",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000319",
+          "rerank_score": 0.8801
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 455,
+          "section": "Điều 5. Vi phạm quy định về giao kết hợp đồng lao động5",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:001806",
+          "rerank_score": 0.8197
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 49,
+          "section": "Trả lời:",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000080",
+          "rerank_score": 0.7439
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 89066.56
+      "latency_ms": 81059.88
     },
     {
-      "id": 22,
-      "query": "Trong ví dụ LangChain, RecursiveCharacterTextSplitter được cấu hình chunk_size và chunk_overlap bao nhiêu?",
-      "expected_answer": "chunk_size=1000 và chunk_overlap=200.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.414,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_006",
+      "query": "HĐLĐ xác định thời hạn tối đa bao nhiêu tháng theo Điều 20?",
+      "expected_answer": "Không quá 36 tháng kể từ thời điểm có hiệu lực của hợp đồng.",
+      "generated_answer": "Theo Điều 20, hợp đồng lao động xác định thời hạn là hợp đồng mà trong đó hai bên xác định thời hạn, thời điểm chấm dứt hiệu lực của hợp đồng trong thời gian không quá 36 tháng kể từ thời điểm có hiệu lực của hợp đồng [SOURCE_2].",
+      "similarity_score": 0.7095,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_2",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 11,
+          "section": "Điều 20. Loại hợp đồng lao động",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000044",
+          "rerank_score": 0.9779
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 91417.34
+      "latency_ms": 65213.96
     },
     {
-      "id": 23,
-      "query": "VectorStoreRetriever trong ví dụ hỗ trợ các kiểu tìm kiếm nào?",
-      "expected_answer": "similarity, mmr (Maximum Marginal Relevance) và similarity_score_threshold.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4292,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_007",
+      "query": "Có áp dụng thử việc với HĐLĐ dưới 01 tháng không?",
+      "expected_answer": "Không. Điều 24 quy định không áp dụng thử việc với NLĐ giao kết HĐLĐ có thời hạn dưới 01 tháng.",
+      "generated_answer": "Không áp dụng thử việc đối với người lao động giao kết hợp đồng lao động có thời hạn dưới 01 tháng [SOURCE_1], [SOURCE_2], [SOURCE_3].",
+      "similarity_score": 0.8413,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 13,
+          "section": "2. Trường hợp không áp dụng thử việc",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000032",
+          "rerank_score": 0.9967
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 13,
+          "section": "Điều 24. Thử việc",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000049",
+          "rerank_score": 0.996
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "Văn-bản-hợp-nhất-18-VBHN-VPQH.pdf",
+          "page": 11,
+          "section": "Điều 24. Thử việc",
+          "chunk_id": "van-ban-hop-nhat-18-vbhn-vpqh-9ba3e3741cd49a49:chunk:000034",
+          "rerank_score": 0.8082
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 35330.88
+      "latency_ms": 67594.96
     },
     {
-      "id": 24,
-      "query": "Pipeline của phần thực hành dùng những thành phần nào từ tài liệu PDF đến câu trả lời?",
-      "expected_answer": "Tài liệu AIVN được chunking, vector hóa và lưu vào ChromaDB. Query được vector hóa, dùng similarity search lấy Top-K context, ghép qua prompt template rồi đưa vào Qwen để sinh câu trả lời.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4168,
+      "id": "LAW_E_008",
+      "query": "Thời gian thử việc tối đa đối với người quản lý doanh nghiệp là bao lâu?",
+      "expected_answer": "Không quá 180 ngày.",
+      "generated_answer": "Thời gian thử việc tối đa đối với công việc của người quản lý doanh nghiệp là không quá 180 ngày [SOURCE_1], [SOURCE_2], [SOURCE_4]. Quy định này áp dụng đối với người quản lý doanh nghiệp theo quy định của Luật Doanh nghiệp và Luật Quản lý, sử dụng vốn nhà nước đầu tư vào sản xuất, kinh doanh tại doanh nghiệp [SOURCE_1], [SOURCE_2], [SOURCE_4].",
+      "similarity_score": 0.6448,
       "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 12,
+          "section": "1. Thời hạn thử việc",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000030",
+          "rerank_score": 0.9989
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 13,
+          "section": "Điều 25. Thời gian thử việc",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000050",
+          "rerank_score": 0.9928
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "Văn-bản-hợp-nhất-18-VBHN-VPQH.pdf",
+          "page": 11,
+          "section": "Điều 25. Thời gian thir viée",
+          "chunk_id": "van-ban-hop-nhat-18-vbhn-vpqh-9ba3e3741cd49a49:chunk:000035",
+          "rerank_score": 0.7596
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 41675.37
+      "latency_ms": 54349.35
     },
     {
-      "id": 25,
-      "query": "Trong class TextSplitter của phần thực hành, mặc định chunk_size và chunk_overlap là bao nhiêu?",
-      "expected_answer": "chunk_size=400 và chunk_overlap=120.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4251,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_009",
+      "query": "Khi tạm thời chuyển NLĐ làm công việc khác so với HĐLĐ, thời gian tối đa thông thường là bao nhiêu?",
+      "expected_answer": "Không quá 60 ngày làm việc cộng dồn trong 01 năm, trừ trường hợp NLĐ đồng ý bằng văn bản cho thời gian dài hơn.",
+      "generated_answer": "Khi tạm thời chuyển người lao động làm công việc khác so với hợp đồng lao động, thời gian tối đa thông thường là không quá 60 ngày làm việc cộng dồn trong 01 năm [SOURCE_1], [SOURCE_2], [SOURCE_4]. Trường hợp muốn chuyển người lao động làm công việc khác quá 60 ngày làm việc cộng dồn trong 01 năm thì chỉ được thực hiện khi có sự đồng ý của người lao động bằng văn bản [SOURCE_2], [SOURCE_3], [SOURCE_4].",
+      "similarity_score": 0.8229,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 4,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 47,
+          "section": "(b) Các vấn đề cần lưu ý",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000111",
+          "rerank_score": 0.9943
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 13,
+          "section": "Điều 29. Chuyển người lao động làm công việc khác so với hợp đồng lao động",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000054",
+          "rerank_score": 0.9893
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 418,
+          "section": "Điều 8. Tạm thời chuyển người lao động làm công việc khác",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:001640",
+          "rerank_score": 0.9879
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 14,
+          "section": "Trả lời:",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000021",
+          "rerank_score": 0.9725
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 45232.66
+      "latency_ms": 73619.12
     },
     {
-      "id": 26,
-      "query": "Retriever trong class VectorDB của phần thực hành mặc định lấy bao nhiêu document gần nhất?",
-      "expected_answer": "Mặc định lấy 4 document gần nhất.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4532,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_010",
+      "query": "NLĐ làm HĐLĐ không xác định thời hạn muốn đơn phương chấm dứt hợp đồng thông thường phải báo trước bao lâu?",
+      "expected_answer": "Ít nhất 45 ngày, trừ các trường hợp luật cho phép không cần báo trước hoặc ngành/nghề đặc thù có quy định riêng.",
+      "generated_answer": "Người lao động làm việc theo hợp đồng lao động không xác định thời hạn, khi muốn đơn phương chấm dứt hợp đồng, phải báo trước cho người sử dụng lao động ít nhất 45 (bốn mươi lăm) ngày [SOURCE_3], [SOURCE_4]. Tuy nhiên, quy định này có thể ngoại trừ các trường hợp được quy định tại Điều 156 của Bộ luật này [SOURCE_4].",
+      "similarity_score": 0.7544,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_3",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 30,
+          "section": "1. Các trường hợp đơn phương chấm dứt HĐLĐ phải thông báo trước",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000075",
+          "rerank_score": 0.9967
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 81,
+          "section": "Điều 37. Quyền đơn phương chấm dứt hợp đồng lao động của người lao động",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000341",
+          "rerank_score": 0.9947
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 34227.5
+      "latency_ms": 75928.13
     },
     {
-      "id": 27,
-      "query": "Prompt của OfflineRAG yêu cầu mô hình làm gì khi tài liệu không có thông tin?",
-      "expected_answer": "Mô hình phải nói rõ “Không có thông tin”, trả lời dựa trên tài liệu và không thêm chi tiết nào ngoài tài liệu.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.5683,
+      "id": "LAW_E_011",
+      "query": "NLĐ làm HĐLĐ xác định thời hạn từ 12 đến 36 tháng muốn nghỉ thông thường phải báo trước bao lâu?",
+      "expected_answer": "Ít nhất 30 ngày.",
+      "generated_answer": "Người lao động (NLĐ) làm việc theo hợp đồng lao động (HĐLĐ) xác định thời hạn có thời hạn từ 12 (mười hai) tháng đến 36 (ba mươi sáu) tháng khi đơn phương chấm dứt HĐLĐ phải báo trước cho người sử dụng lao động (NSDLĐ) ít nhất 30 (ba mươi) ngày [SOURCE_2].",
+      "similarity_score": 0.6069,
       "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_2",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 30,
+          "section": "1. Các trường hợp đơn phương chấm dứt HĐLĐ phải thông báo trước",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000075",
+          "rerank_score": 0.9944
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 29076.38
+      "latency_ms": 69972.45
     },
     {
-      "id": 28,
-      "query": "Semantic Chunking khác Recursive Chunking ở nguyên tắc quyết định điểm cắt như thế nào?",
-      "expected_answer": "Recursive Chunking dựa trên ký tự phân tách; Semantic Chunking dựa trên sự thay đổi ngữ nghĩa giữa các câu, dùng độ tương đồng để phát hiện khi chủ đề đổi.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3437,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_012",
+      "query": "Trợ cấp thôi việc được tính theo mức nào cho mỗi năm làm việc đủ điều kiện?",
+      "expected_answer": "Mỗi năm làm việc được trợ cấp một nửa tháng tiền lương, theo điều kiện và cách xác định thời gian của Điều 46.",
+      "generated_answer": "Mức trợ cấp thôi việc cho mỗi năm làm việc được quy định như sau:\n\n* Mỗi năm làm việc được trợ cấp một nửa tháng tiền lương [SOURCE_1].\n* Cứ mỗi năm làm việc là nửa tháng lương, cộng với phụ cấp lương, nếu có [SOURCE_2].",
+      "similarity_score": 0.7929,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 19,
+          "section": "Điều 46. Trợ cấp thôi việc",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000075",
+          "rerank_score": 0.986
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 43,
+          "section": "· Cho người lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000130",
+          "rerank_score": 0.9623
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 44924.88
+      "latency_ms": 63822.04
     },
     {
-      "id": 29,
-      "query": "Quy trình Semantic Chunking trong tài liệu gồm những bước nào?",
-      "expected_answer": "Tách thành câu hoàn chỉnh; tính độ tương đồng giữa câu trước và câu sau; đặt ngưỡng; tương đồng cao thì gộp, giảm dưới ngưỡng thì ngắt chunk.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3346,
+      "id": "LAW_E_013",
+      "query": "Trợ cấp mất việc làm được tính thế nào theo Điều 47?",
+      "expected_answer": "Cứ mỗi năm làm việc trả 01 tháng tiền lương nhưng ít nhất bằng 02 tháng tiền lương, nếu thuộc trường hợp và điều kiện của Điều 47.",
+      "generated_answer": "Theo Điều 47, trợ cấp mất việc làm được tính như sau:\n\n* **Đối tượng và mức hưởng:** Người sử dụng lao động trả trợ cấp mất việc làm cho người lao động đã làm việc thường xuyên cho mình từ đủ 12 tháng trở lên mà bị mất việc làm theo quy định tại khoản 11 Điều 34 của Bộ luật này; cứ mỗi năm làm việc trả 01 tháng tiền lương nhưng ít nhất bằng 02 tháng tiền lương [SOURCE_1], [SOURCE_2].\n* **Thời gian làm việc để tính trợ cấp:** Là tổng thời gian người lao động đã làm việc thực tế cho người sử dụng lao động trừ đi thời gian người lao động đã tham gia bảo hiểm thất nghiệp theo quy định của pháp luật về bảo hiểm thất nghiệp và thời gian làm việc đã được người sử dụng lao động chi trả trợ cấp thôi việc, trợ cấp mất việc làm [SOURCE_1], [SOURCE_2].\n* **Tiền lương để tính trợ cấp:** Là tiền lương bình quân của 06 tháng liền kề theo hợp đồng lao động trước khi người lao động mất việc làm [SOURCE_1], [SOURCE_2]. Tiền lương này bao gồm tiền lương cấp bậc, chức vụ, phụ cấp khu vực, phụ cấp chức vụ (nếu có) [SOURCE_4].",
+      "similarity_score": 0.6848,
       "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 19,
+          "section": "Điều 47. Trợ cấp mất việc làm",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000076",
+          "rerank_score": 0.9992
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "Văn-bản-hợp-nhất-18-VBHN-VPQH.pdf",
+          "page": 20,
+          "section": "Điều 47. Trợ cấp mất việc làm",
+          "chunk_id": "van-ban-hop-nhat-18-vbhn-vpqh-9ba3e3741cd49a49:chunk:000063",
+          "rerank_score": 0.991
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 28,
+          "section": "3. Trợ cấp mất việc làm",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000076",
+          "rerank_score": 0.9502
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 37635.59
+      "latency_ms": 124557.76
     },
     {
-      "id": 30,
-      "query": "HNSW được mô tả là gì và dùng để giải quyết vấn đề nào?",
-      "expected_answer": "HNSW là thuật toán tìm kiếm vector xấp xỉ dựa trên đồ thị phân tầng, cân bằng tốc độ và độ chính xác; dùng để tìm nhanh khi số lượng vector lớn thay vì brute-force.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.33,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_014",
+      "query": "Tiền lương theo Điều 90 bao gồm những thành phần nào?",
+      "expected_answer": "Gồm mức lương theo công việc hoặc chức danh, phụ cấp lương và các khoản bổ sung khác.",
+      "generated_answer": "Theo Điều 90, tiền lương bao gồm các thành phần sau:\n\n* Mức lương theo công việc hoặc chức danh [SOURCE_1], [SOURCE_2], [SOURCE_4].\n* Phụ cấp lương [SOURCE_1], [SOURCE_2], [SOURCE_4].\n* Các khoản bổ sung khác [SOURCE_1], [SOURCE_2], [SOURCE_4].",
+      "similarity_score": 0.8453,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 3,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 97,
+          "section": "Điều 90. Tiền lương",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000407",
+          "rerank_score": 0.9895
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 31,
+          "section": "Điều 90. Tiền lương",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000125",
+          "rerank_score": 0.9836
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "Văn-bản-hợp-nhất-18-VBHN-VPQH.pdf",
+          "page": 35,
+          "section": "Điều 90. Tiền lương",
+          "chunk_id": "van-ban-hop-nhat-18-vbhn-vpqh-9ba3e3741cd49a49:chunk:000116",
+          "rerank_score": 0.9717
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 28787.91
+      "latency_ms": 55490.52
     },
     {
-      "id": 31,
-      "query": "BM25 cải thiện điểm yếu nào của TF-IDF theo mô tả trong tài liệu?",
-      "expected_answer": "BM25 bổ sung cơ chế bão hòa tần suất và chuẩn hóa độ dài, giúp tránh việc tài liệu lặp từ khóa quá nhiều được ưu tiên không công bằng.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3564,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_015",
+      "query": "Một NLĐ làm thêm vào ngày nghỉ hằng tuần. Mức trả tối thiểu theo Điều 98 là bao nhiêu?",
+      "expected_answer": "Ít nhất bằng 200% đơn giá tiền lương hoặc tiền lương thực trả theo công việc đang làm.",
+      "generated_answer": "Theo Điều 98, người lao động làm thêm giờ vào ngày nghỉ hằng tuần được trả lương ít nhất bằng 200% [SOURCE_1]. \n\nCụ thể hơn:\n* Mức trả này ít nhất bằng 200% so với tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường [SOURCE_2].\n* Đối với người lao động hưởng lương theo sản phẩm, mức trả ít nhất bằng 200% so với đơn giá tiền lương sản phẩm của ngày làm việc bình thường, áp dụng đối với sản phẩm làm thêm vào ngày nghỉ hằng tuần [SOURCE_3].\n* Quy định về việc trả lương ít nhất bằng 200% vào ngày nghỉ hằng tuần cũng được xác nhận trong các tài liệu hướng dẫn về Bộ luật lao động [SOURCE_4].",
+      "similarity_score": 0.7324,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 4,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 33,
+          "section": "Điều 98. Tiền lương làm thêm giờ, làm việc vào ban đêm",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000134",
+          "rerank_score": 0.9849
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 100,
+          "section": "Lưu ý:",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000229",
+          "rerank_score": 0.9042
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 101,
+          "section": "(b) Đối với NLĐ hưởng lương theo sản phẩm",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000230",
+          "rerank_score": 0.842
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "so-tay-kien-thuc-phap-luat-lao-dong-cdi.pdf",
+          "page": 19,
+          "section": "Trả lời:",
+          "chunk_id": "so-tay-kien-thuc-phap-luat-lao-dong-cdi-4dde0b0b00a60305:chunk:000028",
+          "rerank_score": 0.8264
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 45663.79
+      "latency_ms": 77052.13
     },
     {
-      "id": 32,
-      "query": "Hybrid Search trong tài liệu nâng cao thực hiện retrieval theo quy trình nào?",
-      "expected_answer": "Hệ thống chạy song song Sparse Retriever và Dense Retriever, sau đó hợp nhất kết quả; các chiến lược hợp nhất được thực nghiệm gồm Interleaving và RRF.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3277,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_016",
+      "query": "Một NLĐ làm thêm vào ngày lễ, tết. Điều 98 quy định mức tối thiểu nào?",
+      "expected_answer": "Ít nhất bằng 300%, chưa kể tiền lương ngày lễ, tết/ngày nghỉ có hưởng lương đối với NLĐ hưởng lương ngày.",
+      "generated_answer": "Theo Điều 98, người lao động làm thêm giờ vào ngày nghỉ lễ, tết, ngày nghỉ có hưởng lương được trả lương ít nhất bằng 300% [SOURCE_1]. Mức lương này chưa kể tiền lương ngày lễ, tết, ngày nghỉ có hưởng lương đối với người lao động hưởng lương ngày [SOURCE_1].",
+      "similarity_score": 0.8184,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 1,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 33,
+          "section": "Điều 98. Tiền lương làm thêm giờ, làm việc vào ban đêm",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000134",
+          "rerank_score": 0.988
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 28603.8
+      "latency_ms": 58435.04
     },
     {
-      "id": 33,
-      "query": "Vì sao tài liệu xếp hạng khá ở cả Vector Search và BM25 có thể được RRF ưu tiên hơn tài liệu đứng đầu chỉ ở một bên?",
-      "expected_answer": "RRF cộng điểm theo nghịch đảo thứ hạng ở từng danh sách, nên tài liệu có thứ hạng tốt và ổn định ở cả hai luồng có thể có tổng điểm cao hơn.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3484,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_017",
+      "query": "Doanh nghiệp bố trí 10 giờ/ngày theo tuần. Điều này có thể phù hợp không và giới hạn tuần là bao nhiêu?",
+      "expected_answer": "Có thể, nếu NSDLĐ quy định thời giờ làm việc theo tuần và thông báo cho NLĐ; khi đó thời giờ bình thường không quá 10 giờ/ngày và không quá 48 giờ/tuần.",
+      "generated_answer": "Việc doanh nghiệp bố trí 10 giờ/ngày theo tuần là có thể phù hợp, vì trong trường hợp quy định thời giờ làm việc theo tuần thì thời giờ làm việc bình thường không quá 10 giờ trong 01 ngày [SOURCE_1], [SOURCE_2], [SOURCE_3], [SOURCE_4]. \n\nTuy nhiên, cần lưu ý các điều kiện sau:\n* Người sử dụng lao động có quyền quy định thời giờ làm việc theo ngày hoặc tuần nhưng phải thông báo cho người lao động biết [SOURCE_2], [SOURCE_3], [SOURCE_4].\n* Giới hạn thời gian làm việc trong tuần không được quá",
+      "similarity_score": 0.8468,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 4,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 101,
+          "section": "Điều 104. Thời giờ làm việc bình thường",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000423",
+          "rerank_score": 0.8016
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 35,
+          "section": "Chương VII THỜI GIỜ LÀM VIỆC, THỜI GIỜ NGHỈ NGƠI Mục 1. THỜI GIỜ LÀM VIỆC Điều 105. Thời giờ làm việc bình thường",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000141",
+          "rerank_score": 0.7855
+        },
+        {
+          "source_id": "SOURCE_3",
+          "file": "Văn-bản-hợp-nhất-18-VBHN-VPQH.pdf",
+          "page": 40,
+          "section": "Điều 105. Thời gid lam việc bình thường",
+          "chunk_id": "van-ban-hop-nhat-18-vbhn-vpqh-9ba3e3741cd49a49:chunk:000134",
+          "rerank_score": 0.7781
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 107,
+          "section": "1. Thời giờ làm việc",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000242",
+          "rerank_score": 0.5375
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 46924.93
+      "latency_ms": 62453.43
     },
     {
-      "id": 34,
-      "query": "Nếu người dùng chỉ gõ một cụm rất ngắn như “remote work”, tài liệu đề xuất nhóm kỹ thuật nào để cải thiện retrieval?",
-      "expected_answer": "Query Transformation: dùng LLM viết lại, mở rộng hoặc chia nhỏ câu hỏi trước retrieval; các kỹ thuật được trình bày gồm HyDE và Query Decomposition.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3616,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_018",
+      "query": "Một NLĐ làm đủ 12 tháng hỏi về nghỉ hằng năm. RAG cần căn cứ điều nào và yếu tố nào để xác định số ngày nghỉ?",
+      "expected_answer": "Căn cứ Điều 113. Số ngày nghỉ hưởng nguyên lương phụ thuộc nhóm điều kiện/công việc của NLĐ theo các mức được điều này quy định.",
+      "generated_answer": "Để xác định số ngày nghỉ hằng năm cho người lao động (NLĐ) làm việc đủ 12 tháng, cần căn cứ vào các điều khoản và yếu tố sau:\n\n**1. Căn cứ pháp lý:**\nCăn cứ vào Điều 113 của Bộ luật Lao động (BLLĐ 2019) [SOURCE_2], [SOURCE_4].\n\n**2. Các yếu tố để xác định số ngày nghỉ:**\nSố ngày nghỉ hằng năm được xác định dựa trên điều kiện làm việc và thâm niên của NLĐ:\n\n* **Điều kiện làm việc:**\n * **12 ngày làm việc:** Đối với người làm công việc trong điều kiện bình thường [SOURCE_2], [SOURCE_4].\n * **14 ngày làm việc:** Đối với NLĐ chưa thành niên, lao động là người khuyết tật, người làm nghề hoặc công việc nặng nhọc, độc hại, nguy hiểm [SOURCE_2], [SOURCE_4].\n * **16 ngày làm việc:** Đối với người làm nghề hoặc công việc đặc biệt nặng nhọc, độc hại, nguy hiểm [SOURCE_2], [SOURCE_4].\n\n* **Thâm niên làm việc:**\n Cứ đủ 05 năm làm việc cho một người sử dụng lao động thì số ngày nghỉ hằng năm của NLĐ theo các quy định nêu trên sẽ được tăng thêm tương ứng 01 ngày [SOURCE_2].",
+      "similarity_score": 0.7532,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_2",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 115,
+          "section": "1. Số ngày nghỉ hằng năm",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000260",
+          "rerank_score": 0.9945
+        },
+        {
+          "source_id": "SOURCE_4",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 36,
+          "section": "Điều 113. Nghỉ hằng năm",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000150",
+          "rerank_score": 0.9663
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 44473.67
+      "latency_ms": 150383.22
     },
     {
-      "id": 35,
-      "query": "Query Decomposition phù hợp với loại câu hỏi nào và xử lý ra sao?",
-      "expected_answer": "Phù hợp câu hỏi phức tạp mà một đoạn khó chứa đủ thông tin; hệ thống chia thành sub-query, retrieval riêng rồi cho LLM tổng hợp.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4228,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_019",
+      "query": "Khi xử lý kỷ luật lao động, NSDLĐ phải bảo đảm những nguyên tắc tố tụng cơ bản nào?",
+      "expected_answer": "Phải chứng minh lỗi của NLĐ; có sự tham gia của tổ chức đại diện NLĐ tại cơ sở khi NLĐ là thành viên; NLĐ phải có mặt và có quyền tự bào chữa/nhờ bào chữa; việc xử lý phải được lập biên bản, cùng các yêu cầu khác của Điều 122.",
+      "generated_answer": "Dựa trên tài liệu được cung cấp, khi xử lý kỷ luật lao động, người sử dụng lao động (NSDLĐ) phải tuân thủ các nguyên tắc sau:\n\n- Người sử dụng lao động phải chứng minh được lỗi của người lao động [SOURCE_3, SOURCE_5].\n- Phải có sự tham gia của tổ chức đại diện tập thể lao động tại cơ sở (hoặc tổ chức đại diện người lao động tại cơ sở) [SOURCE_3, SOURCE_5].\n- Người lao động phải có mặt và có quyền tự bào chữa, nhờ luật sư hoặc người khác bào chữa; trường hợp là người dưới 18 tuổi thì phải có sự tham gia của cha, mẹ hoặc người đại diện theo pháp luật [SOURCE_3, SOURCE_5].\n- Việc xử lý kỷ luật lao động phải được lập thành biên bản [SOURCE_3, SOURCE_5].\n- Mỗi hành vi vi phạm kỷ luật lao động chỉ bị xử lý một hình thức kỷ luật (không được áp dụng nhiều hình thức xử lý kỷ luật lao động đối với một hành vi vi phạm) [SOURCE_2, SOURCE_5].\n- Khi một người lao động đồng thời có nhiều hành vi vi phạm kỷ luật lao động thì chỉ áp dụng hình thức kỷ luật cao nhất tương ứng với hành vi vi phạm nặng nhất [SOURCE_2, SOURCE_5].\n- Không xử lý kỷ luật lao động đối với người lao động vi phạm nội quy lao động trong khi mắc bệnh tâm thần hoặc một bệnh khác làm mất khả năng nhận thức hay khả năng điều khiển hành vi [SOURCE_2, SOURCE_5].\n- Cấm xâm phạm thân thể, nhân phẩm người lao động khi xử lý vi phạm kỷ luật lao động [SOURCE_2].\n- Cấm dùng hình thức phạt tiền, cúp lương thay việc xử lý kỷ luật lao động [SOURCE_2].\n- Cấm xử lý kỷ luật lao động vì lý do tham gia đình công theo quy định của pháp luật [SOURCE_2].\n- Không được xử lý kỷ luật lao động đối với người lao động đang trong thời gian: nghỉ ốm đau, điều dưỡng; nghỉ việc được sự đồng ý của NSDLĐ; đang bị tạm giữ, tạm giam; đang chờ kết quả của cơ quan có thẩm quyền điều tra xác minh và kết luận đối với hành vi vi phạm được quy định tại khoản 1 Điều 126 của Bộ luật Lao động; lao động nữ có thai, nghỉ thai sản; người lao động nuôi con nhỏ dưới 12 tháng tuổi [SOURCE_5].",
+      "similarity_score": 0.7388,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_2",
+          "file": "giao trinh Luat lao dong CB 2005.pdf",
+          "page": 90,
+          "section": "b) Nguyên tắc xử lý vi phạm kỷ luật lao động",
+          "chunk_id": "giao-trinh-luat-lao-dong-cb-2005-f565d53ce036bcdc:chunk:000270",
+          "rerank_score": 0.9187
+        },
+        {
+          "source_id": "SOURCE_5",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 106,
+          "section": "Điều 123. Nguyên tắc, trình tự xử lý kỷ luật lao động",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000448",
+          "rerank_score": 0.8552
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 58924.09
+      "latency_ms": 166799.95
     },
     {
-      "id": 36,
-      "query": "Cross-Encoder và MMR giải quyết hai mục tiêu re-ranking khác nhau như thế nào?",
-      "expected_answer": "Cross-Encoder chấm lại mức độ liên quan giữa query và từng document; MMR cân bằng mức độ liên quan với tính đa dạng để giảm trùng lặp.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3583,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
+      "id": "LAW_E_020",
+      "query": "NLĐ trộm cắp hoặc sử dụng ma túy tại nơi làm việc có thể bị áp dụng hình thức kỷ luật nào theo Điều 125?",
+      "expected_answer": "Có thể bị áp dụng hình thức xử lý kỷ luật sa thải theo các trường hợp Điều 125 quy định.",
+      "generated_answer": "Theo Điều 125, người lao động có hành vi trộm cắp hoặc sử dụng ma túy tại nơi làm việc có thể bị áp dụng hình thức xử lý kỷ luật sa thải [SOURCE_1]. Các hành vi này cũng nằm trong danh sách các hành vi sẽ bị xử lý kỷ luật lao động theo hình thức sa thải [SOURCE_2].",
+      "similarity_score": 0.7718,
+      "is_pass": true,
+      "is_early_exit": false,
+      "citations_count": 2,
+      "citations": [
+        {
+          "source_id": "SOURCE_1",
+          "file": "luu-ban-nhap-tu-dong-3-4.pdf",
+          "page": 40,
+          "section": "Điều 125. Áp dụng hình thức xử lý kỷ luật sa thải",
+          "chunk_id": "luu-ban-nhap-tu-dong-3-4-2a96e9feefa079a4:chunk:000164",
+          "rerank_score": 0.9982
+        },
+        {
+          "source_id": "SOURCE_2",
+          "file": "ILO-VCCI_Labour-Law-Guide-Book-V04-Final.pdf",
+          "page": 24,
+          "section": "(a) Hành vi bị xử lý KLLĐ theo hình thức sa thải",
+          "chunk_id": "ilo-vcci_labour-law-guide-book-v04-final-6b95040083c1ba9a:chunk:000060",
+          "rerank_score": 0.9226
+        }
+      ],
       "image_urls_count": 0,
       "image_urls": [],
-      "latency_ms": 46502.49
-    },
-    {
-      "id": 37,
-      "query": "Bài thực nghiệm nâng cao sử dụng bao nhiêu tài liệu PDF làm dữ liệu đầu vào?",
-      "expected_answer": "45 tài liệu PDF chứa kiến thức chuyên sâu về Trí tuệ nhân tạo thuộc khóa học AIO.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3887,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 42467.34
-    },
-    {
-      "id": 38,
-      "query": "Bốn metric Ragas được sử dụng trong tài liệu để đánh giá RAG là gì?",
-      "expected_answer": "Faithfulness, Answer Relevancy, Context Precision và Context Recall.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.431,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 38567.18
-    },
-    {
-      "id": 39,
-      "query": "Faithfulness đo điều gì trong đánh giá RAG?",
-      "expected_answer": "Faithfulness đo mức độ các phát biểu trong câu trả lời có thể được hỗ trợ bởi context đã truy xuất, nhằm kiểm soát hallucination.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3622,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 44711.36
-    },
-    {
-      "id": 40,
-      "query": "Trong ví dụ Einstein, Faithfulness bằng bao nhiêu và vì sao?",
-      "expected_answer": "Faithfulness = 0.5 vì có 2 phát biểu nhưng chỉ 1 phát biểu được context hỗ trợ; ngày 20 March 1879 không khớp context ghi 14 March 1879.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.442,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 57381.31
-    },
-    {
-      "id": 41,
-      "query": "Context Precision và Context Recall khác nhau ở trọng tâm đánh giá nào?",
-      "expected_answer": "Context Precision tập trung vào độ chính xác và thứ hạng của context liên quan; Context Recall tập trung vào độ bao phủ thông tin cần thiết từ reference trong retrieved contexts.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3722,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 43765.06
-    },
-    {
-      "id": 42,
-      "query": "Ví dụ green tea trong phần Context Precision cho kết quả cuối cùng xấp xỉ bao nhiêu?",
-      "expected_answer": "Context Precision xấp xỉ 0.76.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4709,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 44980.76
-    },
-    {
-      "id": 43,
-      "query": "Ragas tạo testset tự động từ corpus PDF theo luồng chính nào?",
-      "expected_answer": "PDF được tiền xử lý và chuyển sang markdown, xây knowledge graph bằng embedding và trích xuất quan hệ, sau đó query synthesizer sinh câu hỏi; LLM tạo reference answer và reference_contexts cùng metadata.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3913,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 26752.01
-    },
-    {
-      "id": 44,
-      "query": "Phân phối mặc định của ba loại query do Ragas sinh trong tài liệu là bao nhiêu?",
-      "expected_answer": "Single-hop specific 50%, multi-hop abstract 25%, multi-hop specific 25%.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3925,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 47070.29
-    },
-    {
-      "id": 45,
-      "query": "Một sample trong Ragas Testset có những trường chính nào, và khi đánh giá hệ thống thực tế cần bổ sung thêm gì?",
-      "expected_answer": "Các trường chính gồm user_input, reference_contexts, reference, persona_name, query_style, query_length và synthesizer_name. Khi đánh giá thực tế bổ sung response và retrieved_contexts.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3678,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 46943.67
-    },
-    {
-      "id": 46,
-      "query": "Baseline RAG nâng cao được cấu hình như thế nào về chunking, retrieval và Top-K?",
-      "expected_answer": "Baseline dùng chunk_size=1024, chunk_overlap=128, VectorDB với similarity retrieval và k=3; chưa áp dụng Query Transformation hay Re-ranking.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.471,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 38095.58
-    },
-    {
-      "id": 47,
-      "query": "Baseline đạt các điểm Ragas nào và điểm yếu rõ nhất là gì?",
-      "expected_answer": "Faithfulness 0.73, Answer Relevancy 0.53, Context Precision 0.81, Context Recall 0.67. Điểm yếu rõ nhất là Answer Relevancy thấp nhất; Context Recall cũng còn trung bình.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4919,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 46224.7
-    },
-    {
-      "id": 48,
-      "query": "Semantic Chunking thay đổi các metric thế nào so với baseline?",
-      "expected_answer": "Faithfulness 0.73→0.81, Answer Relevancy 0.53→0.61, Context Precision 0.81→0.83, Context Recall 0.67→0.63.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4464,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 38415.45
-    },
-    {
-      "id": 49,
-      "query": "Trong các chiến lược Retrieval thử nghiệm, Hybrid + RRF đạt kết quả nào nổi bật?",
-      "expected_answer": "Hybrid + RRF đạt Faithfulness 0.86, Answer Relevancy 0.57, Context Precision 0.80 và Context Recall 0.80; tài liệu kết luận chiến lược này cân bằng tốt giữa “tìm đủ” và “tìm đúng”.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4401,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 43747.44
-    },
-    {
-      "id": 50,
-      "query": "Kỹ thuật nào đạt Faithfulness cao nhất trong bảng tổng kết thực nghiệm và điểm là bao nhiêu?",
-      "expected_answer": "Query Decomposition đạt Faithfulness cao nhất: 0.93, tăng 0.20 so me với baseline.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4142,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 40257.35
-    },
-    {
-      "id": 51,
-      "query": "HyDE đã tác động thế nào đến Faithfulness, Answer Relevancy và Context Recall so với baseline?",
-      "expected_answer": "Faithfulness tăng lên 0.81 (+0.08), Answer Relevancy giảm xuống 0.50 (-0.03), Context Recall giảm xuống 0.63 (-0.04).",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4348,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 59711.89
-    },
-    {
-      "id": 52,
-      "query": "Query Decomposition đạt kết quả gì và đánh đổi ở metric retrieval nào?",
-      "expected_answer": "Decomposition đạt Faithfulness 0.93, Answer Relevancy 0.65, Context Precision 0.68 và Context Recall 0.69. Đánh đổi chính là Context Precision giảm.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4507,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 58477.91
-    },
-    {
-      "id": 53,
-      "query": "Cross-Encoder trong thực nghiệm cải thiện những metric nào so với baseline?",
-      "expected_answer": "Cross-Encoder đạt Faithfulness 0.76, Answer Relevancy 0.61, Context Precision 0.82, Context Recall 0.71; Answer Relevancy tăng 0.08 và Context Recall tăng 0.04.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4461,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 58975.21
-    },
-    {
-      "id": 54,
-      "query": "Vì sao MMR làm giảm Context Recall trong thực nghiệm này?",
-      "expected_answer": "MMR phạt tài liệu có nội dung tương đồng để tăng đa dạng; trong tài liệu học thuật, các đoạn gần nghĩa có thể chứa chi tiết bổ trợ quan trọng nên bị loại quá mức, làm Context Recall giảm xuống 0.60.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.3919,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 44865.7
-    },
-    {
-      "id": 55,
-      "query": "Tài liệu cho biết ChromaDB dùng thuật toán mã hóa dữ liệu (encryption) nào khi lưu vector?",
-      "expected_answer": "Tài liệu không cung cấp thông tin về thuật toán mã hóa dữ liệu (encryption) mà ChromaDB sử dụng khi lưu vector.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.5458,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 37610.06
-    },
-    {
-      "id": 56,
-      "query": "Ragas trong tài liệu có metric riêng để chấm độ trễ phản hồi (latency) không, và công thức là gì?",
-      "expected_answer": "Tài liệu không cung cấp metric Ragas riêng cho latency hoặc công thức chấm latency; tài liệu chỉ sử dụng bốn metric Faithfulness, Answer Relevancy, Context Precision và Context Recall.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.485,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 41073.07
-    },
-    {
-      "id": 57,
-      "query": "Breakpoint threshold nào là tối ưu cho Semantic Chunking trên mọi loại dữ liệu?",
-      "expected_answer": "Tài liệu không đưa ra một breakpoint threshold tối ưu cho mọi loại dữ liệu; chỉ mô tả cơ chế dùng ngưỡng và cấu hình trong thực nghiệm.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.5045,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 46517.5
-    },
-    {
-      "id": 58,
-      "query": "Nếu tăng k thì kết quả RAG có tốt hơn không?",
-      "expected_answer": "Câu hỏi chưa đủ rõ vì tài liệu dùng “k” ở nhiều ngữ cảnh, như Top-K retrieval và hằng số k trong RRF. Cần làm rõ tham số nào trước khi kết luận.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4533,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 55531.66
-    },
-    {
-      "id": 59,
-      "query": "Tài liệu quy định SLA thời gian phản hồi tối đa của chatbot RAG là bao nhiêu giây?",
-      "expected_answer": "Tài liệu không cung cấp SLA thời gian phản hồi tối đa của chatbot RAG.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.5409,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 27498.57
-    },
-    {
-      "id": 60,
-      "query": "Theo tài liệu, phương pháp nào luôn tốt nhất cho mọi hệ thống RAG: Semantic Chunking, Hybrid+RRF hay Decomposition?",
-      "expected_answer": "Tài liệu không khẳng định một phương pháp luôn tốt nhất cho mọi hệ thống RAG. Kết quả chỉ phản ánh chuỗi thực nghiệm cụ thể và mỗi kỹ thuật có trade-off khác nhau.",
-      "generated_answer": "Dựa trên tài liệu được cung cấp, tôi không tìm thấy thông tin để trả lời câu hỏi này.",
-      "similarity_score": 0.4459,
-      "is_pass": false,
-      "is_early_exit": true,
-      "citations_count": 0,
-      "citations": [],
-      "image_urls_count": 0,
-      "image_urls": [],
-      "latency_ms": 47368.36
+      "latency_ms": 58086.25
     }
   ]
 }
